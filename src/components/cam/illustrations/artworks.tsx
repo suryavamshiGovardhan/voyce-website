@@ -205,6 +205,9 @@ export function PixelJump() {
 }
 
 export function CircuitNodes() {
+  const nodes2 = [
+    { x: 70, y: 70 }, { x: 200, y: 46 }, { x: 330, y: 84 }, { x: 110, y: 170 }, { x: 250, y: 150 },
+  ];
   const nodes = [
     { x: 70, y: 70, d: 0 }, { x: 200, y: 46, d: 300 }, { x: 330, y: 84, d: 600 },
     { x: 110, y: 170, d: 900 }, { x: 250, y: 150, d: 1200 }, { x: 340, y: 196, d: 1500 },
