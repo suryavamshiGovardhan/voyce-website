@@ -218,9 +218,6 @@ export function CircuitNodes() {
       <circle cx={n.x} cy={n.y} r="4.5" fill="var(--art-d)" />
     </g>
   ));
-  const nodes2 = [
-    { x: 70, y: 70 }, { x: 200, y: 46 }, { x: 330, y: 84 }, { x: 110, y: 170 }, { x: 250, y: 150 },
-  ];
   return (
     <svg viewBox="0 0 400 250" className="camva" aria-hidden="true" focusable="false">
       {nodes}
