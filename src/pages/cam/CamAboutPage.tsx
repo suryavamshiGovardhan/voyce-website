@@ -33,7 +33,7 @@ export default function CamAboutPage() {
               <div key={s.name} className="cam-tile p-5">
                 <p className="cam-serif text-xl">{s.name}</p>
                 <p className="cam-muted mt-2 text-sm leading-relaxed">{s.path}</p>
-                <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--cam-paper)" }}>{s.now}</p>
+                <p className="mt-3 text-sm leading-relaxed" style={{ color: "var(--cam-teal-dark)", fontWeight: 700 }}>{s.now}</p>
               </div>
             ))}
           </div>

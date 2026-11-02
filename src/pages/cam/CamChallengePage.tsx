@@ -77,7 +77,7 @@ export default function CamChallengePage() {
                   onClick={() => toggle(d.day)}
                   aria-pressed={isDone}
                   className="cam-tile flex w-full items-start gap-4 p-4 text-left"
-                  style={isDone ? { boxShadow: "0 0 0 1px #c4a06a88" } : undefined}
+                  style={isDone ? { boxShadow: "0 0 0 3px var(--cam-sun)" } : undefined}
                 >
                   <span
                     className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors"

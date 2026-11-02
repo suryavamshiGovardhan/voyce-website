@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, AtSign, DoorOpen, Instagram, Mail } from "lucide-react";
+import { ArrowRight, AtSign, DoorOpen, Instagram, Mail, Search } from "lucide-react";
 import { cam } from "@/data/cam";
 
 type Visual = { id: string; kind: string; alt: string };
@@ -72,15 +72,16 @@ export function StepPath({ steps, door = false }: { steps: { title: string; body
 export function GapDiagram() {
   return (
     <svg viewBox="0 0 660 320" className="w-full" role="img" aria-label="The Exposure Gap: the distance between careers that exist and careers you have been shown">
-      <rect x="40" y="110" width="210" height="170" rx="20" fill="var(--cam-kraft)" opacity="0.92" />
-      <rect x="410" y="180" width="210" height="100" rx="20" fill="var(--cam-surface)" />
-      <rect x="410" y="180" width="210" height="100" rx="20" fill="none" stroke="var(--cam-line)" />
-      <circle cx="515" cy="150" r="10" fill="var(--cam-paper)" />
-      <rect x="508" y="162" width="14" height="18" rx="6" fill="var(--cam-paper)" />
-      <path d="M 250 130 Q 330 40 410 195" fill="none" stroke="var(--cam-paper)" strokeWidth="1.5" strokeDasharray="7 9" />
-      <text x="330" y="80" textAnchor="middle" fill="var(--cam-kraft)" style={{ fontFamily: "IBM Plex Mono, monospace", fontSize: 11, letterSpacing: "0.22em" }}>THE EXPOSURE GAP</text>
-      <text x="145" y="300" textAnchor="middle" fill="var(--cam-muted)" style={{ fontFamily: "IBM Plex Mono, monospace", fontSize: 10, letterSpacing: "0.18em" }}>CAREERS THAT EXIST</text>
-      <text x="515" y="300" textAnchor="middle" fill="var(--cam-muted)" style={{ fontFamily: "IBM Plex Mono, monospace", fontSize: 10, letterSpacing: "0.18em" }}>CAREERS YOU'VE BEEN SHOWN</text>
+      <rect x="40" y="110" width="210" height="170" rx="20" fill="var(--cam-teal)" />
+      <rect x="40" y="110" width="210" height="170" rx="20" fill="none" stroke="var(--cam-ink)" strokeWidth="3" />
+      <rect x="410" y="180" width="210" height="100" rx="20" fill="var(--cam-mint)" />
+      <rect x="410" y="180" width="210" height="100" rx="20" fill="none" stroke="var(--cam-ink)" strokeWidth="3" />
+      <circle cx="515" cy="150" r="10" fill="var(--cam-ink)" />
+      <rect x="508" y="162" width="14" height="18" rx="6" fill="var(--cam-ink)" />
+      <path d="M 250 130 Q 330 40 410 195" fill="none" stroke="var(--cam-ink)" strokeWidth="2.5" strokeDasharray="7 9" />
+      <text x="330" y="80" textAnchor="middle" fill="var(--cam-coral)" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 13, fontWeight: 800 }}>The Exposure Gap</text>
+      <text x="145" y="300" textAnchor="middle" fill="var(--cam-muted)" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 11, fontWeight: 700 }}>CAREERS THAT EXIST</text>
+      <text x="515" y="300" textAnchor="middle" fill="var(--cam-muted)" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: 11, fontWeight: 700 }}>CAREERS YOU'VE BEEN SHOWN</text>
     </svg>
   );
 }
@@ -256,14 +257,14 @@ export function SearchMock() {
   };
   return (
     <div>
-      <form onSubmit={submit} className="flex items-center gap-3 rounded-full px-5 py-3.5" style={{ background: "var(--cam-surface)", boxShadow: "var(--cam-shadow-border)" }}>
-        <span aria-hidden="true" style={{ color: "var(--cam-dim)" }}>⌕</span>
+      <form onSubmit={submit} className="flex items-center gap-3 rounded-full px-5 py-3.5" style={{ background: "var(--cam-card)", border: "2px solid var(--cam-ink)", boxShadow: "4px 4px 0 var(--cam-ink)" }}>
+        <Search className="h-4 w-4 shrink-0" aria-hidden="true" style={{ color: "var(--cam-dim)" }} />
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search careers — tea, ocean, type, cricket…"
           aria-label="Search the CAM atlas"
-          className="cam-mono w-full bg-transparent text-sm outline-none placeholder:opacity-50"
+          className="w-full bg-transparent text-sm outline-none placeholder:opacity-50"
           style={{ color: "var(--cam-fg)" }}
         />
         <button type="submit" className="cam-kicker cam-ring shrink-0 rounded-full px-4 py-1.5" style={{ background: "var(--cam-paper)", color: "var(--cam-ink)" }}>
