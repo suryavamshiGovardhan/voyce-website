@@ -89,7 +89,7 @@ function SceneBody({ scene }: { scene: TalkScene }) {
     case "number":
       return (
         <div className="mx-auto max-w-3xl text-center">
-          <p className="cam-serif text-[clamp(72px,14vw,150px)] leading-none" style={{ color: "var(--cam-paper)" }}>{scene.value}</p>
+          <p className="cam-serif text-[clamp(72px,14vw,150px)] leading-none" style={{ color: "var(--cam-coral)" }}>{scene.value}</p>
           {scene.caption && <p className="cam-kicker mt-4">{scene.caption}</p>}
           {scene.sub && <p className="cam-muted mt-4 text-lg">{scene.sub}</p>}
         </div>

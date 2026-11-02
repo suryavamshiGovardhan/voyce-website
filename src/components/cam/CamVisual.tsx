@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowRight, AtSign, DoorOpen, Instagram, Mail } from "lucide-react";
+import { ArrowRight, AtSign, DoorOpen, Instagram, Mail, Search } from "lucide-react";
 import { cam } from "@/data/cam";
 
 type Visual = { id: string; kind: string; alt: string };

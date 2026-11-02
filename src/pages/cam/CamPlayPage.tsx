@@ -100,7 +100,7 @@ export default function CamPlayPage() {
         ) : (
           <div className="cam-card cam-slide-in mt-10 p-8 text-center sm:p-12">
             <p className="cam-kicker">Final score</p>
-            <p className="cam-serif mt-4 text-7xl leading-none" style={{ color: "var(--cam-paper)" }}>{score} / {rounds.length}</p>
+            <p className="cam-serif mt-4 text-7xl leading-none" style={{ color: "var(--cam-coral)" }}>{score} / {rounds.length}</p>
             <p className="cam-muted mx-auto mt-6 max-w-md text-lg leading-relaxed">{verdict}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <button type="button" onClick={restart} className="cam-btn cam-lift">
