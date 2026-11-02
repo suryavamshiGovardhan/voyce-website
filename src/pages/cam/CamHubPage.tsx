@@ -6,7 +6,7 @@ import {
   Leaf, Microscope, Rocket, Sparkles, Stethoscope, CalendarDays,
 } from "lucide-react";
 import CamShell, { coverBgForSlug } from "@/components/cam/CamShell";
-import TopicArt, { artForSlug } from "@/components/cam/illustrations";
+import { TopicArt, artForSlug } from "@/components/cam/illustrations";
 import { cam } from "@/data/cam";
 
 const articles = [...cam.articles].sort((a, b) => a.order - b.order);

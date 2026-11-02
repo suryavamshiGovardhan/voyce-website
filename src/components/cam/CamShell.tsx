@@ -4,7 +4,7 @@ import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
 import { SEOHead } from "@/components/SEOHead";
 import { cam } from "@/data/cam";
-import TopicArt, { artForSlug } from "@/components/cam/illustrations";
+import { TopicArt, artForSlug } from "@/components/cam/illustrations";
 import "./cam.css";
 
 interface Props { title: string; description: string; canonical: string; children: ReactNode }
