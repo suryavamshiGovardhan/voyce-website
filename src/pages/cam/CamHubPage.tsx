@@ -265,7 +265,7 @@ export default function CamHubPage() {
               className="mt-5 text-lg font-semibold sm:text-2xl"
               style={{ color: "var(--cam-sun)", fontFamily: "'Bricolage Grotesque', sans-serif" }}
             >
-              {jobCount.toLocaleString("en-IN")}+ real jobs. Which one have you never heard of?
+              2,000+ real jobs. Which one have you never heard of?
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.5, ease: EASE }}
