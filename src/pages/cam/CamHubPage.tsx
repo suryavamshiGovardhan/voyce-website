@@ -131,10 +131,7 @@ function TenSecondChallenge() {
           {[0, 1, 2, 3, 4].map((i) => (
             <input
               key={i}
-              value={phase === "idle" ? "" : undefined}
-              defaultValue={undefined}
               disabled={phase !== "run"}
-              onChange={() => { /* naming is free-form; the point is the count */ }}
               aria-label={`Career ${i + 1}`}
               inputMode="text"
               className="cam-mono w-full rounded-xl px-2 text-center outline-none"
