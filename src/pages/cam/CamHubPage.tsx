@@ -131,10 +131,7 @@ function TenSecondChallenge() {
           {[0, 1, 2, 3, 4].map((i) => (
             <input
               key={i}
-              value={phase === "idle" ? "" : undefined}
-              defaultValue={undefined}
               disabled={phase !== "run"}
-              onChange={() => { /* naming is free-form; the point is the count */ }}
               aria-label={`Career ${i + 1}`}
               inputMode="text"
               className="cam-mono w-full rounded-xl px-2 text-center outline-none"
@@ -268,7 +265,7 @@ export default function CamHubPage() {
               className="mt-5 text-lg font-semibold sm:text-2xl"
               style={{ color: "var(--cam-sun)", fontFamily: "'Bricolage Grotesque', sans-serif" }}
             >
-              {jobCount.toLocaleString("en-IN")}+ real jobs. Which one have you never heard of?
+              2,000+ real jobs. Which one have you never heard of?
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.1, duration: 0.5, ease: EASE }}
