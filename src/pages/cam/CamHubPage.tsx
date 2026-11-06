@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -231,10 +231,6 @@ export default function CamHubPage() {
   const list = active === "All" ? articles : articles.filter((a) => a.category === active);
   const [featured, ...rest] = list;
 
-  const jobCount = useMemo(
-    () => Object.values(cam.source.atlasIndex).flat().length,
-    []
-  );
 
   return (
     <CamShell
