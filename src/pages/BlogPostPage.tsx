@@ -112,7 +112,7 @@ export default function BlogPostPage() {
                 )}
               </header>
               
-              <div className="prose prose-lg max-w-none">
+              <div className="prose prose-lg max-w-none blog-content">
                 {post.content ? (
                   <SafeHTML html={post.content} />
                 ) : (
