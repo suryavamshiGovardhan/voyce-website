@@ -14,5 +14,5 @@
 - [ ] Misc polish: /story coming soon, /teacher mock URL, seeded 2023 posts
 
 ## Queued (Nov 3)
-- [ ] Add "The Psychology of Self-Efficacy & Learned Helplessness" essay as a blog article (full text, cleaned of external image links; tables preserved; no content rewrite)
-- [ ] CAM brand redesign — finish: type-check, build check, Playwright verify /cam, article page, interactive pages at 390px + desktop
+- [x] Add "The Psychology of Self-Efficacy & Learned Helplessness" essay as a blog article (full text, cleaned of external image links; tables preserved; no content rewrite)
+- [x] CAM brand redesign — finish: type-check, build check, Playwright verify /cam, article page, interactive pages at 390px + desktop
