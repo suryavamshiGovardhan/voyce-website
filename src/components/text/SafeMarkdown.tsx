@@ -52,7 +52,7 @@ export function SafeMarkdown({ content, className = "" }: SafeMarkdownProps) {
  */
 export function SafeHTML({ html, className = "" }: { html: string; className?: string }) {
   const sanitizedHTML = DOMPurify.sanitize(html, {
-    ALLOWED_TAGS: ['p', 'strong', 'em', 'br', 'ul', 'ol', 'li'],
+    ALLOWED_TAGS: ['p', 'strong', 'em', 'br', 'ul', 'ol', 'li', 'h2', 'h3', 'h4', 'blockquote', 'hr', 'table', 'thead', 'tbody', 'tr', 'th', 'td'],
     ALLOWED_ATTR: []
   });
 
