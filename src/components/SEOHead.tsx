@@ -10,7 +10,8 @@ interface SEOHeadProps {
   noindex?: boolean;
 }
 
-export const SITE_ORIGIN = "https://voyce-x.lovable.app";
+import { SITE_ORIGIN, BASE_PATH } from "@/lib/site";
+export { SITE_ORIGIN };
 export const DEFAULT_TITLE = "VOYCE — Student & school wellbeing";
 const DEFAULT_DESCRIPTION = "A calm, private wellbeing space for students, parents, teachers and schools. Read real stories, reflect privately, find a next step. No diagnosis, no scores.";
 const DEFAULT_KEYWORDS = "student wellbeing, school wellbeing, emotional check-in, reflection, mindfulness, VOYCE";
@@ -29,7 +30,7 @@ export function canonicalFor(pathname: string): string {
   const clean = pathname.replace(/\/+$/, "") || "/";
   return `${SITE_ORIGIN}${clean === "/" ? "/" : clean}`;
 }
-const DEFAULT_OG_IMAGE = "https://voyce-x.lovable.app/og-image.png";
+const DEFAULT_OG_IMAGE = `${SITE_ORIGIN}/og-image.jpg`;
 
 export function SEOHead({
   title,
@@ -41,7 +42,7 @@ export function SEOHead({
   noindex = false
 }: SEOHeadProps) {
   const fullTitle = formatTitle(title);
-  const currentUrl = canonicalUrl || canonicalFor(window.location.pathname);
+  const currentUrl = canonicalUrl || canonicalFor(window.location.pathname.slice(BASE_PATH.length) || "/");
 
   useEffect(() => {
     // Set page title

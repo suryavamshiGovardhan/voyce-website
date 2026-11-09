@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import SiteHeader from "@/components/site/SiteHeader";
 import SiteFooter from "@/components/site/SiteFooter";
-import { SEOHead } from "@/components/SEOHead";
+import { SEOHead, canonicalFor } from "@/components/SEOHead";
 
 interface PageShellProps {
   children: ReactNode;
@@ -26,7 +26,7 @@ export default function PageShell({
         title={title}
         description={description}
         keywords={keywords}
-        canonicalUrl={canonical ? `https://voyce-x.lovable.app${canonical}` : undefined}
+        canonicalUrl={canonical ? canonicalFor(canonical) : undefined}
         noindex={noindex}
       />
       <div className="flex min-h-screen flex-col bg-background">

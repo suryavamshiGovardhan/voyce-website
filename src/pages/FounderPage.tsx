@@ -35,8 +35,8 @@ export default function FounderPage() {
         title="Suryavamshi Govardhan — Founder of VOYCE | Contact & Profile"
         description="Suryavamshi Govardhan is the founder of VOYCE, a mental health platform from India bridging ancient wisdom with modern psychology. Instagram @suryavamshiiii, voycexx@gmail.com, +91 90104 81175."
         keywords="Suryavamshi Govardhan, Suryavamshi Govardhan VOYCE-X, VOYCE-X founder, suryavamshiiii, Suryavamshi Govardhan contact, mental health founder India, wellness entrepreneur, psychology"
-        ogImage="https://voyce-x.lovable.app/og-image.png"
-        canonicalUrl="https://voyce-x.lovable.app/suryavamshi-govardhan"
+        ogImage="https://suryavamshigovardhan.github.io/voyce-website/og-image.jpg"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan"
       />
       <FounderSchema />
       <OrganizationSchema />

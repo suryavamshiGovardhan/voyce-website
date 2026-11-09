@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BASE_PATH } from "@/lib/site";
 import { Copy, Check, Share2, Link2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +15,7 @@ export default function ShareLinksPanel({
   code, partnerALink, partnerBLink, reportLink, compact,
 }: Props) {
   const [copied, setCopied] = useState<string | null>(null);
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const origin = (typeof window !== "undefined" ? window.location.origin : "") + BASE_PATH;
 
   const copy = (text: string, key: string) => {
     navigator.clipboard.writeText(text).then(() => {

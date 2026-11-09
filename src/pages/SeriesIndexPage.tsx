@@ -11,7 +11,7 @@ export default function SeriesIndexPage() {
         title="The Unheard Mind — VOYCE Original Series"
         description="8 psychology concepts. Real stories. Ancient wisdom. No filter. A VOYCE original series by Suryavamshi Govardhan."
         keywords="VOYCE, The Unheard Mind, psychology series, mental health stories, shadow self, attachment theory"
-        canonicalUrl="https://voyce-x.lovable.app/series"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/series"
       />
       <Navbar />
 

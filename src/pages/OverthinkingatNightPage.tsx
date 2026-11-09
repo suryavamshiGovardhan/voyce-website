@@ -15,7 +15,7 @@ export default function OverthinkingAtNightPage() {
         description="A KATA-style explanation of why your brain spirals at night. Brain fatigue, cortisol, dopamine, and the silence that reveals everything."
         keywords="overthinking at night, night anxiety, cortisol cycle, brain fatigue, VOYCE-X, KATA essay"
         ogType="article"
-        canonicalUrl="https://voyce-x.lovable.app/article/overthinking-at-night"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/article/overthinking-at-night"
       />
       <ArticleSchema
         title="Why Humans Overthink More at Night"
@@ -23,7 +23,7 @@ export default function OverthinkingAtNightPage() {
         author="Suryavamshi Govardhan"
         datePublished="2025-02-21"
         image={heroImage}
-        url="https://voyce-x.lovable.app/article/overthinking-at-night"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/overthinking-at-night"
       />
       <div className="min-h-screen bg-background">
         <Navbar />

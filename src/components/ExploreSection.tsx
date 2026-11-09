@@ -1,5 +1,6 @@
 
 import { ArrowRight, BookOpen, Brain, Heart, Microscope, Users, Zap, Sparkles, Globe, TreePine } from 'lucide-react';
+import { BASE_PATH } from "@/lib/site";
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -244,7 +245,7 @@ export default function ExploreSection() {
                 className="bg-card backdrop-blur-sm border border-border hover:bg-muted text-foreground px-10 py-4 text-lg transform hover:scale-110 hover:-translate-y-2 transition-all duration-300"
                 asChild
               >
-                <a href="/path">
+                <a href={`${BASE_PATH}/path`}>
                   Start Your Journey
                   <ArrowRight className="ml-2 h-5 w-5 animate-bounce" />
                 </a>
@@ -256,7 +257,7 @@ export default function ExploreSection() {
                 className="border-white/50 text-foreground hover:bg-white hover:text-slate-800 px-10 py-4 text-lg transform hover:scale-110 hover:-translate-y-2 transition-all duration-300"
                 asChild
               >
-                <a href="/library">
+                <a href={`${BASE_PATH}/library`}>
                   Browse Library
                   <BookOpen className="ml-2 h-5 w-5" />
                 </a>

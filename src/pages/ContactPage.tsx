@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { BASE_PATH } from "@/lib/site";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -74,7 +75,7 @@ export default function ContactPage() {
             <CardContent>
               <p className="text-muted-foreground">
                 VOYCE is a community-driven space. Your stories, feedback, and ideas help shape what we build. 
-                Visit our <a href="/thoughts" className="text-primary hover:underline">Thoughts page</a> to share your voice.
+                Visit our <a href={`${BASE_PATH}/thoughts`} className="text-primary hover:underline">Thoughts page</a> to share your voice.
               </p>
             </CardContent>
           </Card>

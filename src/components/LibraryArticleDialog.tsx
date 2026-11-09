@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { BASE_PATH } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -83,7 +84,7 @@ export default function LibraryArticleDialog({ open, onOpenChange, article }: Pr
                 <div className="mt-3">
                   <Button asChild variant="outline" size="sm">
                     <a
-                      href="/contact"
+                      href={`${BASE_PATH}/contact`}
                       aria-label="Open the contact page"
                     >
                       Contact

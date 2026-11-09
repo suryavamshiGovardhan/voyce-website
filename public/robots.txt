@@ -1,5 +1,5 @@
 # robots.txt for VOYCE — student & school wellbeing
-# https://voyce-x.lovable.app
+# https://suryavamshigovardhan.github.io/voyce-website
 
 User-agent: *
 Allow: /
@@ -30,4 +30,4 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-Sitemap: https://voyce-x.lovable.app/sitemap.xml
+Sitemap: https://suryavamshigovardhan.github.io/voyce-website/sitemap.xml

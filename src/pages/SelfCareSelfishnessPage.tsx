@@ -12,7 +12,7 @@ export default function SelfCareSelfishnessPage() {
         description="A reflective essay on why self-care is a form of constructive selfishness — and why that's not a flaw but clarity."
         keywords="self-care, selfishness, boundaries, mental health, people pleasing, VOYCE, philosophy"
         ogType="article"
-        canonicalUrl="https://voyce-x.lovable.app/article/self-care-selfishness"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/article/self-care-selfishness"
       />
       <ArticleSchema
         title="Self-Care is Selfishness — And I Stand By It"
@@ -20,7 +20,7 @@ export default function SelfCareSelfishnessPage() {
         author="Suryavamshi Govardhan"
         datePublished="2025-03-18"
         image={selfCareHero}
-        url="https://voyce-x.lovable.app/article/self-care-selfishness"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/self-care-selfishness"
       />
       <div className="min-h-screen bg-background">
         <Navbar />

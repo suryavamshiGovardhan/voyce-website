@@ -15,7 +15,7 @@ export default function CannotSayNoPage() {
         description="A KATA-style essay on why saying no feels impossible. People-pleasing, childhood conditioning, authority fear, and identity."
         keywords="people pleasing, cannot say no, approval seeking, childhood conditioning, emotional dependency, VOYCE-X"
         ogType="article"
-        canonicalUrl="https://voyce-x.lovable.app/article/cannot-say-no"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/article/cannot-say-no"
       />
       <ArticleSchema
         title="Why Some People Cannot Say No Even When They Want To"
@@ -23,7 +23,7 @@ export default function CannotSayNoPage() {
         author="Suryavamshi Govardhan"
         datePublished="2025-02-21"
         image={heroImage}
-        url="https://voyce-x.lovable.app/article/cannot-say-no"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/cannot-say-no"
       />
       <div className="min-h-screen bg-background">
         <Navbar />

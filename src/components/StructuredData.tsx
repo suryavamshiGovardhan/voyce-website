@@ -32,11 +32,11 @@ export function OrganizationSchema() {
     <StructuredData
       type="Organization"
       data={{
-        '@id': 'https://voyce-x.lovable.app/#organization',
+        '@id': 'https://suryavamshigovardhan.github.io/voyce-website/#organization',
         name: 'VOYCE',
         alternateName: 'VOYCE Mental Health Platform',
         description: 'Comprehensive mental health and wellness platform offering educational resources, philosophical insights, mood tracking, journaling, DSM-5 training, and personal growth tools. Founded by Suryavamshi Govardhan.',
-        url: 'https://voyce-x.lovable.app',
+        url: 'https://suryavamshigovardhan.github.io/voyce-website',
         logo: {
           '@type': 'ImageObject',
           url: 'https://storage.googleapis.com/gpt-engineer-file-uploads/TlmOIOM4z7NaylqoW24ZCR1G9mj2/uploads/1758355648497-1000172409.png',
@@ -47,9 +47,9 @@ export function OrganizationSchema() {
         foundingDate: '2025',
         founder: {
           '@type': 'Person',
-          '@id': 'https://voyce-x.lovable.app/suryavamshi-govardhan#person',
+          '@id': 'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan#person',
           name: 'Suryavamshi Govardhan',
-          url: 'https://voyce-x.lovable.app/suryavamshi-govardhan',
+          url: 'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan',
           jobTitle: 'Founder & Visionary',
           sameAs: [
             'https://www.instagram.com/suryavamshiiii'
@@ -205,15 +205,15 @@ export function ArticleSchema({
         author: {
           '@type': 'Person',
           name: author,
-          url: 'https://voyce-x.lovable.app/suryavamshi-govardhan',
+          url: 'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan',
         },
         datePublished,
         dateModified: dateModified || datePublished,
-        image: image || 'https://voyce-x.lovable.app/og-image.png',
+        image: image || 'https://suryavamshigovardhan.github.io/voyce-website/og-image.jpg',
         publisher: {
           '@type': 'Organization',
           name: 'VOYCE',
-          url: 'https://voyce-x.lovable.app',
+          url: 'https://suryavamshigovardhan.github.io/voyce-website',
           logo: {
             '@type': 'ImageObject',
             url: 'https://storage.googleapis.com/gpt-engineer-file-uploads/TlmOIOM4z7NaylqoW24ZCR1G9mj2/uploads/1758355648497-1000172409.png',
@@ -221,7 +221,7 @@ export function ArticleSchema({
           founder: {
             '@type': 'Person',
             name: 'Suryavamshi Govardhan',
-            url: 'https://voyce-x.lovable.app/suryavamshi-govardhan'
+            url: 'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan'
           }
         },
         mainEntityOfPage: {
@@ -241,14 +241,14 @@ export function FounderSchema() {
     <StructuredData
       type="Person"
       data={{
-        '@id': 'https://voyce-x.lovable.app/suryavamshi-govardhan#person',
+        '@id': 'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan#person',
         name: 'Suryavamshi Govardhan',
         alternateName: ['Suryavamshi Govardhan VOYCE', 'S. Suryavamshi', 'Surya Govardhan'],
         givenName: 'Suryavamshi',
         familyName: 'Govardhan',
         description: 'Founder of VOYCE, a mental health and wellness platform bridging ancient wisdom with modern psychology for accessible emotional wellbeing.',
-        url: 'https://voyce-x.lovable.app/suryavamshi-govardhan',
-        mainEntityOfPage: 'https://voyce-x.lovable.app/suryavamshi-govardhan',
+        url: 'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan',
+        mainEntityOfPage: 'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan',
         image: 'https://storage.googleapis.com/gpt-engineer-file-uploads/TlmOIOM4z7NaylqoW24ZCR1G9mj2/uploads/1758355648497-1000172409.png',
         jobTitle: 'Founder & Visionary',
         email: 'mailto:voycexx@gmail.com',
@@ -274,12 +274,12 @@ export function FounderSchema() {
         worksFor: {
           '@type': 'Organization',
           name: 'VOYCE',
-          url: 'https://voyce-x.lovable.app'
+          url: 'https://suryavamshigovardhan.github.io/voyce-website'
         },
         founder: {
           '@type': 'Organization',
           name: 'VOYCE',
-          url: 'https://voyce-x.lovable.app'
+          url: 'https://suryavamshigovardhan.github.io/voyce-website'
         },
         knowsAbout: [
           'Mental Health',
@@ -295,9 +295,9 @@ export function FounderSchema() {
         knowsLanguage: ['English', 'Hindi', 'Telugu'],
         sameAs: [
           'https://www.instagram.com/suryavamshiiii',
-          'https://voyce-x.lovable.app',
-          'https://voyce-x.lovable.app/suryavamshi-govardhan',
-          'https://voyce-x.lovable.app/article/why-i-built-voyce'
+          'https://suryavamshigovardhan.github.io/voyce-website',
+          'https://suryavamshigovardhan.github.io/voyce-website/suryavamshi-govardhan',
+          'https://suryavamshigovardhan.github.io/voyce-website/article/why-i-built-voyce'
         ],
         alumniOf: {
           '@type': 'Organization',

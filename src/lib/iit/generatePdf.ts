@@ -40,7 +40,7 @@ export async function generateReportPdf(node: HTMLElement, sessionCode: string):
     pdf.setFontSize(8);
     pdf.setTextColor(140, 140, 160);
     pdf.text(
-      `The Invisible Inheritance · Session ${sessionCode} · voyce-x.lovable.app`,
+      `The Invisible Inheritance · Session ${sessionCode} · suryavamshigovardhan.github.io/voyce-website`,
       pageWidth / 2,
       pageHeight - 14,
       { align: "center" }

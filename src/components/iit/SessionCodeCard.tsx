@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BASE_PATH } from "@/lib/site";
 import { Copy, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -11,7 +12,7 @@ interface Props {
 
 export default function SessionCodeCard({ code, partnerALink, partnerBLink, reportLink }: Props) {
   const [copied, setCopied] = useState<string | null>(null);
-  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const origin = (typeof window !== "undefined" ? window.location.origin : "") + BASE_PATH;
 
   const copy = (text: string, key: string) => {
     navigator.clipboard.writeText(text).then(() => {

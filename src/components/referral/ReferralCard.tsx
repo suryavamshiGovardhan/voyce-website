@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { appUrl } from "@/lib/site";
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { Card } from '@/components/ui/card';
@@ -71,7 +72,7 @@ export default function ReferralCard() {
   };
 
   const copyReferralLink = () => {
-    const referralLink = `${window.location.origin}/signup?ref=${referralCode}`;
+    const referralLink = appUrl(`/signup?ref=${referralCode}`);
     navigator.clipboard.writeText(referralLink);
     toast.success('Referral link copied!', {
       description: 'Share it with friends to earn rewards',
@@ -84,7 +85,7 @@ export default function ReferralCard() {
   };
 
   const shareOnWhatsApp = () => {
-    const message = `Hey! I'm learning mental health & self-awareness on VOYCE. Join with my code ${referralCode} and get 100 points to start: ${window.location.origin}/signup?ref=${referralCode}`;
+    const message = `Hey! I'm learning mental health & self-awareness on VOYCE. Join with my code ${referralCode} and get 100 points to start: ${appUrl(`/signup?ref=${referralCode}`)}`;
     window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, '_blank');
   };
 

@@ -1,4 +1,5 @@
 import { Suspense, lazy } from 'react';
+import { BASE_PATH } from "@/lib/site";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -115,7 +116,7 @@ const App = () => (
           <TooltipProvider>
             <Toaster />
             <Sonner />
-            <BrowserRouter>
+            <BrowserRouter basename={BASE_PATH}>
               <RouteMeta />
               <GlobalErrorHandler />
               <DailyCheckIn />

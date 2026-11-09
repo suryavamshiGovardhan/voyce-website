@@ -30,7 +30,7 @@ export default function InvisibleInheritancePage() {
         title="The Invisible Inheritance — Emotional Readiness Before Marriage & Parenthood"
         description="A new emotional infrastructure layer from VOYCE. Helping couples understand themselves, each other, and inherited patterns — before emotional damage reaches the next generation."
         keywords="emotional inheritance, generational trauma, marriage readiness, parenting readiness, relationship literacy, VOYCE, India"
-        canonicalUrl="https://voyce-x.lovable.app/invisible-inheritance"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/invisible-inheritance"
       />
       <AuroraBackground variant="spectrum">
         <Navbar />

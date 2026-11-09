@@ -15,7 +15,7 @@ export default function SecondChildArticlePage() {
         description="A systems and environmental psychology explanation of birth order effects. Not magic — just environment. Decoded the KATA way."
         keywords="birth order psychology, second child intelligence, sibling dynamics, Alfred Adler, environmental psychology, VOYCE-X"
         ogType="article"
-        canonicalUrl="https://voyce-x.lovable.app/article/second-child-intelligence"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/article/second-child-intelligence"
       />
       <ArticleSchema
         title="Why the Second Child Often Appears More Intelligent and Active Than the First"
@@ -23,7 +23,7 @@ export default function SecondChildArticlePage() {
         author="Suryavamshi Govardhan"
         datePublished="2025-02-21"
         image={heroImage}
-        url="https://voyce-x.lovable.app/article/second-child-intelligence"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/second-child-intelligence"
       />
       <div className="min-h-screen bg-background">
         <Navbar />

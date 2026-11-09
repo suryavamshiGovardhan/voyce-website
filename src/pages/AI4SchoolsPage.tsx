@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BASE_PATH } from "@/lib/site";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -191,7 +192,7 @@ export default function AI4SchoolsPage() {
         <div className="container mx-auto max-w-6xl px-6 text-center">
           <p className="mx-auto mb-6 max-w-xl rounded-full border border-border bg-background/90 px-4 py-2 text-xs text-muted-foreground">
             AI4Schools is a separate AI &amp; STEM programme from the VOYCE team. Looking for student wellbeing?{" "}
-            <a href="/schools" className="font-medium text-primary underline-offset-4 hover:underline">See VOYCE for Schools</a>.
+            <a href={`${BASE_PATH}/schools`} className="font-medium text-primary underline-offset-4 hover:underline">See VOYCE for Schools</a>.
           </p>
           <SectionLabel>India's AI Education Operating System</SectionLabel>
           <h1 className="font-display mt-6 text-5xl md:text-7xl font-semibold tracking-tight leading-[0.95]">
@@ -620,7 +621,7 @@ export default function AI4SchoolsPage() {
                   Send enquiry <ArrowRight className="ml-1 h-4 w-4" />
                 </Button>
                 <Button type="button" variant="outline" className="rounded-full px-6" asChild>
-                  <a href="/contact">Other ways to reach us</a>
+                  <a href={`${BASE_PATH}/contact`}>Other ways to reach us</a>
                 </Button>
               </div>
             </form>

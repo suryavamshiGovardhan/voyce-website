@@ -68,7 +68,7 @@ export default function FeaturesPage() {
             </Lede>
           </Reveal>
           <Reveal delay={120}>
-            <BrowserFrame label="voyce-x.lovable.app/dashboard">
+            <BrowserFrame label="VOYCE · dashboard (preview)">
               <DashboardScreen />
             </BrowserFrame>
           </Reveal>

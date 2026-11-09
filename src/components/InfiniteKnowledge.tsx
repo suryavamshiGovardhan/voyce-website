@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { asset } from "@/lib/site";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Book, Globe, FileText, Microscope } from "lucide-react";
@@ -51,7 +52,7 @@ export default function InfiniteKnowledge({ topic, searchTerms }: InfiniteKnowle
         link: `https://amazon.com/s?k=${encodeURIComponent(topic + ' book')}`,
         author: 'Leading Experts',
         source: 'Amazon',
-        image: '/placeholder.svg'
+        image: asset('placeholder.svg')
       },
       {
         type: 'external',

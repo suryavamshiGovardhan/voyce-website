@@ -272,7 +272,7 @@ export default function Index() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           <Reveal>
-            <BrowserFrame label="voyce-x.lovable.app/dashboard">
+            <BrowserFrame label="VOYCE · dashboard (preview)">
               <DashboardScreen />
             </BrowserFrame>
             <p className="mt-4 text-sm text-muted-foreground">
@@ -280,7 +280,7 @@ export default function Index() {
             </p>
           </Reveal>
           <Reveal delay={100}>
-            <BrowserFrame label="voyce-x.lovable.app/schools">
+            <BrowserFrame label="VOYCE · schools (preview)">
               <SchoolDashboardScreen />
             </BrowserFrame>
             <p className="mt-4 text-sm text-muted-foreground">

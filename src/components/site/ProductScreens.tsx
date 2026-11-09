@@ -28,7 +28,7 @@ export function PhoneFrame({ children, className }: { children: ReactNode; class
 
 export function BrowserFrame({
   children,
-  label = "voyce-x.lovable.app",
+  label = "VOYCE",
   className,
 }: {
   children: ReactNode;

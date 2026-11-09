@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { localDateKey } from "@/lib/site";
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { useGamification } from '@/hooks/useGamification';
@@ -38,7 +39,7 @@ export default function DailyChallenge() {
     if (!user) return;
 
     try {
-      const today = new Date().toISOString().split('T')[0];
+      const today = localDateKey();
 
       // Get today's challenge
       let { data: todayChallenge, error: challengeError } = await supabase

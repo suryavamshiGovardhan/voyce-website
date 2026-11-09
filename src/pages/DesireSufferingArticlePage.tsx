@@ -14,7 +14,7 @@ export default function DesireSufferingArticlePage() {
         description="VOYCE explores the philosophical debate between desire and suffering, questioning Buddha's teachings through modern psychology and existential truth."
         keywords="desire, suffering, Buddha, philosophy, psychology, human journey, mindfulness, existentialism, VOYCE"
         ogType="article"
-        canonicalUrl="https://voyce-x.lovable.app/article/desire-suffering-journey"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/article/desire-suffering-journey"
       />
       <ArticleSchema
         title="Desire, Suffering & The Human Journey — The Debate Buddha Never Finished"
@@ -22,7 +22,7 @@ export default function DesireSufferingArticlePage() {
         author="Suryavamshi Govardhan"
         datePublished="2025-01-15"
         image={heroImage}
-        url="https://voyce-x.lovable.app/article/desire-suffering-journey"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/desire-suffering-journey"
       />
       <div className="min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
         <Navbar />

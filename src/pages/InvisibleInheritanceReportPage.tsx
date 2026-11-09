@@ -81,7 +81,7 @@ export default function InvisibleInheritanceReportPage() {
       <SEOHead
         title="Your Reflection — The Invisible Inheritance Test"
         description="A shared compatibility map for the patterns you each inherited. Conversations to have before vows."
-        canonicalUrl={`https://voyce-x.lovable.app/invisible-inheritance/test/${code}/report`}
+        canonicalUrl={`https://suryavamshigovardhan.github.io/voyce-website/invisible-inheritance/test/${code}/report`}
       />
       <AuroraBackground variant="spectrum">
         <Navbar />

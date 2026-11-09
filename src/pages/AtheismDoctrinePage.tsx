@@ -14,7 +14,7 @@ export default function AtheismDoctrinePage() {
         description="VOYCE explores atheism not as disbelief, but as the pursuit of truth without excuses. A journey through philosophy, reason, and the courage to question."
         keywords="atheism, philosophy, reason, independent thinking, existentialism, critical thinking, VOYCE, rebellion, truth"
         ogType="article"
-        canonicalUrl="https://voyce-x.lovable.app/article/atheism-doctrines"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/article/atheism-doctrines"
       />
       <ArticleSchema
         title="Doctrines of Atheism: The Rebel's Reason"
@@ -22,7 +22,7 @@ export default function AtheismDoctrinePage() {
         author="Suryavamshi Govardhan"
         datePublished="2025-01-15"
         image={heroImage}
-        url="https://voyce-x.lovable.app/article/atheism-doctrines"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/atheism-doctrines"
       />
       <div className="min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
         <Navbar />

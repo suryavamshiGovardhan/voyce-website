@@ -1,4 +1,5 @@
 import { Component, ReactNode } from 'react';
+import { BASE_PATH } from "@/lib/site";
 import { AlertCircle, RefreshCw, Home } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -35,7 +36,7 @@ export class ErrorBoundary extends Component<Props, State> {
   };
 
   handleGoHome = () => {
-    window.location.href = '/';
+    window.location.href = `${BASE_PATH}/`;
   };
 
   render() {

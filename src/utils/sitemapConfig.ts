@@ -58,7 +58,7 @@ export const sitemapRoutes: SitemapRoute[] = [
 /**
  * Generate XML sitemap string
  */
-export function generateSitemapXML(baseUrl: string = 'https://voyce-x.lovable.app'): string {
+export function generateSitemapXML(baseUrl: string = 'https://suryavamshigovardhan.github.io/voyce-website'): string {
   const now = new Date().toISOString().split('T')[0];
   
   const urlEntries = sitemapRoutes.map(route => `

@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { appUrl } from "@/lib/site";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { SEOHead } from "@/components/SEOHead";
@@ -104,7 +105,7 @@ export default function InvisibleInheritanceTestTakePage() {
             event: "Partner completed test",
             sessionCode: sessionCode.toUpperCase(),
             partner: partnerKey,
-            reportUrl: `${window.location.origin}/invisible-inheritance/test/${sessionCode.toUpperCase()}/report`,
+            reportUrl: appUrl(`/invisible-inheritance/test/${sessionCode.toUpperCase()}/report`),
             answersCount: TOTAL_QUESTIONS,
           },
         }).catch((e) => console.error("notify failed", e));
@@ -134,7 +135,7 @@ export default function InvisibleInheritanceTestTakePage() {
     return (
       <AuroraBackground>
         <div className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
-          <SEOHead title="Already Completed — The Invisible Inheritance Test" description="You've already completed this test." canonicalUrl={`https://voyce-x.lovable.app/invisible-inheritance/test/${sessionCode}`} />
+          <SEOHead title="Already Completed — The Invisible Inheritance Test" description="You've already completed this test." canonicalUrl={`https://suryavamshigovardhan.github.io/voyce-website/invisible-inheritance/test/${sessionCode}`} />
           <p className="ii-eyebrow mb-6">ALREADY COMPLETED</p>
           <h1 className="ii-display text-4xl sm:text-5xl mb-5">
             <span className="ii-text-gradient">You've finished your half.</span>
@@ -177,7 +178,7 @@ export default function InvisibleInheritanceTestTakePage() {
           partner: partnerKey,
           name,
           email,
-          reportUrl: `${window.location.origin}/invisible-inheritance/test/${sessionCode.toUpperCase()}/report`,
+          reportUrl: appUrl(`/invisible-inheritance/test/${sessionCode.toUpperCase()}/report`),
         },
       }).catch((e) => console.error("notify failed", e));
       setShowIntro(false);
@@ -196,7 +197,7 @@ export default function InvisibleInheritanceTestTakePage() {
         <SEOHead
           title={`Partner ${partnerKey.toUpperCase()} — The Invisible Inheritance Test`}
           description="Optional: leave your name and email before you begin."
-          canonicalUrl={`https://voyce-x.lovable.app/invisible-inheritance/test/${sessionCode}/${partnerKey}`}
+          canonicalUrl={`https://suryavamshigovardhan.github.io/voyce-website/invisible-inheritance/test/${sessionCode}/${partnerKey}`}
         />
         <div className="min-h-screen flex items-center justify-center px-4 py-12">
           <div className="ii-glass max-w-lg w-full p-8 sm:p-10 rounded-2xl">
@@ -269,7 +270,7 @@ export default function InvisibleInheritanceTestTakePage() {
       <SEOHead
         title={`Partner ${partnerKey.toUpperCase()} — The Invisible Inheritance Test`}
         description="Sixty quiet questions. Ten dimensions. Take your half privately."
-        canonicalUrl={`https://voyce-x.lovable.app/invisible-inheritance/test/${sessionCode}/${partnerKey}`}
+        canonicalUrl={`https://suryavamshigovardhan.github.io/voyce-website/invisible-inheritance/test/${sessionCode}/${partnerKey}`}
       />
 
       {/* progress */}

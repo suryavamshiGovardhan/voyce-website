@@ -52,7 +52,7 @@ export default function SeriesEpisodePage() {
         description={ep.hook}
         keywords={`VOYCE, The Unheard Mind, ${ep.tag}, ${ep.title}, mental health, psychology`}
         ogType="article"
-        canonicalUrl={`https://voyce-x.lovable.app/series/${ep.id}`}
+        canonicalUrl={`https://suryavamshigovardhan.github.io/voyce-website/series/${ep.id}`}
       />
       <Navbar />
       <ReadingProgress />

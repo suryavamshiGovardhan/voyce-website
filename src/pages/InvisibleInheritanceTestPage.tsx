@@ -61,7 +61,7 @@ export default function InvisibleInheritanceTestPage() {
       <SEOHead
         title="The Invisible Inheritance Test — A Pre-Marriage Mirror"
         description="A cinematic emotional-readiness test for couples before marriage. Surface the inherited patterns, triggers and templates that usually surface too late."
-        canonicalUrl="https://voyce-x.lovable.app/invisible-inheritance/test"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/invisible-inheritance/test"
       />
       <AuroraBackground variant="spectrum">
         <Navbar />

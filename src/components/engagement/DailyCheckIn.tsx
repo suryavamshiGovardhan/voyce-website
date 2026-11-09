@@ -31,13 +31,18 @@ export function DailyCheckIn() {
   const checkTodayCheckIn = async () => {
     if (!user) return;
 
-    const today = new Date().toISOString().split('T')[0];
+    // "Today" in the visitor's own timezone (IST for most users), not UTC.
+    const start = new Date();
+    start.setHours(0, 0, 0, 0);
+    const end = new Date(start);
+    end.setDate(end.getDate() + 1);
     const { data, error } = await supabase
       .from('mood_entries')
       .select('id')
       .eq('user_id', user.id)
-      .gte('created_at', `${today}T00:00:00`)
-      .lte('created_at', `${today}T23:59:59`)
+      .gte('created_at', start.toISOString())
+      .lt('created_at', end.toISOString())
+      .limit(1)
       .maybeSingle();
 
     if (!error && !data) {

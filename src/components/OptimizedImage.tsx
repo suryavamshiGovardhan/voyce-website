@@ -1,4 +1,5 @@
 import { useState, useEffect, ImgHTMLAttributes } from 'react';
+import { asset } from "@/lib/site";
 import { cn } from '@/lib/utils';
 
 interface OptimizedImageProps extends ImgHTMLAttributes<HTMLImageElement> {
@@ -12,7 +13,7 @@ interface OptimizedImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 export function OptimizedImage({ 
   src, 
   alt, 
-  fallback = '/placeholder.svg',
+  fallback = asset('placeholder.svg'),
   className,
   loading = 'lazy',
   ...props 

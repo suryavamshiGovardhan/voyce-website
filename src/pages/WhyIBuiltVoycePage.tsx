@@ -18,15 +18,15 @@ export default function WhyIBuiltVoycePage() {
         title="Why I Built VOYCE | By Suryavamshi Govardhan"
         description="Suryavamshi Govardhan shares the personal journey and vision behind creating VOYCE, a mental health platform bridging ancient wisdom with modern psychology."
         keywords="Suryavamshi Govardhan, VOYCE-X, mental health platform, why I built, founder story, wellness entrepreneur, psychology, mindfulness"
-        ogImage="https://voyce-x.lovable.app/og-image.png"
-        canonicalUrl="https://voyce-x.lovable.app/article/why-i-built-voyce"
+        ogImage="https://suryavamshigovardhan.github.io/voyce-website/og-image.jpg"
+        canonicalUrl="https://suryavamshigovardhan.github.io/voyce-website/article/why-i-built-voyce"
       />
       <ArticleSchema
         title="Why I Built VOYCE"
         description="Suryavamshi Govardhan shares the personal journey and vision behind creating VOYCE, a mental health platform bridging ancient wisdom with modern psychology."
         author="Suryavamshi Govardhan"
         datePublished={publishDate}
-        url="https://voyce-x.lovable.app/article/why-i-built-voyce"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/why-i-built-voyce"
       />
       <FounderSchema />
 

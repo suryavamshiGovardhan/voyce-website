@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SITE_ORIGIN } from "@/lib/site";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Brain, Target, Mic, CheckCircle2, BookOpen, Sparkles, Send, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -124,7 +125,7 @@ const Day1JournalPage = () => {
         title="Day 1: Installing a New Mental Operating System | VOYCE Journal"
         description="A personal journey of breaking the cycle of passive overthinking. Day 1 of a 21-day protocol to rebuild self-thinking ability through structured discipline."
         keywords="self improvement, mental health journal, 21 day challenge, discipline, overthinking, personal growth, VOYCE"
-        ogImage="/og-image.png"
+        ogImage={`${SITE_ORIGIN}/og-image.jpg`}
       />
       <ArticleSchema
         title="Day 1: Installing a New Mental Operating System"
@@ -133,7 +134,7 @@ const Day1JournalPage = () => {
         datePublished="2025-12-05"
         dateModified="2025-12-05"
         image={heroImage}
-        url="https://voyce-x.lovable.app/article/day-1-journal"
+        url="https://suryavamshigovardhan.github.io/voyce-website/article/day-1-journal"
       />
 
       <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-muted/30">
