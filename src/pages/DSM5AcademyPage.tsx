@@ -1,3 +1,4 @@
+import SiteChrome from "@/components/site/SiteChrome";
 import { useState } from "react";
 import ReferenceNote from "@/components/site/ReferenceNote";
 import { Link } from "react-router-dom";
@@ -43,7 +44,7 @@ const DSM5AcademyPage = () => {
       description: "Master the foundation of DSM-5 structure and diagnostic principles",
       modules: 4,
       duration: "3-4 hours",
-      color: "bg-blue-500",
+      color: "bg-primary",
       icon: BookOpen,
       status: "available",
       completion: 75,
@@ -104,7 +105,7 @@ const DSM5AcademyPage = () => {
       description: "Comprehensive training on early development and psychotic conditions",
       modules: 5,
       duration: "4-5 hours", 
-      color: "bg-purple-500",
+      color: "bg-primary",
       icon: Brain,
       status: "available",
       completion: 60,
@@ -177,7 +178,7 @@ const DSM5AcademyPage = () => {
       description: "In-depth coverage of mood and anxiety disorder assessment and treatment",
       modules: 6,
       duration: "5-6 hours",
-      color: "bg-green-500", 
+      color: "bg-primary", 
       icon: Target,
       status: "available",
       completion: 30,
@@ -359,7 +360,7 @@ const DSM5AcademyPage = () => {
       description: "Master advanced assessment techniques and clinical implementation",
       modules: 4,
       duration: "3-4 hours",
-      color: "bg-yellow-500",
+      color: "bg-primary",
       icon: Award,
       status: "available",
       completion: 0,
@@ -464,24 +465,25 @@ const DSM5AcademyPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
+    <SiteChrome>
+    <div className="min-h-screen bg-background">
       <ReferenceNote />
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-primary/10">
+      <div className="border-b border-border bg-surface">
         <div className="max-w-8xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-                <GraduationCap className="w-6 h-6 text-foreground" />
+                <GraduationCap className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-primary">VOYCE DSM-5 Academy</h1>
+                <h1 className="text-2xl text-foreground">VOYCE DSM-5 Academy</h1>
                 <p className="text-sm text-muted-foreground">Self-paced study material · not a clinical qualification</p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-4">
               <div className="flex items-center gap-2 bg-primary/5 px-4 py-2 rounded-lg">
-                <Star className="w-4 h-4 text-yellow-500" />
+                <Star className="w-4 h-4 text-amber-700" />
                 <span className="text-sm font-medium">{academyFacts.totalModules} modules · free</span>
               </div>
               <Button variant="outline" size="sm" asChild>
@@ -494,12 +496,12 @@ const DSM5AcademyPage = () => {
 
           </div>
         </div>
-      </header>
+      </div>
 
       <div className="max-w-8xl mx-auto px-4 py-8">
         {/* Welcome Section */}
         <section className="mb-12">
-          <div className="bg-white rounded-2xl shadow-sm border border-primary/10 p-8">
+          <div className="bg-card rounded-2xl shadow-sm border border-primary/10 p-8">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4">Welcome to DSM-5 Academy</h2>
@@ -610,10 +612,10 @@ const DSM5AcademyPage = () => {
                   <CardContent className="border-t border-border/50 bg-muted/20">
                     <div className="grid gap-4 mt-4">
                       {level.modules_list.map((module) => (
-                        <div key={module.id} className="flex items-center justify-between p-4 bg-white rounded-lg border">
+                        <div key={module.id} className="flex items-center justify-between p-4 bg-card rounded-lg border">
                           <div className="flex items-center gap-3">
                             {module.completed ? (
-                              <CheckCircle className="w-5 h-5 text-green-500" />
+                              <CheckCircle className="w-5 h-5 text-primary" />
                             ) : (
                               <div className="w-5 h-5 border-2 border-muted-foreground rounded-full" />
                             )}
@@ -755,6 +757,7 @@ const DSM5AcademyPage = () => {
         </section>
       </div>
     </div>
+    </SiteChrome>
   );
 };
 

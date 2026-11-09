@@ -827,7 +827,6 @@
 /* ============================================================
    Invisible Inheritance — scoped maximalist tokens & utilities
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Instrument+Serif:ital@0;1&display=swap');
 
 :root {
   --ii-bg-0: 40 30% 98%;
@@ -1168,3 +1167,57 @@
   .v-card-hover:hover, .v-card-hover:focus-within { transform: none; }
   .group:hover .v-chip, .group:hover .v-arrow, a:hover > .v-arrow { transform: none; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Legacy page normaliser: older pages wrap their root in .v-legacy so   */
+/* their headings, prose and surfaces follow the same rhythm as the rest */
+/* ------------------------------------------------------------------ */
+.v-legacy { background: hsl(var(--background)); color: hsl(var(--foreground)); }
+.v-legacy h1 {
+  font-family: 'Fraunces', Georgia, ui-serif, serif;
+  font-weight: 500; letter-spacing: -0.02em; line-height: 1.08;
+}
+.v-legacy h2 {
+  font-family: 'Fraunces', Georgia, ui-serif, serif;
+  font-weight: 500; letter-spacing: -0.015em; line-height: 1.15;
+}
+.v-legacy h1:not([class*="text-"]), .v-legacy h2:not([class*="text-"]) { color: hsl(var(--foreground)); }
+.v-legacy .prose { color: hsl(var(--foreground) / 0.82); line-height: 1.8; }
+.v-legacy .prose p { margin-block: 1.1em; }
+.v-legacy .prose h2 { margin-top: 2.2em; font-size: clamp(1.5rem, 3vw, 1.9rem); }
+.v-legacy .prose strong { color: hsl(var(--foreground)); font-weight: 600; }
+.v-legacy .prose a { color: hsl(var(--primary)); text-underline-offset: 3px; }
+.v-legacy .prose blockquote { border-left-color: hsl(var(--primary) / 0.6); color: hsl(var(--foreground) / 0.8); font-style: normal; }
+.v-legacy img { border-radius: 1.25rem; }
+
+/* Invisible Inheritance: same VOYCE type + surfaces, its own soft atmosphere kept */
+.ii-aurora-root { background: hsl(var(--background)); }
+.ii-aurora-layer { opacity: 0.12; }
+.ii-aurora-3 { animation: none; opacity: 0.15; }
+.ii-display, .ii-serif {
+  font-family: 'Fraunces', Georgia, ui-serif, serif;
+  font-weight: 500; letter-spacing: -0.02em; font-style: normal;
+}
+.ii-serif.italic, .ii-display.italic { font-style: normal; }
+.ii-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: hsl(var(--primary)); }
+.ii-text-gradient { background: none; -webkit-text-fill-color: currentColor; color: hsl(var(--primary)); }
+.ii-glass-card {
+  background: hsl(var(--card)); border: 1px solid hsl(var(--border));
+  border-radius: 1.25rem; box-shadow: var(--shadow-soft); backdrop-filter: none;
+}
+.ii-glass-card-hover { transition: transform var(--dur-base) var(--ease-calm), box-shadow var(--dur-base) var(--ease-calm), border-color var(--dur-base) var(--ease-calm); }
+.ii-glass-card-hover:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: hsl(var(--primary) / 0.35); }
+.ii-cta { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); box-shadow: none; }
+.ii-cta:hover { background: hsl(var(--primary) / 0.92); }
+.ii-marginalia { font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; }
+@media (prefers-reduced-motion: reduce) {
+  .ii-aurora-1, .ii-aurora-2, .ii-aurora-orb, .ii-orb-a, .ii-orb-b, .ii-orb-c { animation: none !important; }
+}
+
+/* Long-form reading: VOYCE sans body + Fraunces headings everywhere */
+.v-legacy .blog-content, .v-legacy .blog-content p, .v-legacy .blog-content li {
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+}
+.v-legacy .blog-content p { line-height: 1.8; color: hsl(var(--foreground) / 0.82); }
+.v-legacy .blog-quote { font-family: 'Fraunces', Georgia, serif; font-style: normal; font-weight: 400; color: hsl(var(--foreground) / 0.75); }
+.v-legacy .font-playfair { font-family: 'Fraunces', Georgia, serif; }

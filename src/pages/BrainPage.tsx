@@ -14,7 +14,7 @@ export default function BrainPage() {
         description="Explore the magnificent architecture of consciousness and unlock your brain's infinite potential through ancient wisdom and cutting-edge neuroscience."
         keywords="brain function, neuroscience, consciousness, neuroplasticity, cognitive science, brain health, VOYCE"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
       
       <PageHero

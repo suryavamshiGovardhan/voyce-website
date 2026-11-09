@@ -17,7 +17,7 @@ export default function StressPage() {
         description="Master the science of stress and develop powerful tools for resilience"
         keywords="stress management, stress relief, mental health, resilience"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
         
         <PageHero

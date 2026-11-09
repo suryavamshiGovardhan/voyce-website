@@ -26,7 +26,7 @@ const neuroscienceKeyFacts = [
 
 export default function NeurosciencePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="v-legacy min-h-screen bg-background">
       <SEOHead title="Neuroscience timeline" description="A short history of neuroscience, its methods and frontiers, and labs in India." canonicalUrl={canonicalFor("/neuroscience")} />
       <Navbar />
       

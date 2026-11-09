@@ -1,3 +1,4 @@
+import { NextStep } from "@/components/site/value";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -7,7 +8,7 @@ import { Heart, Share2, BookOpen, MessageCircle } from "lucide-react";
 
 export default function StoryPage() {
   return (
-    <div className="min-h-screen blog-container">
+    <div className="v-legacy min-h-screen blog-container">
       <Navbar />
       
       <main className="py-12">
@@ -180,6 +181,12 @@ export default function StoryPage() {
         </div>
       </main>
       
+      <NextStep
+        title="Let what you read settle for a minute."
+        body="A short private check-in helps you notice how it landed."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/blog", label: "More slow reads" }}
+      />
       <Footer />
     </div>
   );

@@ -1,3 +1,5 @@
+import { NextStep } from "@/components/site/value";
+import SiteChrome from "@/components/site/SiteChrome";
 import { useState } from "react";
 import { SITE_ORIGIN } from "@/lib/site";
 import { motion } from "framer-motion";
@@ -120,7 +122,7 @@ const Day1JournalPage = () => {
   };
 
   return (
-    <>
+    <SiteChrome>
       <SEOHead
         title="Day 1: Installing a New Mental Operating System | VOYCE Journal"
         description="A personal journey of breaking the cycle of passive overthinking. Day 1 of a 21-day protocol to rebuild self-thinking ability through structured discipline."
@@ -137,7 +139,7 @@ const Day1JournalPage = () => {
         url="https://suryavamshigovardhan.github.io/voyce-website/article/day-1-journal"
       />
 
-      <div className="min-h-screen bg-gradient-to-b from-background via-background/95 to-muted/30">
+      <div className="bg-background">
         <div className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Back Button */}
           <motion.div
@@ -170,7 +172,7 @@ const Day1JournalPage = () => {
               <Calendar className="w-4 h-4" />
               <span className="text-sm font-medium">5th December 2025 • Day 1</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
               Installing a New Mental Operating System
             </h1>
             <p className="text-xl text-muted-foreground italic">
@@ -312,7 +314,7 @@ const Day1JournalPage = () => {
             className="border-t border-border pt-12"
           >
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold mb-4 text-foreground">
                 Your Turn: Daily Progress Entry
               </h2>
               <p className="text-muted-foreground">
@@ -679,7 +681,13 @@ const Day1JournalPage = () => {
           </motion.div>
         </div>
       </div>
-    </>
+      <NextStep
+        title="Let what you read settle for a minute."
+        body="A short private check-in helps you notice how it landed."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/blog", label: "More slow reads" }}
+      />
+    </SiteChrome>
   );
 };
 

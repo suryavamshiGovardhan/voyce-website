@@ -9,7 +9,7 @@ import CDSContent from "@/components/content/CDSContent";
 
 export default function CDSPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="v-legacy min-h-screen bg-background">
       <SEOHead title="Cognitive Disengagement Syndrome (CDS)" description="What CDS is, how it differs from ADHD, and what current research says." canonicalUrl={canonicalFor("/cds")} />
       <Navbar />
       

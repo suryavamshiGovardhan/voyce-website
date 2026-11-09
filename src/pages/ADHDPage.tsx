@@ -18,7 +18,7 @@ export default function ADHDPage() {
         description="Harness neurodiversity and transform ADHD into your superpower. Learn evidence-based strategies for focus, organization, and celebrating unique cognitive strengths."
         keywords="ADHD support, attention deficit, focus strategies, neurodiversity, ADHD management, executive function, VOYCE"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         {/* Subtle Indian/Vedic cultural overlay for ADHD focus themes */}
         <div className="absolute inset-0 pointer-events-none z-0">
         <MandalaPattern className="absolute top-10 right-10 w-64 h-64 animate-mandala-spin" />

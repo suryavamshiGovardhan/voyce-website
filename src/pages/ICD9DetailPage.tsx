@@ -54,7 +54,7 @@ export default function ICD9DetailPage() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="v-legacy min-h-screen flex items-center justify-center">
           <div className="text-center space-y-4">
             <h1 className="text-2xl font-bold">Category not found</h1>
             <Button onClick={() => navigate("/icd9")}>

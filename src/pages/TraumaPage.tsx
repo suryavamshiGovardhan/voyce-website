@@ -19,7 +19,7 @@ export default function TraumaPage() {
         description="Transform wounds into wisdom with trauma-informed healing approaches. Learn about PTSD recovery, resilience building, and ancient healing practices for complete restoration."
         keywords="trauma recovery, PTSD treatment, healing trauma, resilience, trauma-informed care, emotional healing, VOYCE"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         {/* Japanese/East Asian cultural overlay for healing themes */}
         <div className="absolute inset-0 pointer-events-none z-0 opacity-60">
         <CherryBlossomAccent className="absolute top-20 right-20 w-32 h-32 animate-cherry-bloom" />

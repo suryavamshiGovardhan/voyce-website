@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { useAuth } from "@/hooks/useAuth";
 import { Link } from "react-router-dom";
-import { Brain, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { WelcomeQuoteDialog } from "@/components/WelcomeQuoteDialog";
 import { SEOHead } from "@/components/SEOHead";
 
@@ -61,13 +61,14 @@ export default function LoginPage() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="v-legacy min-h-screen flex flex-col">
       <SEOHead title="Sign in" description="Sign in to your private VOYCE journal and patterns." noindex />
       <Navbar />
-      <main id="main-content" className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
+      <main id="main-content" className="relative isolate flex-grow flex items-center justify-center overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+        <div className="v-hero-glow" aria-hidden />
+        <div className="v-card relative z-10 max-w-md w-full space-y-8 p-7 sm:p-9">
           <div className="text-center">
-            <Brain className="mx-auto h-12 w-12 text-primary mb-4" />
+            <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-primary">Welcome back</p>
             <h1 className="font-display text-3xl tracking-tight">
               Welcome back to VOYCE
             </h1>
@@ -118,7 +119,7 @@ export default function LoginPage() {
                   <span className="w-full border-t" />
                 </div>
                 <div className="relative flex justify-center text-xs uppercase">
-                  <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
+                  <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
                 </div>
               </div>
               

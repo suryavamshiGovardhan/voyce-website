@@ -1,3 +1,4 @@
+import SiteChrome from "@/components/site/SiteChrome";
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { AdminGate } from "@/components/admin/AdminGate";
@@ -185,9 +186,11 @@ export default function AdminCareersPage() {
   return (
     <>
       <SEOHead title="Careers Explorer" description="Private admin careers library." noindex />
-      <AdminGate title="Careers Explorer access">
-        <Explorer />
-      </AdminGate>
+      <SiteChrome>
+        <AdminGate title="Careers Explorer access">
+          <Explorer />
+        </AdminGate>
+      </SiteChrome>
     </>
   );
 }

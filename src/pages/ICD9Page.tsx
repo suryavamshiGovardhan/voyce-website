@@ -40,7 +40,7 @@ export default function ICD9Page() {
         description="Explore all ICD-9-CM diagnostic codes used in medical systems worldwide. Curated by VOYCE for mental health and clinical awareness."
         keywords="ICD-9, ICD-9-CM, diagnostic codes, medical codes, mental health, clinical awareness"
       />
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="v-legacy min-h-screen flex flex-col bg-background">
         <Navbar />
         
         <ReferenceNote />

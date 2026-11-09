@@ -1,3 +1,4 @@
+import { NextStep } from "@/components/site/value";
 import { SEOHead } from "@/components/SEOHead";
 import { ArticleSchema } from "@/components/StructuredData";
 import Navbar from "@/components/Navbar";
@@ -24,7 +25,7 @@ export default function AtheismDoctrinePage() {
         image={heroImage}
         url="https://suryavamshigovardhan.github.io/voyce-website/article/atheism-doctrines"
       />
-      <div className="min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
+      <div className="v-legacy min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
         <Navbar />
         
         {/* Hero Section */}
@@ -36,7 +37,7 @@ export default function AtheismDoctrinePage() {
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium mb-4">
                 💭 VOYCE Philosophy
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-foreground">
                 Doctrines of Atheism: The Rebel's Reason
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide">
@@ -386,6 +387,12 @@ export default function AtheismDoctrinePage() {
 
         </div>
 
+      <NextStep
+        title="Let what you read settle for a minute."
+        body="A short private check-in helps you notice how it landed."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/blog", label: "More slow reads" }}
+      />
         <Footer />
       </div>
     </>

@@ -26,7 +26,7 @@ const mindHeartGutKeyFacts = [
 
 export default function MindHeartGutPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="v-legacy min-h-screen bg-background">
       <SEOHead title="Mind, heart and gut" description="How the vagus nerve, gut–brain axis and heart–brain signalling connect — with simple practices." canonicalUrl={canonicalFor("/mind-heart-gut")} />
       <Navbar />
       

@@ -89,7 +89,7 @@ function StoriesPage() {
         keywords="mental health stories, anonymous stories, self-reflection, personal growth, mindfulness"
       />
       
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
         
         <main className="container mx-auto px-4 py-12 max-w-3xl">
@@ -159,7 +159,7 @@ function StoriesPage() {
                 {/* Reflection Prompt */}
                 <div className="mt-12 p-6 bg-muted/30 rounded-xl border border-border">
                   <p className="text-lg text-foreground font-medium mb-4 flex items-center gap-2">
-                    <PenLine className="h-5 w-5 text-purple-500" aria-hidden="true" />
+                    <PenLine className="h-5 w-5 text-primary" aria-hidden="true" />
                     One question to sit with:
                   </p>
                   <p className="text-xl text-foreground/90 italic">
@@ -171,7 +171,7 @@ function StoriesPage() {
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     onClick={handleReflect}
-                    className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800"
+                    className="bg-primary hover:from-purple-700 hover:to-purple-800"
                   >
                     <PenLine className="h-4 w-4 mr-2" aria-hidden="true" />
                     Reflect privately

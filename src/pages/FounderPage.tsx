@@ -1,3 +1,5 @@
+import { NextStep } from "@/components/site/value";
+import SiteChrome from "@/components/site/SiteChrome";
 import { SEOHead } from "@/components/SEOHead";
 import { FounderSchema, OrganizationSchema, FAQSchema } from "@/components/StructuredData";
 import { Card, CardContent } from "@/components/ui/card";
@@ -30,7 +32,7 @@ const founderFaqs = [
 
 export default function FounderPage() {
   return (
-    <>
+    <SiteChrome>
       <SEOHead
         title="Suryavamshi Govardhan — Founder of VOYCE | Contact & Profile"
         description="Suryavamshi Govardhan is the founder of VOYCE, a mental health platform from India bridging ancient wisdom with modern psychology. Instagram @suryavamshiiii, voycexx@gmail.com, +91 90104 81175."
@@ -282,32 +284,13 @@ export default function FounderPage() {
         </section>
 
 
-        {/* Call to Action */}
-        <section className="py-16 bg-primary/5" aria-labelledby="cta-heading">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 id="cta-heading" className="text-3xl font-bold text-foreground mb-4">
-              Experience VOYCE Today
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              A quiet space for reflection, built and maintained by one person, with the platform 
-              created by Suryavamshi Govardhan.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/" aria-label="Start your wellness journey with VOYCE">
-                <Button size="lg" className="gap-2">
-                  Start Your Journey
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-              <Link to="/blog" aria-label="Read articles on VOYCE blog">
-                <Button variant="outline" size="lg">
-                  Read Our Blog
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
-    </>
+      <NextStep
+        title="Want to see what VOYCE is building?"
+        body="Start with the no-account check-in, or read why it exists."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/article/why-i-built-voyce", label: "Why I built VOYCE" }}
+      />
+    </SiteChrome>
   );
 }

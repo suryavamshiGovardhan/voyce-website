@@ -57,7 +57,7 @@ export default function InvisibleInheritanceTestPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="v-legacy min-h-screen flex flex-col">
       <SEOHead
         title="The Invisible Inheritance Test — A Pre-Marriage Mirror"
         description="A cinematic emotional-readiness test for couples before marriage. Surface the inherited patterns, triggers and templates that usually surface too late."

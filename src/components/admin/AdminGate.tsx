@@ -86,7 +86,7 @@ export function AdminGate({ children, title = "Admin access" }: AdminGateProps) 
 
   if (checking) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="min-h-[70vh] flex items-center justify-center bg-background">
         <p className="text-sm text-muted-foreground">Checking access…</p>
       </div>
     );
@@ -94,7 +94,7 @@ export function AdminGate({ children, title = "Admin access" }: AdminGateProps) 
 
   if (!blueprint) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center px-4">
+      <div className="min-h-[70vh] bg-background flex items-center justify-center px-4">
         <Card className="p-6 w-full max-w-md">
           <div className="flex items-center gap-3 mb-4">
             <Lock className="h-5 w-5 text-primary" />

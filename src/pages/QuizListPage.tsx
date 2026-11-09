@@ -89,19 +89,19 @@ export default function QuizListPage() {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty.toLowerCase()) {
       case 'beginner':
-        return 'bg-green-500/10 text-green-600 border-green-500/20';
+        return 'bg-primary/10 text-primary border-primary/40';
       case 'intermediate':
-        return 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20';
+        return 'bg-primary/10 text-amber-700 border-amber-300';
       case 'advanced':
         return 'bg-red-500/10 text-red-600 border-red-500/20';
       default:
-        return 'bg-gray-500/10 text-gray-600 border-gray-500/20';
+        return 'bg-muted-foreground/10 text-muted-foreground border-border/20';
     }
   };
 
   if (selectedQuiz) {
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="v-legacy min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1 container mx-auto px-4 py-8">
           <div className="max-w-2xl mx-auto">

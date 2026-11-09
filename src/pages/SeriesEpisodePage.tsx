@@ -19,13 +19,13 @@ function renderInline(text: string) {
     const token = match[0];
     if (token.startsWith("**")) {
       parts.push(
-        <strong key={key++} className="text-[#f9f6f0] font-medium">
+        <strong key={key++} className="text-foreground font-medium">
           {token.slice(2, -2)}
         </strong>,
       );
     } else {
       parts.push(
-        <em key={key++} className="text-[#2dd4bf] italic">
+        <em key={key++} className="text-primary italic">
           {token.slice(1, -1)}
         </em>,
       );
@@ -46,7 +46,7 @@ export default function SeriesEpisodePage() {
   const next = idx < episodes.length - 1 ? episodes[idx + 1] : null;
 
   return (
-    <div className="min-h-screen bg-[#0d0d14] text-[#f9f6f0]">
+    <div className="v-legacy min-h-screen bg-background text-foreground">
       <SEOHead
         title={`${ep.number}: ${ep.title} — The Unheard Mind | VOYCE`}
         description={ep.hook}
@@ -57,18 +57,20 @@ export default function SeriesEpisodePage() {
       <Navbar />
       <ReadingProgress />
 
-      <article className="max-w-2xl mx-auto px-6 py-20">
+      <article className="max-w-2xl mx-auto px-5 py-14 sm:px-6 sm:py-20">
         {/* Header */}
-        <header className="mb-14">
-          <div className="text-[0.7rem] tracking-[3px] uppercase font-mono text-[#2dd4bf] mb-3">
+        <header className="v-rise mb-14">
+          <Link to="/series" className="v-link mb-6 inline-block text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
+            The Unheard Mind
+          </Link>
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-primary">
             {ep.number} · {ep.tag}
-          </div>
-          <h1 className="font-serif font-black text-4xl md:text-5xl leading-tight text-[#f9f6f0] mb-5">
-            {ep.title}
-          </h1>
-          <blockquote className="font-serif italic text-lg text-[#2dd4bf] border-l-[3px] border-[#2dd4bf] pl-5 leading-relaxed">
-            "{ep.hook}"
-          </blockquote>
+          </p>
+          <h1 className="font-display text-4xl leading-[1.08] tracking-tight text-foreground md:text-5xl">{ep.title}</h1>
+          <p className="mt-6 border-l-2 border-primary/60 pl-5 text-lg leading-relaxed text-foreground/80">{ep.hook}</p>
+          <p className="mt-6 text-xs text-muted-foreground">
+            Episode {idx + 1} of {episodes.length} · Reflective reading, not therapy or diagnosis
+          </p>
         </header>
 
         {/* Sections */}
@@ -76,21 +78,21 @@ export default function SeriesEpisodePage() {
           <section key={i} className="mb-12">
             <div className="flex items-center gap-3 mb-5">
               <span className="text-base">{section.icon}</span>
-              <span className="text-[0.7rem] tracking-[3px] uppercase font-mono text-[#8888a8]">
+              <span className="text-[0.7rem] tracking-[3px] uppercase text-muted-foreground">
                 {section.label}
               </span>
-              <span className="flex-1 h-px bg-card" />
+              <span className="flex-1 h-px bg-border" />
             </div>
 
             {(section.type === "story" || section.type === "psychology") && (
               <div className="space-y-4">
                 {section.paragraphs?.map((p, j) => (
-                  <p key={j} className="text-[#c8c8d8] text-base leading-[1.85]">
+                  <p key={j} className="text-foreground/80 text-base leading-[1.85]">
                     {renderInline(p)}
                   </p>
                 ))}
                 {section.pullquote && (
-                  <div className="my-8 rounded-r-lg border-l-[3px] border-[#2dd4bf] bg-gradient-to-br from-[#2dd4bf]/10 to-[#2dd4bf]/[0.02] px-7 py-6 font-serif italic text-lg text-[#f9f6f0] leading-relaxed">
+                  <div className="my-8 rounded-r-lg border-l-[3px] border-primary bg-gradient-to-br from-primary/10 to-primary/[0.02] px-7 py-6 font-display italic text-lg text-foreground leading-relaxed">
                     {section.pullquote}
                   </div>
                 )}
@@ -98,12 +100,12 @@ export default function SeriesEpisodePage() {
             )}
 
             {section.type === "vedic" && (
-              <div className="rounded-xl border border-[#f5c842]/15 bg-gradient-to-br from-[#f5c842]/5 to-[#f5c842]/[0.02] p-7">
+              <div className="rounded-xl border border-amber-500/25 bg-gradient-to-br from-amber-100/70 to-amber-50/40 p-7">
                 {section.shloka && (
-                  <div className="font-serif italic text-[#f5c842] mb-3 leading-relaxed">
+                  <div className="font-display italic text-amber-800 mb-3 leading-relaxed">
                     "{section.shloka}"
                     {section.shlokaSource && (
-                      <div className="text-sm text-[#c8c8a8] mt-1 not-italic">
+                      <div className="text-sm text-foreground/75 mt-1 not-italic">
                         — {section.shlokaSource}
                       </div>
                     )}
@@ -111,7 +113,7 @@ export default function SeriesEpisodePage() {
                 )}
                 <div className="space-y-3">
                   {section.vedicBody?.map((p, j) => (
-                    <p key={j} className="text-[#c8c8a8] leading-relaxed">
+                    <p key={j} className="text-foreground/75 leading-relaxed">
                       {renderInline(p)}
                     </p>
                   ))}
@@ -120,11 +122,11 @@ export default function SeriesEpisodePage() {
             )}
 
             {section.type === "realtalk" && (
-              <div className="rounded-xl border border-border bg-[#13131f] p-7">
-                <ul className="space-y-3 list-disc pl-5 marker:text-[#2dd4bf]">
+              <div className="rounded-xl border border-border bg-surface p-7">
+                <ul className="space-y-3 list-disc pl-5 marker:text-primary">
                   {section.bullets?.map((b, j) => (
-                    <li key={j} className="text-[#c8c8d8] leading-relaxed">
-                      <strong className="text-[#f9f6f0] font-medium">{b.strong}</strong>{" "}
+                    <li key={j} className="text-foreground/80 leading-relaxed">
+                      <strong className="text-foreground font-medium">{b.strong}</strong>{" "}
                       {b.text}
                     </li>
                   ))}
@@ -135,14 +137,14 @@ export default function SeriesEpisodePage() {
         ))}
 
         {/* Takeaway */}
-        <div className="mt-12 rounded-xl border border-[#2dd4bf]/20 bg-gradient-to-br from-[#1a1a2e] to-[#13131f] p-8 text-center font-serif italic text-xl text-[#2dd4bf] leading-relaxed">
-          ✦ {ep.takeaway} ✦
+        <div className="v-card mt-12 p-8 text-center">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-primary">What you leave with</p>
+          <p className="font-display text-xl leading-relaxed text-foreground sm:text-2xl">{ep.takeaway}</p>
         </div>
 
-        <ReflectPause dark prompt="Take a breath. Which part of this story could have been yours?" />
+        <ReflectPause prompt="Take a breath. Which part of this story could have been yours?" />
 
         <ContinueJourney
-          dark
           links={[
             next
               ? { to: `/series/${next.id}`, label: `${next.number}: ${next.title}`, hint: "The next story in The Unheard Mind." }
@@ -153,28 +155,28 @@ export default function SeriesEpisodePage() {
         />
 
         {/* Nav */}
-        <div className="mt-12 pt-10 border-t border-border flex justify-between gap-4 text-sm font-mono">
+        <div className="mt-12 pt-10 border-t border-border flex justify-between gap-4 text-sm">
           {prev ? (
-            <Link to={`/series/${prev.id}`} className="text-[#2dd4bf] hover:underline">
+            <Link to={`/series/${prev.id}`} className="text-primary hover:underline">
               ← {prev.number}: {prev.title}
             </Link>
           ) : (
-            <Link to="/series" className="text-[#8888a8] hover:text-[#2dd4bf]">
+            <Link to="/series" className="text-muted-foreground hover:text-primary">
               ← All Episodes
             </Link>
           )}
           {next ? (
-            <Link to={`/series/${next.id}`} className="text-[#2dd4bf] hover:underline text-right">
+            <Link to={`/series/${next.id}`} className="text-primary hover:underline text-right">
               {next.number}: {next.title} →
             </Link>
           ) : (
-            <Link to="/series" className="text-[#8888a8] hover:text-[#2dd4bf]">
+            <Link to="/series" className="text-muted-foreground hover:text-primary">
               All Episodes →
             </Link>
           )}
         </div>
 
-        <div className="mt-10 text-center text-xs text-[#8888a8] font-mono">
+        <div className="mt-10 text-center text-xs text-muted-foreground">
           Written by Suryavamshi Govardhan · Founder, VOYCE
         </div>
       </article>

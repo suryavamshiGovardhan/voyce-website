@@ -1,3 +1,4 @@
+import SiteChrome from "@/components/site/SiteChrome";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -293,7 +294,7 @@ const DSM5ModulePage = () => {
 
   if (!currentModule) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center">
         <Card className="w-full max-w-md text-center">
           <CardContent className="p-8">
             <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
@@ -324,9 +325,10 @@ const DSM5ModulePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
+    <SiteChrome>
+    <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-primary/10">
+      <div className="border-b border-border bg-surface">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
@@ -356,7 +358,7 @@ const DSM5ModulePage = () => {
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {/* Module Overview */}
@@ -378,7 +380,7 @@ const DSM5ModulePage = () => {
                 <ul className="grid md:grid-cols-2 gap-2">
                   {currentModule.objectives.map((objective, index) => (
                     <li key={index} className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-primary mt-0.5" />
                       <span className="text-sm">{objective}</span>
                     </li>
                   ))}
@@ -425,7 +427,7 @@ const DSM5ModulePage = () => {
                     
                     <div className="mt-6">
                       <h5 className="font-semibold mb-3 flex items-center gap-2">
-                        <Star className="w-4 h-4 text-yellow-500" />
+                        <Star className="w-4 h-4 text-amber-700" />
                         Key Points
                       </h5>
                       <div className="grid md:grid-cols-2 gap-2">
@@ -459,7 +461,7 @@ const DSM5ModulePage = () => {
                       <AccordionItem value="scenario">
                         <AccordionTrigger>Clinical Scenario</AccordionTrigger>
                         <AccordionContent>
-                          <div className="p-4 bg-blue-50 rounded-lg mb-4">
+                          <div className="p-4 bg-primary/10 rounded-lg mb-4">
                             <p className="text-sm leading-relaxed">{caseStudy.scenario}</p>
                           </div>
                         </AccordionContent>
@@ -480,8 +482,8 @@ const DSM5ModulePage = () => {
                         <AccordionContent>
                           <div className="space-y-2">
                             {caseStudy.learningPoints.map((point, pointIndex) => (
-                              <div key={pointIndex} className="flex items-start gap-2 p-3 bg-green-50 rounded-lg">
-                                <CheckCircle className="w-4 h-4 text-green-500 mt-0.5" />
+                              <div key={pointIndex} className="flex items-start gap-2 p-3 bg-primary/10 rounded-lg">
+                                <CheckCircle className="w-4 h-4 text-primary mt-0.5" />
                                 <span className="text-sm">{point}</span>
                               </div>
                             ))}
@@ -594,7 +596,7 @@ const DSM5ModulePage = () => {
                             <strong>Correct answer:</strong> {question.options[question.correct]}
                           </p>
                         </div>
-                        <div className="p-3 bg-blue-50 rounded">
+                        <div className="p-3 bg-primary/10 rounded">
                           <p className="text-sm"><strong>Explanation:</strong> {question.explanation}</p>
                         </div>
                       </div>
@@ -629,6 +631,7 @@ const DSM5ModulePage = () => {
         </Tabs>
       </div>
     </div>
+    </SiteChrome>
   );
 };
 

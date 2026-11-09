@@ -59,11 +59,11 @@ export default function LeaderboardPage() {
   const getRankIcon = (rank: number) => {
     switch (rank) {
       case 1:
-        return <Trophy className="h-6 w-6 text-yellow-500" />;
+        return <Trophy className="h-6 w-6 text-amber-700" />;
       case 2:
-        return <Medal className="h-6 w-6 text-gray-400" />;
+        return <Medal className="h-6 w-6 text-muted-foreground" />;
       case 3:
-        return <Award className="h-6 w-6 text-orange-600" />;
+        return <Award className="h-6 w-6 text-amber-700" />;
       default:
         return <span className="text-lg font-bold text-muted-foreground">#{rank}</span>;
     }
@@ -74,7 +74,7 @@ export default function LeaderboardPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="v-legacy min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
@@ -166,7 +166,7 @@ export default function LeaderboardPage() {
                         <p className="font-medium">{entry.current_level}</p>
                       </div>
                       <div className="text-center">
-                        <span className="text-orange-500 text-lg">🔥</span>
+                        <span className="text-amber-700 text-lg">🔥</span>
                         <p className="font-medium">{entry.current_streak}</p>
                       </div>
                     </div>

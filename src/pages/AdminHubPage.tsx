@@ -1,3 +1,4 @@
+import SiteChrome from "@/components/site/SiteChrome";
 import { Link } from "react-router-dom";
 import { AdminGate, useAdminAuth } from "@/components/admin/AdminGate";
 import { SEOHead } from "@/components/SEOHead";
@@ -29,7 +30,7 @@ const items = [
 function Hub() {
   const { lock } = useAdminAuth();
   return (
-    <div className="min-h-screen bg-background">
+    <div className="bg-background">
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="flex items-start justify-between gap-4 mb-8">
           <div>
@@ -61,9 +62,11 @@ export default function AdminHubPage() {
   return (
     <>
       <SEOHead title="Admin" description="Private VOYCE admin area." noindex />
-      <AdminGate title="VOYCE Admin">
-        <Hub />
-      </AdminGate>
+      <SiteChrome>
+        <AdminGate title="VOYCE Admin">
+          <Hub />
+        </AdminGate>
+      </SiteChrome>
     </>
   );
 }

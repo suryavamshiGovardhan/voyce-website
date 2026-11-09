@@ -52,7 +52,7 @@ const acesKeyFacts = [
 
 export default function ACESPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="v-legacy min-h-screen bg-background">
       <SEOHead title="Adverse childhood experiences (ACEs)" description="What ACEs are, how early stress can affect health later, and what builds resilience and healing." canonicalUrl={canonicalFor("/aces")} />
       <Navbar />
       <ReadingProgress />

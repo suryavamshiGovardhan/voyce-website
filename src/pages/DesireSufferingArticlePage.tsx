@@ -1,3 +1,4 @@
+import { NextStep } from "@/components/site/value";
 import { SEOHead } from "@/components/SEOHead";
 import { ArticleSchema } from "@/components/StructuredData";
 import Navbar from "@/components/Navbar";
@@ -24,7 +25,7 @@ export default function DesireSufferingArticlePage() {
         image={heroImage}
         url="https://suryavamshigovardhan.github.io/voyce-website/article/desire-suffering-journey"
       />
-      <div className="min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
+      <div className="v-legacy min-h-screen bg-gradient-to-b from-background via-muted/20 to-background">
         <Navbar />
         
         {/* Hero Section */}
@@ -36,7 +37,7 @@ export default function DesireSufferingArticlePage() {
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full text-sm text-primary font-medium mb-4">
                 🌿 VOYCE Philosophy
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-foreground">
                 Desire, Suffering & The Human Journey
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-light tracking-wide">
@@ -181,11 +182,11 @@ export default function DesireSufferingArticlePage() {
               <div className="bg-background/50 rounded-lg p-8 backdrop-blur-sm">
                 <div className="relative h-64 flex items-end justify-between gap-2">
                   {[
-                    { label: "Ignition", height: "20%", color: "bg-green-500/70" },
-                    { label: "Discipline", height: "45%", color: "bg-yellow-500/70" },
-                    { label: "Stress", height: "70%", color: "bg-orange-500/70" },
+                    { label: "Ignition", height: "20%", color: "bg-primary/70" },
+                    { label: "Discipline", height: "45%", color: "bg-primary/70" },
+                    { label: "Stress", height: "70%", color: "bg-primary/70" },
                     { label: "Progress", height: "85%", color: "bg-red-500/70" },
-                    { label: "Hope", height: "60%", color: "bg-orange-500/70" },
+                    { label: "Hope", height: "60%", color: "bg-primary/70" },
                     { label: "Breakdowns", height: "90%", color: "bg-red-600/70" },
                     { label: "Growth", height: "35%", color: "bg-primary/70" },
                   ].map((stage, idx) => (
@@ -223,17 +224,17 @@ export default function DesireSufferingArticlePage() {
               <p className="font-medium text-foreground">Let's settle it.</p>
               
               <div className="space-y-4">
-                <div className="p-6 bg-green-500/10 rounded-lg border-l-4 border-green-500">
+                <div className="p-6 bg-primary/10 rounded-lg border-l-4 border-primary/40">
                   <p className="font-bold text-foreground mb-2">✔ Spiritually:</p>
                   <p>Buddha is right. Craving creates suffering.</p>
                 </div>
                 
-                <div className="p-6 bg-blue-500/10 rounded-lg border-l-4 border-blue-500">
+                <div className="p-6 bg-primary/10 rounded-lg border-l-4 border-primary/40">
                   <p className="font-bold text-foreground mb-2">✔ Psychologically:</p>
                   <p>You are right. Every desire — even the "good ones" — creates internal friction.</p>
                 </div>
                 
-                <div className="p-6 bg-purple-500/10 rounded-lg border-l-4 border-purple-500">
+                <div className="p-6 bg-primary/10 rounded-lg border-l-4 border-primary/40">
                   <p className="font-bold text-foreground mb-2">✔ Existentially:</p>
                   <p>Life itself is a chain of desires. No desire = no movement. No movement = no life.</p>
                 </div>
@@ -313,6 +314,12 @@ export default function DesireSufferingArticlePage() {
 
         </div>
 
+      <NextStep
+        title="Let what you read settle for a minute."
+        body="A short private check-in helps you notice how it landed."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/blog", label: "More slow reads" }}
+      />
         <Footer />
       </div>
     </>

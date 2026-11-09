@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Brain, Heart, Users, AlertTriangle, BookOpen, Search, FileText, Stethoscope, TrendingUp } from "lucide-react";
-import dsm5HeroImage from "@/assets/dsm5-hero.jpg";
 import { SEOHead } from "@/components/SEOHead";
 
 const DSM5Page = () => {
@@ -18,7 +17,7 @@ const DSM5Page = () => {
       id: "neurodevelopmental",
       title: "Neurodevelopmental Disorders",
       icon: Brain,
-      color: "bg-blue-500",
+      color: "bg-primary",
       description: "Disorders typically manifesting early in development",
       subcategories: [
         {
@@ -81,7 +80,7 @@ const DSM5Page = () => {
       id: "bipolar",
       title: "Bipolar & Related Disorders",
       icon: TrendingUp,
-      color: "bg-purple-500",
+      color: "bg-primary",
       description: "Disorders involving manic episodes",
       subcategories: [
         {
@@ -100,7 +99,7 @@ const DSM5Page = () => {
       id: "depressive",
       title: "Depressive Disorders",
       icon: Heart,
-      color: "bg-indigo-500",
+      color: "bg-primary",
       description: "Disorders characterized by sad, empty, or irritable mood",
       subcategories: [
         {
@@ -119,7 +118,7 @@ const DSM5Page = () => {
       id: "anxiety",
       title: "Anxiety Disorders", 
       icon: AlertTriangle,
-      color: "bg-yellow-500",
+      color: "bg-primary",
       description: "Disorders characterized by excessive fear and anxiety",
       subcategories: [
         {
@@ -157,7 +156,7 @@ const DSM5Page = () => {
       id: "dissociative",
       title: "Dissociative Disorders",
       icon: Brain,
-      color: "bg-teal-500",
+      color: "bg-primary",
       description: "Disruption of consciousness, memory, identity, or perception",
       subcategories: [
         {
@@ -171,7 +170,7 @@ const DSM5Page = () => {
       id: "somatic",
       title: "Somatic Symptom & Related Disorders",
       icon: Stethoscope,
-      color: "bg-green-500",
+      color: "bg-primary",
       description: "Physical symptoms causing significant distress",
       subcategories: [
         {
@@ -185,7 +184,7 @@ const DSM5Page = () => {
       id: "feeding",
       title: "Feeding & Eating Disorders",
       icon: Heart,
-      color: "bg-pink-500", 
+      color: "bg-primary", 
       description: "Persistent disturbance of eating behavior",
       subcategories: [
         {
@@ -199,7 +198,7 @@ const DSM5Page = () => {
       id: "elimination",
       title: "Elimination Disorders",
       icon: FileText,
-      color: "bg-orange-500",
+      color: "bg-primary",
       description: "Inappropriate elimination of urine or feces",
       subcategories: [
         {
@@ -213,7 +212,7 @@ const DSM5Page = () => {
       id: "sleep",
       title: "Sleep-Wake Disorders",
       icon: Brain,
-      color: "bg-violet-500",
+      color: "bg-primary",
       description: "Dissatisfaction regarding quality, timing, and amount of sleep",
       subcategories: [
         {
@@ -241,7 +240,7 @@ const DSM5Page = () => {
       id: "gender",
       title: "Gender Dysphoria",
       icon: Users,
-      color: "bg-cyan-500",
+      color: "bg-primary",
       description: "Distress accompanying incongruence between gender identity and assigned gender",
       subcategories: [
         {
@@ -269,7 +268,7 @@ const DSM5Page = () => {
       id: "substance",
       title: "Substance-Related & Addictive Disorders",
       icon: AlertTriangle,
-      color: "bg-amber-600",
+      color: "bg-primary",
       description: "Disorders related to substance use and behavioral addictions",
       subcategories: [
         {
@@ -293,7 +292,7 @@ const DSM5Page = () => {
       id: "neurocognitive",
       title: "Neurocognitive Disorders",
       icon: Brain,
-      color: "bg-gray-600",
+      color: "bg-muted-foreground",
       description: "Disorders affecting cognitive functioning",
       subcategories: [
         {
@@ -307,7 +306,7 @@ const DSM5Page = () => {
       id: "personality",
       title: "Personality Disorders",
       icon: Users,
-      color: "bg-stone-600",
+      color: "bg-muted-foreground",
       description: "Enduring patterns of inner experience and behavior",
       subcategories: [
         {
@@ -345,7 +344,7 @@ const DSM5Page = () => {
       id: "other",
       title: "Other Mental Disorders",
       icon: BookOpen,
-      color: "bg-slate-500",
+      color: "bg-muted-foreground",
       description: "Mental disorders not fitting other categories",
       subcategories: [
         {
@@ -366,18 +365,19 @@ const DSM5Page = () => {
       />
       <SiteHeader />
       <ReferenceNote />
-      <div id="main-content" className="min-h-screen bg-gradient-to-br from-medical-50 to-primary-50">
+      <div id="main-content" className="v-legacy min-h-screen bg-surface">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${dsm5HeroImage})` }}>
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="relative isolate overflow-hidden border-b border-border/60 py-20 px-4">
+        <div className="v-hero-glow" aria-hidden />
+        <div className="v-rise relative z-10 max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-6 py-2 mb-6">
             <Stethoscope className="w-5 h-5 text-foreground" />
             <span className="text-sm font-medium text-foreground">DSM-5-TR Comprehensive Guide</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+          <h1 className="text-4xl md:text-6xl mb-6 text-foreground">
             Diagnostic & Statistical Manual
           </h1>
-          <p className="text-xl text-foreground/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
             Complete guide to mental health disorders classification, diagnostic criteria, and clinical applications for healthcare professionals and students
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -393,7 +393,7 @@ const DSM5Page = () => {
       <section className="px-4 mb-8">
         <div className="max-w-7xl mx-auto">
           <Tabs value={activeCategory} onValueChange={setActiveCategory} className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 gap-2 h-auto p-2 bg-white/50 backdrop-blur-sm">
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-4 gap-2 h-auto p-2 bg-card backdrop-blur-sm">
               <TabsTrigger value="overview" className="text-sm">Overview</TabsTrigger>
               <TabsTrigger value="assessment" className="text-sm">Assessment</TabsTrigger>
               <TabsTrigger value="categories" className="text-sm">Categories</TabsTrigger>
@@ -476,24 +476,24 @@ const DSM5Page = () => {
                 <CardContent>
                   <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-lg">
                     <div className="mermaid-diagram">
-                      <div className="text-center text-sm font-mono bg-white/80 p-4 rounded border">
+                      <div className="text-center text-sm font-mono bg-card p-4 rounded border">
                         <div className="space-y-4">
                           <div className="text-lg font-bold text-primary">DSM-5-TR Organization</div>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
-                            <div className="bg-blue-50 p-3 rounded">
-                              <div className="font-semibold text-blue-800">Section I</div>
+                            <div className="bg-primary/10 p-3 rounded">
+                              <div className="font-semibold text-foreground">Section I</div>
                               <div className="text-sm">DSM-5-TR Basics</div>
-                              <div className="text-xs text-blue-600">Use & Structure</div>
+                              <div className="text-xs text-primary">Use & Structure</div>
                             </div>
-                            <div className="bg-green-50 p-3 rounded">
-                              <div className="font-semibold text-green-800">Section II</div>
+                            <div className="bg-primary/10 p-3 rounded">
+                              <div className="font-semibold text-foreground">Section II</div>
                               <div className="text-sm">Diagnostic Criteria</div>
-                              <div className="text-xs text-green-600">20 Disorder Classes</div>
+                              <div className="text-xs text-primary">20 Disorder Classes</div>
                             </div>
-                            <div className="bg-purple-50 p-3 rounded">
-                              <div className="font-semibold text-purple-800">Section III</div>
+                            <div className="bg-primary/10 p-3 rounded">
+                              <div className="font-semibold text-foreground">Section III</div>
                               <div className="text-sm">Emerging Measures</div>
-                              <div className="text-xs text-purple-600">Assessment Tools</div>
+                              <div className="text-xs text-primary">Assessment Tools</div>
                             </div>
                           </div>
                         </div>
@@ -549,18 +549,18 @@ const DSM5Page = () => {
                       </div>
 
                       <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-blue-50 p-4 rounded-lg">
-                          <div className="text-sm font-semibold text-blue-800 mb-2">Cultural Considerations</div>
-                          <ul className="text-xs text-blue-700 space-y-1">
+                        <div className="bg-primary/10 p-4 rounded-lg">
+                          <div className="text-sm font-semibold text-foreground mb-2">Cultural Considerations</div>
+                          <ul className="text-xs text-primary space-y-1">
                             <li>• Cultural formulation</li>
                             <li>• Language barriers</li>
                             <li>• Religious beliefs</li>
                             <li>• Social context</li>
                           </ul>
                         </div>
-                        <div className="bg-green-50 p-4 rounded-lg">
-                          <div className="text-sm font-semibold text-green-800 mb-2">Assessment Tools</div>
-                          <ul className="text-xs text-green-700 space-y-1">
+                        <div className="bg-primary/10 p-4 rounded-lg">
+                          <div className="text-sm font-semibold text-foreground mb-2">Assessment Tools</div>
+                          <ul className="text-xs text-primary space-y-1">
                             <li>• Standardized interviews</li>
                             <li>• Rating scales</li>
                             <li>• Psychological tests</li>
@@ -578,30 +578,30 @@ const DSM5Page = () => {
                     <CardDescription>Systematic approach to differential diagnosis</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="bg-gradient-to-b from-medical-50 to-primary-50 p-6 rounded-lg">
+                    <div className="bg-surface p-6 rounded-lg">
                       <div className="text-center space-y-4">
-                        <div className="bg-white p-3 rounded-lg border-2 border-primary/20">
+                        <div className="bg-card p-3 rounded-lg border-2 border-primary/20">
                           <div className="font-semibold text-primary">Initial Assessment</div>
                           <div className="text-sm text-muted-foreground">Chief complaint & history</div>
                         </div>
                         <div className="text-2xl text-muted-foreground">↓</div>
-                        <div className="bg-white p-3 rounded-lg border-2 border-secondary/20">
+                        <div className="bg-card p-3 rounded-lg border-2 border-secondary/20">
                           <div className="font-semibold text-secondary">Rule Out Medical Causes</div>
                           <div className="text-sm text-muted-foreground">Physical exam & lab tests</div>
                         </div>
                         <div className="text-2xl text-muted-foreground">↓</div>
-                        <div className="bg-white p-3 rounded-lg border-2 border-accent/20">
+                        <div className="bg-card p-3 rounded-lg border-2 border-accent/20">
                           <div className="font-semibold text-accent">Substance Use Assessment</div>
                           <div className="text-sm text-muted-foreground">Current & historical use</div>
                         </div>
                         <div className="text-2xl text-muted-foreground">↓</div>
-                        <div className="bg-white p-3 rounded-lg border-2 border-muted/40">
+                        <div className="bg-card p-3 rounded-lg border-2 border-muted/40">
                           <div className="font-semibold">Primary Mental Health Diagnosis</div>
                           <div className="text-sm text-muted-foreground">Match DSM-5-TR criteria</div>
                         </div>
                         <div className="text-2xl text-muted-foreground">↓</div>
-                        <div className="bg-white p-3 rounded-lg border-2 border-success/20">
-                          <div className="font-semibold text-green-700">Comorbidity Assessment</div>
+                        <div className="bg-card p-3 rounded-lg border-2 border-success/20">
+                          <div className="font-semibold text-primary">Comorbidity Assessment</div>
                           <div className="text-sm text-muted-foreground">Additional conditions</div>
                         </div>
                       </div>
@@ -689,7 +689,7 @@ const DSM5Page = () => {
                   <CardContent className="space-y-6">
                     <div className="space-y-4">
                       <div className="border-l-4 border-l-blue-500 pl-4">
-                        <h4 className="font-semibold text-blue-700">Clinical Settings</h4>
+                        <h4 className="font-semibold text-primary">Clinical Settings</h4>
                         <ul className="text-sm text-muted-foreground mt-2 space-y-1">
                           <li>• Psychiatric hospitals and clinics</li>
                           <li>• Primary care practices</li>
@@ -700,7 +700,7 @@ const DSM5Page = () => {
                       </div>
                       
                       <div className="border-l-4 border-l-green-500 pl-4">
-                        <h4 className="font-semibold text-green-700">Treatment Planning</h4>
+                        <h4 className="font-semibold text-primary">Treatment Planning</h4>
                         <ul className="text-sm text-muted-foreground mt-2 space-y-1">
                           <li>• Evidence-based treatment selection</li>
                           <li>• Medication management guidelines</li>
@@ -710,7 +710,7 @@ const DSM5Page = () => {
                       </div>
                       
                       <div className="border-l-4 border-l-purple-500 pl-4">
-                        <h4 className="font-semibold text-purple-700">Research Applications</h4>
+                        <h4 className="font-semibold text-primary">Research Applications</h4>
                         <ul className="text-sm text-muted-foreground mt-2 space-y-1">
                           <li>• Clinical trial participant selection</li>
                           <li>• Epidemiological studies</li>
@@ -728,9 +728,9 @@ const DSM5Page = () => {
                     <CardDescription>Important factors to consider when using DSM-5-TR</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="bg-yellow-50 border border-border p-4 rounded-lg">
-                      <h4 className="font-semibold text-yellow-800 mb-2">⚠️ Key Limitations</h4>
-                      <ul className="text-sm text-yellow-700 space-y-1">
+                    <div className="bg-amber-50 border border-border p-4 rounded-lg">
+                      <h4 className="font-semibold text-amber-700 mb-2">⚠️ Key Limitations</h4>
+                      <ul className="text-sm text-amber-700 space-y-1">
                         <li>• Categorical vs. dimensional approach debate</li>
                         <li>• Cultural bias and Western-centric focus</li>
                         <li>• Comorbidity complexity</li>
@@ -739,9 +739,9 @@ const DSM5Page = () => {
                       </ul>
                     </div>
                     
-                    <div className="bg-blue-50 border border-border p-4 rounded-lg">
-                      <h4 className="font-semibold text-blue-800 mb-2">🎯 Best Practices</h4>
-                      <ul className="text-sm text-blue-700 space-y-1">
+                    <div className="bg-primary/10 border border-border p-4 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">🎯 Best Practices</h4>
+                      <ul className="text-sm text-primary space-y-1">
                         <li>• Use as clinical guide, not rigid rules</li>
                         <li>• Consider cultural formulation</li>
                         <li>• Integrate multiple assessment methods</li>
@@ -750,9 +750,9 @@ const DSM5Page = () => {
                       </ul>
                     </div>
                     
-                    <div className="bg-green-50 border border-border p-4 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">✅ Quality Assurance</h4>
-                      <ul className="text-sm text-green-700 space-y-1">
+                    <div className="bg-primary/10 border border-border p-4 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">✅ Quality Assurance</h4>
+                      <ul className="text-sm text-primary space-y-1">
                         <li>• Peer consultation for complex cases</li>
                         <li>• Regular training and updates</li>
                         <li>• Inter-rater reliability checks</li>

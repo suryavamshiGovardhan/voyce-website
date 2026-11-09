@@ -32,8 +32,8 @@ const categoryIcons = {
 };
 
 const difficultyColors = {
-  basic: "bg-green-100 text-green-700 dark:bg-green-900 dark:text-primary",
-  intermediate: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-primary",
+  basic: "bg-primary/10 text-primary dark:bg-green-900 dark:text-primary",
+  intermediate: "bg-amber-50 text-amber-700 dark:bg-yellow-900 dark:text-primary",
   advanced: "bg-red-100 text-red-700 dark:bg-red-900 dark:text-primary"
 };
 
@@ -80,7 +80,7 @@ export default function TheoriesPage() {
         description="Comprehensive guide to over 100 psychology theories from developmental to neuroscience. Search, filter, and explore theories from basic to advanced levels."
         keywords="psychology theories, cognitive psychology, behavioral psychology, developmental psychology, psychotherapy theories, VOYCE"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
       
       <PageHero eyebrow="Learn · Theories" title={<>The ideas behind <span className="text-primary">how people grow.</span></>} lede="A searchable library of psychology, education and human-development theories — each explained in plain language, from basic to advanced." />

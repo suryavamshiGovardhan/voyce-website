@@ -195,7 +195,7 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="v-legacy min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow flex items-center justify-center">
           <p className="text-muted-foreground">Loading profile...</p>
@@ -213,7 +213,7 @@ export default function ProfilePage() {
         keywords="profile settings, account management, user preferences"
         noindex={true}
       />
-      <div className="min-h-screen flex flex-col">
+      <div className="v-legacy min-h-screen flex flex-col">
         <Navbar />
       <main className="flex-grow py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
@@ -483,7 +483,7 @@ export default function ProfilePage() {
                 <CardContent>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-2">
-                      <Award className="h-5 w-5 text-yellow-500" />
+                      <Award className="h-5 w-5 text-amber-700" />
                       <div>
                         <p className="text-sm font-medium">Mindfulness Master</p>
                         <p className="text-xs text-muted-foreground">2 days ago</p>
@@ -497,7 +497,7 @@ export default function ProfilePage() {
                       </div>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <BookOpen className="h-5 w-5 text-blue-500" />
+                      <BookOpen className="h-5 w-5 text-primary" />
                       <div>
                         <p className="text-sm font-medium">Knowledge Seeker</p>
                         <p className="text-xs text-muted-foreground">2 weeks ago</p>

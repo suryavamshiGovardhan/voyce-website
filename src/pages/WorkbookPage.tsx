@@ -78,7 +78,7 @@ export default function WorkbookPage() {
         description="Share your personal story and engage with interactive mental health workbook exercises. Your voice matters in building a supportive community."
         keywords="mental health workbook, personal story, therapy exercises, self-reflection, VOYCE community"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
       
       <PageHero eyebrow="Workbook" title={<>Reflect, write, <span className="text-primary">and see yourself more clearly.</span></>} lede="Guided prompts that help you slow down and put your experience into words — and, if you want, share your story with the community." />
@@ -104,7 +104,7 @@ export default function WorkbookPage() {
                 <CardTitle className="text-3xl text-foreground text-center">Workshop Workbook</CardTitle>
               </CardHeader>
               <CardContent className="p-8">
-                <div className="w-full h-[600px] rounded-xl overflow-hidden shadow-lg bg-white">
+                <div className="w-full h-[600px] rounded-xl overflow-hidden shadow-lg bg-card">
                   <iframe
                     src="https://docs.google.com/document/d/1BQt0KYI80v0zOzGQrDgVwA9Dqqxz98v8iKCb7eB4Tj0/preview"
                     width="100%"
@@ -145,7 +145,7 @@ export default function WorkbookPage() {
                 </p>
               </CardHeader>
               <CardContent className="p-8">
-                <div className="w-full h-[700px] rounded-xl overflow-hidden shadow-lg bg-white">
+                <div className="w-full h-[700px] rounded-xl overflow-hidden shadow-lg bg-card">
                   <iframe
                     src="https://docs.google.com/forms/d/e/1FAIpQLSfRfrRKJsrX9P8E3kzV4rpsjaWa3nDTiaZbR5XZgJbN6qoamg/viewform?embedded=true"
                     width="100%"
@@ -239,7 +239,7 @@ export default function WorkbookPage() {
               <Button
                 type="submit"
                 disabled={submitting}
-                className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-foreground py-3 rounded-xl text-lg font-medium disabled:opacity-70"
+                className="w-full bg-primary hover:bg-primary/90 text-foreground py-3 rounded-xl text-lg font-medium disabled:opacity-70"
               >
                 {submitting ? (
                   <>

@@ -12,7 +12,7 @@ export default function IntegratedDiagnosticsPage() {
         description="Comprehensive mental health diagnostic resource combining ICD-9-CM codes, DSM-5 criteria, real-world case studies, and cross-reference mappings for clinical education."
         keywords="ICD-9, DSM-5, mental health diagnosis, case studies, cross-reference, clinical education, diagnostic criteria, psychiatric disorders"
       />
-      <div className="min-h-screen flex flex-col bg-background">
+      <div className="v-legacy min-h-screen flex flex-col bg-background">
         <Navbar />
         
         <ReferenceNote />

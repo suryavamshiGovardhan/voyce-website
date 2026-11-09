@@ -12,7 +12,7 @@ export default function TermsOfUsePage() {
         description="Terms of Use for VOYCE. Understand the guidelines for using our platform."
         keywords="terms of use, terms of service, VOYCE terms"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
         <PageHero eyebrow="Legal" title="Terms of use" lede="The ground rules for using VOYCE — kept as short and plain as we can." />
         <main className="container mx-auto px-4 py-12 max-w-3xl sm:py-16">

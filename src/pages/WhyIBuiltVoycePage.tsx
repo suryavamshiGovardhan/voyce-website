@@ -1,3 +1,5 @@
+import { NextStep } from "@/components/site/value";
+import SiteChrome from "@/components/site/SiteChrome";
 import { SEOHead } from "@/components/SEOHead";
 import { ArticleSchema, FounderSchema } from "@/components/StructuredData";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,7 +15,7 @@ export default function WhyIBuiltVoycePage() {
   const publishDate = "2025-12-14";
   
   return (
-    <>
+    <SiteChrome>
       <SEOHead
         title="Why I Built VOYCE | By Suryavamshi Govardhan"
         description="Suryavamshi Govardhan shares the personal journey and vision behind creating VOYCE, a mental health platform bridging ancient wisdom with modern psychology."
@@ -192,6 +194,12 @@ export default function WhyIBuiltVoycePage() {
           </div>
         </article>
       </main>
-    </>
+      <NextStep
+        title="Let what you read settle for a minute."
+        body="A short private check-in helps you notice how it landed."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/blog", label: "More slow reads" }}
+      />
+    </SiteChrome>
   );
 }

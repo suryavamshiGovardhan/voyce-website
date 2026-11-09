@@ -29,24 +29,24 @@ export default function DashboardPage() {
   const todaysTip = "Remember: It's okay to not be okay. Every small step towards mental wellness counts.";
 
   return (
-    <AuthGuard>
+    <AuthGuard chrome>
       <SEOHead 
         title="My Dashboard - VOYCE"
         description="Your personal mental wellness journey dashboard"
         noindex
       />
-      <div className="min-h-screen flex flex-col">
+      <div className="v-legacy min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-accent/20">
+        <main className="flex-grow py-8 px-4 sm:px-6 lg:px-8 bg-background">
           <div className="max-w-7xl mx-auto space-y-8">
             {/* Welcome Section */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h1 className="text-4xl font-bold text-primary mb-2">
-                  Welcome back, {user?.user_metadata?.full_name || 'Wellness Warrior'}!
+                <h1 className="text-4xl tracking-tight text-foreground mb-2">
+                  Welcome back, {user?.user_metadata?.full_name || 'there'}
                 </h1>
                 <p className="text-lg text-muted-foreground">
-                  Continue your journey towards better mental health
+                  Pick up where you left off — a check-in, a practice or a page to read.
                 </p>
               </div>
               <div className="flex gap-2">
@@ -96,38 +96,38 @@ export default function DashboardPage() {
                 </Link>
               </Card>
 
-              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-blue-200 bg-blue-50/50">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-primary/20 bg-primary/10">
                 <Link to="/journal" className="flex flex-col items-center text-center gap-3">
-                  <div className="p-3 bg-blue-100 rounded-full">
-                    <BookOpen className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <BookOpen className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-blue-900">My Journal</h3>
-                    <p className="text-sm text-blue-700">Write your thoughts</p>
+                    <h3 className="font-semibold text-foreground">My Journal</h3>
+                    <p className="text-sm text-primary">Write your thoughts</p>
                   </div>
                 </Link>
               </Card>
 
-              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-green-200 bg-green-50/50">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-primary/20 bg-primary/10">
                 <Link to="/thoughts" className="flex flex-col items-center text-center gap-3">
-                  <div className="p-3 bg-green-100 rounded-full">
-                    <MessageCircle className="h-6 w-6 text-green-600" />
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <MessageCircle className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-green-900">Community</h3>
-                    <p className="text-sm text-green-700">Share your story</p>
+                    <h3 className="font-semibold text-foreground">Community</h3>
+                    <p className="text-sm text-primary">Share your story</p>
                   </div>
                 </Link>
               </Card>
 
-              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-purple-200 bg-purple-50/50">
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-primary/20 bg-primary/10">
                 <Link to="/library" className="flex flex-col items-center text-center gap-3">
-                  <div className="p-3 bg-purple-100 rounded-full">
-                    <Heart className="h-6 w-6 text-purple-600" />
+                  <div className="p-3 bg-primary/10 rounded-full">
+                    <Heart className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-purple-900">Learn</h3>
-                    <p className="text-sm text-purple-700">Explore resources</p>
+                    <h3 className="font-semibold text-foreground">Learn</h3>
+                    <p className="text-sm text-primary">Explore resources</p>
                   </div>
                 </Link>
               </Card>

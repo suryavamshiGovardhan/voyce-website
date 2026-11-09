@@ -77,7 +77,7 @@ export default function InvisibleInheritanceReportPage() {
   const reportLink = `/invisible-inheritance/test/${code}/report`;
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="v-legacy min-h-screen flex flex-col">
       <SEOHead
         title="Your Reflection — The Invisible Inheritance Test"
         description="A shared compatibility map for the patterns you each inherited. Conversations to have before vows."
@@ -126,7 +126,7 @@ export default function InvisibleInheritanceReportPage() {
             <div className="text-center">
               <p className="text-rose-400 mb-4 ii-serif">{error}</p>
               <Link to="/invisible-inheritance/test">
-                <Button variant="outline" className="ii-pill bg-white/[0.03] border-white/15">Back to the test</Button>
+                <Button variant="outline" className="ii-pill bg-card/[0.03] border-white/15">Back to the test</Button>
               </Link>
             </div>
           )}
@@ -142,7 +142,7 @@ export default function InvisibleInheritanceReportPage() {
                 The report opens automatically once both partners finish. Share the link above with them.
               </p>
               <Link to="/invisible-inheritance/test">
-                <Button variant="outline" className="ii-pill bg-white/[0.03] border-white/15">Back</Button>
+                <Button variant="outline" className="ii-pill bg-card/[0.03] border-white/15">Back</Button>
               </Link>
             </div>
           )}
@@ -157,8 +157,8 @@ export default function InvisibleInheritanceReportPage() {
                   <span className="text-3xl text-muted-foreground">%</span>
                 </p>
                 <div className="flex justify-center gap-6 text-xs text-muted-foreground ii-serif">
-                  <span><span className="text-emerald-300 font-medium">{report.resonanceCount}</span> resonance</span>
-                  <span><span className="text-amber-300 font-medium">{report.tensionCount}</span> tension</span>
+                  <span><span className="text-primary font-medium">{report.resonanceCount}</span> resonance</span>
+                  <span><span className="text-amber-700 font-medium">{report.tensionCount}</span> tension</span>
                   <span><span className="text-rose-300 font-medium">{report.blindSpotCount}</span> blind spot</span>
                 </div>
               </section>
@@ -186,8 +186,8 @@ export default function InvisibleInheritanceReportPage() {
                       </div>
                       <span className={[
                         "text-[10px] uppercase tracking-[0.3em] px-2.5 py-1 rounded-full border whitespace-nowrap",
-                        d.zone === "resonance" && "text-emerald-300 border-emerald-400/40 bg-emerald-400/5",
-                        d.zone === "tension" && "text-amber-300 border-amber-400/40 bg-amber-400/5",
+                        d.zone === "resonance" && "text-primary border-primary/40 bg-primary/5",
+                        d.zone === "tension" && "text-amber-700 border-amber-300 bg-primary/5",
                         d.zone === "blind_spot" && "text-rose-300 border-rose-400/40 bg-rose-400/5",
                       ].filter(Boolean).join(" ")}>
                         {d.zone.replace("_", " ")}
@@ -221,10 +221,10 @@ export default function InvisibleInheritanceReportPage() {
                 </p>
                 <div className="mt-6 flex justify-center gap-3 flex-wrap">
                   <Link to="/invisible-inheritance">
-                    <Button variant="outline" className="ii-pill bg-white/[0.03] border-white/15">The vision</Button>
+                    <Button variant="outline" className="ii-pill bg-card/[0.03] border-white/15">The vision</Button>
                   </Link>
                   <Link to="/invisible-inheritance/test">
-                    <Button variant="outline" className="ii-pill bg-white/[0.03] border-white/15">Start another session</Button>
+                    <Button variant="outline" className="ii-pill bg-card/[0.03] border-white/15">Start another session</Button>
                   </Link>
                 </div>
               </section>

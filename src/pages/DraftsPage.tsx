@@ -12,7 +12,7 @@ export default function DraftsPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
         <main className="container mx-auto px-4 py-8">
           <div className="flex items-center justify-center min-h-[400px]">
@@ -29,7 +29,7 @@ export default function DraftsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="v-legacy min-h-screen bg-background">
       <Navbar />
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">

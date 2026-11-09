@@ -1,3 +1,4 @@
+import { NextStep } from "@/components/site/value";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/SEOHead';
@@ -25,7 +26,7 @@ export default function CannotSayNoPage() {
         image={heroImage}
         url="https://suryavamshigovardhan.github.io/voyce-website/article/cannot-say-no"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
         <main className="container mx-auto px-4 py-8">
           <div className="max-w-3xl mx-auto">
@@ -223,6 +224,12 @@ export default function CannotSayNoPage() {
             </article>
           </div>
         </main>
+      <NextStep
+        title="Let what you read settle for a minute."
+        body="A short private check-in helps you notice how it landed."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/blog", label: "More slow reads" }}
+      />
         <Footer />
       </div>
     </>

@@ -150,7 +150,7 @@ export default function AI4SchoolsPage() {
   const filteredProjects = projects.filter((p) => p.toLowerCase().includes(query.toLowerCase()));
 
   return (
-    <div className="min-h-screen bg-background text-foreground antialiased">
+    <div className="v-legacy min-h-screen bg-background text-foreground antialiased">
       <SEOHead
         title="AI4SCHOOLS — Building India's Next Generation of AI Innovators"
         description="A future-ready AI, Robotics, Coding, STEM & Innovation program for schools. Bootcamps, labs, teacher training, AI clubs and student projects."
@@ -199,7 +199,7 @@ export default function AI4SchoolsPage() {
             Building India's Next Generation
             <br />
             of{" "}
-            <span className="bg-gradient-to-r from-amber-500 via-orange-500 to-blue-600 bg-clip-text text-transparent">
+            <span className="text-primary">
               AI Innovators.
             </span>
           </h1>
@@ -255,7 +255,7 @@ export default function AI4SchoolsPage() {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {whyCards.map(({ icon: Icon, t, d }) => (
             <div key={t} className={`${glassCard} p-6`}>
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/20 to-blue-500/20 text-foreground">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-foreground">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 font-display text-xl font-semibold">{t}</h3>
@@ -289,7 +289,7 @@ export default function AI4SchoolsPage() {
         <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {filteredTeach.map(({ icon: Icon, t }) => (
             <div key={t} className={`${glassCard} group p-5 text-center`}>
-              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/15 via-orange-500/15 to-blue-500/15 transition-transform group-hover:scale-110">
+              <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary transition-transform group-hover:scale-110">
                 <Icon className="h-5 w-5" />
               </div>
               <div className="mt-3 text-sm font-medium">{t}</div>
@@ -309,7 +309,7 @@ export default function AI4SchoolsPage() {
               <div key={r.stage} className={`${glassCard} p-5 relative`}>
                 <div className="flex items-center justify-between">
                   <Badge variant="secondary" className="rounded-full">{`0${i + 1}`}</Badge>
-                  <div className="h-7 w-7 rounded-full bg-gradient-to-br from-amber-400 to-blue-600 grid place-items-center text-white text-xs font-bold">
+                  <div className="h-7 w-7 rounded-full bg-primary grid place-items-center text-white text-xs font-bold">
                     {i + 1}
                   </div>
                 </div>
@@ -335,7 +335,7 @@ export default function AI4SchoolsPage() {
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <Badge variant="outline" className="rounded-full">{p.dur}</Badge>
-                  <Zap className="h-4 w-4 text-amber-500" />
+                  <Zap className="h-4 w-4 text-amber-700" />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold">{p.t}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.d}</p>
@@ -362,14 +362,14 @@ export default function AI4SchoolsPage() {
               <div>
                 <div className="text-xs text-muted-foreground">{b.day}</div>
                 <h3 className="font-display text-2xl font-semibold mt-1">{b.t}</h3>
-                <div className="mt-3 inline-flex items-center gap-2 text-xs text-amber-700 dark:text-amber-300">
+                <div className="mt-3 inline-flex items-center gap-2 text-xs text-amber-700 dark:text-amber-700">
                   <Calendar className="h-3.5 w-3.5" /> 4 hours
                 </div>
               </div>
               <ul className="grid sm:grid-cols-2 gap-2">
                 {b.items.map((it) => (
                   <li key={it} className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-emerald-500 shrink-0" />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary shrink-0" />
                     <span>{it}</span>
                   </li>
                 ))}
@@ -386,8 +386,8 @@ export default function AI4SchoolsPage() {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {labs.map(({ icon: Icon, t, d }) => (
             <div key={t} className={`${glassCard} p-6 relative overflow-hidden`}>
-              <div className="absolute inset-0 -z-10 opacity-0 hover:opacity-100 transition-opacity bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-blue-500/10" />
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500/20 to-blue-500/20">
+              <div className="absolute inset-0 -z-10 opacity-0 hover:opacity-100 transition-opacity bg-primary" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary">
                 <Icon className="h-5 w-5" />
               </div>
               <h3 className="mt-5 font-display text-xl font-semibold">{t}</h3>
@@ -409,7 +409,7 @@ export default function AI4SchoolsPage() {
               style={{ minHeight: 100 + ((i * 37) % 120) }}
             >
               <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-gradient-to-r from-amber-400 to-blue-500" />
+                <div className="h-2 w-2 rounded-full bg-primary" />
                 <div className="text-[11px] uppercase tracking-wider text-muted-foreground">Project</div>
               </div>
               <div className="mt-3 font-display text-lg font-semibold leading-snug">{p}</div>
@@ -466,7 +466,7 @@ export default function AI4SchoolsPage() {
             ))}
           </div>
           <div className="mt-8 inline-flex items-center gap-2 text-sm">
-            <Award className="h-4 w-4 text-amber-500" />
+            <Award className="h-4 w-4 text-amber-700" />
             <span>Includes <strong>AI4SCHOOLS Certified Educator</strong> credential.</span>
           </div>
         </div>
@@ -499,7 +499,7 @@ export default function AI4SchoolsPage() {
             (g, i) => (
               <div
                 key={g}
-                className="aspect-square rounded-2xl border border-border/60 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-blue-500/10 flex items-end p-4 hover:scale-[1.02] transition-transform"
+                className="aspect-square rounded-2xl border border-border/60 bg-primary flex items-end p-4 hover:scale-[1.02] transition-transform"
               >
                 <div>
                   <div className="text-[11px] text-muted-foreground">0{i + 1}</div>

@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
         description="Privacy Policy for VOYCE. Learn how we collect, use, and protect your information."
         keywords="privacy policy, data protection, VOYCE privacy"
       />
-      <div className="min-h-screen bg-background">
+      <div className="v-legacy min-h-screen bg-background">
         <Navbar />
         <PageHero eyebrow="Legal" title="Privacy policy" lede="What we collect, why, and how you stay in control. Written to be read, not skimmed past." />
         <main className="container mx-auto px-4 py-12 max-w-3xl sm:py-16">

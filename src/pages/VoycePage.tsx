@@ -1,25 +1,15 @@
-import { useState, useEffect } from "react";
+import SiteChrome from "@/components/site/SiteChrome";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Brain, Heart, Leaf, Waves, Mountain, Music, Mail, Instagram, Youtube, Share2, Clock, Users, BookOpen, Activity, Lightbulb, Target, TrendingUp, Shield, Globe, Microscope, Calculator } from "lucide-react";
-import { hapticFeedback } from "@/utils/hapticFeedback";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
-import HeroSection from "@/components/sections/HeroSection";
+import { PageHero, NextStep } from "@/components/site/value";
 import AboutSection from "@/components/sections/AboutSection";
 import NewsletterSection from "@/components/sections/NewsletterSection";
-import CallToActionSection from "@/components/sections/CallToActionSection";
 import { SEOHead } from "@/components/SEOHead";
 
 export default function VoycePage() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Auto theme based on time
-  useEffect(() => {
-    const hour = new Date().getHours();
-    const shouldBeDark = hour < 6 || hour > 20;
-    setIsDarkMode(shouldBeDark);
-  }, []);
 
   const comprehensiveStressGuide = [
     {
@@ -115,34 +105,33 @@ export default function VoycePage() {
   ];
 
   return (
-    <>
+    <SiteChrome>
       <SEOHead 
-        title="About VOYCE"
+        title="The VOYCE guide to stress & wellbeing"
         description="Comprehensive guide to stress, mental health, and emotional wellbeing. Learn from ancient wisdom and modern neuroscience about managing stress, trauma, and building resilience."
         keywords="stress management, mental health education, neuroscience, trauma recovery, mindfulness, emotional wellbeing, VOYCE"
       />
-      <div className={`min-h-screen transition-colors duration-1000 ${
-        isDarkMode 
-          ? 'bg-background' 
-          : 'bg-gradient-to-br from-green-50 via-white to-orange-50'
-      } japanese-pattern`}>
-        {/* Enhanced Music Player */}
-        <EnhancedMusicPlayer />
+      <div className="bg-background">
 
-      {/* Hero Section */}
-      <HeroSection />
+      <PageHero
+        eyebrow="The VOYCE guide"
+        title={<>Stress is a language. <span className="text-primary">Learn to read it.</span></>}
+        lede="A long-form guide to stress and emotional wellbeing — where it comes from, what it does to the body and mind, and what helps. Read it in sections; nothing here is a diagnosis."
+        primary={{ to: "#about-section", label: "Start reading" }}
+        secondary={{ to: "/start-here", label: "Or start a private check-in" }}
+      />
 
       {/* About VOYCE */}
       <AboutSection />
 
       {/* Comprehensive Stress Guide */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-50 to-orange-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-surface">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <Brain className="h-16 w-16 text-green-600 mx-auto mb-6 float-3d" />
-            <h2 className="text-4xl font-light text-slate-800 mb-8">Stress — The Complete Guide</h2>
+            <Brain className="h-16 w-16 text-primary mx-auto mb-6 float-3d" />
+            <h2 className="text-4xl font-light text-foreground mb-8">Stress — The Complete Guide</h2>
             <div className="max-w-3xl mx-auto p-6 bg-muted rounded-2xl border border-border mb-12">
-              <p className="text-lg italic text-orange-800 leading-relaxed">
+              <p className="text-lg italic text-amber-700 leading-relaxed">
                 🧠 "You cannot heal what you cannot understand. Stress is a language, VOYCE is the translator."
               </p>
             </div>
@@ -153,18 +142,18 @@ export default function VoycePage() {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-white/60 backdrop-blur-sm border border-border rounded-2xl overflow-hidden"
+                className="bg-card backdrop-blur-sm border border-border rounded-2xl overflow-hidden"
               >
-                <AccordionTrigger className="px-6 py-4 hover:bg-green-50/50 transition-colors">
+                <AccordionTrigger className="px-6 py-4 hover:bg-muted transition-colors">
                   <div className="flex items-center space-x-4">
-                    <section.icon className="h-6 w-6 text-green-600" />
-                    <span className="text-left text-lg font-medium text-slate-700">{section.title}</span>
+                    <section.icon className="h-6 w-6 text-primary" />
+                    <span className="text-left text-lg font-medium text-foreground">{section.title}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6">
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="md:col-span-2">
-                      <p className="text-slate-600 leading-relaxed">{section.content}</p>
+                      <p className="text-muted-foreground leading-relaxed">{section.content}</p>
                     </div>
                     <div className="relative">
                       <img 
@@ -183,10 +172,10 @@ export default function VoycePage() {
 
           {/* Video Resources */}
           <div className="mt-16">
-            <h3 className="text-2xl font-light text-slate-800 mb-8 text-center">Educational Videos</h3>
+            <h3 className="text-2xl font-light text-foreground mb-8 text-center">Educational Videos</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {videoResources.map((video, index) => (
-                <Card key={index} className="bg-white/60 backdrop-blur-sm border-border shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow">
+                <Card key={index} className="bg-card backdrop-blur-sm border-border shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow">
                   <div className="relative">
                     <img 
                       src={video.thumbnail} 
@@ -199,8 +188,8 @@ export default function VoycePage() {
                     </div>
                   </div>
                   <CardContent className="p-4">
-                    <h4 className="font-medium text-slate-700 mb-2">{video.title}</h4>
-                    <p className="text-sm text-slate-600">{video.description}</p>
+                    <h4 className="font-medium text-foreground mb-2">{video.title}</h4>
+                    <p className="text-sm text-muted-foreground">{video.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -213,9 +202,9 @@ export default function VoycePage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <Instagram className="h-12 w-12 text-orange-500 mx-auto mb-6 float-3d" />
-            <h2 className="text-4xl font-light text-slate-800 mb-8">Who Are You When...?</h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <Instagram className="h-12 w-12 text-amber-700 mx-auto mb-6 float-3d" />
+            <h2 className="text-4xl font-light text-foreground mb-8">Who Are You When...?</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Explore identity, vulnerability, and truth through our Instagram mini-series
             </p>
           </div>
@@ -241,7 +230,7 @@ export default function VoycePage() {
                 description: "Finding your voice when the world seems to ignore you"
               }
             ].map((item, index) => (
-              <Card key={index} className="bg-white/60 backdrop-blur-sm border-border shadow-lg rounded-2xl hover:shadow-xl transition-shadow overflow-hidden">
+              <Card key={index} className="bg-card backdrop-blur-sm border-border shadow-lg rounded-2xl hover:shadow-xl transition-shadow overflow-hidden">
                 <div className="relative">
                   <img 
                     src={item.image} 
@@ -255,7 +244,7 @@ export default function VoycePage() {
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -265,7 +254,7 @@ export default function VoycePage() {
             <Button 
               asChild
               size="lg" 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-foreground px-12 py-4 rounded-2xl text-lg haptic-btn shadow-lg"
+              className="bg-primary hover:from-orange-600 hover:to-orange-700 text-foreground px-12 py-4 rounded-2xl text-lg haptic-btn shadow-lg"
             >
               <a href="https://www.instagram.com/suryavamshiiii" target="_blank" rel="noopener noreferrer">
                 Follow VOYCE on Instagram
@@ -279,44 +268,14 @@ export default function VoycePage() {
       {/* Newsletter */}
       <NewsletterSection />
 
-      {/* Call to Action */}
-      <CallToActionSection />
+      <NextStep
+        title="Try one thing from this guide today."
+        body="A two-minute practice is enough to start."
+        primary={{ to: "/tools", label: "Try a practice" }}
+        secondary={{ to: "/stress", label: "Read the stress module" }}
+      />
 
-      {/* Floating Controls */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-4">
-        <Button
-          size="icon"
-          variant="outline"
-          className="rounded-full bg-white/80 backdrop-blur-sm border-border shadow-lg hover:bg-green-50"
-          onClick={() => {
-            setIsDarkMode(!isDarkMode);
-            hapticFeedback.onClick();
-          }}
-          aria-label="Toggle theme"
-        >
-          <Music className={`h-5 w-5 ${isDarkMode ? 'text-yellow-500' : 'text-slate-600'}`} />
-        </Button>
-        
-        <Button
-          size="icon"
-          variant="outline"
-          className="rounded-full bg-white/80 backdrop-blur-sm border-border shadow-lg hover:bg-green-50"
-          onClick={() => {
-            if (navigator.share) {
-              navigator.share({
-                title: 'VOYCE - Mental Health Management',
-                text: 'Mental Clarity, Emotional Freedom',
-                url: window.location.href
-              });
-            }
-            hapticFeedback.onClick();
-          }}
-          aria-label="Share VOYCE"
-        >
-          <Share2 className="h-5 w-5 text-slate-600" />
-        </Button>
-      </div>
     </div>
-    </>
+    </SiteChrome>
   );
 }
