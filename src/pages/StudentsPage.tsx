@@ -40,8 +40,8 @@ export default function StudentsPage() {
             </Lede>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="h-12 rounded-full px-7">
-                <Link to="/signup">
-                  Start with VOYCE
+                <Link to="/start-here">
+                  Start here — no account
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>

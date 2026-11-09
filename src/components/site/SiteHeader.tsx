@@ -1,73 +1,62 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode, type MouseEvent } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 
-type NavItem = { label: string; to: string; description?: string };
+type NavItem = { label: string; to: string; description?: string; external?: boolean; group?: string };
 
-const PRIMARY: { label: string; to?: string; items?: NavItem[]; wide?: boolean }[] = [
+export const CAM_SITE = "https://suryavamshigovardhan.github.io/cam-website/";
+
+const PRIMARY: { label: string; to?: string; items?: NavItem[]; wide?: boolean; note?: string }[] = [
   { label: "How it works", to: "/how-it-works" },
   {
-    label: "For people",
+    label: "For you",
     items: [
       { label: "Students", to: "/students", description: "Understand yourself, one small step at a time" },
-      { label: "Teachers", to: "/teachers", description: "Notice patterns, start better conversations" },
       { label: "Parents", to: "/parents", description: "Understand the signals behind the silence" },
-      { label: "Schools", to: "/schools", description: "Build a culture where wellbeing is noticed" },
-      { label: "AI4Schools", to: "/ai4schools", description: "Programs for future-ready classrooms" },
+      { label: "Teachers", to: "/teachers", description: "Notice patterns, start better conversations" },
+      { label: "VOYCE for Schools", to: "/schools", description: "Student wellbeing for your whole school" },
     ],
   },
-  { label: "Features", to: "/features" },
+  {
+    label: "Explore",
+    wide: true,
+    note: "No account needed",
+    items: [
+      { label: "Start here", to: "/start-here", description: "Your first two minutes on VOYCE" },
+      { label: "Stories", to: "/stories", description: "Real experiences, shared with consent" },
+      { label: "The Unheard Mind", to: "/series", description: "Eight-part narrative series" },
+      { label: "Tools & practices", to: "/tools", description: "Small things you can try today" },
+      { label: "Guides & articles", to: "/resources", description: "Plain-language wellbeing reading" },
+      { label: "Blog", to: "/blog", description: "Essays and reflections" },
+      { label: "Library", to: "/library", description: "Long-form deep dives" },
+      { label: "Workbook", to: "/workbook", description: "Write it out" },
+      { label: "VOYCE Path", to: "/path", description: "A guided sequence" },
+      { label: "Thoughts", to: "/thoughts", description: "Short reflections" },
+      { label: "Newsletters", to: "/newsletters", description: "Occasional letters" },
+      { label: "My journal", to: "/journal", description: "Private entries (needs sign-in)" },
+    ],
+  },
   {
     label: "Learn",
     wide: true,
     items: [
-      { label: "Stress", to: "/stress", description: "Understanding stress responses" },
-      { label: "Trauma", to: "/trauma", description: "Healing and recovery" },
-      { label: "ADHD", to: "/adhd", description: "Attention and focus" },
-      { label: "Brain", to: "/brain", description: "How your brain works" },
-      { label: "Neuroscience", to: "/neuroscience", description: "Research explained simply" },
-      { label: "Mind, heart, gut", to: "/mind-heart-gut", description: "The whole-body connection" },
-      { label: "ACEs impact", to: "/aces", description: "Childhood experiences" },
-      { label: "CDS research", to: "/cds", description: "Cognitive disengagement" },
-      { label: "Psychology theories", to: "/theories", description: "Foundational frameworks" },
-      { label: "DSM-5 guide", to: "/dsm5", description: "Reference material" },
-      { label: "DSM-5 Academy", to: "/dsm5-academy", description: "Study modules" },
-      { label: "ICD-9 hub", to: "/icd9", description: "Classification reference" },
-      { label: "Diagnostics library", to: "/diagnostics", description: "Cross-referenced knowledge" },
-      { label: "Quizzes", to: "/quizzes", description: "Check your understanding" },
-    ],
-  },
-  {
-    label: "CAM",
-    items: [
-      { label: "All articles", to: "/cam", description: "Career Advisory Movement" },
-      { label: "The Talk", to: "/cam/talk", description: "The keynote, as slides" },
-      { label: "Atlas", to: "/cam/atlas", description: "Search 1,000+ real jobs" },
-      { label: "Play", to: "/cam/play", description: "Guess the job" },
-      { label: "Six lenses", to: "/cam/fit", description: "Tests for choosing" },
-      { label: "30 days", to: "/cam/challenge", description: "Thirty days of looking" },
-      { label: "About", to: "/cam/about", description: "Who is behind CAM" },
-    ],
-  },
-  {
-    label: "Resources",
-    wide: true,
-    items: [
-      { label: "Guides & articles", to: "/resources", description: "Editorial library on wellbeing" },
-      { label: "The Unheard Mind", to: "/series", description: "Eight-part narrative series" },
-      { label: "Library", to: "/library", description: "Long-form deep dives" },
-      { label: "Blog", to: "/blog", description: "Essays and reflections" },
-      { label: "Stories", to: "/stories", description: "Real experiences, shared with consent" },
-      { label: "Tools", to: "/tools", description: "Practices you can try today" },
-      { label: "VOYCE Path", to: "/path", description: "A guided sequence" },
-      { label: "Workbook", to: "/workbook", description: "Write it out" },
-      { label: "Journal", to: "/journal", description: "Your private entries" },
-      { label: "Newsletters", to: "/newsletters", description: "Occasional letters" },
-      { label: "Thoughts", to: "/thoughts", description: "Short reflections" },
-      { label: "Invisible Inheritance", to: "/invisible-inheritance", description: "For couples" },
+      { group: "Understand yourself", label: "Stress", to: "/stress", description: "Understanding stress responses" },
+      { group: "Understand yourself", label: "Trauma", to: "/trauma", description: "Healing and recovery" },
+      { group: "Understand yourself", label: "ADHD", to: "/adhd", description: "Attention and focus" },
+      { group: "Understand yourself", label: "Brain", to: "/brain", description: "How your brain works" },
+      { group: "Understand yourself", label: "Mind, heart, gut", to: "/mind-heart-gut", description: "The whole-body connection" },
+      { group: "Understand yourself", label: "Neuroscience", to: "/neuroscience", description: "Research explained simply" },
+      { group: "Understand yourself", label: "ACEs impact", to: "/aces", description: "Childhood experiences" },
+      { group: "Understand yourself", label: "CDS research", to: "/cds", description: "Cognitive disengagement" },
+      { group: "Understand yourself", label: "Psychology theories", to: "/theories", description: "Foundational frameworks" },
+      { group: "Professional reference — not student self-tests", label: "DSM-5 guide", to: "/dsm5", description: "Reference for adults & professionals" },
+      { group: "Professional reference — not student self-tests", label: "DSM-5 Academy", to: "/dsm5-academy", description: "Study modules for learners" },
+      { group: "Professional reference — not student self-tests", label: "ICD-9 hub", to: "/icd9", description: "Classification reference" },
+      { group: "Professional reference — not student self-tests", label: "Diagnostics library", to: "/diagnostics", description: "Cross-referenced knowledge" },
+      { group: "Professional reference — not student self-tests", label: "Knowledge quizzes", to: "/quizzes", description: "Test what you learned — not a wellbeing score" },
     ],
   },
   {
@@ -76,13 +65,46 @@ const PRIMARY: { label: string; to?: string; items?: NavItem[]; wide?: boolean }
       { label: "Safety", to: "/safety", description: "What VOYCE is and is not" },
       { label: "Privacy", to: "/privacy", description: "What we collect and why" },
       { label: "FAQ", to: "/faq", description: "Real questions, plain answers" },
+      { label: "About", to: "/about", description: "Why VOYCE exists" },
       { label: "Partners", to: "/partners", description: "Work with VOYCE" },
       { label: "Contact", to: "/contact", description: "Reach the team" },
     ],
   },
-  { label: "About", to: "/about" },
+  {
+    label: "Other initiatives",
+    note: "Separate projects from the same team",
+    items: [
+      { label: "CAM — careers", to: CAM_SITE, external: true, description: "Career exposure for Classes 8–12 (separate site)" },
+      { label: "AI4Schools", to: "/ai4schools", description: "AI & STEM programme — not the wellbeing product" },
+      { label: "Invisible Inheritance", to: "/invisible-inheritance", description: "A reflection test for couples" },
+    ],
+  },
 ];
 
+function MenuLink({ item, className, children }: { item: NavItem; className: string; children: ReactNode }) {
+  if (item.external) {
+    return (
+      <a href={item.to} target="_blank" rel="noopener noreferrer" className={className}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link to={item.to} className={className}>
+      {children}
+    </Link>
+  );
+}
+
+function groupItems(items: NavItem[]) {
+  const groups: { name?: string; items: NavItem[] }[] = [];
+  items.forEach((item) => {
+    const last = groups[groups.length - 1];
+    if (last && last.name === item.group) last.items.push(item);
+    else groups.push({ name: item.group, items: [item] });
+  });
+  return groups;
+}
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -103,7 +125,24 @@ export default function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const skipToMain = (e: MouseEvent<HTMLAnchorElement>) => {
+    const target = (document.getElementById("main-content") || document.querySelector("main")) as HTMLElement | null;
+    if (!target) return;
+    e.preventDefault();
+    if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+    target.focus();
+    target.scrollIntoView();
+  };
+
   return (
+    <>
+    <a
+      href="#main-content"
+      onClick={skipToMain}
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-5 focus:py-2 focus:text-primary-foreground"
+    >
+      Skip to main content
+    </a>
     <header
       className={cn(
         "sticky top-0 z-50 w-full border-b transition-colors duration-300",
@@ -150,31 +189,40 @@ export default function SiteHeader() {
                     <div
                       className={cn(
                         "absolute top-full pt-2",
-                        entry.wide ? "left-1/2 w-[38rem] -translate-x-1/2" : "left-0 w-72",
+                        entry.wide ? "left-1/2 w-[38rem] -translate-x-1/2" : entry.label === "Other initiatives" ? "right-0 w-80" : "left-0 w-72",
                       )}
                     >
-                      <ul
-                        className={cn(
-                          "rounded-2xl border border-border bg-popover p-2 shadow-[0_24px_60px_-30px_hsl(var(--foreground)/0.45)]",
-                          entry.wide && "grid grid-cols-2 gap-x-2",
+                      <div className="rounded-2xl border border-border bg-popover p-2 shadow-[0_24px_60px_-30px_hsl(var(--foreground)/0.45)]">
+                        {entry.note && (
+                          <p className="px-3 pb-1 pt-2 text-[11px] uppercase tracking-[0.18em] text-primary">{entry.note}</p>
                         )}
-                      >
-                        {entry.items.map((item) => (
-                          <li key={item.to}>
-                            <Link
-                              to={item.to}
-                              className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-secondary"
-                            >
-                              <span className="block text-sm font-medium">{item.label}</span>
-                              {item.description && (
-                                <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
-                                  {item.description}
-                                </span>
-                              )}
-                            </Link>
-                          </li>
+                        {groupItems(entry.items).map((group) => (
+                          <div key={group.name ?? "default"}>
+                            {group.name && (
+                              <p className="px-3 pb-1 pt-3 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                                {group.name}
+                              </p>
+                            )}
+                            <ul className={cn(entry.wide && "grid grid-cols-2 gap-x-2")}>
+                              {group.items.map((item) => (
+                                <li key={item.to}>
+                                  <MenuLink item={item} className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-secondary">
+                                    <span className="flex items-center gap-1.5 text-sm font-medium">
+                                      {item.label}
+                                      {item.external && <ExternalLink className="h-3 w-3" aria-hidden="true" />}
+                                    </span>
+                                    {item.description && (
+                                      <span className="mt-0.5 block text-xs leading-snug text-muted-foreground">
+                                        {item.description}
+                                      </span>
+                                    )}
+                                  </MenuLink>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -194,7 +242,7 @@ export default function SiteHeader() {
                 <Link to="/login">Sign in</Link>
               </Button>
               <Button asChild size="sm" className="rounded-full px-5">
-                <Link to="/signup">Get started</Link>
+                <Link to="/start-here">Start here</Link>
               </Button>
             </>
           )}
@@ -217,6 +265,22 @@ export default function SiteHeader() {
       {open && (
         <div id="mobile-nav" className="border-t border-border bg-background lg:hidden">
           <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-5 pb-8 pt-4">
+            <div className="mb-5 flex flex-col gap-3">
+              {user ? (
+                <Button asChild className="h-12 rounded-full">
+                  <Link to="/dashboard">My VOYCE</Link>
+                </Button>
+              ) : (
+                <>
+                  <Button asChild className="h-12 rounded-full">
+                    <Link to="/start-here">Start here — no account</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="h-12 rounded-full">
+                    <Link to="/login">Sign in</Link>
+                  </Button>
+                </>
+              )}
+            </div>
             <ul className="space-y-1">
               {PRIMARY.map((entry) => (
                 <li key={entry.label}>
@@ -229,39 +293,31 @@ export default function SiteHeader() {
                       <p className="px-3 pb-1 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                         {entry.label}
                       </p>
-                      <ul>
-                        {entry.items?.map((item) => (
-                          <li key={item.to}>
-                            <Link to={item.to} className="block rounded-xl px-3 py-2.5 text-base">
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                      {entry.note && <p className="px-3 pb-1 text-xs text-primary">{entry.note}</p>}
+                      {groupItems(entry.items ?? []).map((group) => (
+                        <div key={group.name ?? "default"}>
+                          {group.name && <p className="px-3 pb-1 pt-2 text-xs text-muted-foreground">{group.name}</p>}
+                          <ul>
+                            {group.items.map((item) => (
+                              <li key={item.to}>
+                                <MenuLink item={item} className="flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-base">
+                                  {item.label}
+                                  {item.external && <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />}
+                                </MenuLink>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     </div>
                   )}
                 </li>
               ))}
             </ul>
-            <div className="mt-5 flex flex-col gap-3">
-              {user ? (
-                <Button asChild className="h-12 rounded-full">
-                  <Link to="/dashboard">My VOYCE</Link>
-                </Button>
-              ) : (
-                <>
-                  <Button asChild variant="outline" className="h-12 rounded-full">
-                    <Link to="/login">Sign in</Link>
-                  </Button>
-                  <Button asChild className="h-12 rounded-full">
-                    <Link to="/signup">Get started</Link>
-                  </Button>
-                </>
-              )}
-            </div>
           </div>
         </div>
       )}
     </header>
+    </>
   );
 }

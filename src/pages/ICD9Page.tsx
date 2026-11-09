@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReferenceNote from "@/components/site/ReferenceNote";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
@@ -42,7 +43,8 @@ export default function ICD9Page() {
       <div className="min-h-screen flex flex-col bg-background">
         <Navbar />
         
-        <main className="flex-1">
+        <ReferenceNote />
+        <main id="main-content" className="flex-1">
           {/* Hero Section */}
           <section className="relative py-16 px-4 bg-gradient-to-b from-primary/5 to-background">
             <div className="container mx-auto max-w-6xl">

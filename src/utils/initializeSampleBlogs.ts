@@ -48,7 +48,7 @@ export const initializeSampleBlogs = async () => {
         quotes: '"Mental health is not a destination, but a process." — Noam Shpancer',
         tips: 'Reach out for help | Join support communities | Practice self-compassion',
         blog_references: 'National Mental Health Survey of India | WHO Mental Health Atlas',
-        footer: 'VOYCE-X Mental Health Platform',
+        footer: 'VOYCE Mental Health Platform',
         featured_image: 'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=1200',
         category: 'Mental Health Awareness',
         status: 'published'
@@ -64,7 +64,7 @@ export const initializeSampleBlogs = async () => {
         quotes: '"You don\'t have to see the whole staircase, just take the first step." — MLK Jr.',
         tips: 'Create a study schedule | Take regular breaks | Exercise daily | Practice deep breathing',
         blog_references: 'American Psychological Association | ICMR studies',
-        footer: 'Educational content from VOYCE-X',
+        footer: 'Educational content from VOYCE',
         featured_image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200',
         category: 'Student Mental Health',
         status: 'published'

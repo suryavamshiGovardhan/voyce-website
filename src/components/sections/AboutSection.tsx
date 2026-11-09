@@ -9,7 +9,7 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <JapaneseIcon type="zen" className="text-green-500 w-12 h-12 mx-auto mb-6" />
-          <h2 className="text-4xl font-light text-slate-800 mb-8">The VOYCE-X Story</h2>
+          <h2 className="text-4xl font-light text-slate-800 mb-8">The VOYCE Story</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -21,7 +21,7 @@ export default function AboutSection() {
               create a perfect storm of emotional distress.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Founded by S. Suryavamshi, VOYCE-X emerges from personal experience and deep understanding of 
+              Founded by S. Suryavamshi, VOYCE emerges from personal experience and deep understanding of 
               rural narratives, brain science, and emotional healing through immersive soundscapes.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function AboutSection() {
 
         <Card className="bg-white/60 backdrop-blur-sm border-green-200 shadow-lg rounded-2xl mb-16">
           <CardContent className="p-8">
-            <h4 className="text-xl font-medium text-green-700 mb-6 text-center">Core Pillars of VOYCE-X</h4>
+            <h4 className="text-xl font-medium text-green-700 mb-6 text-center">Core Pillars of VOYCE</h4>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">

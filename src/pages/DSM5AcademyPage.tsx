@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReferenceNote from "@/components/site/ReferenceNote";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -464,6 +465,7 @@ const DSM5AcademyPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
+      <ReferenceNote />
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-primary/10">
         <div className="max-w-8xl mx-auto px-4 py-4">

@@ -49,8 +49,8 @@ const COLUMNS: { title: string; links: { label: string; to: string; external?: b
       { label: "ADHD", to: "/adhd" },
       { label: "Brain & neuroscience", to: "/brain" },
       { label: "ACEs impact", to: "/aces" },
-      { label: "DSM-5 guide", to: "/dsm5" },
-      { label: "ICD-9 hub", to: "/icd9" },
+      { label: "DSM-5 guide (professional reference)", to: "/dsm5" },
+      { label: "ICD-9 hub (professional reference)", to: "/icd9" },
       { label: "Psychology theories", to: "/theories" },
     ],
   },
@@ -64,20 +64,20 @@ const COLUMNS: { title: string; links: { label: string; to: string; external?: b
     ],
   },
   {
-    title: "Partners",
+    title: "Schools & partners",
     links: [
-      { label: "Partner with VOYCE", to: "/partners" },
       { label: "VOYCE for Schools", to: "/schools" },
-      { label: "AI4Schools", to: "/ai4schools" },
-      { label: "Workbook", to: "/workbook" },
-      { label: "Invisible Inheritance", to: "/invisible-inheritance" },
+      { label: "Partner with VOYCE", to: "/partners" },
+      { label: "AI4Schools (AI & STEM programme)", to: "/ai4schools" },
+      { label: "CAM — careers (separate site)", to: "https://suryavamshigovardhan.github.io/cam-website/" },
+      { label: "Invisible Inheritance (for couples)", to: "/invisible-inheritance" },
     ],
   },
 ];
 
 export default function SiteFooter() {
   return (
-    <footer className="relative border-t border-border bg-surface">
+    <footer className="relative border-t border-border bg-surface pb-20 sm:pb-0">
       <SonarGrid
         aria-hidden="true"
         interactive={false}
@@ -126,9 +126,15 @@ export default function SiteFooter() {
                 <ul className="space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
+                      {link.to.startsWith("http") ? (
+                        <a href={link.to} target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 transition-colors hover:text-primary">
+                        {link.label}
+                      </a>
+                      ) : (
                       <Link to={link.to} className="text-sm text-foreground/80 transition-colors hover:text-primary">
                         {link.label}
                       </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -156,7 +162,7 @@ export default function SiteFooter() {
             helpline.
           </p>
           <div className="mt-6 flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} VOYCE-X. Founded by Suryavamshi Govardhan.</p>
+            <p>© {new Date().getFullYear()} VOYCE. Founded by Suryavamshi Govardhan.</p>
             <div className="flex flex-wrap gap-4">
               <Link to="/privacy" className="hover:text-primary">
                 Privacy

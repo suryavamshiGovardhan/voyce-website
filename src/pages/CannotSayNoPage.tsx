@@ -11,7 +11,7 @@ export default function CannotSayNoPage() {
   return (
     <>
       <SEOHead
-        title="Why Some People Cannot Say No | VOYCE-X"
+        title="Why Some People Cannot Say No | VOYCE"
         description="A KATA-style essay on why saying no feels impossible. People-pleasing, childhood conditioning, authority fear, and identity."
         keywords="people pleasing, cannot say no, approval seeking, childhood conditioning, emotional dependency, VOYCE-X"
         ogType="article"

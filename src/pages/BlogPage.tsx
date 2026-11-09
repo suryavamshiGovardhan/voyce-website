@@ -45,7 +45,7 @@ export default function BlogPage() {
     <>
       <SEOHead 
         title="Mental Health Blog"
-        description="Read insightful articles on mental health, mindfulness, psychology, and emotional wellbeing from the VOYCE-X community."
+        description="Read insightful articles on mental health, mindfulness, psychology, and emotional wellbeing from the VOYCE community."
         keywords="mental health blog, psychology articles, mindfulness tips, emotional wellbeing, mental health resources"
       />
       <div className="min-h-screen bg-background">
@@ -55,7 +55,7 @@ export default function BlogPage() {
           <header className="text-center mb-12">
             <p className="text-xs uppercase tracking-[0.3em] text-primary/80 mb-3 font-medium">VOYCE Journal</p>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4 leading-tight">
-              VOYCE-X Blog
+              VOYCE Blog
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
               Insights, stories, and resources for mental health and wellbeing — slow reads for an unquiet mind.

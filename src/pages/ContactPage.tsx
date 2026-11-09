@@ -8,8 +8,8 @@ export default function ContactPage() {
   return (
     <>
       <SEOHead 
-        title="Contact | VOYCE-X"
-        description="Get in touch with the VOYCE-X team. We'd love to hear from you."
+        title="Contact | VOYCE"
+        description="Get in touch with the VOYCE team. We'd love to hear from you."
         keywords="contact VOYCE-X, support, feedback"
       />
       <div className="min-h-screen bg-background">
@@ -73,7 +73,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                VOYCE-X is a community-driven space. Your stories, feedback, and ideas help shape what we build. 
+                VOYCE is a community-driven space. Your stories, feedback, and ideas help shape what we build. 
                 Visit our <a href="/thoughts" className="text-primary hover:underline">Thoughts page</a> to share your voice.
               </p>
             </CardContent>

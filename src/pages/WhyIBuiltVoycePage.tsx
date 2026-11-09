@@ -15,15 +15,15 @@ export default function WhyIBuiltVoycePage() {
   return (
     <>
       <SEOHead
-        title="Why I Built VOYCE-X | By Suryavamshi Govardhan"
-        description="Suryavamshi Govardhan shares the personal journey and vision behind creating VOYCE-X, a mental health platform bridging ancient wisdom with modern psychology."
+        title="Why I Built VOYCE | By Suryavamshi Govardhan"
+        description="Suryavamshi Govardhan shares the personal journey and vision behind creating VOYCE, a mental health platform bridging ancient wisdom with modern psychology."
         keywords="Suryavamshi Govardhan, VOYCE-X, mental health platform, why I built, founder story, wellness entrepreneur, psychology, mindfulness"
         ogImage="https://voyce-x.lovable.app/og-image.png"
         canonicalUrl="https://voyce-x.lovable.app/article/why-i-built-voyce"
       />
       <ArticleSchema
-        title="Why I Built VOYCE-X"
-        description="Suryavamshi Govardhan shares the personal journey and vision behind creating VOYCE-X, a mental health platform bridging ancient wisdom with modern psychology."
+        title="Why I Built VOYCE"
+        description="Suryavamshi Govardhan shares the personal journey and vision behind creating VOYCE, a mental health platform bridging ancient wisdom with modern psychology."
         author="Suryavamshi Govardhan"
         datePublished={publishDate}
         url="https://voyce-x.lovable.app/article/why-i-built-voyce"
@@ -39,7 +39,7 @@ export default function WhyIBuiltVoycePage() {
                 Founder's Story
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Why I Built VOYCE-X
+                Why I Built VOYCE
               </h1>
               <div className="flex flex-wrap items-center justify-center gap-4 text-muted-foreground text-sm">
                 <div className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export default function WhyIBuiltVoycePage() {
                 from neuroscience validated what meditation practitioners had known for centuries.
               </p>
               <p>
-                This realization became the foundation of <Link to="/" className="text-primary hover:underline font-medium">VOYCE-X</Link>. 
+                This realization became the foundation of <Link to="/" className="text-primary hover:underline font-medium">VOYCE</Link>. 
                 I wanted to create a platform that didn't just offer clinical information but wove together the 
                 threads of science, philosophy, and practical wisdom into something accessible, engaging, and 
                 genuinely helpful.
@@ -108,7 +108,7 @@ export default function WhyIBuiltVoycePage() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Building for Real People</h2>
               <p>
-                VOYCE-X isn't built for metrics or vanity numbers. Every feature exists because it serves a real 
+                VOYCE isn't built for metrics or vanity numbers. Every feature exists because it serves a real 
                 need. The DSM-5 Academy helps aspiring mental health professionals and curious minds understand 
                 diagnostic frameworks. The mood tracking and journaling features give users tools for self-reflection. 
                 The philosophical articles explore the deeper questions of existence and meaning.
@@ -120,21 +120,21 @@ export default function WhyIBuiltVoycePage() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Vision Ahead</h2>
               <p>
-                VOYCE-X is just beginning. With AI-powered insights, community features, and continuously expanding 
+                VOYCE is just beginning. With AI-powered insights, community features, and continuously expanding 
                 educational content, the platform will grow to serve more people in more meaningful ways. But the 
                 core mission remains unchanged: to make emotional wellbeing accessible, understandable, and 
                 achievable for everyone.
               </p>
               <p>
                 If you're reading this and have ever felt alone in your struggles, know that you're not. 
-                <Link to="/" className="text-primary hover:underline font-medium"> VOYCE-X</Link> exists because 
+                <Link to="/" className="text-primary hover:underline font-medium"> VOYCE</Link> exists because 
                 I believe every person deserves the tools to understand themselves and navigate their inner world 
                 with clarity and compassion.
               </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Join the Journey</h2>
               <p>
-                I invite you to explore VOYCE-X, share your story, and become part of a community that values 
+                I invite you to explore VOYCE, share your story, and become part of a community that values 
                 authentic growth over superficial fixes. Together, we can redefine what mental health support 
                 looks like — not as a clinical intervention, but as a continuous journey of understanding, 
                 acceptance, and transformation.
@@ -155,7 +155,7 @@ export default function WhyIBuiltVoycePage() {
                     </Link>
                   </h3>
                   <p className="text-muted-foreground text-sm mb-3">
-                    Suryavamshi Govardhan is the founder of VOYCE-X, a mental health and wellness platform 
+                    Suryavamshi Govardhan is the founder of VOYCE, a mental health and wellness platform 
                     that bridges ancient wisdom with modern psychology. As a student of psychology and an 
                     aspiring entrepreneur from India, he is committed to making emotional wellbeing accessible 
                     to everyone regardless of their background.
@@ -184,7 +184,7 @@ export default function WhyIBuiltVoycePage() {
             <div className="mt-12 text-center">
               <Link to="/">
                 <Button size="lg" className="gap-2">
-                  Explore VOYCE-X
+                  Explore VOYCE
                   <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>

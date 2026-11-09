@@ -9,6 +9,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Brain, Clock, Trophy, Target } from 'lucide-react';
 import { toast } from 'sonner';
+import { SEOHead } from '@/components/SEOHead';
 
 interface Quiz {
   id: string;
@@ -120,13 +121,19 @@ export default function QuizListPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOHead
+        title="Knowledge quizzes"
+        description="Short quizzes on psychology and wellbeing concepts. They check what you've learned — they never score how you feel."
+      />
       <Navbar />
-      <main className="flex-1 container mx-auto px-4 py-8">
+      <main id="main-content" className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-2">Mental Health Quizzes</h1>
-            <p className="text-muted-foreground">
-              Test your knowledge and earn points!
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.22em] text-primary">Learn · reference</p>
+            <h1 className="font-display text-4xl tracking-tight mb-2">Knowledge quizzes</h1>
+            <p className="text-muted-foreground max-w-2xl">
+              Check what you&rsquo;ve learned about psychology and wellbeing ideas. These test facts from the reading
+              &mdash; they are not a mental-health test and never score how you feel.
             </p>
           </div>
 
@@ -177,10 +184,7 @@ export default function QuizListPage() {
                           {quiz.time_limit_seconds && ` • ${Math.floor(quiz.time_limit_seconds / 60)}min`}
                         </span>
                       </div>
-                      <div className="flex items-center gap-1 font-medium text-primary">
-                        <Trophy className="h-4 w-4" />
-                        <span>+{quiz.points_reward} pts</span>
-                      </div>
+
                     </div>
                   </div>
                 </Card>

@@ -10,9 +10,25 @@ interface SEOHeadProps {
   noindex?: boolean;
 }
 
-const DEFAULT_TITLE = "VOYCE-X | Mental Health & Mindfulness Platform";
-const DEFAULT_DESCRIPTION = "A compassionate mental health platform offering blogs, stories, and resources for emotional wellbeing, mindfulness, and personal growth.";
-const DEFAULT_KEYWORDS = "mental health, mindfulness, emotional wellbeing, psychology, self-care, meditation, mental wellness";
+export const SITE_ORIGIN = "https://voyce-x.lovable.app";
+export const DEFAULT_TITLE = "VOYCE — Student & school wellbeing";
+const DEFAULT_DESCRIPTION = "A calm, private wellbeing space for students, parents, teachers and schools. Read real stories, reflect privately, find a next step. No diagnosis, no scores.";
+const DEFAULT_KEYWORDS = "student wellbeing, school wellbeing, emotional check-in, reflection, mindfulness, VOYCE";
+
+/** One brand, one suffix: "Page | VOYCE". Strips any old "| VOYCE" suffixes. */
+export function formatTitle(title?: string): string {
+  if (!title) return DEFAULT_TITLE;
+  let t = title.replace(/VOYCE/g, "VOYCE").trim();
+  t = t.replace(/(\s*[|·—-]\s*VOYCE)+\s*$/i, "").trim();
+  if (!t) return DEFAULT_TITLE;
+  return /\bVOYCE\b/.test(t) ? t : `${t} | VOYCE`;
+}
+
+/** Canonical = origin + path, never query strings or hashes. */
+export function canonicalFor(pathname: string): string {
+  const clean = pathname.replace(/\/+$/, "") || "/";
+  return `${SITE_ORIGIN}${clean === "/" ? "/" : clean}`;
+}
 const DEFAULT_OG_IMAGE = "https://voyce-x.lovable.app/og-image.png";
 
 export function SEOHead({
@@ -24,8 +40,8 @@ export function SEOHead({
   canonicalUrl,
   noindex = false
 }: SEOHeadProps) {
-  const fullTitle = title ? `${title} | VOYCE-X` : DEFAULT_TITLE;
-  const currentUrl = canonicalUrl || window.location.href;
+  const fullTitle = formatTitle(title);
+  const currentUrl = canonicalUrl || canonicalFor(window.location.pathname);
 
   useEffect(() => {
     // Set page title
@@ -55,7 +71,7 @@ export function SEOHead({
     updateMetaTag('og:image', ogImage, true);
     updateMetaTag('og:url', currentUrl, true);
     updateMetaTag('og:type', ogType, true);
-    updateMetaTag('og:site_name', 'VOYCE-X', true);
+    updateMetaTag('og:site_name', 'VOYCE', true);
     
     // Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image');

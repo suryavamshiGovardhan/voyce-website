@@ -11,7 +11,7 @@ export default function SearchForMeaningPage() {
   return (
     <>
       <SEOHead
-        title="Why Humans Search for Meaning | VOYCE-X"
+        title="Why Humans Search for Meaning | VOYCE"
         description="A KATA-style essay on why humans need meaning even when life is simple. Existential curiosity, pattern-seeking, and consciousness."
         keywords="search for meaning, existential psychology, purpose of life, human consciousness, VOYCE-X, KATA essay"
         ogType="article"

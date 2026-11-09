@@ -22,7 +22,7 @@ export default function NewsletterSection() {
           <CardContent className="p-12 text-center">
             <div className="mb-8">
               <Mail className="h-16 w-16 text-green-600 mx-auto mb-6 float-3d" />
-              <h2 className="text-3xl font-light text-slate-800 mb-4">✉️ Join the VOYCE-X Letter</h2>
+              <h2 className="text-3xl font-light text-slate-800 mb-4">✉️ Join the VOYCE Letter</h2>
               <p className="text-xl text-slate-600">1 Insightful Email Every Week</p>
               <p className="text-sm text-slate-500 mt-2">Deep insights on mental health, stress management, and emotional intelligence</p>
             </div>

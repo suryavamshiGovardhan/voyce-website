@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ReferenceNote from "@/components/site/ReferenceNote";
+import SiteHeader from "@/components/site/SiteHeader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -362,7 +364,9 @@ const DSM5Page = () => {
         description="Complete DSM-5-TR guide to mental health disorders classification, diagnostic criteria, and clinical applications. Essential resource for healthcare professionals and students."
         keywords="DSM-5, diagnostic manual, mental disorders, psychiatric diagnosis, mental health classification, clinical psychology"
       />
-      <div className="min-h-screen bg-gradient-to-br from-medical-50 to-primary-50">
+      <SiteHeader />
+      <ReferenceNote />
+      <div id="main-content" className="min-h-screen bg-gradient-to-br from-medical-50 to-primary-50">
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-cover bg-center" style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${dsm5HeroImage})` }}>
         <div className="max-w-7xl mx-auto text-center">

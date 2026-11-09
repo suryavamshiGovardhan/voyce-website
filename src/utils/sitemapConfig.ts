@@ -1,5 +1,5 @@
 /**
- * Sitemap Configuration for VOYCE-X
+ * Sitemap Configuration for VOYCE
  * Static routes for SEO indexing
  */
 
@@ -12,7 +12,7 @@ export interface SitemapRoute {
 
 export const sitemapRoutes: SitemapRoute[] = [
   // High Priority Pages
-  { path: '/', priority: 1.0, changefreq: 'daily', title: 'VOYCE-X Home' },
+  { path: '/', priority: 1.0, changefreq: 'daily', title: 'VOYCE Home' },
   { path: '/voyce', priority: 0.9, changefreq: 'weekly', title: 'About VOYCE' },
   { path: '/blog', priority: 0.9, changefreq: 'daily', title: 'Mental Health Blog' },
   { path: '/article/desire-suffering-journey', priority: 0.9, changefreq: 'monthly', title: 'Desire, Suffering & The Human Journey' },

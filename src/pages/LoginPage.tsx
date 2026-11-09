@@ -11,6 +11,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Link } from "react-router-dom";
 import { Brain, Phone, Mail } from "lucide-react";
 import { WelcomeQuoteDialog } from "@/components/WelcomeQuoteDialog";
+import { SEOHead } from "@/components/SEOHead";
 
 export default function LoginPage() {
   const { t } = useLanguage();
@@ -61,16 +62,18 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOHead title="Sign in" description="Sign in to your private VOYCE journal and patterns." noindex />
       <Navbar />
-      <main className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <main id="main-content" className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div className="text-center">
             <Brain className="mx-auto h-12 w-12 text-primary mb-4" />
-            <h2 className="text-3xl font-bold tracking-tight">
+            <h1 className="font-display text-3xl tracking-tight">
               Welcome back to VOYCE
-            </h2>
+            </h1>
             <p className="mt-2 text-muted-foreground">
-              Welcome back. Pick up where you left off.
+              Pick up where you left off. No account?{" "}
+              <Link to="/start-here" className="text-primary hover:underline">Explore without one</Link>.
             </p>
           </div>
           

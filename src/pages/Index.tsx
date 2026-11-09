@@ -25,10 +25,35 @@ const PROGRESSION = [
 ];
 
 const EXPERIENCE = [
-  { number: "01", title: "Check in", body: "Pause for thirty seconds and name where you actually are today." },
-  { number: "02", title: "Understand", body: "VOYCE organises your thoughts, emotions and signals into something readable." },
-  { number: "03", title: "Reflect", body: "Prompts and insights that ask better questions instead of giving verdicts." },
-  { number: "04", title: "Support", body: "Practices, resources and clear routes to real human support when it matters." },
+  { number: "01", title: "Notice", body: "Pause for thirty seconds and name where you actually are today." },
+  { number: "02", title: "Reflect", body: "One gentle prompt at a time, until the feeling has words around it." },
+  { number: "03", title: "Understand", body: "Your own entries, gathered into a pattern you can read without a specialist." },
+  { number: "04", title: "Support", body: "A practice, a piece of reading, or a clear route to a real person." },
+  { number: "05", title: "Grow", body: "Noticing becomes ordinary, so hard weeks are met earlier and calmer." },
+];
+
+const FIRST_VISIT = [
+  {
+    n: "01",
+    title: "Read a real story",
+    body: "A short, anonymous story from someone who felt something similar. You are not the only one.",
+    cta: "Read a story",
+    to: "/stories",
+  },
+  {
+    n: "02",
+    title: "Answer one private question",
+    body: "Write one honest sentence about today. Nothing is saved unless you choose to save it.",
+    cta: "Try a reflection",
+    to: "/start-here",
+  },
+  {
+    n: "03",
+    title: "Take one small next step",
+    body: "A two-minute practice you can use tonight — or a clear route to a person who can help.",
+    cta: "See practices",
+    to: "/tools",
+  },
 ];
 
 const AUDIENCES = [
@@ -70,7 +95,7 @@ const TRUST = [
 export default function Index() {
   return (
     <PageShell
-      title="VOYCE — Understand what you're feeling. Find what comes next."
+      title="VOYCE — Student & school wellbeing. Understand what you're feeling."
       description="VOYCE is a calm, private wellbeing space for students, teachers, parents and schools. Check in, reflect, notice patterns, and find the next small step. Not therapy, not diagnosis."
       keywords="student wellbeing platform, school mental health platform, emotional wellbeing, teacher wellbeing tools, reflection app"
       canonical="/"
@@ -89,43 +114,48 @@ export default function Index() {
               "radial-gradient(60% 50% at 15% 0%, hsl(var(--primary)/0.10) 0%, transparent 70%), radial-gradient(50% 40% at 90% 10%, hsl(var(--accent)/0.10) 0%, transparent 70%)",
           }}
         />
+        {/* Dot grid stays on the visual side only, faded out behind the copy */}
         <SonarGrid
-          className="absolute inset-0"
+          className="absolute inset-0 [mask-image:linear-gradient(to_right,transparent_0%,transparent_45%,black_75%)] max-lg:[mask-image:linear-gradient(to_bottom,transparent_0%,transparent_60%,black_90%)]"
           spacing={30}
-          baseOpacity={0.18}
+          baseOpacity={0.14}
           pingEvery={3.4}
           speed={220}
           ringWidth={110}
-          amplitude={1.8}
+          amplitude={1.6}
           interactive
           aria-hidden="true"
         />
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
-            <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border px-4 py-1.5 text-xs tracking-wide text-muted-foreground">
-              A wellbeing space, not a diagnosis engine
-            </p>
-            <h1 className="font-display text-4xl leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
-              Understand what you&rsquo;re feeling. Find what comes next.
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Some things are easier to say when something simply listens first. VOYCE gives students, teachers,
-              parents and schools a calm, private way to notice emotional wellbeing before it becomes a crisis.
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
-                <Link to="/start-here">
-                  Explore VOYCE
-                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="h-12 rounded-full px-7 text-base">
-                <Link to="/how-it-works">How it works</Link>
-              </Button>
+            <div className="rounded-3xl bg-background/90 p-1 backdrop-blur-sm sm:p-2">
+              <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1.5 text-xs tracking-wide text-muted-foreground">
+                Student &amp; school wellbeing · free · no account needed
+              </p>
+              <h1 className="font-display text-4xl leading-[1.08] tracking-tight sm:text-5xl md:text-6xl">
+                Understand what you&rsquo;re feeling. Find what comes next.
+              </h1>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 sm:text-lg">
+                VOYCE helps students put a feeling into words in two minutes &mdash; read a real story, answer one
+                private question, and leave with one small next step.
+              </p>
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
+                  <Link to="/start-here">
+                    Start here &mdash; no account
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="h-12 rounded-full bg-background px-7 text-base">
+                  <Link to="/how-it-works">How it works</Link>
+                </Button>
+              </div>
+              <ul className="mt-7 grid gap-2 text-sm text-foreground/75 sm:grid-cols-3">
+                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />No diagnosis</li>
+                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />No scores</li>
+                <li className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />Private by default</li>
+              </ul>
             </div>
-            <p className="mt-6 text-sm text-muted-foreground">
-              Free to explore. No diagnosis. No pressure to explain yourself.
-            </p>
           </Reveal>
 
           <Reveal delay={120} className="relative">
@@ -137,9 +167,35 @@ export default function Index() {
                 <PatternsScreen />
               </PhoneFrame>
             </div>
+            <p className="mt-10 text-center text-xs text-muted-foreground">Illustrative preview screens.</p>
           </Reveal>
         </div>
       </section>
+
+      {/* 01b — WHAT YOU GET IN TWO MINUTES */}
+      <Section className="py-14 sm:py-20" ariaLabel="What you get in your first two minutes">
+        <Reveal className="max-w-3xl">
+          <Eyebrow>Your first two minutes</Eyebrow>
+          <StatementHeading>Three small things you leave with.</StatementHeading>
+        </Reveal>
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+          {FIRST_VISIT.map((item, i) => (
+            <Reveal key={item.title} delay={i * 80}>
+              <Link
+                to={item.to}
+                className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-primary/40"
+              >
+                <span className="font-display text-sm text-primary">{item.n}</span>
+                <h3 className="mt-3 text-lg font-medium tracking-tight">{item.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-primary transition-all group-hover:gap-3">
+                  {item.cta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
 
       {/* 02 — THE INSIGHT */}
       <Section tone="ink" ariaLabel="The insight behind VOYCE">
@@ -177,13 +233,13 @@ export default function Index() {
       <Section>
         <Reveal className="max-w-3xl">
           <Eyebrow>The VOYCE experience</Eyebrow>
-          <StatementHeading>Four small movements, repeated gently.</StatementHeading>
+          <StatementHeading>Five small steps, repeated gently.</StatementHeading>
           <Lede>
             VOYCE is a support and wellbeing platform. It does not replace psychologists, doctors, counsellors,
             teachers, parents, or emergency services — it helps you reach them sooner and with clearer words.
           </Lede>
         </Reveal>
-        <StepRail steps={EXPERIENCE} className="mt-14" />
+        <StepRail steps={EXPERIENCE} className="mt-14 lg:grid-cols-5" />
       </Section>
 
       {/* 04 — REAL PRODUCT */}
@@ -192,8 +248,9 @@ export default function Index() {
           <Eyebrow>Inside VOYCE</Eyebrow>
           <StatementHeading>The product, not a metaphor for it.</StatementHeading>
           <Lede>
-            Every screen below reflects something VOYCE actually does today: check-ins, private reflection, personal
-            patterns, guided practices, and an aggregated view for schools that never exposes an individual.
+            These screens show what VOYCE is designed to do: check-ins, private reflection, personal patterns, guided
+            practices, and an aggregated view for schools that never exposes an individual. All names and numbers in
+            these previews are sample data for illustration — not real users or real schools.
           </Lede>
         </Reveal>
 
@@ -219,7 +276,7 @@ export default function Index() {
               <DashboardScreen />
             </BrowserFrame>
             <p className="mt-4 text-sm text-muted-foreground">
-              Your dashboard — today, your patterns, one suggestion. Never a scoreboard.
+              Your dashboard — today, your patterns, one suggestion. Never a scoreboard. (Illustrative preview.)
             </p>
           </Reveal>
           <Reveal delay={100}>
@@ -228,6 +285,7 @@ export default function Index() {
             </BrowserFrame>
             <p className="mt-4 text-sm text-muted-foreground">
               The school view — aggregated participation and patterns, with individual entries kept private.
+              Sample numbers for illustration only; VOYCE has no school case studies yet.
             </p>
           </Reveal>
         </div>
@@ -303,7 +361,7 @@ export default function Index() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg" className="h-12 rounded-full px-8 text-base">
-              <Link to="/start-here">Start with VOYCE</Link>
+              <Link to="/start-here">Start here — no account</Link>
             </Button>
             <Button
               asChild

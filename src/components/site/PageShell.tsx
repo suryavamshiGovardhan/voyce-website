@@ -30,14 +30,8 @@ export default function PageShell({
         noindex={noindex}
       />
       <div className="flex min-h-screen flex-col bg-background">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-5 focus:py-2 focus:text-primary-foreground"
-        >
-          Skip to main content
-        </a>
         <SiteHeader />
-        <main id="main-content" className="flex-1">
+        <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
           {children}
         </main>
         <SiteFooter />

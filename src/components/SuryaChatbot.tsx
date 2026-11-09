@@ -6,13 +6,28 @@ import { cn } from "@/lib/utils";
 
 type Message = { role: "user" | "assistant"; content: string };
 
+const FORM_ROUTES = [
+  "/login",
+  "/signup",
+  "/forgot-password",
+  "/reset-password",
+  "/journal",
+  "/workbook",
+  "/blog/create",
+  "/blog/edit",
+  "/contact",
+  "/profile",
+  "/admin",
+  "/invisible-inheritance/test",
+];
+
 const WHATSAPP_NUMBER = "9010481175";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi, I'd like to talk about VOYCE-X`;
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi, I'd like to talk about VOYCE`;
 
 // Quick suggestion buttons based on page context
 const getQuickSuggestions = (pathname: string): string[] => {
   if (pathname === "/") {
-    return ["What is VOYCE-X?", "Where should I begin?", "Is this therapy?"];
+    return ["What is VOYCE?", "Where should I begin?", "Is this therapy?"];
   }
   if (pathname === "/start-here") {
     return ["I feel confused", "I just want to read", "Help for schools"];
@@ -31,7 +46,7 @@ const getQuickSuggestions = (pathname: string): string[] => {
 
 const getInitialGreeting = (pathname: string): string => {
   if (pathname === "/") {
-    return "Hi, I'm Surya. I can help you understand what VOYCE-X is and where to start.";
+    return "Hi, I'm Surya. I can help you understand what VOYCE is and where to start.";
   }
   if (pathname === "/start-here") {
     return "If you feel unsure, you can ask me anything. There's no right or wrong question.";
@@ -42,7 +57,7 @@ const getInitialGreeting = (pathname: string): string => {
   if (pathname === "/schools") {
     return "I can help you understand our schools program. For institutional inquiries, WhatsApp may be better.";
   }
-  return "Hi, I'm Surya. How can I help you navigate VOYCE-X?";
+  return "Hi, I'm Surya. How can I help you find your way around VOYCE?";
 };
 
 export function SuryaChatbot() {
@@ -187,25 +202,46 @@ export function SuryaChatbot() {
 
   const quickSuggestions = getQuickSuggestions(location.pathname);
 
+  // Never float over forms: hide on form-heavy routes and while typing anywhere.
+  const onFormRoute = FORM_ROUTES.some((r) => location.pathname === r || location.pathname.startsWith(`${r}/`));
+  const [typing, setTyping] = useState(false);
+  useEffect(() => {
+    const isField = (el: EventTarget | null) =>
+      el instanceof HTMLElement && (el.matches("input, textarea, select, [contenteditable='true']") || el.getAttribute("role") === "combobox");
+    const onIn = (e: FocusEvent) => { if (isField(e.target) && !(e.target as HTMLElement).closest("[data-surya-chat]")) setTyping(true); };
+    const onOut = () => setTyping(false);
+    document.addEventListener("focusin", onIn);
+    document.addEventListener("focusout", onOut);
+    return () => {
+      document.removeEventListener("focusin", onIn);
+      document.removeEventListener("focusout", onOut);
+    };
+  }, []);
+  const hideButton = isOpen || onFormRoute || typing;
+
   return (
     <>
-      {/* Floating Button */}
+      {/* Floating Button — small icon on phones, raised above the host's bottom-right badge.
+          Hidden on form pages and while typing so it never covers fields or submit buttons. */}
       <button
         onClick={() => setIsOpen(true)}
         className={cn(
-          "fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300 hover:scale-105",
+          "fixed z-40 inline-flex items-center gap-2 rounded-full shadow-lg transition-all duration-300 hover:scale-105",
+          "bottom-16 right-3 h-11 w-11 justify-center sm:bottom-24 sm:right-6 sm:h-auto sm:w-auto sm:p-4",
           "bg-primary text-primary-foreground",
-          isOpen && "scale-0 opacity-0"
+          hideButton && "pointer-events-none scale-0 opacity-0"
         )}
-        aria-label="Ask Surya"
-        title="Ask Surya"
+        aria-label="Ask Surya, VOYCE's AI guide"
+        title="Ask Surya — VOYCE's AI guide"
+        aria-hidden={hideButton}
+        tabIndex={hideButton ? -1 : 0}
       >
-        <Brain className="w-6 h-6" />
+        <Brain className="h-5 w-5 sm:h-6 sm:w-6" aria-hidden="true" />
       </button>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-card rounded-2xl shadow-2xl border border-border flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-300">
+        <div data-surya-chat className="fixed bottom-6 right-6 z-50 w-[360px] max-w-[calc(100vw-3rem)] h-[500px] max-h-[calc(100vh-6rem)] bg-card rounded-2xl shadow-2xl border border-border flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-muted/50">
             <div className="flex items-center gap-2">
@@ -214,7 +250,7 @@ export function SuryaChatbot() {
               </div>
               <div>
                 <h3 className="font-medium text-foreground text-sm">Surya</h3>
-                <p className="text-xs text-muted-foreground">VOYCE-X Guide</p>
+                <p className="text-xs text-muted-foreground">VOYCE AI guide · not a person or a therapist</p>
               </div>
             </div>
             <button

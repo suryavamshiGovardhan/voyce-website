@@ -84,7 +84,7 @@ function StoriesPage() {
   return (
     <>
       <SEOHead 
-        title="Stories | VOYCE-X"
+        title="Stories | VOYCE"
         description="Read real, anonymous human stories about mental health, self-discovery, and quiet moments of truth. No judgement, no pressure."
         keywords="mental health stories, anonymous stories, self-reflection, personal growth, mindfulness"
       />

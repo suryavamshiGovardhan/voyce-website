@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from './useAuth';
-import { toast } from 'sonner';
 
 export interface GamificationData {
   id: string;
@@ -132,9 +131,7 @@ export function useGamification() {
         event_type: eventType
       });
 
-      toast.success(`+${points} points earned!`, {
-        description: `You earned ${points} points for ${eventType}`,
-      });
+      // No points toast: VOYCE promises "no scores". Progress is tracked quietly for the user's own dashboard.
 
       // Check for new badges
       await checkAndAwardBadges();
@@ -191,9 +188,8 @@ export function useGamification() {
             badge_id: badge.id
           });
 
-        toast.success(`🎉 New Badge Earned!`, {
-          description: `${badge.icon} ${badge.name}: ${badge.description}`,
-        });
+        // Badge celebrations intentionally silent (no scoring language in the UI).
+
 
         await trackEvent('badge_earned', {
           badge_id: badge.id,

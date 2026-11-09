@@ -4,14 +4,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-const CamHubPage = lazy(() => import("./pages/cam/CamHubPage"));
-const CamArticlePage = lazy(() => import("./pages/cam/CamArticlePage"));
-const CamTalkPage = lazy(() => import("./pages/cam/CamTalkPage"));
-const CamAtlasPage = lazy(() => import("./pages/cam/CamAtlasPage"));
-const CamPlayPage = lazy(() => import("./pages/cam/CamPlayPage"));
-const CamFitPage = lazy(() => import("./pages/cam/CamFitPage"));
-const CamChallengePage = lazy(() => import("./pages/cam/CamChallengePage"));
-const CamAboutPage = lazy(() => import("./pages/cam/CamAboutPage"));
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 import { AuthProvider } from "@/hooks/useAuth";
 import { GlobalErrorHandler } from "@/components/GlobalErrorHandler";
@@ -19,11 +11,12 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LoadingFallback } from "@/components/LoadingFallback";
 import { DailyCheckIn } from "@/components/engagement/DailyCheckIn";
 import { SuryaChatbot } from "@/components/SuryaChatbot";
+import { RouteMeta } from "@/components/site/RouteMeta";
 
 // Eager load critical pages
 import Index from "./pages/Index";
-import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage";
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const SignUpPage = lazy(() => import("./pages/SignUpPage"));
 import NotFound from "./pages/NotFound";
 const ForgotPasswordPage = lazy(() => import("./pages/ForgotPasswordPage"));
 const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
@@ -62,7 +55,6 @@ const ICD9Page = lazy(() => import("./pages/ICD9Page"));
 const ICD9DetailPage = lazy(() => import("./pages/ICD9DetailPage"));
 const IntegratedDiagnosticsPage = lazy(() => import("./pages/IntegratedDiagnosticsPage"));
 const QuizListPage = lazy(() => import("./pages/QuizListPage"));
-const LeaderboardPage = lazy(() => import("./pages/LeaderboardPage"));
 const DesireSufferingArticlePage = lazy(() => import("./pages/DesireSufferingArticlePage"));
 const AtheismDoctrinePage = lazy(() => import("./pages/AtheismDoctrinePage"));
 const Day1JournalPage = lazy(() => import("./pages/Day1JournalPage"));
@@ -102,6 +94,7 @@ const AboutPage = lazy(() => import("./pages/AboutPage"));
 const SafetyPage = lazy(() => import("./pages/SafetyPage"));
 const FaqPage = lazy(() => import("./pages/FaqPage"));
 const PartnersPage = lazy(() => import("./pages/PartnersPage"));
+const CamHandoffPage = lazy(() => import("./pages/CamHandoffPage"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -123,6 +116,7 @@ const App = () => (
             <Toaster />
             <Sonner />
             <BrowserRouter>
+              <RouteMeta />
               <GlobalErrorHandler />
               <DailyCheckIn />
               <SuryaChatbot />
@@ -182,7 +176,7 @@ const App = () => (
                   <Route path="/icd9/:range" element={<ICD9DetailPage />} />
                   <Route path="/diagnostics" element={<IntegratedDiagnosticsPage />} />
                   <Route path="/quizzes" element={<QuizListPage />} />
-                  <Route path="/leaderboard" element={<LeaderboardPage />} />
+                  <Route path="/leaderboard" element={<Navigate to="/quizzes" replace />} />
                   <Route path="/article/desire-suffering-journey" element={<DesireSufferingArticlePage />} />
                   <Route path="/article/atheism-doctrines" element={<AtheismDoctrinePage />} />
                   <Route path="/article/day-1-journal" element={<Day1JournalPage />} />
@@ -217,15 +211,9 @@ const App = () => (
                   <Route path="/faq" element={<FaqPage />} />
                   <Route path="/partners" element={<PartnersPage />} />
                   <Route path="/resources" element={<ResourcesPage />} />
-                  <Route path="/cam" element={<CamHubPage />} />
-                  <Route path="/cam/articles/:slug" element={<CamArticlePage />} />
-                  <Route path="/cam/talk" element={<CamTalkPage />} />
-                  <Route path="/cam/careers" element={<CamAtlasPage />} />
-                  <Route path="/cam/atlas" element={<CamAtlasPage />} />
-                  <Route path="/cam/play" element={<CamPlayPage />} />
-                  <Route path="/cam/fit" element={<CamFitPage />} />
-                  <Route path="/cam/challenge" element={<CamChallengePage />} />
-                  <Route path="/cam/about" element={<CamAboutPage />} />
+                  {/* CAM moved to its own site — old links hand off there */}
+                  <Route path="/cam" element={<CamHandoffPage />} />
+                  <Route path="/cam/*" element={<CamHandoffPage />} />
 
                   {/* Legal pages */}
                   <Route path="/privacy" element={<PrivacyPolicyPage />} />

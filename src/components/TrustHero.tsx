@@ -66,7 +66,7 @@ function TrustHero() {
           id="hero-heading"
           className="font-display text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-emerald-200 to-green-400"
         >
-          VOYCE-X
+          VOYCE
         </h1>
 
         {/* Tagline */}

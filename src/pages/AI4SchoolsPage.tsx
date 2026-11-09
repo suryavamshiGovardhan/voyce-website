@@ -189,6 +189,10 @@ export default function AI4SchoolsPage() {
         </div>
 
         <div className="container mx-auto max-w-6xl px-6 text-center">
+          <p className="mx-auto mb-6 max-w-xl rounded-full border border-border bg-background/90 px-4 py-2 text-xs text-muted-foreground">
+            AI4Schools is a separate AI &amp; STEM programme from the VOYCE team. Looking for student wellbeing?{" "}
+            <a href="/schools" className="font-medium text-primary underline-offset-4 hover:underline">See VOYCE for Schools</a>.
+          </p>
           <SectionLabel>India's AI Education Operating System</SectionLabel>
           <h1 className="font-display mt-6 text-5xl md:text-7xl font-semibold tracking-tight leading-[0.95]">
             Building India's Next Generation

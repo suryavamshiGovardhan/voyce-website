@@ -83,7 +83,7 @@ The anterior insular cortex, which creates the felt sense of being a body, also 
         }
       ],
 
-      voyceIntegration: `VOYCE-X approaches ego death not as a goal to achieve but as a natural unfolding to allow. Our Ego Death Meditations guide you through progressive experiences of self-dissolution, always with safety and grounding practices built in.
+      voyceIntegration: `VOYCE approaches ego death not as a goal to achieve but as a natural unfolding to allow. Our Ego Death Meditations guide you through progressive experiences of self-dissolution, always with safety and grounding practices built in.
 
 The Shadow Work Journal helps you see the hidden attachments and identifications that keep the ego in place. Every projection you integrate, every shadow you embrace, loosens the ego's grip.
 
@@ -172,7 +172,7 @@ Epigenetic research suggests trauma can even be inherited—affecting gene expre
         }
       ],
 
-      voyceIntegration: `VOYCE-X provides multiple pathways for trauma healing, recognizing that different people need different approaches. Our Somatic Healing Library offers 40+ practices for completing trapped stress cycles and restoring nervous system regulation.
+      voyceIntegration: `VOYCE provides multiple pathways for trauma healing, recognizing that different people need different approaches. Our Somatic Healing Library offers 40+ practices for completing trapped stress cycles and restoring nervous system regulation.
 
 The Trauma Simulators (used with careful guidance) can help loved ones of trauma survivors understand what it feels like from the inside—building empathy and reducing the isolation that compounds trauma's effects.
 
@@ -271,7 +271,7 @@ Importantly, increased entropy is not the same as pathology. In disorders like d
         }
       ],
 
-      voyceIntegration: `VOYCE-X translates cutting-edge neuroscience into practical tools for consciousness exploration. Our Neural Rewiring Lab uses evidence-based techniques to increase neuroplasticity and flexibility—creating conditions conducive to insight and transformation.
+      voyceIntegration: `VOYCE translates cutting-edge neuroscience into practical tools for consciousness exploration. Our Neural Rewiring Lab uses evidence-based techniques to increase neuroplasticity and flexibility—creating conditions conducive to insight and transformation.
 
 The Witness Training develops metacognitive capacity—the ability to observe your own thinking. This corresponds to what researchers call "decentering," which shows up in brain scans as reduced identification with DMN activity.
 
@@ -360,7 +360,7 @@ Research on fatherhood shows that involved fathers experience hormonal changes�
         }
       ],
 
-      voyceIntegration: `VOYCE-X offers specific tools for men on the path of integration. The Shadow Work Journal includes prompts specifically designed for masculine shadow work—exploring relationship with father, internalized messages about manhood, and the wounds of male socialization.
+      voyceIntegration: `VOYCE offers specific tools for men on the path of integration. The Shadow Work Journal includes prompts specifically designed for masculine shadow work—exploring relationship with father, internalized messages about manhood, and the wounds of male socialization.
 
 The Anonymous Truth Circle provides a space for men to practice vulnerability with other men—often for the first time. Research shows that male friendships tend to be "side by side" rather than "face to face," avoiding emotional intimacy. Our circles create containers for deeper connection.
 
@@ -457,7 +457,7 @@ This is not to dismiss biological factors—the brain is clearly involved in men
         }
       ],
 
-      voyceIntegration: `VOYCE-X holds a both/and position: we respect the contributions of psychiatry while advocating for a larger understanding. Mental suffering is real. Biological factors are real. But so are social, psychological, and spiritual factors.
+      voyceIntegration: `VOYCE holds a both/and position: we respect the contributions of psychiatry while advocating for a larger understanding. Mental suffering is real. Biological factors are real. But so are social, psychological, and spiritual factors.
 
 Our content explores alternative frameworks without dismissing conventional treatment. We believe people deserve informed choice—the right to understand the limitations as well as the benefits of the biomedical model.
 
@@ -556,7 +556,7 @@ The good news: attachment styles can change. Through therapy, conscious relation
         }
       ],
 
-      voyceIntegration: `VOYCE-X's Love Without Ego module guides practitioners through the territory of unconditional love. Through meditation, self-inquiry, and shadow work, you learn to distinguish between love and attachment.
+      voyceIntegration: `VOYCE's Love Without Ego module guides practitioners through the territory of unconditional love. Through meditation, self-inquiry, and shadow work, you learn to distinguish between love and attachment.
 
 The Shadow Work Journal helps you identify your attachment patterns and their origins. What early experiences shaped how you love? What fears drive your relationship behaviors?
 
@@ -661,7 +661,7 @@ The field is young, and much remains unknown. But the direction is clear: scienc
         }
       ],
 
-      voyceIntegration: `VOYCE-X embraces the technology of enlightenment while emphasizing that technology is always in service of the deeper work. Our Neural Rewiring Lab uses evidence-based techniques to increase neuroplasticity, making the brain more receptive to transformation.
+      voyceIntegration: `VOYCE embraces the technology of enlightenment while emphasizing that technology is always in service of the deeper work. Our Neural Rewiring Lab uses evidence-based techniques to increase neuroplasticity, making the brain more receptive to transformation.
 
 The Ego Death Meditations incorporate modern understanding of how the default mode network can be quieted, creating conditions conducive to ego dissolution.
 
@@ -768,13 +768,13 @@ The neuroscience suggests that as the brain's "selfing" mechanisms quiet—wheth
         }
       ],
 
-      voyceIntegration: `VOYCE-X's most advanced work is in the territory of conscious death. Our Ego Death Meditations progressively guide practitioners toward the dissolution experience that mirrors what NDEs describe.
+      voyceIntegration: `VOYCE's most advanced work is in the territory of conscious death. Our Ego Death Meditations progressively guide practitioners toward the dissolution experience that mirrors what NDEs describe.
 
 This is not morbid or life-denying—it's life-affirming in the deepest sense. When you know experientially that what you truly are cannot die, you're free to live fully, love freely, and give generously.
 
 We approach this work with reverence and care. Ego death experiences can be destabilizing if not properly prepared for and integrated. Our graduated approach—building capacity through the other tools first—ensures practitioners are ready.
 
-The ultimate teaching of VOYCE-X is simple: Die before you die. Then live without fear.`,
+The ultimate teaching of VOYCE is simple: Die before you die. Then live without fear.`,
 
       practicalSteps: [
         "Contemplate impermanence daily: Everything changes. Everything ends. Let this awareness inform how you live.",

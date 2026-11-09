@@ -37,7 +37,7 @@ export default function CallToActionSection() {
         
         <div className="border-t border-green-200 pt-8">
           <p className="text-slate-500 italic">
-            Website built for VOYCE-X – founded by S. Suryavamshi<br />
+            Website built for VOYCE – founded by S. Suryavamshi<br />
             Inspired by rural narratives, brain science, emotional healing, and personal truth
           </p>
         </div>

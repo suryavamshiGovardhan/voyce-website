@@ -78,7 +78,7 @@ export default function HeroSection() {
               hapticFeedback.onClick();
             }}
           >
-            Explore VOYCE-X
+            Explore VOYCE
             <Leaf className="ml-2 h-5 w-5" />
           </Button>
           <Button 

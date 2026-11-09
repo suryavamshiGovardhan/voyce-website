@@ -159,7 +159,7 @@ export default function EnhancedMusicPlayer() {
               // Expanded Player with Full Controls
               <div className="w-80">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-medium text-slate-800">VOYCE-X Soundscape</h3>
+                  <h3 className="text-lg font-medium text-slate-800">VOYCE Soundscape</h3>
                   <Button
                     size="icon"
                     variant="ghost"

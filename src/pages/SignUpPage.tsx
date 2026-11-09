@@ -1,36 +1,40 @@
-
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, type FormEvent } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Check, ChevronDown, Lock } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import PageShell from "@/components/site/PageShell";
+import { Eyebrow } from "@/components/site/primitives";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { useLanguage } from "@/lib/i18n/LanguageContext";
-import { Link } from "react-router-dom";
-import { Brain, Shield, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+type Age = "" | "adult" | "teen" | "child";
+
+const PASSWORD_RULES = [
+  { id: "len", label: "At least 8 characters", test: (p: string) => p.length >= 8 },
+  { id: "letter", label: "At least one letter", test: (p: string) => /[A-Za-z]/.test(p) },
+  { id: "number", label: "At least one number", test: (p: string) => /\d/.test(p) },
+];
 
 export default function SignUpPage() {
-  const { t } = useLanguage();
   const { signUp, loading } = useAuth();
-  const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    fullName: "",
-    mobile: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    ageGroup: "",
-    state: "",
-    district: "",
-    language: "en",
-    agreeToTerms: false,
-    subscribeNewsletter: false
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [age, setAge] = useState<Age>("");
+  const [parentAware, setParentAware] = useState(false);
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [stateName, setStateName] = useState("");
+  const [district, setDistrict] = useState("");
+  const [errors, setErrors] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [created, setCreated] = useState(false);
 
   const indianStates = [
     "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
@@ -40,93 +44,110 @@ export default function SignUpPage() {
     "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
   ];
 
-  const ageGroups = [
-    "13-17 (Student)", "18-24 (College/Young Adult)", "25-34", "35-44", "45-54", "55+"
-  ];
+  const rulesOk = PASSWORD_RULES.every((r) => r.test(password));
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const validate = (): string[] => {
+    const list: string[] = [];
+    if (!/^\S+@\S+\.\S+$/.test(email.trim())) list.push("Enter a valid email address.");
+    if (!rulesOk) list.push("Your password doesn't meet all the rules yet.");
+    if (password !== confirmPassword) list.push("The two passwords don't match.");
+    if (!age) list.push("Tell us your age range.");
+    if (age === "child") list.push("VOYCE accounts are for ages 13 and up. You can still explore everything without an account.");
+    if (age === "teen" && !parentAware) list.push("Please confirm a parent or guardian knows about and agrees to this account.");
+    if (!agreeToTerms) list.push("Please agree to the Terms of Use and Privacy Policy.");
+    return list;
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords don't match!");
-      return;
-    }
+    const list = validate();
+    setErrors(list);
+    if (list.length) return;
 
     setIsSubmitting(true);
-    
     try {
       const { error } = await signUp(
-        formData.email,
-        formData.password,
-        formData.fullName,
-        formData.mobile,
-        formData.ageGroup,
-        formData.state,
-        formData.district
+        email.trim(),
+        password,
+        fullName.trim(),
+        mobile.trim() || undefined,
+        age === "teen" ? "13-17 (Student)" : "18+",
+        stateName || undefined,
+        district.trim() || undefined,
       );
-      
-      if (!error) {
-        navigate('/dashboard');
+      if (error) {
+        setErrors([(error as { message?: string }).message || "We couldn't create your account. Please try again."]);
+      } else {
+        setCreated(true);
       }
-    } catch (err) {
-      // Error already handled by auth context with toast
-      if (import.meta.env.DEV) {
-        console.error('Signup error:', err);
-      }
+    } catch {
+      setErrors(["Something went wrong. Please try again in a moment."]);
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Redirect if already logged in
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <PageShell title="Create a free account" description="Save private reflections on VOYCE." canonical="/signup" noindex>
+        <div className="py-24 text-center text-muted-foreground">Loading…</div>
+      </PageShell>
+    );
+  }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <Brain className="mx-auto h-12 w-12 text-primary mb-4" />
-            <h2 className="text-3xl font-bold">Join VOYCE Community</h2>
-            <p className="mt-2 text-muted-foreground">
-              Start your journey towards better mental wellness
+    <PageShell
+      title="Create a free account"
+      description="Save private reflections and see your own patterns over time. Optional — you can explore VOYCE without an account."
+      canonical="/signup"
+      noindex
+    >
+      <div className="mx-auto w-full max-w-md px-5 py-14 sm:py-20">
+        <Eyebrow>Optional</Eyebrow>
+        <h1 className="font-display text-3xl leading-tight tracking-tight sm:text-4xl">Create a free account</h1>
+        <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+          Only needed if you want to save private journal entries and see your own patterns.
+        </p>
+
+        <div className="mt-5 rounded-2xl border border-primary/25 bg-primary/5 p-4 text-sm leading-relaxed">
+          Just looking around?{" "}
+          <Link to="/start-here" className="font-medium text-primary underline-offset-4 hover:underline">
+            Start here without an account
+          </Link>{" "}
+          — read stories, reflect and try practices. Nothing is saved.
+        </div>
+
+        {created ? (
+          <div className="mt-8 rounded-2xl border border-border bg-card p-6" role="status" aria-live="polite">
+            <p className="font-display text-2xl tracking-tight">Check your email</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              We sent a confirmation link to <strong>{email}</strong>. Open it, then sign in.
             </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="rounded-full">
+                <Link to="/login">Go to sign in</Link>
+              </Button>
+              <Button asChild variant="outline" className="rounded-full">
+                <Link to="/start-here">Explore meanwhile</Link>
+              </Button>
+            </div>
           </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <Label htmlFor="fullName">Full Name</Label>
-              <Input
-                id="fullName"
-                type="text"
-                required
-                value={formData.fullName}
-                onChange={(e) => setFormData({...formData, fullName: e.target.value})}
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="mobile">Mobile Number</Label>
-              <Input
-                id="mobile"
-                type="tel"
-                placeholder="+91 XXXXX XXXXX"
-                value={formData.mobile}
-                onChange={(e) => setFormData({...formData, mobile: e.target.value})}
-              />
-              <p className="text-xs text-muted-foreground mt-1">Optional: We'll send updates about your wellness journey</p>
-            </div>
+        ) : (
+          <form onSubmit={handleSubmit} noValidate className="mt-8 space-y-6">
+            {errors.length > 0 && (
+              <div role="alert" className="rounded-2xl border border-destructive/40 bg-destructive/5 p-4 text-sm">
+                <p className="font-medium text-destructive">Please fix this first:</p>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-foreground/80">
+                  {errors.map((er) => (
+                    <li key={er}>{er}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div>
-              <Label htmlFor="email">Email Address</Label>
-              <Input
-                id="email"
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-              />
+              <Label htmlFor="email">Email address</Label>
+              <Input id="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} className="mt-2 h-11" />
             </div>
 
             <div>
@@ -134,119 +155,196 @@ export default function SignUpPage() {
               <Input
                 id="password"
                 type="password"
+                autoComplete="new-password"
                 required
-                value={formData.password}
-                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                aria-describedby="password-rules"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="mt-2 h-11"
               />
+              <ul id="password-rules" className="mt-2 space-y-1 text-xs">
+                {PASSWORD_RULES.map((r) => {
+                  const ok = r.test(password);
+                  return (
+                    <li key={r.id} className={cn("flex items-center gap-2", ok ? "text-primary" : "text-muted-foreground")}>
+                      <Check className={cn("h-3.5 w-3.5", ok ? "opacity-100" : "opacity-30")} aria-hidden="true" />
+                      {r.label}
+                      <span className="sr-only">{ok ? "(done)" : "(not yet)"}</span>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
 
             <div>
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
+              <Label htmlFor="confirmPassword">Confirm password</Label>
               <Input
                 id="confirmPassword"
                 type="password"
+                autoComplete="new-password"
                 required
-                value={formData.confirmPassword}
-                onChange={(e) => setFormData({...formData, confirmPassword: e.target.value})}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="mt-2 h-11"
               />
+              {confirmPassword && password !== confirmPassword && (
+                <p className="mt-2 text-xs text-destructive">The passwords don&rsquo;t match yet.</p>
+              )}
             </div>
+
+            <fieldset>
+              <legend className="text-sm font-medium">How old are you?</legend>
+              <div className="mt-2 grid gap-2">
+                {[
+                  { v: "adult", l: "18 or older" },
+                  { v: "teen", l: "13 to 17" },
+                  { v: "child", l: "Under 13" },
+                ].map((o) => (
+                  <label
+                    key={o.v}
+                    className={cn(
+                      "flex cursor-pointer items-center gap-3 rounded-xl border px-4 py-3 text-sm transition-colors",
+                      age === o.v ? "border-primary bg-primary/5" : "border-border",
+                    )}
+                  >
+                    <input
+                      type="radio"
+                      name="age"
+                      value={o.v}
+                      checked={age === o.v}
+                      onChange={() => setAge(o.v as Age)}
+                      className="h-4 w-4 accent-[hsl(var(--primary))]"
+                    />
+                    {o.l}
+                  </label>
+                ))}
+              </div>
+              {age === "teen" && (
+                <div className="mt-3 rounded-xl border border-border bg-surface p-4">
+                  <p className="text-sm leading-relaxed text-foreground/80">
+                    If you&rsquo;re under 18, a parent or guardian should know about and agree to this account.
+                  </p>
+                  <div className="mt-3 flex items-start gap-3">
+                    <Checkbox
+                      id="parentAware"
+                      checked={parentAware}
+                      onCheckedChange={(c) => setParentAware(c === true)}
+                      aria-labelledby="parentAware-label"
+                      className="mt-0.5"
+                    />
+                    <Label id="parentAware-label" htmlFor="parentAware" className="text-sm font-normal leading-relaxed">
+                      A parent or guardian knows I&rsquo;m creating this account and agrees.
+                    </Label>
+                  </div>
+                </div>
+              )}
+              {age === "child" && (
+                <p className="mt-3 rounded-xl border border-border bg-surface p-4 text-sm leading-relaxed text-foreground/80">
+                  VOYCE accounts are for ages 13 and up. You can still{" "}
+                  <Link to="/start-here" className="text-primary underline-offset-4 hover:underline">
+                    explore without an account
+                  </Link>
+                  , and it&rsquo;s a good idea to explore with a parent or teacher.
+                </p>
+              )}
+            </fieldset>
 
             <div>
-              <Label htmlFor="ageGroup">Age Group</Label>
-              <Select value={formData.ageGroup} onValueChange={(value) => setFormData({...formData, ageGroup: value})}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select your age group" />
-                </SelectTrigger>
-                <SelectContent>
-                  {ageGroups.map((group) => (
-                    <SelectItem key={group} value={group}>{group}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <button
+                type="button"
+                onClick={() => setShowMore((v) => !v)}
+                aria-expanded={showMore}
+                aria-controls="more-fields"
+                className="flex w-full items-center justify-between rounded-xl border border-border px-4 py-3 text-left text-sm"
+              >
+                <span>
+                  A little more about you <span className="text-muted-foreground">(optional — you can skip this)</span>
+                </span>
+                <ChevronDown className={cn("h-4 w-4 transition-transform", showMore && "rotate-180")} aria-hidden="true" />
+              </button>
+              {showMore && (
+                <div id="more-fields" className="mt-4 space-y-5">
+                  <div>
+                    <Label htmlFor="fullName">First name or nickname</Label>
+                    <Input id="fullName" autoComplete="given-name" value={fullName} onChange={(e) => setFullName(e.target.value)} className="mt-2 h-11" />
+                  </div>
+                  <div>
+                    <Label htmlFor="state">State</Label>
+                    <Select value={stateName} onValueChange={setStateName}>
+                      <SelectTrigger id="state" className="mt-2 h-11">
+                        <SelectValue placeholder="Select your state" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {indianStates.map((st) => (
+                          <SelectItem key={st} value={st}>
+                            {st}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <div>
+                    <Label htmlFor="district">District</Label>
+                    <Input id="district" value={district} onChange={(e) => setDistrict(e.target.value)} className="mt-2 h-11" />
+                  </div>
+                  {age === "adult" && (
+                    <div>
+                      <Label htmlFor="mobile">Mobile number</Label>
+                      <Input
+                        id="mobile"
+                        type="tel"
+                        autoComplete="tel"
+                        placeholder="+91 XXXXX XXXXX"
+                        value={mobile}
+                        onChange={(e) => setMobile(e.target.value)}
+                        className="mt-2 h-11"
+                      />
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
-            <div>
-              <Label htmlFor="state">State</Label>
-              <Select value={formData.state} onValueChange={(value) => setFormData({...formData, state: value})}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select your state" />
-                </SelectTrigger>
-                <SelectContent>
-                  {indianStates.map((state) => (
-                    <SelectItem key={state} value={state}>{state}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <Label htmlFor="district">District</Label>
-              <Input
-                id="district"
-                type="text"
-                placeholder="Enter your district"
-                value={formData.district}
-                onChange={(e) => setFormData({...formData, district: e.target.value})}
-              />
-            </div>
-
-            <div className="flex items-center space-x-2">
+            <div className="flex items-start gap-3">
               <Checkbox
                 id="agreeToTerms"
-                checked={formData.agreeToTerms}
-                onCheckedChange={(checked) => setFormData({...formData, agreeToTerms: checked as boolean})}
+                checked={agreeToTerms}
+                onCheckedChange={(c) => setAgreeToTerms(c === true)}
+                aria-labelledby="agreeToTerms-label"
+                className="mt-0.5"
               />
-              <Label htmlFor="agreeToTerms" className="text-sm">
-                I agree to VOYCE's <Link to="/terms-of-use" className="text-primary hover:underline">Terms of Use</Link> and <Link to="/privacy" className="text-primary hover:underline">Privacy Policy</Link>
+              <Label id="agreeToTerms-label" htmlFor="agreeToTerms" className="text-sm font-normal leading-relaxed">
+                I agree to VOYCE&rsquo;s{" "}
+                <Link to="/terms-of-use" className="text-primary hover:underline">
+                  Terms of Use
+                </Link>{" "}
+                and{" "}
+                <Link to="/privacy" className="text-primary hover:underline">
+                  Privacy Policy
+                </Link>
+                .
               </Label>
             </div>
 
-            <div className="flex items-center space-x-2">
-              <Checkbox
-                id="subscribeNewsletter"
-                checked={formData.subscribeNewsletter}
-                onCheckedChange={(checked) => setFormData({...formData, subscribeNewsletter: checked as boolean})}
-              />
-              <Label htmlFor="subscribeNewsletter" className="text-sm">
-                Subscribe to mental wellness newsletter
-              </Label>
-            </div>
-
-            <Button 
-              type="submit" 
-              className="w-full" 
-              disabled={!formData.agreeToTerms || isSubmitting}
-            >
-              {isSubmitting ? "Creating Account..." : "Create Account"}
+            <Button type="submit" className="h-12 w-full rounded-full text-base" disabled={isSubmitting || age === "child"}>
+              {isSubmitting ? "Creating your account…" : "Create free account"}
+              {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />}
             </Button>
 
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground">
-                Already have an account?{" "}
-                <Link to="/login" className="text-primary hover:underline">
-                  Sign in
-                </Link>
-              </p>
-            </div>
-          </form>
+            <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+              <Lock className="h-3.5 w-3.5" aria-hidden="true" />
+              Your journal stays private. You can delete your account any time.
+            </p>
 
-          <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-            <div className="flex flex-col items-center">
-              <Shield className="h-8 w-8 text-primary mb-2" />
-              <p className="text-xs text-muted-foreground">Your data is secure</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Users className="h-8 w-8 text-primary mb-2" />
-              <p className="text-xs text-muted-foreground">Free to start. Delete anytime.</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <Brain className="h-8 w-8 text-primary mb-2" />
-              <p className="text-xs text-muted-foreground">Expert guidance</p>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
+            <p className="text-center text-sm text-muted-foreground">
+              Already have an account?{" "}
+              <Link to="/login" className="text-primary hover:underline">
+                Sign in
+              </Link>
+            </p>
+          </form>
+        )}
+      </div>
+    </PageShell>
   );
 }

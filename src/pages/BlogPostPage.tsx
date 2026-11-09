@@ -43,7 +43,7 @@ export default function BlogPostPage() {
       {post && (
         <SEOHead 
           title={post.title}
-          description={post.content?.substring(0, 160) || 'VOYCE-X Blog Post'}
+          description={post.content?.substring(0, 160) || 'VOYCE Blog Post'}
           keywords="mental health, mindfulness, wellbeing"
           canonicalUrl={`https://voyce-x.lovable.app/blog/${post.slug}`}
           ogType="article"

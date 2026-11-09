@@ -11,7 +11,7 @@ export default function SilenceDiscomfortPage() {
   return (
     <>
       <SEOHead
-        title="Why Silence Makes People Uncomfortable | VOYCE-X"
+        title="Why Silence Makes People Uncomfortable | VOYCE"
         description="A KATA-style essay on why humans fear silence. Social conditioning, self-awareness, and the mind revealed."
         keywords="fear of silence, social anxiety, self-awareness, psychology of silence, VOYCE-X, KATA essay"
         ogType="article"

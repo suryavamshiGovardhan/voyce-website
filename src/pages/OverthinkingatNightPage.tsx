@@ -11,7 +11,7 @@ export default function OverthinkingAtNightPage() {
   return (
     <>
       <SEOHead
-        title="Why Humans Overthink More at Night | VOYCE-X"
+        title="Why Humans Overthink More at Night | VOYCE"
         description="A KATA-style explanation of why your brain spirals at night. Brain fatigue, cortisol, dopamine, and the silence that reveals everything."
         keywords="overthinking at night, night anxiety, cortisol cycle, brain fatigue, VOYCE-X, KATA essay"
         ogType="article"

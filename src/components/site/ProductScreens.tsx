@@ -154,7 +154,7 @@ export function DashboardScreen() {
     <div className="space-y-4">
       <div className="flex items-baseline justify-between">
         <p className="font-display text-lg">Today</p>
-        <span className="text-[10px] text-muted-foreground">Day 12 of your journey</span>
+        <span className="rounded-full bg-accent/15 px-2 py-0.5 text-[10px] font-medium text-foreground/70">Sample data</span>
       </div>
       <div className="grid grid-cols-3 gap-2.5">
         {[
@@ -192,7 +192,7 @@ export function SchoolDashboardScreen() {
       <div className="flex items-baseline justify-between">
         <p className="font-display text-lg">Class wellbeing overview</p>
         <span className="rounded-full border border-border px-2.5 py-1 text-[10px] text-muted-foreground">
-          Aggregated · no individual entries
+          Sample data · aggregated · no individual entries
         </span>
       </div>
       <div className="grid grid-cols-4 gap-3">

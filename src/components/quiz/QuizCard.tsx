@@ -95,7 +95,7 @@ export default function QuizCard({ quiz, onComplete }: QuizCardProps) {
             <div className="flex items-center justify-center gap-2 bg-primary/10 rounded-lg p-4">
               <Trophy className="h-5 w-5 text-primary" />
               <span className="font-medium">
-                +{quiz.points_reward} points earned!
+                Nice — you remembered most of it.
               </span>
             </div>
           )}

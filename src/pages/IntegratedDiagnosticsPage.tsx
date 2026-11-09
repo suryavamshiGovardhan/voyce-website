@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ReferenceNote from "@/components/site/ReferenceNote";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { IntegratedDiagnosticHub } from "@/components/diagnostics/IntegratedDiagnosticHub";
@@ -14,7 +15,8 @@ export default function IntegratedDiagnosticsPage() {
       <div className="min-h-screen flex flex-col bg-background">
         <Navbar />
         
-        <main className="flex-1 py-8 px-4">
+        <ReferenceNote />
+        <main id="main-content" className="flex-1 py-8 px-4">
           <div className="container mx-auto max-w-7xl">
             <IntegratedDiagnosticHub />
           </div>

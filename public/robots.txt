@@ -1,70 +1,25 @@
-# robots.txt for VOYCE Mental Health Platform
+# robots.txt for VOYCE — student & school wellbeing
 # https://voyce-x.lovable.app
-# Last updated: 2025-12-05
 
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Public pages - encourage indexing
-Allow: /voyce
-Allow: /path
-Allow: /tools
-Allow: /library
-Allow: /blog
-Allow: /blog/*
-Allow: /stress
-Allow: /trauma
-Allow: /adhd
-Allow: /brain
-Allow: /neuroscience
-Allow: /theories
-Allow: /dsm5
-Allow: /dsm5-academy
-Allow: /dsm5-academy/*
-Allow: /icd9
-Allow: /icd9/*
-Allow: /diagnostics
-Allow: /newsletters
-Allow: /schools
-Allow: /aces
-Allow: /cds
-Allow: /mind-heart-gut
-Allow: /workbook
-Allow: /article/*
-Allow: /quizzes
-Allow: /leaderboard
-
-# Private/Auth pages - discourage indexing
+# Private / account / admin pages
 Disallow: /dashboard
 Disallow: /profile
 Disallow: /journal
-Disallow: /journal/*
 Disallow: /login
 Disallow: /signup
+Disallow: /forgot-password
+Disallow: /reset-password
 Disallow: /drafts
 Disallow: /blog/create
-Disallow: /blog/edit/*
+Disallow: /blog/edit/
+Disallow: /admin
+Disallow: /invisible-inheritance/test/
 
-# API endpoints and functions
-Disallow: /api/
-Disallow: /_next/
-Disallow: /supabase/
-
-# Crawl delay for respectful crawling
-Crawl-delay: 1
-
-# Sitemap location
-Sitemap: https://voyce-x.lovable.app/sitemap.xml
-
-# Additional directives for specific bots
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
+# CAM moved to its own site: https://suryavamshigovardhan.github.io/cam-website/
+Disallow: /cam
 
 User-agent: GPTBot
 Disallow: /
@@ -74,3 +29,5 @@ Disallow: /
 
 User-agent: CCBot
 Disallow: /
+
+Sitemap: https://voyce-x.lovable.app/sitemap.xml

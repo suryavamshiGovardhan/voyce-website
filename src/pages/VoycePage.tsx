@@ -92,7 +92,7 @@ export default function VoycePage() {
       title: "Future Frontiers: Stress Research and Innovation",
       icon: TrendingUp,
       image: "https://images.unsplash.com/photo-1559757175-6db7c2c2e1aa?w=800&q=80",
-      content: "The future of stress research lies in personalized medicine, epigenetics, and AI-driven interventions. Scientists are developing stress vaccines, genetic tests for stress susceptibility, and real-time biomarker monitoring. Virtual reality therapy, biofeedback devices, and personalized meditation programs represent the cutting edge. VOYCE-X positions itself at this intersection of ancient wisdom and modern technology, preparing for a future where stress management is as personalized as our fingerprints."
+      content: "The future of stress research lies in personalized medicine, epigenetics, and AI-driven interventions. Scientists are developing stress vaccines, genetic tests for stress susceptibility, and real-time biomarker monitoring. Virtual reality therapy, biofeedback devices, and personalized meditation programs represent the cutting edge. VOYCE positions itself at this intersection of ancient wisdom and modern technology, preparing for a future where stress management is as personalized as our fingerprints."
     }
   ];
 
@@ -143,7 +143,7 @@ export default function VoycePage() {
             <h2 className="text-4xl font-light text-slate-800 mb-8">Stress — The Complete Guide</h2>
             <div className="max-w-3xl mx-auto p-6 bg-muted rounded-2xl border border-border mb-12">
               <p className="text-lg italic text-orange-800 leading-relaxed">
-                🧠 "You cannot heal what you cannot understand. Stress is a language, VOYCE-X is the translator."
+                🧠 "You cannot heal what you cannot understand. Stress is a language, VOYCE is the translator."
               </p>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function VoycePage() {
               className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-foreground px-12 py-4 rounded-2xl text-lg haptic-btn shadow-lg"
             >
               <a href="https://www.instagram.com/suryavamshiiii" target="_blank" rel="noopener noreferrer">
-                Follow VOYCE-X on Instagram
+                Follow VOYCE on Instagram
                 <Instagram className="ml-2 h-5 w-5" />
               </a>
             </Button>
@@ -304,14 +304,14 @@ export default function VoycePage() {
           onClick={() => {
             if (navigator.share) {
               navigator.share({
-                title: 'VOYCE-X - Mental Health Management',
+                title: 'VOYCE - Mental Health Management',
                 text: 'Mental Clarity, Emotional Freedom',
                 url: window.location.href
               });
             }
             hapticFeedback.onClick();
           }}
-          aria-label="Share VOYCE-X"
+          aria-label="Share VOYCE"
         >
           <Share2 className="h-5 w-5 text-slate-600" />
         </Button>
