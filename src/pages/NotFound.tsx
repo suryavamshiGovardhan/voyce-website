@@ -1,66 +1,43 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Home, ArrowLeft, Search } from "lucide-react";
-import { SEOHead } from "@/components/SEOHead";
+import { Link, useLocation } from "react-router-dom";
+import { ArrowRight, Compass, BookOpen, Wind, HelpCircle } from "lucide-react";
+import PageShell from "@/components/site/PageShell";
+import { Section } from "@/components/site/primitives";
+import { PageHero, FeatureGrid } from "@/components/site/value";
 
 const NotFound = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-
   useEffect(() => {
-    // Log 404 errors in development only
-    if (import.meta.env.DEV) {
-      console.error("404 Error: Non-existent route:", location.pathname);
-    }
+    if (import.meta.env.DEV) console.error("404 Error: Non-existent route:", location.pathname);
   }, [location.pathname]);
 
   return (
-    <>
-      <SEOHead 
-        title="Page Not Found"
-        description="The page you're looking for doesn't exist."
-        noindex
+    <PageShell title="Page not found" description="The page you're looking for doesn't exist." noindex>
+      <PageHero
+        eyebrow="404 · Page not found"
+        title={<>This page wandered off. <span className="text-primary">You don't have to.</span></>}
+        lede="The link may be old or mistyped. Here are the places most people are looking for."
+        primary={{ to: "/", label: "Go to the home page" }}
+        secondary={{ to: "/start-here", label: "Start here" }}
       />
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary/20 to-background p-4">
-        <div className="max-w-md w-full text-center space-y-6 animate-fade-in">
-          <div className="relative">
-            <div className="text-9xl font-bold text-primary/10">404</div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Search className="h-24 w-24 text-primary/30 animate-pulse" />
-            </div>
-          </div>
-          
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold text-foreground">
-              Page Not Found
-            </h1>
-            <p className="text-muted-foreground">
-              The page you're looking for doesn't exist or has been moved.
-              Let's get you back on track.
-            </p>
-          </div>
-
-          <div className="flex gap-3 justify-center pt-4">
-            <Button
-              onClick={() => navigate(-1)}
-              variant="outline"
-              className="gap-2"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Go Back
-            </Button>
-            <Button
-              onClick={() => navigate('/')}
-              className="gap-2"
-            >
-              <Home className="h-4 w-4" />
-              Go Home
-            </Button>
-          </div>
-        </div>
-      </div>
-    </>
+      <Section className="py-14 sm:py-20">
+        <FeatureGrid
+          cols={4}
+          items={[
+            { icon: <Compass className="h-5 w-5" />, title: "How it works", body: "What VOYCE is, in five steps.", to: "/how-it-works", cta: "See how" },
+            { icon: <Wind className="h-5 w-5" />, title: "Calm practices", body: "Breathing and grounding tools.", to: "/tools", cta: "Try one" },
+            { icon: <BookOpen className="h-5 w-5" />, title: "Library", body: "Short reads on the mind.", to: "/library", cta: "Browse" },
+            { icon: <HelpCircle className="h-5 w-5" />, title: "FAQ", body: "Quick answers to common questions.", to: "/faq", cta: "Read" },
+          ]}
+        />
+        <p className="mt-10 text-center text-sm text-muted-foreground">
+          Still lost?{" "}
+          <Link to="/contact" className="v-link inline-flex items-center font-medium text-primary">
+            Tell us which link broke <ArrowRight className="v-arrow ml-1 h-3.5 w-3.5" aria-hidden />
+          </Link>
+        </p>
+      </Section>
+    </PageShell>
   );
 };
 

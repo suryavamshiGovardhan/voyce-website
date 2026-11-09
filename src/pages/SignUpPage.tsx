@@ -328,7 +328,7 @@ export default function SignUpPage() {
 
             <Button type="submit" className="h-12 w-full rounded-full text-base" disabled={isSubmitting || age === "child"}>
               {isSubmitting ? "Creating your account…" : "Create free account"}
-              {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />}
+              {!isSubmitting && <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />}
             </Button>
 
             <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">

@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { PageHero, NextStep, LeaveWith } from "@/components/site/value";
+
 import { hapticFeedback } from "@/utils/hapticFeedback";
 import { Heart, Send, FileText, MessageSquare, Loader2 } from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
@@ -79,20 +80,10 @@ export default function WorkbookPage() {
       />
       <div className="min-h-screen bg-background">
         <Navbar />
-        <EnhancedMusicPlayer />
       
-      <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6">
-            VOYCE <span className="text-primary">Workshop</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Your guided journey through mental clarity and emotional freedom. 
-            Explore, reflect, and share your unique VOYCE story.
-          </p>
-        </div>
-
+      <PageHero eyebrow="Workbook" title={<>Reflect, write, <span className="text-primary">and see yourself more clearly.</span></>} lede="Guided prompts that help you slow down and put your experience into words — and, if you want, share your story with the community." />
+      <div className="container mx-auto px-4 py-12 sm:py-16">
+        <LeaveWith className="mb-12" items={["Guided prompts to reflect at your own pace", "A clearer picture of what you are carrying", "The option to share — or keep it to yourself"]} />
         {/* Tabbed Interface */}
         <Tabs defaultValue="workbook" className="w-full">
           <TabsList className="grid w-full grid-cols-2 mb-8 bg-card">
@@ -267,6 +258,7 @@ export default function WorkbookPage() {
         </Card>
       </div>
 
+      <NextStep title="Prefer something quicker?" body="A two-minute private check-in works too." primary={{ to: "/start-here", label: "Start a check-in" }} secondary={{ to: "/tools", label: "Try a practice" }} />
       <Footer />
     </div>
     </>

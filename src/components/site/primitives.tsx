@@ -5,16 +5,27 @@ import { cn } from "@/lib/utils";
 /* Reveal — gentle scroll-in animation (respects reduced motion)       */
 /* ------------------------------------------------------------------ */
 
+const HIDDEN = {
+  up: "opacity-0 translate-y-6",
+  left: "opacity-0 -translate-x-6",
+  right: "opacity-0 translate-x-6",
+  scale: "opacity-0 scale-[0.97]",
+  fade: "opacity-0",
+} as const;
+
 export function Reveal({
   children,
   delay = 0,
   className,
   as: Tag = "div",
+  variant = "up",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
   as?: ElementType;
+  /** Direction the content arrives from. */
+  variant?: "up" | "left" | "right" | "scale" | "fade";
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(false);
@@ -46,8 +57,8 @@ export function Reveal({
       ref={ref as never}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
-        "transition-all duration-700 ease-out motion-reduce:transition-none",
-        shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2",
+        "transition-[opacity,transform] duration-700 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
+        shown ? "opacity-100 translate-x-0 translate-y-0 scale-100" : HIDDEN[variant],
         className,
       )}
     >
@@ -68,7 +79,10 @@ export function Section({
   id,
   as: Tag = "section",
   ariaLabel,
+  hero = false,
 }: {
+  /** Adds the slow-drifting hero atmosphere behind the content. */
+  hero?: boolean;
   children: ReactNode;
   className?: string;
   containerClassName?: string;
@@ -84,8 +98,15 @@ export function Section({
     primary: "bg-primary/5 text-foreground",
   };
   return (
-    <Tag id={id} aria-label={ariaLabel} className={cn("py-20 sm:py-28", tones[tone], className)}>
-      <div className={cn("mx-auto w-full max-w-6xl px-5 sm:px-8", containerClassName)}>{children}</div>
+    <Tag
+      id={id}
+      aria-label={ariaLabel}
+      className={cn("py-20 sm:py-28", tones[tone], hero && "relative isolate overflow-hidden", className)}
+    >
+      {hero && <div className="v-hero-glow" aria-hidden />}
+      <div className={cn("mx-auto w-full max-w-6xl px-5 sm:px-8", hero && "relative z-10", containerClassName)}>
+        {children}
+      </div>
     </Tag>
   );
 }
@@ -171,9 +192,8 @@ export function QuietCard({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border bg-card p-7 shadow-[0_1px_2px_hsl(var(--foreground)/0.04)]",
-        interactive &&
-          "transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_18px_40px_-24px_hsl(var(--foreground)/0.35)] motion-reduce:hover:translate-y-0",
+        "v-card p-7",
+        interactive && "v-card-hover group",
         className,
       )}
     >

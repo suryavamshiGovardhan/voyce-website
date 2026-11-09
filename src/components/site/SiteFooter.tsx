@@ -127,11 +127,11 @@ export default function SiteFooter() {
                   {col.links.map((link) => (
                     <li key={link.label}>
                       {link.to.startsWith("http") ? (
-                        <a href={link.to} target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/80 transition-colors hover:text-primary">
+                        <a href={link.to} target="_blank" rel="noopener noreferrer" className="v-link text-sm text-foreground/80 transition-colors hover:text-primary">
                         {link.label}
                       </a>
                       ) : (
-                      <Link to={link.to} className="text-sm text-foreground/80 transition-colors hover:text-primary">
+                      <Link to={link.to} className="v-link text-sm text-foreground/80 transition-colors hover:text-primary">
                         {link.label}
                       </Link>
                       )}
@@ -149,7 +149,7 @@ export default function SiteFooter() {
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
               {BEGIN_AGAIN.map((item) => (
                 <li key={item.to}>
-                  <Link to={item.to} className="text-sm text-foreground/80 transition-colors hover:text-primary">
+                  <Link to={item.to} className="v-link text-sm text-foreground/80 transition-colors hover:text-primary">
                     {item.label}
                   </Link>
                 </li>

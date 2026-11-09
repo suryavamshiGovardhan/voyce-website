@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import TraumaContent from "@/components/content/TraumaContent";
 import { CherryBlossomAccent, PagodaAccent } from "@/components/CulturalPatterns";
@@ -30,20 +30,17 @@ export default function TraumaPage() {
       
       <div className="relative z-10">
         <Navbar />
-        <EnhancedMusicPlayer />
         
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6 font-eastasia">
-              <span className="text-eastasia-cherry">Trauma</span> Recovery
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-zen">
-              心の癒し - Transform wounds into wisdom through the sacred alchemy of healing, integrating 
-              ancient Japanese principles of resilience with modern trauma-informed approaches for complete restoration.
-            </p>
-          </div>
+        <PageHero
+          eyebrow="Learn · Trauma & healing"
+          title={<>Understanding trauma, <span className="text-primary">gently.</span></>}
+          lede="What trauma is, how it can show up in the body and mind, and the paths people use to heal — written to inform, not to diagnose. Go at your own pace."
+          note="Educational reading — not a diagnosis. Take what helps, leave the rest."
+        />
+        <div className="container mx-auto px-4 py-12 sm:py-16">
+          <LeaveWith className="mb-10" items={["The difference between acute, chronic and complex trauma", "Common signs in the body, mood and relationships", "Therapy approaches that are known to help", "Where to find support if this feels close to home"]} />
 
-          <div className="bg-card rounded-2xl p-8 border border-eastasia-cherry/20 shadow-2xl">
+          <div className="v-learn-body">
             <TraumaContent />
           </div>
 
@@ -64,6 +61,12 @@ export default function TraumaPage() {
           <ShareStoryButton />
         </div>
 
+        <NextStep
+          title="You don't have to carry this alone."
+          body="If something here feels personal, talking to a trusted adult or a professional is a strong first step."
+          primary={{ to: "/safety", label: "See support options" }}
+          secondary={{ to: "/start-here", label: "Start a private check-in" }}
+        />
         <Footer />
       </div>
     </div>

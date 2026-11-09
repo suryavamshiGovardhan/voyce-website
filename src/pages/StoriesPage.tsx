@@ -96,12 +96,13 @@ function StoriesPage() {
           {!selectedStory ? (
             <>
               {/* Stories List */}
-              <header className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Stories
+              <header className="v-rise mb-12 text-center">
+                <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-primary">Stories</p>
+                <h1 className="font-display text-4xl leading-[1.08] tracking-tight text-foreground md:text-5xl">
+                  You are not the only one <span className="text-primary">who feels this way.</span>
                 </h1>
-                <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-                  Real moments of quiet truth. Anonymous, grounded, human.
+                <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">
+                  Short, anonymous stories about quiet moments of truth. Read one, then take a minute to reflect on what it stirred in you.
                 </p>
               </header>
 
@@ -109,7 +110,7 @@ function StoriesPage() {
                 {stories.map((story) => (
                   <Card 
                     key={story.id}
-                    className="p-6 hover:shadow-lg transition-all cursor-pointer border-l-4 border-l-green-500/50 hover:border-l-green-500"
+                    className="v-card v-card-hover group cursor-pointer border-l-4 border-l-primary/40 p-6 hover:border-l-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     onClick={() => setSelectedStory(story)}
                     role="button"
                     tabIndex={0}
@@ -117,15 +118,15 @@ function StoriesPage() {
                     aria-label={`Read story: ${story.title}`}
                   >
                     <h2 className="text-xl font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <BookOpen className="h-5 w-5 text-green-500 flex-shrink-0" aria-hidden="true" />
+                      <BookOpen className="h-5 w-5 text-primary flex-shrink-0" aria-hidden="true" />
                       {story.title}
                     </h2>
                     <p className="text-muted-foreground leading-relaxed">
                       {story.excerpt}
                     </p>
-                    <div className="mt-4 flex items-center text-green-600 dark:text-green-400 text-sm font-medium">
+                    <div className="mt-4 flex items-center text-primary text-sm font-medium">
                       Read more
-                      <ArrowRight className="h-4 w-4 ml-1" aria-hidden="true" />
+                      <ArrowRight className="v-arrow h-4 w-4 ml-1" aria-hidden="true" />
                     </div>
                   </Card>
                 ))}

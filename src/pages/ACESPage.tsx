@@ -1,7 +1,9 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { SEOHead } from "@/components/SEOHead";
+import { canonicalFor } from "@/components/SEOHead";
+import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ComprehensiveContent from "@/components/ComprehensiveContent";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import ACESContent from "@/components/content/ACESContent";
@@ -51,22 +53,20 @@ const acesKeyFacts = [
 export default function ACESPage() {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Adverse childhood experiences (ACEs)" description="What ACEs are, how early stress can affect health later, and what builds resilience and healing." canonicalUrl={canonicalFor("/aces")} />
       <Navbar />
       <ReadingProgress />
-      <EnhancedMusicPlayer />
       
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6">
-            <span className="text-primary">ACEs</span> Impact
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Understanding Adverse Childhood Experiences and their lasting impact on health, 
-            behavior, and life outcomes — plus pathways to healing and resilience.
-          </p>
-        </div>
+      <PageHero
+        eyebrow="Learn · Childhood experiences"
+        title={<>Adverse childhood experiences, <span className="text-primary">and the way forward.</span></>}
+        lede="What ACEs are, how early stress can affect health and behaviour later, what the Indian context looks like, and — most importantly — what builds resilience and healing."
+        note="Educational reading — not a diagnosis. Take what helps, leave the rest."
+      />
+      <div className="container mx-auto px-4 py-12 sm:py-16">
+        <LeaveWith className="mb-10" items={["The categories researchers use for ACEs", "How early stress can affect the body over time", "The protective factors that build resilience", "Healing paths for young people and families"]} />
 
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-2xl mb-12">
+        <div className="v-learn-body mb-12">
           <ACESContent />
         </div>
 
@@ -94,6 +94,12 @@ export default function ACESPage() {
         <ShareStoryButton />
       </div>
 
+      <NextStep
+        title="Resilience is built, not born."
+        body="If this topic feels heavy, please pause — and reach out to someone you trust."
+        primary={{ to: "/safety", label: "See support options" }}
+        secondary={{ to: "/trauma", label: "Read about healing" }}
+      />
       <Footer />
     </div>
   );

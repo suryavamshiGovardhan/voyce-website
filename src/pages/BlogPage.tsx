@@ -11,6 +11,8 @@ import { AlertCircle, PenSquare } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { initializeSampleBlogs } from '@/utils/initializeSampleBlogs';
 import { SEOHead } from '@/components/SEOHead';
+import { PageHero, NextStep, LeaveWith } from "@/components/site/value";
+
 
 export default function BlogPage() {
   const { blogs, loading, error, refetch } = useBlogs();
@@ -50,17 +52,16 @@ export default function BlogPage() {
       />
       <div className="min-h-screen bg-background">
       <Navbar />
-      <main className="container mx-auto px-4 py-8">
+      <PageHero
+        eyebrow="VOYCE Journal"
+        title={<>Slow reads <span className="text-primary">for an unquiet mind.</span></>}
+        lede="Essays, stories and ideas on psychology, philosophy and growing up — each one short enough to finish, and leaves you with one question worth keeping."
+        primary={{ to: "/series", label: "Start with The Unheard Mind" }}
+        secondary={{ to: "/library", label: "Browse the library" }}
+      />
+      <main className="container mx-auto px-4 py-12 sm:py-16">
         <div className="max-w-4xl mx-auto">
-          <header className="text-center mb-12">
-            <p className="text-xs uppercase tracking-[0.3em] text-primary/80 mb-3 font-medium">VOYCE Journal</p>
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-foreground mb-4 leading-tight">
-              VOYCE Blog
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-2xl mx-auto leading-relaxed">
-              Insights, stories, and resources for mental health and wellbeing — slow reads for an unquiet mind.
-            </p>
-            {user && (
+          {user && (
               <Button asChild size="lg">
                 <Link to="/blog/create">
                   <PenSquare className="mr-2 h-5 w-5" />
@@ -68,10 +69,9 @@ export default function BlogPage() {
                 </Link>
               </Button>
             )}
-          </header>
 
           {/* Featured: The Unheard Mind series */}
-          <Card className="overflow-hidden mb-8 border-border bg-background">
+          <Card className="v-card v-card-hover overflow-hidden mb-8 border-border bg-background">
             <CardHeader>
               <Badge className="w-fit mb-2 bg-muted text-primary border border-border hover:bg-muted">VOYCE Original Series</Badge>
               <CardTitle className="font-display text-3xl md:text-4xl text-foreground">
@@ -92,7 +92,7 @@ export default function BlogPage() {
 
           {/* Featured Philosophy Articles */}
           <div className="space-y-6 mb-8">
-            <Card className="overflow-hidden border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
+            <Card className="v-card v-card-hover overflow-hidden border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
               <CardHeader>
                 <Badge className="w-fit mb-2" variant="outline">Featured Philosophy</Badge>
                 <CardTitle className="text-2xl">
@@ -114,7 +114,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
+            <Card className="v-card v-card-hover overflow-hidden border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
               <CardHeader>
                 <Badge className="w-fit mb-2" variant="outline">Featured Philosophy</Badge>
                 <CardTitle className="text-2xl">
@@ -136,7 +136,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-border bg-gradient-to-br from-green-500/5 to-emerald-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-green-500/5 to-emerald-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted text-green-600 border-border">21-Day Protocol</Badge>
                 <CardTitle className="text-2xl">
@@ -158,7 +158,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-border bg-gradient-to-br from-blue-500/5 to-cyan-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-blue-500/5 to-cyan-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted text-blue-600 border-border">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -180,7 +180,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-border bg-gradient-to-br from-amber-500/5 to-orange-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-amber-500/5 to-orange-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted text-amber-600 border-border">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -202,7 +202,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-border bg-gradient-to-br from-indigo-500/5 to-violet-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-indigo-500/5 to-violet-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted text-indigo-600 border-border">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -224,7 +224,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-slate-500/20 bg-gradient-to-br from-slate-500/5 to-gray-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-slate-500/20 bg-gradient-to-br from-slate-500/5 to-gray-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-slate-500/10 text-slate-600 border-slate-500/20">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -246,7 +246,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-border bg-gradient-to-br from-rose-500/5 to-pink-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-rose-500/5 to-pink-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted text-rose-600 border-border">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -268,7 +268,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-border bg-gradient-to-br from-teal-500/5 to-emerald-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-teal-500/5 to-emerald-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted text-teal-600 border-border">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -290,7 +290,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden border-border bg-gradient-to-br from-yellow-500/5 to-amber-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-yellow-500/5 to-amber-500/5">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted text-yellow-600 border-border">Personal Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -381,6 +381,12 @@ export default function BlogPage() {
           )}
         </div>
       </main>
+      <NextStep
+        title="Read something that stayed with you?"
+        body="Take a minute to notice how it landed — privately."
+        primary={{ to: "/start-here", label: "Start a private check-in" }}
+        secondary={{ to: "/stories", label: "Read real stories" }}
+      />
       <Footer />
     </div>
     </>

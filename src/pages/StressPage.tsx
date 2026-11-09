@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import StressContent from "@/components/content/StressContent";
 import { ModuleTracker } from "@/components/engagement/ModuleTracker";
@@ -19,20 +19,17 @@ export default function StressPage() {
       />
       <div className="min-h-screen bg-background">
         <Navbar />
-        <EnhancedMusicPlayer />
         
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6">
-              <span className="text-primary">Stress</span> Management
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Master the science of stress — understanding your body's response system 
-              and developing powerful tools for resilience and optimal well-being.
-            </p>
-          </div>
+        <PageHero
+          eyebrow="Learn · Stress"
+          title={<>Understand stress, <span className="text-primary">then lower it.</span></>}
+          lede="What happens in your body when pressure builds, how to notice it early, and small techniques you can use the same day — before an exam, after a hard conversation, or at night."
+          note="Educational reading — not a diagnosis. Take what helps, leave the rest."
+        />
+        <div className="container mx-auto px-4 py-12 sm:py-16">
+          <LeaveWith className="mb-10" items={["How the stress response (HPA axis) works, in plain words", "The early signs your body gives before stress peaks", "A handful of breathing and grounding techniques to try today", "When stress needs more than self-help \u2014 and who to talk to"]} />
 
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-2xl">
+          <div className="v-learn-body">
             <StressContent />
             <ModuleTracker 
               moduleId="understanding-stress"
@@ -54,6 +51,12 @@ export default function StressPage() {
           <ShareStoryButton />
         </div>
 
+        <NextStep
+          title="Turn one idea into a two-minute practice."
+          body="Pick a calm tool, try it once, and notice what shifts."
+          primary={{ to: "/tools", label: "Try a practice" }}
+          secondary={{ to: "/start-here", label: "Or start a private check-in" }}
+        />
         <Footer />
       </div>
     </>

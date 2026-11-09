@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal } from "@/components/site/primitives";
@@ -19,7 +20,7 @@ export default function PartnersPage() {
       keywords="partner with VOYCE, school wellbeing partnership, contribute writing wellbeing"
       canonical="/partners"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <Reveal className="max-w-3xl">
           <Eyebrow>Partners</Eyebrow>
           <StatementHeading as="h1" className="text-4xl sm:text-5xl">
@@ -29,6 +30,9 @@ export default function PartnersPage() {
             VOYCE is early. We have not run large deployments, and we do not claim to have. If you want to
             build this properly with us, there is room.
           </Lede>
+        </Reveal>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["How partnerships with VOYCE work", "Who we are looking to work with", "A direct line to the team"]} />
         </Reveal>
       </Section>
 
@@ -50,7 +54,7 @@ export default function PartnersPage() {
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild size="lg" className="rounded-full px-7">
               <Link to="/contact">
-                Contact VOYCE <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                Contact VOYCE <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-7">

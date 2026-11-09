@@ -1,87 +1,85 @@
-import Navbar from "@/components/Navbar";
-import { BASE_PATH } from "@/lib/site";
-import Footer from "@/components/Footer";
-import { SEOHead } from "@/components/SEOHead";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Instagram, MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Mail, Instagram, MessageSquare, LifeBuoy } from "lucide-react";
+import PageShell from "@/components/site/PageShell";
+import { Reveal, Section } from "@/components/site/primitives";
+import { PageHero, NextStep } from "@/components/site/value";
+
+const CHANNELS = [
+  {
+    icon: <Mail className="h-5 w-5" aria-hidden />,
+    title: "Email",
+    body: "Questions, feedback, school or partnership enquiries.",
+    href: "mailto:voycexx@gmail.com",
+    label: "voycexx@gmail.com",
+  },
+  {
+    icon: <Instagram className="h-5 w-5" aria-hidden />,
+    title: "Instagram",
+    body: "Updates and behind-the-scenes from the founder.",
+    href: "https://www.instagram.com/suryavamshiiii",
+    label: "@suryavamshiiii",
+    external: true,
+  },
+];
 
 export default function ContactPage() {
   return (
-    <>
-      <SEOHead 
-        title="Contact | VOYCE"
-        description="Get in touch with the VOYCE team. We'd love to hear from you."
-        keywords="contact VOYCE-X, support, feedback"
+    <PageShell
+      title="Contact"
+      description="Get in touch with the VOYCE team — questions, feedback, school enquiries."
+      canonical="/contact"
+      keywords="contact VOYCE, support, feedback, schools"
+    >
+      <PageHero
+        eyebrow="Contact"
+        title={<>Talk to a real person <span className="text-primary">behind VOYCE.</span></>}
+        lede="Questions, feedback, or thinking about VOYCE for your school? Write to us — you will hear back from the team, not a bot."
       />
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <main className="container mx-auto px-4 py-12 max-w-4xl">
-          <h1 className="text-4xl font-bold text-foreground mb-4 text-center">Contact Us</h1>
-          <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Have questions, feedback, or just want to say hello? We'd love to hear from you.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Mail className="h-6 w-6 text-primary" />
-                  Email
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-3">
-                  For general inquiries and support
+      <Section className="py-14 sm:py-20">
+        <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
+          {CHANNELS.map((c, i) => (
+            <Reveal key={c.title} delay={i * 90}>
+              <a
+                href={c.href}
+                {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="v-card v-card-hover group flex h-full flex-col p-7 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                <span className="v-chip mb-5">{c.icon}</span>
+                <h2 className="text-lg font-medium">{c.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.body}</p>
+                <span className="mt-5 font-medium text-primary">{c.label}</span>
+              </a>
+            </Reveal>
+          ))}
+          <Reveal delay={180} className="sm:col-span-2">
+            <div className="v-card flex flex-col gap-4 p-7 sm:flex-row sm:items-start">
+              <span className="v-chip shrink-0"><MessageSquare className="h-5 w-5" aria-hidden /></span>
+              <div>
+                <h2 className="text-lg font-medium">Share a thought instead</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  Ideas and stories help shape what we build. Leave yours on the{" "}
+                  <Link to="/thoughts" className="v-link font-medium text-primary">Thoughts page</Link>.
                 </p>
-                <a 
-                  href="mailto:voycexx@gmail.com" 
-                  className="text-primary hover:underline font-medium"
-                >
-                  voycexx@gmail.com
-                </a>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Instagram className="h-6 w-6 text-pink-500" />
-                  Instagram
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-3">
-                  Follow for updates and connect
-                </p>
-                <a 
-                  href="https://www.instagram.com/suryavamshiiii" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline font-medium"
-                >
-                  @suryavamshiiii
-                </a>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="mt-8 max-w-2xl mx-auto">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <MessageSquare className="h-6 w-6 text-green-500" />
-                Share Your Thoughts
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                VOYCE is a community-driven space. Your stories, feedback, and ideas help shape what we build. 
-                Visit our <a href={`${BASE_PATH}/thoughts`} className="text-primary hover:underline">Thoughts page</a> to share your voice.
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={240} className="sm:col-span-2">
+            <div className="flex gap-3 rounded-2xl border border-destructive/20 bg-destructive/5 p-5 text-sm leading-relaxed text-foreground/80">
+              <LifeBuoy className="mt-0.5 h-5 w-5 shrink-0 text-destructive" aria-hidden />
+              <p>
+                Email is not monitored around the clock. If you or someone you know is in danger right now, please
+                contact local emergency services or see our <Link to="/safety" className="v-link font-medium text-foreground">safety page</Link>.
               </p>
-            </CardContent>
-          </Card>
-        </main>
-        <Footer />
-      </div>
-    </>
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+      <NextStep
+        title="Bringing VOYCE to a school?"
+        body="See how the programme works for students, teachers and parents."
+        primary={{ to: "/schools", label: "VOYCE for schools" }}
+        secondary={{ to: "/how-it-works", label: "How it works" }}
+      />
+    </PageShell>
   );
 }

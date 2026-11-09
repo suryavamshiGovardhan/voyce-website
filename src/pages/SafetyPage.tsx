@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal } from "@/components/site/primitives";
 
@@ -30,7 +31,7 @@ export default function SafetyPage() {
       keywords="VOYCE safety, mental wellbeing safety, crisis helplines India, not a diagnosis"
       canonical="/safety"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <Reveal className="max-w-3xl">
           <Eyebrow>Safety</Eyebrow>
           <StatementHeading as="h1" className="text-4xl sm:text-5xl">
@@ -39,6 +40,9 @@ export default function SafetyPage() {
           <Lede>
             Being clear about our limits is part of the product. Here is the whole boundary, in plain language.
           </Lede>
+        </Reveal>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["What VOYCE will and won’t do", "How your data is protected", "Where to go for urgent help"]} />
         </Reveal>
       </Section>
 
@@ -99,6 +103,12 @@ export default function SafetyPage() {
           </Lede>
         </Reveal>
       </Section>
+      <NextStep
+        title="Feel safe enough to try it?"
+        body="Start with a private check-in. Nothing is shared unless you choose."
+        primary={{ to: "/start-here", label: "Start here" }}
+        secondary={{ to: "/faq", label: "Read the FAQ" }}
+      />
     </PageShell>
   );
 }

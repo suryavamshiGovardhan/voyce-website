@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import BrainContent from "@/components/content/BrainContent";
 import { SEOHead } from "@/components/SEOHead";
@@ -16,26 +16,29 @@ export default function BrainPage() {
       />
       <div className="min-h-screen bg-background">
         <Navbar />
-      <EnhancedMusicPlayer />
       
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6 japanese-heading">
-            <span className="text-primary">Brain</span> Mastery
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed japanese-text">
-            Unlock the infinite potential of your mind — exploring the magnificent architecture of consciousness 
-            through the convergence of ancient wisdom and cutting-edge neuroscientific discovery.
-          </p>
-        </div>
+      <PageHero
+        eyebrow="Learn · The brain"
+        title={<>How your brain <span className="text-primary">learns, feels and changes.</span></>}
+        lede="A guided tour of brain structure, networks, memory, emotion and neuroplasticity — so the way you think and feel makes a little more sense."
+        note="Educational reading — not a diagnosis. Take what helps, leave the rest."
+      />
+      <div className="container mx-auto px-4 py-12 sm:py-16">
+        <LeaveWith className="mb-10" items={["A simple map of the main brain regions and networks", "Why habits and practice physically reshape the brain", "How memory and emotion are linked", "Everyday habits that support focus and recovery"]} />
 
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-2xl">
+        <div className="v-learn-body">
           <BrainContent />
         </div>
 
         <ShareStoryButton />
       </div>
 
+      <NextStep
+        title="See the science in practice."
+        body="Stress is where brain science meets daily life."
+        primary={{ to: "/stress", label: "Read about stress" }}
+        secondary={{ to: "/tools", label: "Try a calm practice" }}
+      />
       <Footer />
     </div>
     </>

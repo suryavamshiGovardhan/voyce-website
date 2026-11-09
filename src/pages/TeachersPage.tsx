@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard, StepRail } from "@/components/site/primitives";
@@ -41,7 +42,7 @@ export default function TeachersPage() {
       keywords="teacher wellbeing tools, classroom wellbeing, student wellbeing signals, pastoral care tools"
       canonical="/teachers"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <div className="grid items-center gap-14 lg:grid-cols-[1fr_1fr]">
           <Reveal>
             <Eyebrow>For teachers</Eyebrow>
@@ -53,10 +54,10 @@ export default function TeachersPage() {
               right words, so a quiet term doesn&rsquo;t become a crisis nobody saw coming.
             </Lede>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="h-12 rounded-full px-7">
+              <Button asChild size="lg" className="v-sheen h-12 rounded-full px-7">
                 <Link to="/contact">
                   Explore teacher tools
-                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="h-12 rounded-full px-7">
@@ -70,6 +71,9 @@ export default function TeachersPage() {
             </BrowserFrame>
           </Reveal>
         </div>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["Class-level trends that add context you would otherwise miss", "Prompts for opening a wellbeing conversation without interrogating", "Clear steps for handing over to a counsellor"]} />
+        </Reveal>
       </Section>
 
       <Section tone="muted">

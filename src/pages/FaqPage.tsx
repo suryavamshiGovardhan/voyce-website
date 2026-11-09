@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal } from "@/components/site/primitives";
 
@@ -45,7 +46,7 @@ export default function FaqPage() {
       keywords="VOYCE FAQ, student wellbeing questions, privacy, is VOYCE therapy"
       canonical="/faq"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <Reveal className="max-w-3xl">
           <Eyebrow>FAQ</Eyebrow>
           <StatementHeading as="h1" className="text-4xl sm:text-5xl">
@@ -58,6 +59,9 @@ export default function FaqPage() {
             </a>
             .
           </Lede>
+        </Reveal>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["Straight answers on privacy, age and cost", "What VOYCE is not", "Who to contact when you are unsure"]} />
         </Reveal>
       </Section>
 
@@ -81,6 +85,12 @@ export default function FaqPage() {
           </Lede>
         </Reveal>
       </Section>
+      <NextStep
+        title="Still have a question?"
+        body="Write to us — a person on the team will reply."
+        primary={{ to: "/contact", label: "Get in touch" }}
+        secondary={{ to: "/safety", label: "Read safety boundaries" }}
+      />
     </PageShell>
   );
 }

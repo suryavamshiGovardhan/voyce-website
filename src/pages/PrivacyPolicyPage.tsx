@@ -1,19 +1,21 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { PageHero, NextStep, LeaveWith } from "@/components/site/value";
+
 
 export default function PrivacyPolicyPage() {
   return (
     <>
       <SEOHead 
-        title="Privacy Policy | VOYCE-X"
-        description="Privacy Policy for VOYCE-X. Learn how we collect, use, and protect your information."
-        keywords="privacy policy, data protection, VOYCE-X privacy"
+        title="Privacy Policy | VOYCE"
+        description="Privacy Policy for VOYCE. Learn how we collect, use, and protect your information."
+        keywords="privacy policy, data protection, VOYCE privacy"
       />
       <div className="min-h-screen bg-background">
         <Navbar />
-        <main className="container mx-auto px-4 py-12 max-w-4xl">
-          <h1 className="text-4xl font-bold text-foreground mb-8">Privacy Policy</h1>
+        <PageHero eyebrow="Legal" title="Privacy policy" lede="What we collect, why, and how you stay in control. Written to be read, not skimmed past." />
+        <main className="container mx-auto px-4 py-12 max-w-3xl sm:py-16">
           
           <div className="prose prose-slate dark:prose-invert max-w-none space-y-6">
             <p className="text-muted-foreground">
@@ -23,7 +25,7 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-foreground">1. Information We Collect</h2>
               <p className="text-muted-foreground">
-                VOYCE-X collects minimal information necessary to provide our educational and reflective services:
+                VOYCE collects minimal information necessary to provide our educational and reflective services:
               </p>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
                 <li>Account information (email, name) when you create an account</li>
@@ -38,7 +40,7 @@ export default function PrivacyPolicyPage() {
                 We use your information solely to:
               </p>
               <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>Provide and personalize your VOYCE-X experience</li>
+                <li>Provide and personalize your VOYCE experience</li>
                 <li>Save your journal entries and progress</li>
                 <li>Improve our educational content and features</li>
                 <li>Send occasional updates if you opt-in</li>

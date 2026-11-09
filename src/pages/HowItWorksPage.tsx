@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard } from "@/components/site/primitives";
@@ -52,7 +53,7 @@ export default function HowItWorksPage() {
       keywords="how voyce works, student wellbeing journey, emotional check-in, reflection tool"
       canonical="/how-it-works"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <Reveal className="max-w-3xl">
           <Eyebrow>How it works</Eyebrow>
           <StatementHeading as="h1" className="text-4xl sm:text-5xl">
@@ -62,6 +63,9 @@ export default function HowItWorksPage() {
             VOYCE doesn&rsquo;t ask you to explain your whole life before it becomes useful. It asks one small question,
             then builds from your answers.
           </Lede>
+        </Reveal>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["A clear picture of every step before you start", "What stays private, and what never leaves you", "Where VOYCE stops and real help begins"]} />
         </Reveal>
       </Section>
 
@@ -98,6 +102,12 @@ export default function HowItWorksPage() {
           </QuietCard>
         </Reveal>
       </Section>
+      <NextStep
+        title="Try the first step now."
+        body="Two minutes, private by default, no account needed."
+        primary={{ to: "/start-here", label: "Start with VOYCE" }}
+        secondary={{ to: "/students", label: "What students get" }}
+      />
     </PageShell>
   );
 }

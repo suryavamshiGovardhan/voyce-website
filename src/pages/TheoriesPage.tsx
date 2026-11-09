@@ -7,7 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { PageHero, NextStep, LeaveWith } from "@/components/site/value";
+
 import { hapticFeedback } from "@/utils/hapticFeedback";
 import { psychologyTheories, searchTheories, getTheoriesByCategory, getTheoriesByDifficulty } from "@/data/psychologyTheories";
 import { 
@@ -81,18 +82,11 @@ export default function TheoriesPage() {
       />
       <div className="min-h-screen bg-background">
         <Navbar />
-        <EnhancedMusicPlayer />
       
-      <div className="container mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6">
-            Psychology <span className="text-primary">Theories</span> Library
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Comprehensive collection of psychological, educational, and human development theories 
-            for mental health awareness, VOYCE workshops, and educational programs.
-          </p>
+      <PageHero eyebrow="Learn · Theories" title={<>The ideas behind <span className="text-primary">how people grow.</span></>} lede="A searchable library of psychology, education and human-development theories — each explained in plain language, from basic to advanced." />
+      <div className="container mx-auto px-4 py-12 sm:py-16">
+        <LeaveWith className="mb-12" items={["Plain-language summaries of major theories", "Who proposed each idea, and when", "Filters from beginner to advanced", "Ideas you can use in class, workshops or your own life"]} />
+        <div className="mb-12 text-center">
           <div className="flex justify-center mt-8">
             <Badge className="bg-muted text-primary text-lg px-6 py-2">
               <Book className="h-5 w-5 mr-2" />
@@ -342,6 +336,7 @@ export default function TheoriesPage() {
         </Card>
       </div>
 
+      <NextStep title="Want the ideas in story form?" body="The Unheard Mind explains eight concepts through real stories." primary={{ to: "/series", label: "Read the series" }} secondary={{ to: "/library", label: "Open the library" }} />
       <Footer />
     </div>
     </>

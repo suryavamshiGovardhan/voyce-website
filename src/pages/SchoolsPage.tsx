@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Mail, Instagram } from "lucide-react";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, StepRail } from "@/components/site/primitives";
@@ -27,7 +28,7 @@ export default function SchoolsPage() {
       keywords="school wellbeing, student wellbeing programme, school mental wellbeing pilot, privacy-first student check-in"
       canonical="/schools"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <Reveal className="max-w-3xl">
           <Eyebrow>For schools</Eyebrow>
           <StatementHeading as="h1" className="text-4xl sm:text-5xl">
@@ -41,13 +42,16 @@ export default function SchoolsPage() {
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" className="rounded-full px-7">
               <Link to="/contact">
-                Talk to us about a pilot <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                Talk to us about a pilot <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-7">
               <Link to="/how-it-works">See how it works</Link>
             </Button>
           </div>
+        </Reveal>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["A small, low-risk pilot shaped around your school", "Aggregated, non-identifying trends — never individual entries", "A short orientation for teachers and counsellors", "Clear escalation and safety boundaries"]} />
         </Reveal>
       </Section>
 
@@ -125,6 +129,12 @@ export default function SchoolsPage() {
           </p>
         </Reveal>
       </Section>
+      <NextStep
+        title="See whether VOYCE fits your school."
+        body="Write to us and we will walk you through a pilot."
+        primary={{ to: "/contact", label: "Talk to us" }}
+        secondary={{ to: "/teachers", label: "For teachers" }}
+      />
     </PageShell>
   );
 }

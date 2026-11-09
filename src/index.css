@@ -1058,3 +1058,113 @@
 .blog-content table { width: 100%; border-collapse: collapse; margin: 1.4em 0; font-size: 0.95rem; display: block; overflow-x: auto; }
 .blog-content th, .blog-content td { border-bottom: 1px solid hsl(var(--border)); padding: 0.6em 0.8em; text-align: left; vertical-align: top; }
 .blog-content th { font-weight: 700; background: hsl(var(--muted)); }
+
+/* ================================================================== */
+/* VOYCE design system — motion + surface tokens (redesign, Nov 2026)  */
+/* Calm, slow, never bouncy. Everything is off under reduced motion.   */
+/* ================================================================== */
+:root {
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 700ms;
+  --shadow-soft: 0 1px 2px hsl(var(--foreground) / 0.04), 0 8px 24px -16px hsl(var(--foreground) / 0.18);
+  --shadow-lift: 0 2px 4px hsl(var(--foreground) / 0.04), 0 22px 48px -24px hsl(var(--foreground) / 0.32);
+}
+
+/* Cards that gently rise on hover/focus */
+.v-card {
+  border-radius: 1.25rem;
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--card));
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--dur-base) var(--ease-calm), box-shadow var(--dur-base) var(--ease-calm),
+    border-color var(--dur-base) var(--ease-calm);
+}
+.v-card-hover:hover,
+.v-card-hover:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+  border-color: hsl(var(--primary) / 0.35);
+}
+
+/* Icon chip that warms up when its card is hovered */
+.v-chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 2.5rem; width: 2.5rem; border-radius: 9999px;
+  background: hsl(var(--primary) / 0.09); color: hsl(var(--primary));
+  transition: transform var(--dur-base) var(--ease-calm), background var(--dur-base) var(--ease-calm);
+}
+.group:hover .v-chip, .group:focus-within .v-chip { transform: scale(1.08) rotate(-4deg); background: hsl(var(--primary) / 0.16); }
+
+/* Arrow that nudges forward on hover */
+.v-arrow { transition: transform var(--dur-base) var(--ease-calm); }
+.group:hover .v-arrow, .group:focus-visible .v-arrow, a:hover > .v-arrow { transform: translateX(4px); }
+
+/* Underline that draws in on hover */
+.v-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px; background-repeat: no-repeat; background-position: 0 100%;
+  transition: background-size var(--dur-base) var(--ease-calm);
+}
+.v-link:hover, .v-link:focus-visible { background-size: 100% 1px; }
+
+/* Hero atmosphere: two soft colour fields that drift very slowly */
+.v-hero-glow { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.v-hero-glow::before, .v-hero-glow::after {
+  content: ""; position: absolute; border-radius: 9999px; filter: blur(64px); opacity: 0.55;
+}
+.v-hero-glow::before {
+  width: 38rem; height: 38rem; top: -14rem; right: -10rem;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.22), transparent 65%);
+  animation: v-drift 22s var(--ease-calm) infinite alternate;
+}
+.v-hero-glow::after {
+  width: 30rem; height: 30rem; bottom: -16rem; left: -8rem;
+  background: radial-gradient(circle, hsl(var(--accent) / 0.35), transparent 65%);
+  animation: v-drift 28s var(--ease-calm) infinite alternate-reverse;
+}
+@keyframes v-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-3rem, 2rem, 0) scale(1.08); }
+}
+
+/* Slow float for small decorative marks */
+.v-float { animation: v-float 7s ease-in-out infinite; }
+@keyframes v-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* Hero entrance: staggered rise for children */
+.v-rise > * { opacity: 0; transform: translateY(14px); animation: v-rise var(--dur-slow) var(--ease-calm) forwards; }
+.v-rise > *:nth-child(2) { animation-delay: 90ms; }
+.v-rise > *:nth-child(3) { animation-delay: 180ms; }
+.v-rise > *:nth-child(4) { animation-delay: 270ms; }
+.v-rise > *:nth-child(5) { animation-delay: 360ms; }
+@keyframes v-rise { to { opacity: 1; transform: none; } }
+
+/* Primary buttons: soft sheen sweep on hover */
+.v-sheen { position: relative; overflow: hidden; isolation: isolate; }
+.v-sheen::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, hsl(0 0% 100% / 0.22) 50%, transparent 70%);
+  transform: translateX(-120%); transition: transform 900ms var(--ease-calm);
+}
+.v-sheen:hover::after { transform: translateX(120%); }
+
+/* Breathing dot (used for "live / private" cues) */
+.v-breathe { animation: v-breathe 4.5s ease-in-out infinite; }
+@keyframes v-breathe { 0%, 100% { transform: scale(1); opacity: 0.55; } 50% { transform: scale(1.35); opacity: 1; } }
+
+/* Learn-page body frame */
+.v-learn-body {
+  border-radius: 1.5rem; border: 1px solid hsl(var(--border)); background: hsl(var(--card));
+  box-shadow: var(--shadow-soft); padding: 1.25rem;
+}
+@media (min-width: 640px) { .v-learn-body { padding: 2.25rem; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .v-hero-glow::before, .v-hero-glow::after, .v-float, .v-breathe { animation: none !important; }
+  .v-rise > * { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .v-card, .v-chip, .v-arrow, .v-link, .v-sheen::after { transition: none !important; }
+  .v-card-hover:hover, .v-card-hover:focus-within { transform: none; }
+  .group:hover .v-chip, .group:hover .v-arrow, a:hover > .v-arrow { transform: none; }
+}

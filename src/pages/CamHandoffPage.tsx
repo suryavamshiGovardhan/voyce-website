@@ -42,10 +42,10 @@ export default function CamHandoffPage() {
             VOYCE stays focused on wellbeing. Taking you to CAM now…
           </Lede>
           <div className="mt-9 flex justify-center">
-            <Button asChild size="lg" className="h-12 rounded-full px-7">
+            <Button asChild size="lg" className="v-sheen h-12 rounded-full px-7">
               <a href={target}>
                 Go to CAM
-                <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
               </a>
             </Button>
           </div>

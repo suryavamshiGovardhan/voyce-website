@@ -162,7 +162,7 @@ export default function StartHerePage() {
                   <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                     <Button asChild className="h-11 rounded-full px-6">
                       <Link to="/tools">
-                        Try a two-minute practice <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                        Try a two-minute practice <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
                       </Link>
                     </Button>
                     <Button asChild variant="outline" className="h-11 rounded-full px-6">

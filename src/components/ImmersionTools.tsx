@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Play, BookOpen, Headphones, Activity, Compass, Users, Brain, Heart, Eye } from "lucide-react";
-import JapaneseIcon from "./JapaneseIcon";
 import { PracticeModal } from "./PracticeModal";
 
 const immersionTools = [
@@ -152,22 +151,21 @@ export default function ImmersionTools() {
           return (
             <Card 
               key={tool.title}
-              className={`bg-black/40 backdrop-blur-sm ${tool.borderColor} ${tool.hoverBorder} zen-transition card-3d haptic-btn group min-h-[350px]`}
+              className="v-card v-card-hover group min-h-[320px] border-border"
             >
               <CardContent className="p-6 flex flex-col h-full">
                 <div className="flex items-center justify-between mb-4">
-                  <div className={`h-12 w-12 rounded-full bg-gradient-to-br from-slate-800/50 to-slate-600/50 flex items-center justify-center group-hover:scale-110 transition-transform border ${tool.borderColor}`}>
-                    <IconComponent className={`h-6 w-6 ${tool.color}`} />
+                  <div className="v-chip h-12 w-12">
+                    <IconComponent className="h-5 w-5" />
                   </div>
                   <div className="flex flex-col items-end">
-                    <JapaneseIcon type={tool.japaneseIcon as any} className={`${tool.color} w-6 h-6 float-3d`} />
-                    <span className={`text-xs ${tool.color} font-mono mt-1`}>{tool.intensity}</span>
+                    <span className="rounded-full bg-muted px-2.5 py-1 text-[0.7rem] font-medium text-muted-foreground">{tool.intensity}</span>
                   </div>
                 </div>
                 
-                <h3 className="text-foreground font-medium mb-2 text-lg">{tool.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-3 italic">
-                  "{tool.description}"
+                <h3 className="font-display text-xl tracking-tight text-foreground mb-2">{tool.title}</h3>
+                <p className="text-foreground/80 text-sm leading-relaxed mb-3">
+                  {tool.description}
                 </p>
                 
                 <div className="flex-grow">
@@ -179,7 +177,7 @@ export default function ImmersionTools() {
                     <span className="text-primary text-xs font-medium mb-2 block">Core Features:</span>
                     <div className="grid grid-cols-2 gap-1">
                       {tool.features.map((feature) => (
-                        <span key={feature} className="bg-muted text-muted-foreground text-xs px-2 py-1 rounded text-center">
+                        <span key={feature} className="rounded-full border border-border px-2 py-1 text-center text-[0.7rem] text-muted-foreground">
                           {feature}
                         </span>
                       ))}
@@ -188,12 +186,12 @@ export default function ImmersionTools() {
                 </div>
                 
                 <div className="flex items-center justify-between mt-auto">
-                  <span className={`${tool.color} text-xs font-mono`}>
+                  <span className="text-xs text-muted-foreground">
                     {tool.sessions}
                   </span>
                   <Button
                     size="sm"
-                    className={`${tool.bgColor} hover:opacity-90 text-foreground haptic-btn text-xs px-4`}
+                    className="v-sheen rounded-full px-4 text-xs"
                     onClick={() => setActiveTool(tool.title)}
                   >
                     Begin Practice
@@ -206,7 +204,7 @@ export default function ImmersionTools() {
       </div>
       
       <div className="mt-12">
-        <div className="bg-black/30 backdrop-blur-sm border border-sky-300/30 rounded-lg p-8">
+        <div className="v-card p-8">
           <div className="text-center">
             <h3 className="text-foreground text-2xl font-light mb-4">The Path of No Path</h3>
             <p className="text-muted-foreground text-sm leading-relaxed italic max-w-3xl mx-auto mb-6">
@@ -215,9 +213,9 @@ export default function ImmersionTools() {
               in the moment when you realize there was never anyone there to be enlightened."
             </p>
             <div className="flex items-center justify-center space-x-4">
-              <JapaneseIcon type="lotus" className="text-sky-400 w-6 h-6" />
+              
               <span className="text-primary font-light">Begin Where You Are</span>
-              <JapaneseIcon type="zen" className="text-primary w-6 h-6" />
+              
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard, StepRail } from "@/components/site/primitives";
@@ -39,7 +40,7 @@ export default function ParentsPage() {
       keywords="parent guidance teenage wellbeing, how to talk to your teenager, signs of stress in students"
       canonical="/parents"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
             <Eyebrow>For parents</Eyebrow>
@@ -51,10 +52,10 @@ export default function ParentsPage() {
               something costs less than staying quiet. VOYCE helps you notice earlier and ask better.
             </Lede>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="h-12 rounded-full px-7">
+              <Button asChild size="lg" className="v-sheen h-12 rounded-full px-7">
                 <Link to="/resources">
                   Explore parent support
-                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="h-12 rounded-full px-7">
@@ -68,6 +69,9 @@ export default function ParentsPage() {
             </PhoneFrame>
           </Reveal>
         </div>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["The quiet signs worth noticing earlier", "Better questions to open a conversation", "Guides written for parents, not clinicians", "Clarity on what VOYCE does — and doesn’t — do"]} />
+        </Reveal>
       </Section>
 
       <Section tone="muted">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard, StepRail } from "@/components/site/primitives";
@@ -27,7 +28,7 @@ export default function StudentsPage() {
       keywords="student wellbeing, student mental wellbeing platform, exam stress, emotional awareness for students"
       canonical="/students"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
             <Eyebrow>For students</Eyebrow>
@@ -39,10 +40,10 @@ export default function StudentsPage() {
               a quiet, private space to notice what&rsquo;s going on — in your own words, at your own pace.
             </Lede>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="h-12 rounded-full px-7">
+              <Button asChild size="lg" className="v-sheen h-12 rounded-full px-7">
                 <Link to="/start-here">
                   Start here — no account
-                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="h-12 rounded-full px-7">
@@ -59,6 +60,9 @@ export default function StudentsPage() {
             </PhoneFrame>
           </Reveal>
         </div>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["A private place to notice how you are really doing", "Words for feelings that are hard to name", "Small practices for stressful days", "Clear signposts if you ever need more help"]} />
+        </Reveal>
       </Section>
 
       <Section tone="muted">

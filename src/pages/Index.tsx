@@ -143,7 +143,7 @@ export default function Index() {
                 <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
                   <Link to="/start-here">
                     Start here &mdash; no account
-                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                    <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg" className="h-12 rounded-full bg-background px-7 text-base">

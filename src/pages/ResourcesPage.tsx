@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Search } from "lucide-react";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Input } from "@/components/ui/input";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard } from "@/components/site/primitives";
@@ -30,7 +31,7 @@ export default function ResourcesPage() {
       keywords="student wellbeing guides, mindfulness for students, study stress, teacher wellbeing resources, parent guidance"
       canonical="/resources"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <Reveal className="max-w-3xl">
           <Eyebrow>Resources</Eyebrow>
           <StatementHeading as="h1" className="text-4xl sm:text-5xl">
@@ -58,6 +59,9 @@ export default function ResourcesPage() {
             </Reveal>
           ))}
         </div>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["Plain-language guides for adults", "Conversation starters you can use tonight", "Signs that mean it is time to get more help"]} />
+        </Reveal>
       </Section>
 
       <Section tone="muted">
@@ -142,6 +146,12 @@ export default function ResourcesPage() {
           ))}
         </Reveal>
       </Section>
+      <NextStep
+        title="Want to try something yourself?"
+        body="Short practices and plain-language reading, no account needed."
+        primary={{ to: "/tools", label: "Try a practice" }}
+        secondary={{ to: "/library", label: "Open the library" }}
+      />
     </PageShell>
   );
 }

@@ -1,7 +1,9 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { SEOHead } from "@/components/SEOHead";
+import { canonicalFor } from "@/components/SEOHead";
+import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ComprehensiveContent from "@/components/ComprehensiveContent";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import NeuroscienceContent from "@/components/content/NeuroscienceContent";
@@ -25,21 +27,19 @@ const neuroscienceKeyFacts = [
 export default function NeurosciencePage() {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead title="Neuroscience timeline" description="A short history of neuroscience, its methods and frontiers, and labs in India." canonicalUrl={canonicalFor("/neuroscience")} />
       <Navbar />
-      <EnhancedMusicPlayer />
       
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6">
-            <span className="text-primary">Neuroscience</span> Timeline
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Journey through the history and cutting-edge advances in neuroscience — 
-            from early brain studies to modern AI-powered discoveries about consciousness.
-          </p>
-        </div>
+      <PageHero
+        eyebrow="Learn · Neuroscience"
+        title={<>A short history of <span className="text-primary">how we came to understand the brain.</span></>}
+        lede="From early brain studies to modern imaging and AI — the methods, the frontiers and the labs in India doing this work."
+        note="Educational reading — not a diagnosis. Take what helps, leave the rest."
+      />
+      <div className="container mx-auto px-4 py-12 sm:py-16">
+        <LeaveWith className="mb-10" items={["Key moments in the history of neuroscience", "How brain imaging and research methods work", "Where the field is heading next", "Indian labs and researchers to know"]} />
 
-        <div className="bg-card rounded-2xl p-8 border border-border shadow-2xl mb-12">
+        <div className="v-learn-body mb-12">
           <NeuroscienceContent />
         </div>
 
@@ -53,6 +53,12 @@ export default function NeurosciencePage() {
         <ShareStoryButton />
       </div>
 
+      <NextStep
+        title="Go from history to your own brain."
+        body="See how structure, memory and emotion fit together."
+        primary={{ to: "/brain", label: "Explore the brain" }}
+        secondary={{ to: "/library", label: "Browse the library" }}
+      />
       <Footer />
     </div>
   );

@@ -1,84 +1,68 @@
-
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import PageShell from "@/components/site/PageShell";
 import ImmersionTools from "@/components/ImmersionTools";
-import { ArrowLeft, Brain, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import JapaneseIcon from "@/components/JapaneseIcon";
-import { hapticFeedback } from "@/utils/hapticFeedback";
-import { useEffect, useRef } from "react";
-import { SEOHead } from "@/components/SEOHead";
 import BreathWidget from "@/components/engagement/BreathWidget";
+import { Reveal, Section, Eyebrow, StatementHeading, Lede } from "@/components/site/primitives";
+import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 
 export default function ToolsPage() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const buttons = sectionRef.current?.querySelectorAll('button, a');
-    buttons?.forEach((button) => {
-      button.addEventListener('click', () => hapticFeedback.onClick());
-      button.addEventListener('mouseenter', () => hapticFeedback.onHover());
-    });
-  }, []);
-
   return (
-    <>
-      <SEOHead 
-        title="Mental Health Tools"
-        description="Practical mental health tools including breathing exercises, meditation guides, mood trackers, and mindfulness resources for daily emotional wellbeing."
-        keywords="mental health tools, meditation, breathing exercises, mood tracking, mindfulness resources, VOYCE tools"
+    <PageShell
+      title="Calm practices & tools"
+      description="Short, guided practices — breathing, grounding, focus and reflection — you can use in a few minutes. No account needed."
+      canonical="/tools"
+      keywords="breathing exercise, grounding, mindfulness for students, calm practices, VOYCE tools"
+    >
+      <PageHero
+        eyebrow="Practices · no account needed"
+        title={<>Small practices that <span className="text-primary">change how the next hour feels.</span></>}
+        lede="Each tool takes between one and ten minutes. Try one now, notice what shifts, and come back when you need it — before an exam, after a hard day, or when your mind won't slow down."
+        primary={{ to: "#breathe", label: "Try one breath cycle" }}
+        secondary={{ to: "/start-here", label: "Start a private check-in" }}
+        aside={
+          <LeaveWith
+            compact
+            items={[
+              "A breathing rhythm you can use anywhere",
+              "A quick way to notice what you are feeling",
+              "One focus or grounding exercise to keep",
+            ]}
+          />
+        }
       />
-      <div className="min-h-screen flex flex-col bg-background" ref={sectionRef}>
-        <Navbar />
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 slide-3d-enter">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex items-center mb-8">
-              <Button asChild variant="ghost" className="text-foreground hover:bg-card haptic-btn">
-                <Link to="/">
-                  <ArrowLeft className="w-5 h-5 mr-2" />
-                  Back to Home
-                </Link>
-              </Button>
-            </div>
-            
-            <div className="text-center mb-12">
-              <div className="flex items-center justify-center mb-6">
-                <Zap className="h-16 w-16 text-primary mr-4 float-3d" />
-                <h1 className="text-5xl font-light text-foreground tracking-wide">
-                  Immersion Tools
-                </h1>
-                <Brain className="h-16 w-16 text-sky-400 ml-4 float-3d" />
-              </div>
-              
-              <div className="flex items-center justify-center space-x-4 mb-6">
-                <JapaneseIcon type="zen" className="text-sky-400" />
-                <h2 className="text-2xl font-light text-primary italic">
-                  Transform Through Practice
-                </h2>
-                <JapaneseIcon type="wave" className="text-primary" />
-              </div>
-              
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-                Interactive tools designed to deepen your understanding and accelerate your transformation. 
-                From guided meditations to neural simulations, each tool is crafted to dissolve illusion and build awareness.
-              </p>
-            </div>
-            
-            <div className="card-3d">
-              <ImmersionTools />
-            </div>
 
-            <div className="mx-auto mt-16 max-w-2xl">
-              <BreathWidget />
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
-    </>
+      <Section id="breathe" className="py-16 sm:py-20">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+          <Reveal variant="left">
+            <Eyebrow>Start here · 1 minute</Eyebrow>
+            <StatementHeading>Breathe with the circle.</StatementHeading>
+            <Lede>
+              Slow, even breathing is one of the quickest ways to tell your body it is safe. Follow the circle for
+              four or five rounds and notice your shoulders drop.
+            </Lede>
+          </Reveal>
+          <Reveal variant="scale" delay={120}>
+            <BreathWidget />
+          </Reveal>
+        </div>
+      </Section>
+
+      <Section tone="muted" className="py-16 sm:py-20">
+        <Reveal className="mb-10 max-w-2xl">
+          <Eyebrow>All practices</Eyebrow>
+          <StatementHeading>Pick what fits the moment.</StatementHeading>
+          <Lede>Guided meditations, reflection prompts and focus exercises. Everything here works without signing in.</Lede>
+        </Reveal>
+        <Reveal>
+          <ImmersionTools />
+        </Reveal>
+      </Section>
+
+      <NextStep
+        title="Want to understand why these work?"
+        body="Read the short science behind stress and the mind–body link."
+        primary={{ to: "/stress", label: "Read about stress" }}
+        secondary={{ to: "/mind-heart-gut", label: "Mind, heart and gut" }}
+      />
+    </PageShell>
   );
 }

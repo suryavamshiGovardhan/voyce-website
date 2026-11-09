@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NextStep, LeaveWith } from "@/components/site/value";
 import PageShell from "@/components/site/PageShell";
 import { Button } from "@/components/ui/button";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard } from "@/components/site/primitives";
@@ -45,7 +46,7 @@ export default function AboutPage() {
       keywords="about VOYCE, Suryavamshi Govardhan, why voyce exists, student wellbeing founder story"
       canonical="/about"
     >
-      <Section className="pt-16 sm:pt-24">
+      <Section hero className="pt-16 sm:pt-24">
         <Reveal className="max-w-3xl">
           <Eyebrow>About</Eyebrow>
           <StatementHeading as="h1" className="text-4xl sm:text-5xl">
@@ -55,6 +56,9 @@ export default function AboutPage() {
             This isn&rsquo;t a mission statement wall. It&rsquo;s the actual sequence of events that led to the thing
             you&rsquo;re looking at.
           </Lede>
+        </Reveal>
+        <Reveal delay={160}>
+          <LeaveWith className="mt-14" items={["Why VOYCE exists and who builds it", "What we believe about student wellbeing", "How we keep it honest and safe"]} />
         </Reveal>
       </Section>
 
@@ -124,7 +128,7 @@ export default function AboutPage() {
             the limits of what software can do for a human being who is struggling.
           </Lede>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-full px-7">
+            <Button asChild size="lg" className="v-sheen h-12 rounded-full px-7">
               <Link to="/contact">Talk to VOYCE</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="h-12 rounded-full px-7">

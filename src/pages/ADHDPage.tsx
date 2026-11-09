@@ -1,7 +1,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import EnhancedMusicPlayer from "@/components/music/EnhancedMusicPlayer";
+import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import ADHDContent from "@/components/content/ADHDContent";
 import { MandalaPattern, LotusAccent } from "@/components/CulturalPatterns";
@@ -27,20 +27,17 @@ export default function ADHDPage() {
       
       <div className="relative z-10">
         <Navbar />
-        <EnhancedMusicPlayer />
         
-        <div className="container mx-auto px-4 py-12">
-          <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-display font-normal tracking-tight text-foreground mb-6 font-indian">
-              <span className="text-primary">ADHD</span> Mastery
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Harness the gift of neurodiversity — transforming scattered attention into focused brilliance 
-              through mindful awareness, strategic systems, and celebration of unique cognitive strengths.
-            </p>
-          </div>
+        <PageHero
+          eyebrow="Learn · ADHD"
+          title={<>ADHD: <span className="text-primary">strengths, struggles and systems.</span></>}
+          lede="How ADHD shows up, how it is assessed and treated, and practical systems that work with an ADHD brain instead of against it."
+          note="Educational reading — not a diagnosis. Take what helps, leave the rest."
+        />
+        <div className="container mx-auto px-4 py-12 sm:py-16">
+          <LeaveWith className="mb-10" items={["The main ADHD presentations and common signs", "How diagnosis and treatment usually work", "Study and daily-life strategies you can try", "The strengths that often come with ADHD"]} />
 
-          <div className="bg-card rounded-2xl p-8 border border-border shadow-2xl">
+          <div className="v-learn-body">
             <ADHDContent />
           </div>
 
@@ -58,6 +55,12 @@ export default function ADHDPage() {
           <ShareStoryButton />
         </div>
 
+        <NextStep
+          title="Try one focus strategy this week."
+          body="Small systems beat big intentions. Start with one."
+          primary={{ to: "/tools", label: "Explore practices" }}
+          secondary={{ to: "/cds", label: "Read about CDS" }}
+        />
         <Footer />
       </div>
     </div>
