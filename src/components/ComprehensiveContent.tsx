@@ -1,6 +1,5 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Book, FileText, Video, Globe, Star, Calendar, User } from "lucide-react";
 import { hapticFeedback } from "@/utils/hapticFeedback";
@@ -20,7 +19,6 @@ interface Resource {
 interface ComprehensiveContentProps {
   topic: string;
   resources: Resource[];
-  statistics?: Array<{ label: string; value: string; source: string }>;
   keyFacts?: string[];
 }
 
@@ -48,7 +46,7 @@ const getResourceColor = (type: string) => {
   }
 };
 
-export default function ComprehensiveContent({ topic, resources, statistics, keyFacts }: ComprehensiveContentProps) {
+export default function ComprehensiveContent({ topic, resources, keyFacts }: ComprehensiveContentProps) {
   const handleResourceClick = (url: string) => {
     hapticFeedback.onNavigation();
     window.open(url, '_blank', 'noopener,noreferrer');
@@ -56,33 +54,12 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
 
   return (
     <div className="space-y-12">
-      {/* Statistics Section */}
-      {statistics && (
-        <Card className="bg-card border-border/20 shadow-xl rounded-2xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-foreground flex items-center">
-              📊 {topic} Statistics & Facts
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {statistics.map((stat, index) => (
-                <div key={index} className="bg-muted p-4 rounded-xl text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
-                  <div className="text-foreground font-medium mb-1">{stat.label}</div>
-                  <div className="text-xs text-muted-foreground">Source: {stat.source}</div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
+      {/* Figures are intentionally not rendered: only sourced, dated figures belong on VOYCE. */}
       {/* Key Facts */}
       {keyFacts && (
-        <Card className="bg-card border-border/20 shadow-xl rounded-2xl">
+        <Card className="bg-card border-border/20 ">
           <CardHeader>
-            <CardTitle className="text-2xl text-foreground">🔍 Key Facts About {topic}</CardTitle>
+            <CardTitle className="font-display text-2xl font-medium text-foreground">A few things worth knowing</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -98,13 +75,13 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
       )}
 
       {/* Resources Grid */}
-      <Card className="bg-card border-border/20 shadow-xl rounded-2xl">
+      <Card className="bg-card border-border/20 ">
         <CardHeader>
-          <CardTitle className="text-3xl text-foreground">
-            🌐 Comprehensive {topic} Resources
+          <CardTitle className="font-display text-2xl font-medium text-foreground">
+            Further reading
           </CardTitle>
           <p className="text-muted-foreground">
-            Latest research, books, articles, and resources from trusted sources worldwide
+            Books, research and organisations if you want to go deeper. Links open on other sites.
           </p>
         </CardHeader>
         <CardContent>
@@ -112,7 +89,7 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
             {resources.map((resource, index) => (
               <Card
                 key={index}
-                className="cursor-pointer bg-muted border-border hover:bg-muted transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+                className="v-card-hover cursor-pointer bg-card border-border transition-shadow group"
                 onClick={() => handleResourceClick(resource.url)}
               >
                 {resource.imageUrl && (
@@ -120,9 +97,9 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
                     <img 
                       src={resource.imageUrl} 
                       alt={resource.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover" loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    
                   </div>
                 )}
                 
@@ -133,12 +110,6 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
                         {getResourceIcon(resource.type)}
                         <span className="ml-1 capitalize">{resource.type}</span>
                       </Badge>
-                      {resource.rating && (
-                        <div className="flex items-center space-x-1">
-                          <Star className="h-3 w-3 text-primary fill-current" />
-                          <span className="text-muted-foreground text-xs">{resource.rating}</span>
-                        </div>
-                      )}
                     </div>
                     
                     <h4 className="text-foreground font-medium text-sm line-clamp-2 group-hover:text-primary transition-colors">
@@ -173,19 +144,6 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
             ))}
           </div>
           
-          <div className="text-center mt-8">
-            <p className="text-muted-foreground text-sm mb-4">
-              Resources are continuously updated from trusted global sources
-            </p>
-            <Button
-              variant="outline"
-              className="border-border text-primary hover:bg-muted"
-              onClick={() => hapticFeedback.onClick()}
-            >
-              <Globe className="h-4 w-4 mr-2" />
-              Explore More Resources
-            </Button>
-          </div>
         </CardContent>
       </Card>
     </div>

@@ -58,7 +58,7 @@ export function ModuleTracker({ moduleId, moduleTitle, onComplete }: ModuleTrack
         setIsCompleted(false);
         toast({
           title: 'Progress updated',
-          description: 'Module marked as incomplete.',
+          description: 'Removed from your reading list.',
         });
       }
     } else {
@@ -74,8 +74,8 @@ export function ModuleTracker({ moduleId, moduleTitle, onComplete }: ModuleTrack
       if (!error) {
         setIsCompleted(true);
         toast({
-          title: 'Great job! 🎉',
-          description: `You've completed: ${moduleTitle}`,
+          title: 'Marked as read',
+          description: moduleTitle,
         });
         onComplete?.();
       }
@@ -84,8 +84,12 @@ export function ModuleTracker({ moduleId, moduleTitle, onComplete }: ModuleTrack
     setLoading(false);
   };
 
+  // Visitors without an account never see this: reading is open to everyone and
+  // nothing is tracked unless someone has chosen to sign in.
+  if (!user) return null;
+
   return (
-    <div className="my-8 p-6 bg-accent/50 rounded-lg border">
+    <div className="my-8 rounded-[1.25rem] border border-border bg-surface p-5 sm:p-6">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           {isCompleted ? (
@@ -95,12 +99,12 @@ export function ModuleTracker({ moduleId, moduleTitle, onComplete }: ModuleTrack
           )}
           <div>
             <h3 className="font-semibold">
-              {isCompleted ? 'Module Completed!' : 'Mark as Complete'}
+              {isCompleted ? 'Marked as read' : 'Finished reading?'}
             </h3>
             <p className="text-sm text-muted-foreground">
               {isCompleted
-                ? 'You finished this module. Great work!'
-                : 'Did you finish reading? Mark this module as complete.'}
+                ? 'Saved privately to your reading list.'
+                : 'Mark it as read to keep a private note of where you got to. This is not a test.'}
             </p>
           </div>
         </div>
@@ -108,8 +112,9 @@ export function ModuleTracker({ moduleId, moduleTitle, onComplete }: ModuleTrack
           onClick={handleToggleComplete}
           disabled={loading}
           variant={isCompleted ? 'outline' : 'default'}
+          className="rounded-full"
         >
-          {loading ? 'Updating...' : isCompleted ? 'Mark Incomplete' : 'Complete'}
+          {loading ? 'Saving…' : isCompleted ? 'Undo' : 'Mark as read'}
         </Button>
       </div>
     </div>

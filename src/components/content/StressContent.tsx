@@ -11,28 +11,28 @@ const StressContent = () => {
       <Card className="bg-surface border-border">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-2xl">
-            <Zap className="h-6 w-6 text-red-600" />
-            Comprehensive Stress Management Guide
+            <Zap className="h-6 w-6 text-primary" aria-hidden="true" />
+            Stress, in plain words
           </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-lg text-foreground leading-relaxed mb-4">
-            Understanding stress as a complex physiological and psychological response system that affects 
-            every aspect of human health and performance. Master evidence-based techniques for optimal stress management.
+            Stress is your body getting ready to cope. A little of it can help you focus; too much for too long wears you
+            down. Open any section below — start with whatever feels most useful today. Nothing here is a test or a diagnosis.
           </p>
         </CardContent>
       </Card>
 
-      <Tabs defaultValue="physiology" className="w-full">
-        <TabsList className="grid w-full grid-cols-8">
-          <TabsTrigger value="physiology">Physiology</TabsTrigger>
-          <TabsTrigger value="types">Types</TabsTrigger>
-          <TabsTrigger value="symptoms">Symptoms</TabsTrigger>
-          <TabsTrigger value="assessment">Assessment</TabsTrigger>
-          <TabsTrigger value="techniques">Techniques</TabsTrigger>
-          <TabsTrigger value="lifestyle">Lifestyle</TabsTrigger>
-          <TabsTrigger value="workplace">Workplace</TabsTrigger>
-          <TabsTrigger value="emergency">Crisis</TabsTrigger>
+      <Tabs defaultValue="symptoms" className="w-full">
+        <TabsList className="v-tabs">
+          <TabsTrigger value="symptoms">Signs to notice</TabsTrigger>
+          <TabsTrigger value="techniques">Things that help</TabsTrigger>
+          <TabsTrigger value="assessment">Questions to ask yourself</TabsTrigger>
+          <TabsTrigger value="lifestyle">Sleep, food &amp; movement</TabsTrigger>
+          <TabsTrigger value="physiology">What happens in your body</TabsTrigger>
+          <TabsTrigger value="types">Kinds of stress</TabsTrigger>
+          <TabsTrigger value="workplace">Work &amp; burnout</TabsTrigger>
+          <TabsTrigger value="emergency">If it feels too much</TabsTrigger>
         </TabsList>
 
         <TabsContent value="physiology" className="space-y-6">
@@ -102,15 +102,15 @@ const StressContent = () => {
                     {
                       name: "Dopamine",
                       function: "Reward and motivation",
-                      effects: ["Pleasure response", "Motor control", "Attention regulation", "Goal-directed behavior"],
+                      effects: ["Pleasure response", "Motor control", "Attention regulation", "Goal-directed behaviour"],
                       color: "purple"
                     }
                   ].map((neurotransmitter, index) => (
-                    <div key={index} className={`bg-${neurotransmitter.color}-50 p-4 rounded-lg border border-${neurotransmitter.color}-200`}>
+                    <div key={index} className={`v-tint-plum p-4 rounded-lg border border-border`}>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                          <h4 className={`font-semibold text-${neurotransmitter.color}-800 text-lg`}>{neurotransmitter.name}</h4>
-                          <p className={`text-sm text-${neurotransmitter.color}-600`}>{neurotransmitter.function}</p>
+                          <h4 className={`font-semibold text-foreground text-lg`}>{neurotransmitter.name}</h4>
+                          <p className={`text-sm text-foreground/80`}>{neurotransmitter.function}</p>
                         </div>
                         <div className="md:col-span-2">
                           <div className="flex flex-wrap gap-2">
@@ -141,9 +141,9 @@ const StressContent = () => {
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold">Acute vs. Chronic Stress</h3>
                   <div className="space-y-3">
-                    <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                      <h4 className="font-semibold text-amber-700 mb-2">Acute Stress</h4>
-                      <ul className="text-sm text-amber-700 space-y-1">
+                    <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                      <h4 className="font-semibold text-foreground mb-2">Acute Stress</h4>
+                      <ul className="text-sm text-foreground space-y-1">
                         <li>• Short-term response to immediate threats</li>
                         <li>• Fight-or-flight activation</li>
                         <li>• Usually resolves quickly</li>
@@ -152,9 +152,9 @@ const StressContent = () => {
                       </ul>
                     </div>
                     
-                    <div className="bg-red-50 p-4 rounded-lg border border-border">
-                      <h4 className="font-semibold text-red-800 mb-2">Chronic Stress</h4>
-                      <ul className="text-sm text-red-700 space-y-1">
+                    <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                      <h4 className="font-semibold text-foreground mb-2">Chronic Stress</h4>
+                      <ul className="text-sm text-foreground space-y-1">
                         <li>• Long-term exposure to stressors</li>
                         <li>• Persistent activation of stress systems</li>
                         <li>• Leads to health complications</li>
@@ -261,9 +261,9 @@ const StressContent = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-4">
-                  <div className="bg-amber-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-amber-700 mb-2">Cognitive Restructuring</h4>
-                    <ul className="text-sm text-amber-700 space-y-1">
+                  <div className="v-tint-apricot p-4 rounded-lg">
+                    <h4 className="font-semibold text-foreground mb-2">Cognitive Restructuring</h4>
+                    <ul className="text-sm text-foreground space-y-1">
                       <li>• Identify negative thought patterns</li>
                       <li>• Challenge unrealistic beliefs</li>
                       <li>• Replace with balanced thinking</li>
@@ -300,7 +300,7 @@ const StressContent = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <AlertTriangle className="h-5 w-5 text-red-600" />
+                <AlertTriangle className="h-5 w-5 text-primary" />
                 How Stress Actually Shows Up in the Body and Mind
               </CardTitle>
             </CardHeader>
@@ -313,9 +313,9 @@ const StressContent = () => {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-red-50 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-red-800 mb-3">Physical Signals</h4>
-                  <ul className="text-sm text-red-700 space-y-2">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-3">Physical Signals</h4>
+                  <ul className="text-sm text-foreground space-y-2">
                     <li>• Tension headaches, jaw clenching, teeth grinding at night</li>
                     <li>• Shoulders creeping toward your ears; low back tightness</li>
                     <li>• Digestion turning unreliable — bloating, cramps, appetite swings</li>
@@ -325,9 +325,9 @@ const StressContent = () => {
                     <li>• Skin flare-ups, hair thinning, missed or heavier cycles</li>
                   </ul>
                 </div>
-                <div className="bg-amber-50 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-3">Emotional Signals</h4>
-                  <ul className="text-sm text-amber-700 space-y-2">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-3">Emotional Signals</h4>
+                  <ul className="text-sm text-foreground space-y-2">
                     <li>• Irritability at things that never used to bother you</li>
                     <li>• A low hum of dread, especially on Sunday evenings</li>
                     <li>• Feeling numb or disconnected — "watching your life from outside"</li>
@@ -336,9 +336,9 @@ const StressContent = () => {
                     <li>• A sense of urgency even when nothing is actually urgent</li>
                   </ul>
                 </div>
-                <div className="bg-amber-50 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-3">Cognitive Signals</h4>
-                  <ul className="text-sm text-amber-700 space-y-2">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-3">Cognitive Signals</h4>
+                  <ul className="text-sm text-foreground space-y-2">
                     <li>• Racing thoughts, especially before sleep</li>
                     <li>• Forgetting small things — names, appointments, why you walked into a room</li>
                     <li>• Trouble finishing sentences or holding attention on one thing</li>
@@ -375,7 +375,7 @@ const StressContent = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Clock className="h-5 w-5 text-primary" />
-                A Gentle Self-Check
+                Questions to sit with — not a test
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -411,9 +411,9 @@ const StressContent = () => {
                     <li>• You still reach out to people</li>
                   </ul>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-2">Signs it's time for more support</h4>
-                  <ul className="text-sm text-amber-700 space-y-1">
+                <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2">Signs it's time for more support</h4>
+                  <ul className="text-sm text-foreground space-y-1">
                     <li>• Symptoms persist for more than 2–3 weeks</li>
                     <li>• Sleep, appetite, or focus are meaningfully disrupted</li>
                     <li>• You've stopped doing the things that keep you well</li>
@@ -477,12 +477,12 @@ const StressContent = () => {
                     <li>• Eat sitting down, off a plate, for at least one meal a day</li>
                   </ul>
                 </div>
-                <div className="bg-amber-50 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-2">Movement as medicine</h4>
-                  <p className="text-sm text-amber-700 mb-2">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2">Movement as medicine</h4>
+                  <p className="text-sm text-foreground mb-2">
                     You do not need a gym. You need a body that gets used regularly. Cortisol has to be metabolised, not just endured.
                   </p>
-                  <ul className="text-sm text-amber-700 space-y-1">
+                  <ul className="text-sm text-foreground space-y-1">
                     <li>• A brisk 20-minute walk most days — the single most researched stress intervention</li>
                     <li>• Two short strength sessions a week (bodyweight is fine)</li>
                     <li>• Slow, nasal-breathing walks after meals</li>
@@ -571,9 +571,9 @@ const StressContent = () => {
                     <li>• Turn off desktop notifications</li>
                   </ul>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-2">Remote-work traps</h4>
-                  <ul className="text-sm text-amber-700 space-y-1">
+                <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2">Remote-work traps</h4>
+                  <ul className="text-sm text-foreground space-y-1">
                     <li>• A defined start and end time</li>
                     <li>• A "commute" walk to bookend the day</li>
                     <li>• Leave the laptop closed after hours</li>
@@ -593,27 +593,27 @@ const StressContent = () => {
 
         <TabsContent value="emergency" className="space-y-6">
           <Card className="border-border">
-            <CardHeader className="bg-red-50">
-              <CardTitle className="flex items-center gap-2 text-red-800">
+            <CardHeader className="v-tint-apricot">
+              <CardTitle className="flex items-center gap-2 text-foreground">
                 <AlertTriangle className="h-5 w-5" />
                 If You Are in Crisis Right Now
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6 pt-6">
-              <div className="bg-red-50 p-5 rounded-lg border border-border">
-                <p className="text-red-900 leading-relaxed mb-4">
+              <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                <p className="text-foreground leading-relaxed mb-4">
                   If you are thinking about ending your life, or you cannot keep yourself safe right now, please reach out. You do not have to have the right
                   words. You do not have to explain yourself well. Just call.
                 </p>
-                <div className="space-y-3 text-red-900">
+                <div className="space-y-3 text-foreground">
+                  <div>
+                    <strong>Tele MANAS (Govt. of India, free, 24×7):</strong> 14416 · 1-800-891-4416
+                  </div>
                   <div>
                     <strong>iCall (India, free, confidential):</strong> +91 9152987821 · Mon–Sat, 8 AM–10 PM
                   </div>
                   <div>
-                    <strong>Vandrevala Foundation (India, 24×7):</strong> 1860-2662-345 · 1800-2333-330
-                  </div>
-                  <div>
-                    <strong>KIRAN (Govt. of India, 24×7):</strong> 1800-599-0019
+                    <strong>Vandrevala Foundation (India, 24×7):</strong> +91 9999 666 555
                   </div>
                   <div>
                     <strong>AASRA (India, 24×7):</strong> +91 9820466726
@@ -625,9 +625,9 @@ const StressContent = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-amber-50 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-2">A safety plan you can build in ten minutes</h4>
-                  <ol className="text-sm text-amber-700 space-y-1 list-decimal list-inside">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2">A safety plan you can build in ten minutes</h4>
+                  <ol className="text-sm text-foreground space-y-1 list-decimal list-inside">
                     <li>My personal warning signs (thoughts, moods, situations)</li>
                     <li>Things I can do alone to feel a little safer (a shower, a walk, one song)</li>
                     <li>People or places that distract me from the pain</li>

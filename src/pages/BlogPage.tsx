@@ -84,7 +84,7 @@ export default function BlogPage() {
               <p className="text-foreground/70 mb-4 leading-relaxed">
                 8 episodes. Psychology, philosophy, and ancient wisdom — explained slowly, without filter.
               </p>
-              <Button asChild variant="outline" className="border-border text-primary hover:bg-muted hover:text-emerald-100">
+              <Button asChild variant="outline" className="border-border text-primary hover:bg-muted hover:text-primary">
                 <Link to="/series">Read the series →</Link>
               </Button>
             </CardContent>
@@ -182,7 +182,7 @@ export default function BlogPage() {
 
             <Card className="v-card v-card-hover overflow-hidden border-border bg-primary">
               <CardHeader>
-                <Badge className="w-fit mb-2 bg-muted text-amber-700 border-border">KATA Essay</Badge>
+                <Badge className="w-fit mb-2 bg-muted text-primary border-border">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
                   <Link to="/article/second-child-intelligence" className="hover:text-primary transition-colors">
                     Why the Second Child Often Appears More Intelligent
@@ -224,7 +224,7 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="v-card v-card-hover overflow-hidden border-border/20 bg-gradient-to-br from-slate-500/5 to-gray-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border/20">
               <CardHeader>
                 <Badge className="w-fit mb-2 bg-muted-foreground/10 text-muted-foreground border-border/20">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
@@ -246,9 +246,9 @@ export default function BlogPage() {
               </CardContent>
             </Card>
 
-            <Card className="v-card v-card-hover overflow-hidden border-border bg-gradient-to-br from-rose-500/5 to-pink-500/5">
+            <Card className="v-card v-card-hover overflow-hidden border-border">
               <CardHeader>
-                <Badge className="w-fit mb-2 bg-muted text-rose-600 border-border">KATA Essay</Badge>
+                <Badge className="w-fit mb-2 bg-muted text-primary border-border">KATA Essay</Badge>
                 <CardTitle className="text-2xl">
                   <Link to="/article/cannot-say-no" className="hover:text-primary transition-colors">
                     Why Some People Cannot Say "No"
@@ -292,7 +292,7 @@ export default function BlogPage() {
 
             <Card className="v-card v-card-hover overflow-hidden border-border bg-primary">
               <CardHeader>
-                <Badge className="w-fit mb-2 bg-muted text-amber-700 border-border">Personal Essay</Badge>
+                <Badge className="w-fit mb-2 bg-muted text-primary border-border">Personal Essay</Badge>
                 <CardTitle className="text-2xl">
                   <Link to="/article/self-care-selfishness" className="hover:text-primary transition-colors">
                     Self-Care is Selfishness — And I Stand By It
@@ -385,7 +385,7 @@ export default function BlogPage() {
         title="Read something that stayed with you?"
         body="Take a minute to notice how it landed — privately."
         primary={{ to: "/start-here", label: "Start a private check-in" }}
-        secondary={{ to: "/stories", label: "Read real stories" }}
+        secondary={{ to: "/stories", label: "Read short stories" }}
       />
       <Footer />
     </div>

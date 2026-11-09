@@ -6,49 +6,24 @@ import { Brain, Heart, Compass, Mountain, TreeDeciduous, Gem, Church, Crown, Shi
 
 const BrainContent = () => {
   return (
-    <div className="space-y-8 washi-texture">
-      <Card className="bg-surface border-border cherry-blossom-bg">
+    <div className="space-y-8">
+      <Card className="bg-surface border-border">
         <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-3xl japanese-heading">
-            <Brain className="h-8 w-8 text-primary" />
-            <Church className="h-6 w-6 text-primary" />
-            Brain Function & Neuroplasticity
-            <Crown className="h-6 w-6 text-primary" />
+          <CardTitle className="flex items-center gap-3 text-2xl japanese-heading">
+            <Brain className="h-6 w-6 text-primary" aria-hidden="true" />
+            Your brain, in plain words
           </CardTitle>
-          <div className="ink-brush-divider my-4"></div>
         </CardHeader>
         <CardContent>
-          <p className="text-lg text-foreground leading-relaxed mb-6 japanese-text">
-            脳の神秘 - The mystery of the brain unveiled through ancient philosophical inquiry and cutting-edge neuroscience, 
-            exploring consciousness, cognition, and the infinite potential of the human mind across cultures and centuries.
+          <p className="text-lg text-foreground leading-relaxed mb-2 japanese-text">
+            How the parts of your brain work together, how it keeps changing as you learn, and why sleep, movement and
+            people around you matter so much. Open any section — there is no order.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <Brain className="h-8 w-8 text-primary mb-3" />
-              <div className="text-3xl font-bold text-primary mb-1">86B</div>
-              <div className="text-sm text-primary japanese-text">Neurons in human brain</div>
-            </div>
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <Flower className="h-8 w-8 text-primary mb-3" />
-              <div className="text-3xl font-bold text-primary mb-1">100T</div>
-              <div className="text-sm text-primary japanese-text">Synaptic connections</div>
-            </div>
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <Gem className="h-8 w-8 text-primary mb-3" />
-              <div className="text-3xl font-bold text-primary mb-1">20%</div>
-              <div className="text-sm text-primary japanese-text">Body's energy usage</div>
-            </div>
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <Mountain className="h-8 w-8 text-primary mb-3" />
-              <div className="text-3xl font-bold text-primary mb-1">25</div>
-              <div className="text-sm text-primary japanese-text">Years for full maturation</div>
-            </div>
-          </div>
         </CardContent>
       </Card>
 
       <Tabs defaultValue="structure" className="w-full">
-        <TabsList className="grid w-full grid-cols-8 bg-surface border border-border">
+        <TabsList className="v-tabs">
           <TabsTrigger value="structure" className="japanese-text">Structure</TabsTrigger>
           <TabsTrigger value="networks" className="japanese-text">Networks</TabsTrigger>
           <TabsTrigger value="plasticity" className="japanese-text">Plasticity</TabsTrigger>
@@ -56,7 +31,7 @@ const BrainContent = () => {
           <TabsTrigger value="consciousness" className="japanese-text">Consciousness</TabsTrigger>
           <TabsTrigger value="memory" className="japanese-text">Memory</TabsTrigger>
           <TabsTrigger value="emotions" className="japanese-text">Emotions</TabsTrigger>
-          <TabsTrigger value="optimization" className="japanese-text">Optimization</TabsTrigger>
+          <TabsTrigger value="optimization" className="japanese-text">Looking after it</TabsTrigger>
         </TabsList>
 
         <TabsContent value="structure" className="space-y-8">
@@ -92,8 +67,8 @@ const BrainContent = () => {
                       color: "orange"
                     }
                   ].map((lobe, index) => (
-                    <div key={index} className={`bg-${lobe.color}-50/80 p-4 rounded-lg border border-${lobe.color}-200`}>
-                      <h4 className={`font-semibold text-${lobe.color}-800 mb-2 japanese-heading`}>{lobe.region}</h4>
+                    <div key={index} className={`v-tint-plum p-4 rounded-lg border border-border`}>
+                      <h4 className={`font-semibold text-foreground mb-2 japanese-heading`}>{lobe.region}</h4>
                       <div className="flex flex-wrap gap-1">
                         {lobe.functions.map((func, idx) => (
                           <Badge key={idx} variant="secondary" className="text-xs japanese-text">{func}</Badge>
@@ -108,18 +83,18 @@ const BrainContent = () => {
             <Card className="edu-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 japanese-heading">
-                  <Church className="h-6 w-6 text-amber-700" />
+                  <Church className="h-6 w-6 text-foreground" />
                   Ancient Brain Wisdom
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-4">
-                  <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
+                  <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Flower className="h-4 w-4" />
                       Sanskrit: मनस् (Manas) - Mind Principle
                     </h4>
-                    <p className="text-sm text-amber-700 japanese-text">
+                    <p className="text-sm text-foreground japanese-text">
                       Vedic understanding of mind as subtle matter coordinating sensory experience, thought, and consciousness through chakra energy centers.
                     </p>
                   </div>
@@ -201,7 +176,7 @@ const BrainContent = () => {
             ].map((type, index) => (
               <Card key={index} className="edu-card hover-lift">
                 <CardHeader>
-                  <CardTitle className={`flex items-center gap-2 text-${type.color}-700 japanese-heading`}>
+                  <CardTitle className={`flex items-center gap-2 text-foreground japanese-heading`}>
                     <type.icon className="h-5 w-5" />
                     {type.title}
                   </CardTitle>
@@ -209,7 +184,7 @@ const BrainContent = () => {
                 <CardContent>
                   <ul className="space-y-2">
                     {type.mechanisms.map((mechanism, idx) => (
-                      <li key={idx} className={`text-sm text-${type.color}-600 flex items-start gap-2 japanese-text`}>
+                      <li key={idx} className={`text-sm text-foreground/80 flex items-start gap-2 japanese-text`}>
                         <Gem className="w-3 h-3 mt-1 flex-shrink-0" />
                         <span>{mechanism}</span>
                       </li>

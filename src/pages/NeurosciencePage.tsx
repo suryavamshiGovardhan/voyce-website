@@ -10,19 +10,12 @@ import NeuroscienceContent from "@/components/content/NeuroscienceContent";
 import { neuroscienceResources } from "@/data/mentalHealthResources";
 import { LearnCheck } from "@/components/site/LearnCheck";
 
-const neuroscienceStatistics = [
-  { label: 'Neuroscience Papers Published Annually', value: '50,000+', source: 'PubMed' },
-  { label: 'Brain Imaging Studies Growth', value: '300%', source: 'Nature Neuroscience' },
-  { label: 'Neuroscience Research Funding', value: '$7.6B', source: 'NIH' }
-];
-
 const neuroscienceKeyFacts = [
-  'Modern neuroscience began in the 1950s with the development of brain imaging technologies',
+  'Modern brain imaging (CT, then MRI and fMRI) developed from the 1970s onwards',
   'fMRI can measure brain activity in real-time by detecting blood flow changes',
-  'Optogenetics allows scientists to control neurons with light, revolutionizing research',
+  'Optogenetics lets scientists switch specific neurons on or off with light in lab studies',
   'Brain organoids grown in labs help researchers study neurological diseases',
-  'AI and machine learning are accelerating neuroscience discoveries',
-  'The Human Connectome Project mapped the brain\'s neural connections'
+    'The Human Connectome Project is mapping how brain regions connect'
 ];
 
 export default function NeurosciencePage() {
@@ -47,7 +40,6 @@ export default function NeurosciencePage() {
         <ComprehensiveContent 
           topic="Neuroscience"
           resources={neuroscienceResources}
-          statistics={neuroscienceStatistics}
           keyFacts={neuroscienceKeyFacts}
         />
 

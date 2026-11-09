@@ -17,7 +17,7 @@ const MindHeartGutContent = () => (
     </Card>
 
     <Tabs defaultValue="vagus" className="w-full">
-      <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-card">
+      <TabsList className="v-tabs">
         <TabsTrigger value="vagus">Vagus Nerve</TabsTrigger>
         <TabsTrigger value="gut">Gut-Brain</TabsTrigger>
         <TabsTrigger value="heart">Heart-Brain</TabsTrigger>
@@ -47,9 +47,9 @@ const MindHeartGutContent = () => (
       </TabsContent>
 
       <TabsContent value="heart" className="space-y-4">
-        <Card><CardHeader><CardTitle className="flex items-center gap-2"><Heart className="h-5 w-5" /> The Heart's Own Little Brain</CardTitle></CardHeader>
+        <Card><CardHeader><CardTitle className="flex items-center gap-2"><Heart className="h-5 w-5" /> The heart's own nerve network</CardTitle></CardHeader>
         <CardContent className="text-foreground leading-relaxed space-y-3">
-          <p>The heart contains roughly 40,000 neurons — an "intrinsic cardiac nervous system" that processes information locally and communicates continuously with the brain. Signals from the heart influence emotional processing, attention, and perception; this is not metaphor, it is measured.</p>
+          <p>The heart has its own small network of nerve cells — researchers call it the "intrinsic cardiac nervous system" — and it is in constant two-way contact with the brain. Studies suggest signals from the heart can affect emotion, attention and perception, though scientists are still working out how much.</p>
           <p>The clinically important variable is <strong>heart rate variability (HRV)</strong> — the beat-to-beat variation in interval. High HRV signals a nervous system with flexibility, capable of shifting between activation and rest as needed. Low HRV correlates with anxiety, depression, chronic stress, cardiovascular disease, and all-cause mortality. It is one of the most-studied biomarkers of nervous-system health available today.</p>
           <p>HRV is trainable. Slow breathing at roughly six breaths per minute (a five-second inhale, a five-second exhale) synchronises heart rhythm with breath and reliably raises HRV within a single session. Sustained practice raises resting HRV over weeks.</p>
           <p>The HeartMath Institute has spent thirty years mapping the specific state of "cardiac coherence" — a smooth, sine-wave-like HRV pattern that emerges reliably with slow paced breathing combined with sustained positive emotion (gratitude, appreciation, warmth). Not every HeartMath claim has been independently replicated, but the core protocol is safe, cheap, and produces measurable physiological shifts, which is more than can be said for most stress interventions.</p>

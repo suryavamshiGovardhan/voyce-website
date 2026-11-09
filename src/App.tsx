@@ -24,7 +24,6 @@ const ForgotPasswordPage = lazy(() => import("./pages/ForgotPasswordPage"));
 const ResetPasswordPage = lazy(() => import("./pages/ResetPasswordPage"));
 
 // Lazy load non-critical pages
-const VoycePage = lazy(() => import("./pages/VoycePage"));
 const PathPage = lazy(() => import("./pages/PathPage"));
 const ToolsPage = lazy(() => import("./pages/ToolsPage"));
 const LibraryPage = lazy(() => import("./pages/LibraryPage"));
@@ -137,7 +136,7 @@ const App = () => (
 
                   
                   {/* Lazy-loaded routes */}
-                  <Route path="/voyce" element={<VoycePage />} />
+                  <Route path="/voyce" element={<Navigate to="/about" replace />} />
                   <Route path="/path" element={<PathPage />} />
                   <Route path="/tools" element={<ToolsPage />} />
                   <Route path="/library" element={<LibraryPage />} />

@@ -41,7 +41,7 @@ export function IntegratedDiagnosticHub() {
           </CardTitle>
           <CardDescription className="text-lg max-w-3xl mx-auto">
             Comprehensive mental health diagnostic resource combining ICD-9-CM medical codes,
-            DSM-5 diagnostic criteria, real-world case studies, and cross-reference mappings
+            DSM-5 diagnostic criteria, fictional teaching case examples, and cross-reference mappings
             for clinical education and awareness.
           </CardDescription>
         </CardHeader>
@@ -82,7 +82,7 @@ export function IntegratedDiagnosticHub() {
         <TabsContent value="cases" className="space-y-6 mt-6">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <h3 className="text-xl font-semibold">Real-World Clinical Case Studies</h3>
+              <h3 className="text-xl font-semibold">Fictional teaching case examples</h3>
               <Badge variant="secondary">{filteredCaseStudies.length} Cases</Badge>
             </div>
             <p className="text-sm text-muted-foreground">

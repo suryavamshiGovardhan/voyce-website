@@ -5,10 +5,16 @@ import { Progress } from "@/components/ui/progress";
 import { Play, Pause, RotateCcw, ChevronLeft, ChevronRight, Timer } from "lucide-react";
 import { immersionToolsData } from "@/data/immersionToolsData";
 
+export type PracticeStep = { step: number; title: string; description: string };
+
 interface PracticeModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   toolTitle: string;
+  /** id in immersionToolsData for tools with long-form steps */
+  toolId?: string;
+  /** steps supplied directly by the caller (take priority) */
+  steps?: PracticeStep[];
 }
 
 // Fallback minimal steps if a tool isn't in the data file
@@ -22,12 +28,16 @@ const fallbackSteps = [
 
 const DEFAULT_STEP_SECONDS = 90;
 
-export function PracticeModal({ open, onOpenChange, toolTitle }: PracticeModalProps) {
+export function PracticeModal({ open, onOpenChange, toolTitle, toolId, steps: givenSteps }: PracticeModalProps) {
   const tool = useMemo(
-    () => immersionToolsData.find((t) => t.title === toolTitle),
-    [toolTitle]
+    () => immersionToolsData.find((t) => (toolId ? t.id === toolId : t.title === toolTitle)),
+    [toolId, toolTitle]
   );
-  const steps = tool?.content.instructions?.length ? tool.content.instructions : fallbackSteps;
+  const steps = givenSteps?.length
+    ? givenSteps
+    : tool?.content.instructions?.length
+      ? tool.content.instructions
+      : fallbackSteps;
 
   const [stepIndex, setStepIndex] = useState(0);
   const [secondsLeft, setSecondsLeft] = useState(DEFAULT_STEP_SECONDS);
@@ -74,15 +84,15 @@ export function PracticeModal({ open, onOpenChange, toolTitle }: PracticeModalPr
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl bg-muted border-border text-foreground">
+      <DialogContent className="w-[calc(100vw-1.5rem)] max-w-2xl rounded-[1.5rem] border-border bg-card p-5 text-foreground sm:p-6">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-light text-foreground">{toolTitle}</DialogTitle>
+          <DialogTitle className="font-display text-2xl font-medium tracking-tight text-foreground">{toolTitle}</DialogTitle>
           <DialogDescription className="text-muted-foreground">
-            A guided practice. Move at your own pace — the timer is a suggestion, not a rule.
+            Move at your own pace — the timer is a suggestion, not a rule. You can stop at any time.
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6 py-2">
+        <div className="min-w-0 space-y-6 py-2">
           <div>
             <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
               <span>Step {stepIndex + 1} of {steps.length}</span>
@@ -91,12 +101,12 @@ export function PracticeModal({ open, onOpenChange, toolTitle }: PracticeModalPr
             <Progress value={totalProgress} className="h-2 bg-muted" />
           </div>
 
-          <div className="rounded-lg border border-border bg-muted p-6 min-h-[180px]">
+          <div className="min-h-[180px] rounded-2xl border border-border bg-surface p-6">
             <h3 className="text-lg font-medium text-foreground mb-2">{current.title}</h3>
             <p className="text-muted-foreground leading-relaxed text-sm">{current.description}</p>
           </div>
 
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3">
             <Button
               variant="outline"
               size="sm"
@@ -107,14 +117,14 @@ export function PracticeModal({ open, onOpenChange, toolTitle }: PracticeModalPr
               }}
               disabled={stepIndex === 0}
             >
-              <ChevronLeft className="h-4 w-4 mr-1" /> Previous
+              <ChevronLeft className="h-4 w-4 sm:mr-1" aria-hidden="true" /><span className="sr-only sm:not-sr-only">Previous</span>
             </Button>
 
             <div className="flex items-center gap-2">
               <Button
                 size="sm"
                 onClick={() => setIsRunning((r) => !r)}
-                className="bg-primary hover:bg-primary text-foreground"
+                className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 {isRunning ? <><Pause className="h-4 w-4 mr-1" /> Pause</> : <><Play className="h-4 w-4 mr-1" /> Start</>}
               </Button>

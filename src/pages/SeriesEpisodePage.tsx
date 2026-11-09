@@ -101,9 +101,9 @@ export default function SeriesEpisodePage() {
             )}
 
             {section.type === "vedic" && (
-              <div className="rounded-xl border border-amber-500/25 bg-gradient-to-br from-amber-100/70 to-amber-50/40 p-7">
+              <div className="rounded-2xl border border-border v-tint-apricot p-7">
                 {section.shloka && (
-                  <div className="font-display italic text-amber-800 mb-3 leading-relaxed">
+                  <div className="font-display italic text-foreground mb-3 leading-relaxed">
                     "{section.shloka}"
                     {section.shlokaSource && (
                       <div className="text-sm text-foreground/75 mt-1 not-italic">
@@ -151,7 +151,7 @@ export default function SeriesEpisodePage() {
             next
               ? { to: `/series/${next.id}`, label: `${next.number}: ${next.title}`, hint: "The next story in The Unheard Mind." }
               : { to: "/series", label: "All episodes", hint: "Return to the beginning of the series." },
-            { to: "/tools", label: "Immersion tools", hint: "Practices to sit with what this stirred." },
+            { to: "/tools", label: "Calm practices", hint: "Practices to sit with what this stirred." },
             { to: "/journal", label: "Your journal", hint: "Write a few private lines while it's still warm." },
           ]}
         />

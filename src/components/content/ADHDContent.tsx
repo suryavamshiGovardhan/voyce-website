@@ -6,31 +6,29 @@ import { Brain, Heart, Compass, Flower, Gem, TreeDeciduous, Mountain, Church, Cr
 
 const ADHDContent = () => {
   return (
-    <div className="space-y-8 bamboo-pattern">
-      <Card className="bg-surface border-border washi-texture">
+    <div className="space-y-8">
+      <Card className="bg-surface border-border">
         <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-3xl japanese-heading">
-            <Brain className="h-8 w-8 text-primary" />
-            <Compass className="h-6 w-6 text-primary" />
-            ADHD: Neurodiversity & Focus Mastery
-            <Flower className="h-6 w-6 text-primary" />
+          <CardTitle className="flex items-center gap-3 text-2xl japanese-heading">
+            <Brain className="h-6 w-6 text-primary" aria-hidden="true" />
+            ADHD, in plain words
           </CardTitle>
-          <div className="ink-brush-divider my-4"></div>
         </CardHeader>
         <CardContent>
-          <p className="text-lg text-foreground leading-relaxed mb-6 japanese-text">
-            注意力の芸術 - The art of attention through the lens of neurodiversity, blending Eastern mindfulness practices 
-            with Western neuroscience to transform ADHD challenges into unique cognitive strengths and creative gifts.
+          <p className="text-lg text-foreground leading-relaxed mb-2 japanese-text">
+            ADHD is a difference in how the brain manages attention, energy and getting started. It comes with real
+            challenges and real strengths. This page helps you understand it — only a qualified professional can say
+            whether someone has ADHD.
           </p>
         </CardContent>
       </Card>
 
       <Tabs defaultValue="neuroscience" className="w-full">
-        <TabsList className="grid w-full grid-cols-8 bg-surface border border-border">
-          <TabsTrigger value="neuroscience" className="japanese-text">Neuroscience</TabsTrigger>
+        <TabsList className="v-tabs">
+          <TabsTrigger value="neuroscience" className="japanese-text">The brain science</TabsTrigger>
           <TabsTrigger value="types" className="japanese-text">Types</TabsTrigger>
-          <TabsTrigger value="symptoms" className="japanese-text">Symptoms</TabsTrigger>
-          <TabsTrigger value="diagnosis" className="japanese-text">Diagnosis</TabsTrigger>
+          <TabsTrigger value="symptoms" className="japanese-text">What it can feel like</TabsTrigger>
+          <TabsTrigger value="diagnosis" className="japanese-text">Getting assessed</TabsTrigger>
           <TabsTrigger value="treatment" className="japanese-text">Treatment</TabsTrigger>
           <TabsTrigger value="strategies" className="japanese-text">Strategies</TabsTrigger>
           <TabsTrigger value="strengths" className="japanese-text">Strengths</TabsTrigger>
@@ -64,7 +62,7 @@ const ADHDContent = () => {
                     <ul className="text-sm text-primary space-y-1 japanese-text">
                       <li>• Reward processing alterations</li>
                       <li>• Motivation and drive issues</li>
-                      <li>• Novelty-seeking behaviors</li>
+                      <li>• Novelty-seeking behaviours</li>
                       <li>• Delayed gratification challenges</li>
                       <li>• Addiction vulnerability</li>
                     </ul>
@@ -87,28 +85,28 @@ const ADHDContent = () => {
             <Card className="edu-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 japanese-heading">
-                  <Flower className="h-6 w-6 text-amber-700" />
+                  <Flower className="h-6 w-6 text-foreground" />
                   Ancient Wisdom & Modern Understanding
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-4">
-                  <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
+                  <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Mountain className="h-4 w-4" />
                       Zen: 一心不乱 (Isshin-furan)
                     </h4>
-                    <p className="text-sm text-amber-700 japanese-text">
+                    <p className="text-sm text-foreground japanese-text">
                       Single-minded focus without distraction - traditional meditation practices for cultivating sustained attention and mental clarity.
                     </p>
                   </div>
 
-                  <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
+                  <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <TreeDeciduous className="h-4 w-4" />
                       Ayurveda: वात (Vata) Imbalance
                     </h4>
-                    <p className="text-sm text-amber-700 japanese-text">
+                    <p className="text-sm text-foreground japanese-text">
                       Air and space elements causing mental restlessness, treated through grounding practices, routine, and specific herbs and foods.
                     </p>
                   </div>
@@ -123,12 +121,12 @@ const ADHDContent = () => {
                     </p>
                   </div>
 
-                  <div className="bg-red-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+                  <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Shield className="h-4 w-4" />
                       Stoic: Προσοχή (Prosoche)
                     </h4>
-                    <p className="text-sm text-red-700 japanese-text">
+                    <p className="text-sm text-foreground japanese-text">
                       Continuous attention to the present moment and one's thoughts - Roman practice of mindful awareness and self-regulation.
                     </p>
                   </div>
@@ -216,7 +214,7 @@ const ADHDContent = () => {
             ].map((strength, index) => (
               <Card key={index} className="edu-card hover-lift">
                 <CardHeader>
-                  <CardTitle className={`flex items-center gap-2 text-${strength.color}-700 japanese-heading`}>
+                  <CardTitle className={`flex items-center gap-2 text-foreground japanese-heading`}>
                     <strength.icon className="h-5 w-5" />
                     {strength.title}
                   </CardTitle>
@@ -224,7 +222,7 @@ const ADHDContent = () => {
                 <CardContent>
                   <ul className="space-y-2">
                     {strength.traits.map((trait, idx) => (
-                      <li key={idx} className={`text-sm text-${strength.color}-600 flex items-center gap-2 japanese-text`}>
+                      <li key={idx} className={`text-sm text-foreground/80 flex items-center gap-2 japanese-text`}>
                         <Flower className="w-3 h-3" />
                         {trait}
                       </li>
@@ -303,7 +301,7 @@ const ADHDContent = () => {
             <CardContent className="space-y-4 text-foreground leading-relaxed">
               <p>ADHD treatment is honestly more effective than most people expect, when the right combination is found. It is also more individualised than any headline suggests. Nothing here is medical advice — it is a map of what the evidence base and lived experience point toward.</p>
               <h4 className="font-semibold text-foreground">Medication classes</h4>
-              <p><strong>Stimulants</strong> — methylphenidate (Ritalin, Concerta) and amphetamine-based (Adderall, Vyvanse; availability varies by country). These are first-line for a reason: response rates around 70–80%. They do not "give you focus" like caffeine; they quiet the noise so the focus you already have can land where you point it. Correct dose feels like nothing dramatic — just a normal day where things get done.</p>
+              <p><strong>Stimulants</strong> — methylphenidate (Ritalin, Concerta) and amphetamine-based (Adderall, Vyvanse; availability varies by country). Clinical guidelines such as NICE NG87 (UK, 2018) list them as a first option for many people, after a proper assessment. They do not "give you focus" like caffeine; they quiet the noise so the focus you already have can land where you point it. Correct dose feels like nothing dramatic — just a normal day where things get done.</p>
               <p><strong>Non-stimulants</strong> — atomoxetine (Strattera), guanfacine, bupropion. Slower onset, no controlled-substance restrictions, useful when stimulants are unavailable, intolerated, or contraindicated (cardiac issues, certain anxiety presentations, history of substance use).</p>
               <p>The right medication is the one that helps you at a dose that does not steal sleep, appetite, or personality. Titration takes weeks. A good prescriber revisits and adjusts.</p>
               <h4 className="font-semibold text-foreground">Therapy and coaching</h4>

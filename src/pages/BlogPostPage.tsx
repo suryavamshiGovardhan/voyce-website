@@ -126,7 +126,7 @@ export default function BlogPostPage() {
                 links={[
                   { to: '/blog', label: 'More from the blog', hint: 'Other essays and reflections.' },
                   { to: '/series', label: 'The Unheard Mind', hint: 'Eight stories, told slowly.' },
-                  { to: '/tools', label: 'Immersion tools', hint: 'Turn reading into practice.' },
+                  { to: '/tools', label: 'Calm practices', hint: 'Turn reading into practice.' },
                 ]}
               />
             </article>

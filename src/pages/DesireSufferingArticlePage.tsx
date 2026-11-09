@@ -177,7 +177,7 @@ export default function DesireSufferingArticlePage() {
           <Card className="p-8 md:p-12 bg-gradient-to-br from-primary/5 via-card to-card border-primary/20">
             <div className="flex items-start gap-4 mb-6">
               <span className="text-4xl">📉</span>
-              <h2 className="text-3xl font-bold mt-2">The Chart of Human Suffering (VOYCE Model)</h2>
+              <h2 className="text-3xl font-bold mt-2">The chart of a goal (an illustration, not data)</h2>
             </div>
             <div className="space-y-6">
               <div className="bg-background/50 rounded-lg p-8 backdrop-blur-sm">
@@ -186,9 +186,9 @@ export default function DesireSufferingArticlePage() {
                     { label: "Ignition", height: "20%", color: "bg-primary/70" },
                     { label: "Discipline", height: "45%", color: "bg-primary/70" },
                     { label: "Stress", height: "70%", color: "bg-primary/70" },
-                    { label: "Progress", height: "85%", color: "bg-red-500/70" },
+                    { label: "Progress", height: "85%", color: "bg-[hsl(var(--apricot))]" },
                     { label: "Hope", height: "60%", color: "bg-primary/70" },
-                    { label: "Breakdowns", height: "90%", color: "bg-red-600/70" },
+                    { label: "Breakdowns", height: "90%", color: "bg-[hsl(var(--apricot))]" },
                     { label: "Growth", height: "35%", color: "bg-primary/70" },
                   ].map((stage, idx) => (
                     <div key={idx} className="flex-1 flex flex-col items-center gap-2">

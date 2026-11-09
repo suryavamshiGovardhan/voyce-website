@@ -11,8 +11,8 @@ export default function BrainPage() {
   return (
     <>
       <SEOHead 
-        title="Brain Function & Neuroscience"
-        description="Explore the magnificent architecture of consciousness and unlock your brain's infinite potential through ancient wisdom and cutting-edge neuroscience."
+        title="Understanding your brain"
+        description="How the parts of your brain work together, how it changes as you learn, and what helps it — in plain words. Educational, not a diagnosis."
         keywords="brain function, neuroscience, consciousness, neuroplasticity, cognitive science, brain health, VOYCE"
       />
       <div className="v-legacy min-h-screen bg-background">

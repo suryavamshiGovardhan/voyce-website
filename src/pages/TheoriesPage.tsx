@@ -32,9 +32,9 @@ const categoryIcons = {
 };
 
 const difficultyColors = {
-  basic: "bg-primary/10 text-primary dark:bg-green-900 dark:text-primary",
-  intermediate: "bg-amber-50 text-amber-700 dark:bg-yellow-900 dark:text-primary",
-  advanced: "bg-red-100 text-red-700 dark:bg-red-900 dark:text-primary"
+  basic: "bg-primary/10 text-primary",
+  intermediate: "v-tint-apricot text-foreground",
+  advanced: "v-tint-sage text-foreground"
 };
 
 export default function TheoriesPage() {
@@ -77,7 +77,7 @@ export default function TheoriesPage() {
     <>
       <SEOHead 
         title="Psychology Theories"
-        description="Comprehensive guide to over 100 psychology theories from developmental to neuroscience. Search, filter, and explore theories from basic to advanced levels."
+        description="A searchable guide to key psychology theories, from child development to neuroscience, explained in plain words."
         keywords="psychology theories, cognitive psychology, behavioral psychology, developmental psychology, psychotherapy theories, VOYCE"
       />
       <div className="v-legacy min-h-screen bg-background">
@@ -336,7 +336,7 @@ export default function TheoriesPage() {
         </Card>
       </div>
 
-      <NextStep title="Want the ideas in story form?" body="The Unheard Mind explains eight concepts through real stories." primary={{ to: "/series", label: "Read the series" }} secondary={{ to: "/library", label: "Open the library" }} />
+      <NextStep title="Want the ideas in story form?" body="The Unheard Mind explains eight concepts through stories." primary={{ to: "/series", label: "Read the series" }} secondary={{ to: "/library", label: "Open the library" }} />
       <Footer />
     </div>
     </>

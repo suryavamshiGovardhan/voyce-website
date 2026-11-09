@@ -75,7 +75,7 @@ export default function WorkbookPage() {
     <>
       <SEOHead 
         title="Interactive Workbook"
-        description="Share your personal story and engage with interactive mental health workbook exercises. Your voice matters in building a supportive community."
+        description="Guided writing prompts to help you put your experience into words — keep it to yourself or share it, your choice."
         keywords="mental health workbook, personal story, therapy exercises, self-reflection, VOYCE community"
       />
       <div className="v-legacy min-h-screen bg-background">

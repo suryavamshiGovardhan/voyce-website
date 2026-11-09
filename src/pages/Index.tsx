@@ -35,7 +35,7 @@ const EXPERIENCE = [
 const FIRST_VISIT = [
   {
     n: "01",
-    title: "Read a real story",
+    title: "Read a short story",
     body: "A short, anonymous story from someone who felt something similar. You are not the only one.",
     cta: "Read a story",
     to: "/stories",
@@ -136,7 +136,7 @@ export default function Index() {
                 Understand what you&rsquo;re feeling. Find what comes next.
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-foreground/80 sm:text-lg">
-                VOYCE helps students put a feeling into words in two minutes &mdash; read a real story, answer one
+                VOYCE helps students put a feeling into words in two minutes &mdash; read a short story, answer one
                 private question, and leave with one small next step.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">

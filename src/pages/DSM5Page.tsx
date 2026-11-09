@@ -360,7 +360,7 @@ const DSM5Page = () => {
     <>
       <SEOHead 
         title="DSM-5-TR Diagnostic Manual"
-        description="Complete DSM-5-TR guide to mental health disorders classification, diagnostic criteria, and clinical applications. Essential resource for healthcare professionals and students."
+        description="Professional reference: an overview of how DSM-5-TR classifies mental health conditions, for adults, students of psychology and clinicians. Not a self-test or diagnosis."
         keywords="DSM-5, diagnostic manual, mental disorders, psychiatric diagnosis, mental health classification, clinical psychology"
       />
       <SiteHeader />

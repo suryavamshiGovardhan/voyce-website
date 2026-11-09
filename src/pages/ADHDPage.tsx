@@ -15,8 +15,8 @@ export default function ADHDPage() {
   return (
     <>
       <SEOHead 
-        title="ADHD Support & Management"
-        description="Harness neurodiversity and transform ADHD into your superpower. Learn evidence-based strategies for focus, organization, and celebrating unique cognitive strengths."
+        title="Understanding ADHD"
+        description="What ADHD is, what it can feel like, how assessment works and everyday strategies that help — in plain words. Educational, not a diagnosis."
         keywords="ADHD support, attention deficit, focus strategies, neurodiversity, ADHD management, executive function, VOYCE"
       />
       <div className="v-legacy min-h-screen bg-background">
@@ -47,7 +47,7 @@ export default function ADHDPage() {
             <ContinueJourney
               links={[
                 { to: "/brain", label: "Brain & neuroscience", hint: "The wiring behind the wander." },
-                { to: "/tools", label: "Immersion tools", hint: "Focus practices that meet you where you are." },
+                { to: "/tools", label: "Calm practices", hint: "Focus practices that meet you where you are." },
                 { to: "/path", label: "VOYCE Path", hint: "A gentle 21-day rhythm to try." },
               ]}
             />

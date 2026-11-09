@@ -1,0 +1,4 @@
+{
+  "_note": "Published blog slugs to pre-create as static folders so deep links return HTTP 200. Add new slugs here when a post is published.",
+  "blog": ["psychology-of-self-efficacy-and-learned-helplessness"]
+}

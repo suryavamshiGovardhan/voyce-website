@@ -84,14 +84,14 @@ export default function DashboardPage() {
 
             {/* Quick Actions */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-red-200 bg-red-50/50">
-                <Link to="/voyce" className="flex flex-col items-center text-center gap-3">
-                  <div className="p-3 bg-red-100 rounded-full">
-                    <Phone className="h-6 w-6 text-red-600" />
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer border-border v-tint-apricot">
+                <Link to="/safety" className="flex flex-col items-center text-center gap-3">
+                  <div className="p-3 bg-card rounded-full">
+                    <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-red-900">Need Help Now?</h3>
-                    <p className="text-sm text-red-700">Emergency contacts</p>
+                    <h3 className="font-semibold text-foreground">Need help now?</h3>
+                    <p className="text-sm text-foreground/80">Helplines and support</p>
                   </div>
                 </Link>
               </Card>

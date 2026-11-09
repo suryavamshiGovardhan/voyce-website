@@ -16,8 +16,8 @@ export default function TraumaPage() {
   return (
     <>
       <SEOHead 
-        title="Trauma Recovery & Healing"
-        description="Transform wounds into wisdom with trauma-informed healing approaches. Learn about PTSD recovery, resilience building, and ancient healing practices for complete restoration."
+        title="Understanding trauma and recovery"
+        description="What trauma is, how it can show up, and what helps people recover — gently and in plain words. Educational, not a diagnosis."
         keywords="trauma recovery, PTSD treatment, healing trauma, resilience, trauma-informed care, emotional healing, VOYCE"
       />
       <div className="v-legacy min-h-screen bg-background">
@@ -53,7 +53,7 @@ export default function TraumaPage() {
             <ContinueJourney
               links={[
                 { to: "/aces", label: "ACEs impact", hint: "Understanding where some wounds begin." },
-                { to: "/tools", label: "Immersion tools", hint: "Gentle practices for hard days." },
+                { to: "/tools", label: "Calm practices", hint: "Gentle practices for hard days." },
                 { to: "/stories", label: "Stories", hint: "You are not the only one walking this." },
               ]}
             />

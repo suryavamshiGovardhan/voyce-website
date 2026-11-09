@@ -2,43 +2,25 @@ import { Link } from "react-router-dom";
 import { Instagram, Mail } from "lucide-react";
 import SonarGrid from "@/components/ui/sonar-grid";
 
-const BEGIN_AGAIN: { label: string; to: string }[] = [
-  { label: "Start here", to: "/start-here" },
-  { label: "The 21-day protocol", to: "/path" },
-  { label: "Stories", to: "/stories" },
-  { label: "Sixty seconds of stillness", to: "/tools" },
-];
-
-const COLUMNS: { title: string; links: { label: string; to: string; external?: boolean }[] }[] = [
+const COLUMNS: { title: string; links: { label: string; to: string }[] }[] = [
   {
-    title: "VOYCE",
-    links: [
-      { label: "About", to: "/about" },
-      { label: "How it works", to: "/how-it-works" },
-      { label: "Features", to: "/features" },
-      { label: "Safety", to: "/safety" },
-    ],
-  },
-  {
-    title: "For people",
+    title: "Who it's for",
     links: [
       { label: "Students", to: "/students" },
-      { label: "Teachers", to: "/teachers" },
       { label: "Parents", to: "/parents" },
+      { label: "Teachers", to: "/teachers" },
       { label: "Schools", to: "/schools" },
     ],
   },
   {
-    title: "Resources",
+    title: "Read & practise",
     links: [
-      { label: "Guides", to: "/resources" },
-      { label: "The Unheard Mind", to: "/series" },
-      { label: "Library", to: "/library" },
-      { label: "Blog", to: "/blog" },
+      { label: "Start here", to: "/start-here" },
+      { label: "Calm practices", to: "/tools" },
       { label: "Stories", to: "/stories" },
-      { label: "Tools", to: "/tools" },
-      { label: "VOYCE Path", to: "/path" },
-      { label: "FAQ", to: "/faq" },
+      { label: "The Unheard Mind", to: "/series" },
+      { label: "Guides", to: "/resources" },
+      { label: "Blog", to: "/blog" },
     ],
   },
   {
@@ -47,32 +29,28 @@ const COLUMNS: { title: string; links: { label: string; to: string; external?: b
       { label: "Stress", to: "/stress" },
       { label: "Trauma", to: "/trauma" },
       { label: "ADHD", to: "/adhd" },
-      { label: "Brain & neuroscience", to: "/brain" },
-      { label: "ACEs impact", to: "/aces" },
-      { label: "DSM-5 guide (professional reference)", to: "/dsm5" },
-      { label: "ICD-9 hub (professional reference)", to: "/icd9" },
-      { label: "Psychology theories", to: "/theories" },
+      { label: "Brain", to: "/brain" },
+      { label: "Childhood experiences", to: "/aces" },
+      { label: "Professional reference", to: "/diagnostics" },
     ],
   },
   {
-    title: "Support",
+    title: "VOYCE",
     links: [
+      { label: "About", to: "/about" },
+      { label: "How it works", to: "/how-it-works" },
+      { label: "Safety", to: "/safety" },
+      { label: "FAQ", to: "/faq" },
+      { label: "Partner with us", to: "/partners" },
       { label: "Contact", to: "/contact" },
-      { label: "Start here", to: "/start-here" },
-      { label: "Privacy", to: "/privacy" },
-      { label: "Terms of use", to: "/terms-of-use" },
     ],
   },
-  {
-    title: "Schools & partners",
-    links: [
-      { label: "VOYCE for Schools", to: "/schools" },
-      { label: "Partner with VOYCE", to: "/partners" },
-      { label: "AI4Schools (AI & STEM programme)", to: "/ai4schools" },
-      { label: "CAM — careers (separate site)", to: "https://suryavamshigovardhan.github.io/cam-website/" },
-      { label: "Invisible Inheritance (for couples)", to: "/invisible-inheritance" },
-    ],
-  },
+];
+
+const OTHER: { label: string; to: string; note: string }[] = [
+  { label: "CAM", to: "https://suryavamshigovardhan.github.io/cam-website/", note: "careers, separate site" },
+  { label: "AI4Schools", to: "/ai4schools", note: "AI & STEM programme" },
+  { label: "Invisible Inheritance", to: "/invisible-inheritance", note: "for adult couples, not students" },
 ];
 
 export default function SiteFooter() {
@@ -86,10 +64,10 @@ export default function SiteFooter() {
         speed={180}
         amplitude={1.4}
         maxRings={2}
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 hidden sm:block"
       />
-      <div className="relative mx-auto w-full max-w-6xl px-5 py-16 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_3fr]">
+      <div className="relative mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_3fr]">
           <div>
             <Link to="/" className="font-display text-xl tracking-tight">
               VOYCE
@@ -117,7 +95,7 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
             {COLUMNS.map((col) => (
               <div key={col.title}>
                 <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
@@ -126,15 +104,9 @@ export default function SiteFooter() {
                 <ul className="space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      {link.to.startsWith("http") ? (
-                        <a href={link.to} target="_blank" rel="noopener noreferrer" className="v-link text-sm text-foreground/80 transition-colors hover:text-primary">
-                        {link.label}
-                      </a>
-                      ) : (
                       <Link to={link.to} className="v-link text-sm text-foreground/80 transition-colors hover:text-primary">
                         {link.label}
                       </Link>
-                      )}
                     </li>
                   ))}
                 </ul>
@@ -143,15 +115,24 @@ export default function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-14 border-t border-border pt-8">
-          <nav aria-label="Begin again" className="mb-8">
-            <p className="text-xs font-medium uppercase tracking-[0.25em] text-muted-foreground">Begin again</p>
+        <div className="mt-10 border-t border-border pt-8">
+          <nav aria-label="Other initiatives" className="mb-8">
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              Other projects from the same team
+            </p>
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-              {BEGIN_AGAIN.map((item) => (
-                <li key={item.to}>
-                  <Link to={item.to} className="v-link text-sm text-foreground/80 transition-colors hover:text-primary">
-                    {item.label}
-                  </Link>
+              {OTHER.map((item) => (
+                <li key={item.label} className="text-sm text-muted-foreground">
+                  {item.to.startsWith("http") ? (
+                    <a href={item.to} target="_blank" rel="noopener noreferrer" className="v-link text-foreground/80 transition-colors hover:text-primary">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link to={item.to} className="v-link text-foreground/80 transition-colors hover:text-primary">
+                      {item.label}
+                    </Link>
+                  )}{" "}
+                  <span className="text-xs">({item.note})</span>
                 </li>
               ))}
             </ul>

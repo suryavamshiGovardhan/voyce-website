@@ -37,18 +37,12 @@ const acesResources = [
   }
 ];
 
-const acesStatistics = [
-  { label: 'Adults with 1+ ACEs', value: '61%', source: 'CDC' },
-  { label: 'Adults with 4+ ACEs', value: '16%', source: 'CDC' },
-  { label: 'Increased Risk of Depression', value: '460%', source: 'ACE Study' }
-];
-
 const acesKeyFacts = [
   'ACEs are linked to chronic health problems, mental illness, and substance misuse',
   'Toxic stress from ACEs can affect brain development and immune system',
   'ACEs are preventable through supportive relationships and community programs',
   'Resilience can be built even after experiencing multiple ACEs',
-  'Early intervention and trauma-informed care improve outcomes significantly'
+  'Support early on, and adults who respond with care, can make a real difference'
 ];
 
 export default function ACESPage() {
@@ -74,7 +68,6 @@ export default function ACESPage() {
         <ComprehensiveContent 
           topic="ACEs"
           resources={acesResources}
-          statistics={acesStatistics}
           keyFacts={acesKeyFacts}
         />
 

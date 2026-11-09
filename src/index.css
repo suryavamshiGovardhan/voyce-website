@@ -1326,3 +1326,54 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
   html.v-motion .v-auto { opacity: 1 !important; transform: none !important; transition: none !important; }
   .v-card-hover:hover, a:hover > .rounded-\[1\.25rem\].border { transform: none !important; }
 }
+
+/* ------------------------------------------------------------------ */
+/* Learn pages in the Dusk system (Nov 10 pass)                        */
+/* Older long-form content components keep their structure; these     */
+/* rules bring tabs, cards, tints and headings into the shared look.   */
+/* ------------------------------------------------------------------ */
+.v-tint-plum    { background: hsl(var(--surface)); }
+.v-tint-apricot { background: hsl(var(--apricot-soft) / 0.7); }
+.v-tint-sage    { background: hsl(var(--sage) / 0.12); }
+
+.v-tabs {
+  display: flex !important; flex-wrap: wrap; gap: 0.5rem; height: auto !important;
+  width: 100%; justify-content: flex-start !important;
+  background: transparent !important; border: 0 !important; padding: 0 !important; margin-bottom: 1.25rem;
+}
+.v-tabs > [role="tab"] {
+  white-space: normal; text-align: left; min-height: 2.75rem;
+  border-radius: 999px; border: 1px solid hsl(var(--border));
+  background: hsl(var(--card)); color: hsl(var(--foreground) / 0.8);
+  padding: 0.5rem 1rem; font-size: 0.875rem; font-weight: 500; letter-spacing: 0;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  transition: background-color var(--dur-fast) var(--ease-calm), color var(--dur-fast) var(--ease-calm), border-color var(--dur-fast) var(--ease-calm);
+}
+.v-tabs > [role="tab"]:hover { border-color: hsl(var(--primary) / 0.45); color: hsl(var(--primary)); }
+.v-tabs > [role="tab"][data-state="active"] {
+  background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); border-color: hsl(var(--primary)); box-shadow: none;
+}
+
+.v-learn-body h3, .v-learn-body .japanese-heading {
+  font-family: 'Fraunces', Georgia, ui-serif, serif; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2;
+}
+.v-learn-body .japanese-text { font-family: "Plus Jakarta Sans", system-ui, sans-serif; letter-spacing: 0; }
+.v-learn-body h4 { font-family: "Plus Jakarta Sans", system-ui, sans-serif; font-weight: 600; color: hsl(var(--foreground)); }
+.v-learn-body p, .v-learn-body li { line-height: 1.7; }
+.v-learn-body .edu-card, .edu-card {
+  background: hsl(var(--card)); backdrop-filter: none; border: 1px solid hsl(var(--border));
+  border-radius: 1.25rem; box-shadow: var(--shadow-soft);
+}
+.v-learn-body .edu-card:hover, .edu-card:hover {
+  background: hsl(var(--card)); border-color: hsl(var(--primary) / 0.3); box-shadow: var(--shadow-lift); transform: translateY(-2px);
+}
+.v-learn-body .hover-lift:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift); }
+.v-learn-body [class*="border-l-4"] { border-left-color: hsl(var(--primary) / 0.45); }
+@media (prefers-reduced-motion: reduce) {
+  .v-learn-body .edu-card:hover, .edu-card:hover, .v-learn-body .hover-lift:hover { transform: none; }
+  .v-tabs > [role="tab"] { transition: none; }
+}
+@media (max-width: 639px) {
+  .v-learn-body { padding: 0.75rem; }
+  .v-learn-body .p-6 { padding: 1rem; }
+}

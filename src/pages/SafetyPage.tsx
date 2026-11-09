@@ -19,7 +19,7 @@ const IS_NOT = [
 
 const HELPLINES = [
   { name: "Tele MANAS (India, 24/7)", value: "14416 or 1-800-891-4416" },
-  { name: "KIRAN mental health helpline (India)", value: "1800-599-0019" },
+  { name: "Vandrevala Foundation (India, 24/7)", value: "+91 9999 666 555" },
   { name: "Emergency services (India)", value: "112" },
 ];
 

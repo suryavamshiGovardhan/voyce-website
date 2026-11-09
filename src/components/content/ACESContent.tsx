@@ -18,7 +18,7 @@ const ACESContent = () => {
       </Card>
 
       <Tabs defaultValue="categories" className="w-full">
-        <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 bg-card">
+        <TabsList className="v-tabs">
           <TabsTrigger value="categories">Categories</TabsTrigger>
           <TabsTrigger value="biology">Biology</TabsTrigger>
           <TabsTrigger value="resilience">Resilience</TabsTrigger>

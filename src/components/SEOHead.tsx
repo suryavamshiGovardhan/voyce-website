@@ -13,7 +13,7 @@ interface SEOHeadProps {
 import { SITE_ORIGIN, BASE_PATH } from "@/lib/site";
 export { SITE_ORIGIN };
 export const DEFAULT_TITLE = "VOYCE — Student & school wellbeing";
-const DEFAULT_DESCRIPTION = "A calm, private wellbeing space for students, parents, teachers and schools. Read real stories, reflect privately, find a next step. No diagnosis, no scores.";
+const DEFAULT_DESCRIPTION = "A calm, private wellbeing space for students, parents, teachers and schools. Read short stories, reflect privately, find a next step. No diagnosis, no scores.";
 const DEFAULT_KEYWORDS = "student wellbeing, school wellbeing, emotional check-in, reflection, mindfulness, VOYCE";
 
 /** One brand, one suffix: "Page | VOYCE". Strips any old "| VOYCE" suffixes. */

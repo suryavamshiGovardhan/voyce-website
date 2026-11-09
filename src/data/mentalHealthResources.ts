@@ -182,24 +182,6 @@ export const neuroscienceResources = [
   }
 ];
 
-export const topicStatistics = {
-  stress: [
-    { label: 'Adults Experience Daily Stress', value: '77%', source: 'APA' },
-    { label: 'Stress-Related Health Issues', value: '43%', source: 'WHO' },
-    { label: 'Workplace Stress Cost', value: '$300B', source: 'American Institute of Stress' }
-  ],
-  trauma: [
-    { label: 'Adults Experience Trauma', value: '70%', source: 'SAMHSA' },
-    { label: 'Develop PTSD from Trauma', value: '20%', source: 'National Center for PTSD' },
-    { label: 'Children Exposed to ACEs', value: '61%', source: 'CDC' }
-  ],
-  adhd: [
-    { label: 'Children with ADHD', value: '9.4%', source: 'CDC' },
-    { label: 'Adults with ADHD', value: '4.4%', source: 'NIMH' },
-    { label: 'ADHD Heredability Rate', value: '76%', source: 'Nature Genetics' }
-  ]
-};
-
 export const topicKeyFacts = {
   stress: [
     'Chronic stress can shrink the prefrontal cortex and enlarge the amygdala',

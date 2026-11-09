@@ -20,8 +20,8 @@ const STEPS = [
   {
     n: "01",
     icon: BookOpen,
-    title: "Read a real story",
-    body: "A short, anonymous story from someone your age. Most people find one that sounds a little like them.",
+    title: "Read a short story",
+    body: "A short, anonymous story about someone your age. Most people find one that sounds a little like them.",
     cta: "Read a story",
     to: "/stories",
   },
@@ -51,7 +51,7 @@ export default function StartHerePage() {
   return (
     <PageShell
       title="Start here — your first two minutes"
-      description="New to VOYCE? Read a real story, answer one private question, and leave with one small next step. No account, nothing saved, no diagnosis."
+      description="New to VOYCE? Read a short story, answer one private question, and leave with one small next step. No account, nothing saved, no diagnosis."
       keywords="start here, student wellbeing, private reflection, no account"
       canonical="/start-here"
     >

@@ -13,23 +13,23 @@ const CDSContent = () => {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-2xl">
             <Brain className="h-6 w-6 text-primary" />
-            Cognitive Disengagement Syndrome (CDS) - Complete Guide
+            Cognitive disengagement syndrome (CDS), in plain words
           </CardTitle>
         </CardHeader>
         <CardContent>
           <p className="text-lg text-foreground leading-relaxed mb-4">
-            Cognitive Disengagement Syndrome (CDS), formerly known as Sluggish Cognitive Tempo (SCT), 
-            represents a distinct neurodevelopmental condition characterized by daydreaming, mental fogginess, 
-            and slowed processing speed that affects millions worldwide.
+            Cognitive disengagement syndrome (CDS), once called sluggish cognitive tempo, is a pattern researchers are
+            still studying: lots of daydreaming, mental fog and slower processing. It is not yet an official diagnosis in
+            DSM-5-TR or ICD-11. This page explains the research — only a qualified professional can assess someone.
           </p>
         </CardContent>
       </Card>
 
       <Tabs defaultValue="definition" className="w-full">
-        <TabsList className="grid w-full grid-cols-6">
+        <TabsList className="v-tabs">
           <TabsTrigger value="definition">Definition</TabsTrigger>
-          <TabsTrigger value="symptoms">Symptoms</TabsTrigger>
-          <TabsTrigger value="diagnosis">Diagnosis</TabsTrigger>
+          <TabsTrigger value="symptoms">Signs</TabsTrigger>
+          <TabsTrigger value="diagnosis">How professionals assess it</TabsTrigger>
           <TabsTrigger value="treatment">Treatment</TabsTrigger>
           <TabsTrigger value="research">Research</TabsTrigger>
           <TabsTrigger value="resources">Resources</TabsTrigger>
@@ -67,7 +67,7 @@ const CDSContent = () => {
                       </ul>
                     </div>
                     <div className="bg-primary/10 p-4 rounded-lg">
-                      <h4 className="font-semibold text-foreground mb-2">Behavioral Features</h4>
+                      <h4 className="font-semibold text-foreground mb-2">Behavioural Features</h4>
                       <ul className="list-disc list-inside space-y-1 text-sm text-primary">
                         <li>Appearing "spacey" or dreamy</li>
                         <li>Slow task completion</li>
@@ -108,7 +108,7 @@ const CDSContent = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5" />
-                Comprehensive Symptom Profile
+                Signs researchers describe
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -161,22 +161,22 @@ const CDSContent = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Microscope className="h-5 w-5" />
-                Diagnostic Approaches and Assessment
+                How professionals look at it
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
                 <h3 className="text-xl font-semibold mb-4">Current Diagnostic Status</h3>
-                <div className="bg-amber-50 border border-border p-4 rounded-lg">
-                  <p className="text-amber-700">
-                    <strong>Important Note:</strong> CDS is not yet officially recognized in the DSM-5-TR or ICD-11. 
+                <div className="v-tint-apricot border border-border p-4 rounded-lg">
+                  <p className="text-foreground">
+                    <strong>Important Note:</strong> CDS is not yet officially recognised in the DSM-5-TR or ICD-11. 
                     However, research is ongoing to establish formal diagnostic criteria.
                   </p>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold mb-4">Assessment Tools</h3>
+                <h3 className="text-xl font-semibold mb-4">Tools professionals use (not self-tests)</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <Card className="border-border">
                     <CardHeader className="pb-3">
@@ -218,17 +218,17 @@ const CDSContent = () => {
                         <h5 className="font-semibold text-primary mb-2">CDS Characteristics</h5>
                         <ul className="text-sm space-y-1">
                           <li>• Underactive/hypoactive</li>
-                          <li>• Slow, sluggish behavior</li>
+                          <li>• Slow, sluggish behaviour</li>
                           <li>• Daydreaming and mental fog</li>
                           <li>• Social withdrawal</li>
                           <li>• Processing speed deficits</li>
                         </ul>
                       </div>
                       <div>
-                        <h5 className="font-semibold text-amber-700 mb-2">ADHD Characteristics</h5>
+                        <h5 className="font-semibold text-foreground mb-2">ADHD Characteristics</h5>
                         <ul className="text-sm space-y-1">
                           <li>• Hyperactive/impulsive</li>
-                          <li>• Fast, restless behavior</li>
+                          <li>• Fast, restless behaviour</li>
                           <li>• Distractibility and inattention</li>
                           <li>• Social impulsivity</li>
                           <li>• Working memory deficits</li>
@@ -253,7 +253,7 @@ const CDSContent = () => {
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold">Behavioral Interventions</h3>
+                  <h3 className="text-lg font-semibold">Behavioural Interventions</h3>
                   <div className="space-y-3">
                     <div className="bg-primary/10 p-4 rounded-lg">
                       <h4 className="font-semibold text-foreground mb-2">Cognitive Training</h4>
@@ -286,15 +286,15 @@ const CDSContent = () => {
                         <li>• Stimulant medications (limited efficacy)</li>
                         <li>• Non-stimulant alternatives</li>
                         <li>• Modafinil for processing speed</li>
-                        <li>• Individualized medication trials</li>
+                        <li>• Individualised medication trials</li>
                       </ul>
                     </div>
                     
-                    <div className="bg-amber-50 p-4 rounded-lg">
-                      <h4 className="font-semibold text-amber-700 mb-2">Alternative Therapies</h4>
-                      <ul className="text-sm text-amber-700 space-y-1">
+                    <div className="v-tint-apricot p-4 rounded-lg">
+                      <h4 className="font-semibold text-foreground mb-2">Alternative Therapies</h4>
+                      <ul className="text-sm text-foreground space-y-1">
                         <li>• Neurofeedback training</li>
-                        <li>• Cognitive behavioral therapy</li>
+                        <li>• Cognitive behavioural therapy</li>
                         <li>• Occupational therapy</li>
                         <li>• Exercise and physical activity programs</li>
                       </ul>
@@ -381,7 +381,7 @@ const CDSContent = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Users className="h-5 w-5" />
-                  Support Organizations
+                  Support Organisations
                 </CardTitle>
               </CardHeader>
               <CardContent>

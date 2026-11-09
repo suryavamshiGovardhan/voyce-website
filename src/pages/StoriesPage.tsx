@@ -85,7 +85,7 @@ function StoriesPage() {
     <>
       <SEOHead 
         title="Stories | VOYCE"
-        description="Read real, anonymous human stories about mental health, self-discovery, and quiet moments of truth. No judgement, no pressure."
+        description="Short, anonymous first-person stories about mental health, self-discovery, and quiet moments of truth. No judgement, no pressure."
         keywords="mental health stories, anonymous stories, self-reflection, personal growth, mindfulness"
       />
       
@@ -171,7 +171,7 @@ function StoriesPage() {
                 <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     onClick={handleReflect}
-                    className="bg-primary hover:from-purple-700 hover:to-purple-800"
+                    className="bg-primary hover:bg-primary/90"
                   >
                     <PenLine className="h-4 w-4 mr-2" aria-hidden="true" />
                     Reflect privately

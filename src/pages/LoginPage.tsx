@@ -144,15 +144,15 @@ export default function LoginPage() {
             </div>
           </form>
 
-          <div className="mt-8 p-4 bg-red-50 border border-red-200 rounded-lg">
+          <div className="mt-8 p-4 v-tint-apricot border border-border rounded-2xl">
             <div className="flex items-center mb-2">
-              <Phone className="h-5 w-5 text-red-600 mr-2" />
-              <h3 className="font-semibold text-red-800">Need Immediate Help?</h3>
+              <Phone className="h-5 w-5 text-primary mr-2" />
+              <h3 className="font-semibold text-foreground">Need help right now?</h3>
             </div>
-            <p className="text-sm text-red-700 mb-2">
+            <p className="text-sm text-foreground/80 mb-2">
               If you're experiencing a mental health crisis, please reach out for immediate support:
             </p>
-            <Button asChild variant="destructive" size="sm" className="w-full">
+            <Button asChild size="sm" className="w-full rounded-full">
               <a href="tel:14416">Call Tele MANAS: 14416</a>
             </Button>
           </div>

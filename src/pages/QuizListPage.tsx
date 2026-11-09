@@ -91,9 +91,9 @@ export default function QuizListPage() {
       case 'beginner':
         return 'bg-primary/10 text-primary border-primary/40';
       case 'intermediate':
-        return 'bg-primary/10 text-amber-700 border-amber-300';
+        return 'v-tint-apricot text-foreground border-border';
       case 'advanced':
-        return 'bg-red-500/10 text-red-600 border-red-500/20';
+        return 'v-tint-sage text-foreground border-border';
       default:
         return 'bg-muted-foreground/10 text-muted-foreground border-border/20';
     }

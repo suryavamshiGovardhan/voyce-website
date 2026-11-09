@@ -49,9 +49,12 @@ export default function ToolsPage() {
 
       <Section tone="muted" className="py-16 sm:py-20">
         <Reveal className="mb-10 max-w-2xl">
-          <Eyebrow>All practices</Eyebrow>
+          <Eyebrow>More practices</Eyebrow>
           <StatementHeading>Pick what fits the moment.</StatementHeading>
-          <Lede>Guided meditations, reflection prompts and focus exercises. Everything here works without signing in.</Lede>
+          <Lede>
+            Start with the gentle ones. The deeper reflections are clearly marked and entirely optional. Everything here
+            works without signing in, and nothing you do is saved or scored.
+          </Lede>
         </Reveal>
         <Reveal>
           <ImmersionTools />

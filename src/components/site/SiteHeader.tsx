@@ -12,7 +12,7 @@ export const CAM_SITE = "https://suryavamshigovardhan.github.io/cam-website/";
 const PRIMARY: { label: string; to?: string; items?: NavItem[]; wide?: boolean; note?: string }[] = [
   { label: "How it works", to: "/how-it-works" },
   {
-    label: "For you",
+    label: "Who it's for",
     items: [
       { label: "Students", to: "/students", description: "Understand yourself, one small step at a time" },
       { label: "Parents", to: "/parents", description: "Understand the signals behind the silence" },
@@ -26,12 +26,12 @@ const PRIMARY: { label: string; to?: string; items?: NavItem[]; wide?: boolean; 
     note: "No account needed",
     items: [
       { label: "Start here", to: "/start-here", description: "Your first two minutes on VOYCE" },
-      { label: "Stories", to: "/stories", description: "Real experiences, shared with consent" },
+      { label: "Stories", to: "/stories", description: "Short first-person stories to reflect on" },
       { label: "The Unheard Mind", to: "/series", description: "Eight-part narrative series" },
       { label: "Tools & practices", to: "/tools", description: "Small things you can try today" },
       { label: "Guides & articles", to: "/resources", description: "Plain-language wellbeing reading" },
       { label: "Blog", to: "/blog", description: "Essays and reflections" },
-      { label: "Library", to: "/library", description: "Long-form deep dives" },
+      { label: "Library", to: "/library", description: "Short ideas to think about" },
       { label: "Workbook", to: "/workbook", description: "Write it out" },
       { label: "VOYCE Path", to: "/path", description: "A guided sequence" },
       { label: "Thoughts", to: "/thoughts", description: "Short reflections" },
@@ -76,7 +76,7 @@ const PRIMARY: { label: string; to?: string; items?: NavItem[]; wide?: boolean; 
     items: [
       { label: "CAM — careers", to: CAM_SITE, external: true, description: "Career exposure for Classes 8–12 (separate site)" },
       { label: "AI4Schools", to: "/ai4schools", description: "AI & STEM programme — not the wellbeing product" },
-      { label: "Invisible Inheritance", to: "/invisible-inheritance", description: "A reflection test for couples" },
+      { label: "Invisible Inheritance", to: "/invisible-inheritance", description: "Separate project for adult couples — not for students" },
     ],
   },
 ];

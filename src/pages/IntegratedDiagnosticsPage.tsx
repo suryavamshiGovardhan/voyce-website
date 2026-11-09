@@ -9,7 +9,7 @@ export default function IntegratedDiagnosticsPage() {
     <>
       <SEOHead
         title="Integrated Diagnostic Resource Hub - ICD-9-CM & DSM-5 | VOYCE"
-        description="Comprehensive mental health diagnostic resource combining ICD-9-CM codes, DSM-5 criteria, real-world case studies, and cross-reference mappings for clinical education."
+        description="Professional reference for adults and clinicians: ICD-9-CM codes, DSM-5 criteria, fictional teaching cases and cross-reference mappings. Not a self-test."
         keywords="ICD-9, DSM-5, mental health diagnosis, case studies, cross-reference, clinical education, diagnostic criteria, psychiatric disorders"
       />
       <div className="v-legacy min-h-screen flex flex-col bg-background">

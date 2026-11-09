@@ -14,8 +14,8 @@ export default function StressPage() {
   return (
     <>
       <SEOHead
-        title="Stress Management - VOYCE"
-        description="Master the science of stress and develop powerful tools for resilience"
+        title="Understanding stress"
+        description="What stress does in your body, early signs to notice, and small things that help — in plain words. Educational, not a diagnosis."
         keywords="stress management, stress relief, mental health, resilience"
       />
       <div className="v-legacy min-h-screen bg-background">
@@ -42,7 +42,7 @@ export default function StressPage() {
             <ReflectPause prompt="Take a breath. Which one small tool here could you try today?" />
             <ContinueJourney
               links={[
-                { to: "/tools", label: "Immersion tools", hint: "Put what you read into practice." },
+                { to: "/tools", label: "Calm practices", hint: "Put what you read into practice." },
                 { to: "/brain", label: "Brain & neuroscience", hint: "Why stress feels the way it does." },
                 { to: "/series", label: "The Unheard Mind", hint: "Stories behind the science." },
               ]}

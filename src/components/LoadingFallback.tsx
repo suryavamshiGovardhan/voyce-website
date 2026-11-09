@@ -1,4 +1,3 @@
-import { ThinkingLoader } from './ThinkingLoader';
 
 interface LoadingFallbackProps {
   message?: string;
@@ -9,7 +8,20 @@ export function LoadingFallback({
   message = "Loading...", 
   fullScreen = true 
 }: LoadingFallbackProps) {
-  return <ThinkingLoader message={message} fullScreen={fullScreen} />;
+  // Calm, on-palette placeholder while a page loads (no dark flash between routes).
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className={`${fullScreen ? "min-h-screen" : "py-16"} flex flex-col items-center justify-center gap-4 bg-background`}
+    >
+      <span className="relative flex h-10 w-10 items-center justify-center" aria-hidden="true">
+        <span className="absolute inset-0 rounded-full bg-primary/15 motion-safe:animate-ping" />
+        <span className="h-4 w-4 rounded-full bg-primary/70" />
+      </span>
+      <span className="text-sm text-muted-foreground">{message}</span>
+    </div>
+  );
 }
 
 export function PageLoadingSkeleton() {

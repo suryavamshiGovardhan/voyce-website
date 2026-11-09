@@ -6,30 +6,27 @@ import { Shield, Heart, Brain, Flower, Mountain, Gem, Church, TreeDeciduous, Com
 
 const TraumaContent = () => {
   return (
-    <div className="space-y-8 washi-texture">
-      <Card className="bg-surface border-border cherry-blossom-bg">
+    <div className="space-y-8">
+      <Card className="bg-surface border-border">
         <CardHeader>
-          <CardTitle className="flex items-center gap-3 text-3xl japanese-heading">
-            <Shield className="h-8 w-8 text-amber-700" />
-            <Flower className="h-6 w-6 text-amber-700" />
-            Trauma Recovery & Resilience
-            <Mountain className="h-6 w-6 text-amber-700" />
+          <CardTitle className="flex items-center gap-3 text-2xl japanese-heading">
+            <Shield className="h-6 w-6 text-primary" aria-hidden="true" />
+            Trauma and recovery, gently
           </CardTitle>
-          <div className="ink-brush-divider my-4"></div>
         </CardHeader>
         <CardContent>
-          <p className="text-lg text-amber-700 leading-relaxed mb-6 japanese-text">
-            古の智慧と現代科学の融合 - Ancient wisdom meets modern science in understanding trauma as a transformative journey from suffering to strength, 
-            incorporating Greek concepts of catharsis, Indian principles of dharma, and Roman stoic resilience.
+          <p className="text-lg text-foreground leading-relaxed mb-2 japanese-text">
+            What trauma is, how it can show up in the body and mind, and what helps people recover. Go slowly — you can
+            stop at any point. If reading this stirs something up, please talk to someone you trust.
           </p>
         </CardContent>
       </Card>
 
       <Tabs defaultValue="understanding" className="w-full">
-        <TabsList className="grid w-full grid-cols-8 bg-surface border border-border">
+        <TabsList className="v-tabs">
           <TabsTrigger value="understanding" className="japanese-text">Understanding</TabsTrigger>
           <TabsTrigger value="types" className="japanese-text">Types</TabsTrigger>
-          <TabsTrigger value="symptoms" className="japanese-text">Symptoms</TabsTrigger>
+          <TabsTrigger value="symptoms" className="japanese-text">How it can show up</TabsTrigger>
           <TabsTrigger value="healing" className="japanese-text">Healing</TabsTrigger>
           <TabsTrigger value="therapies" className="japanese-text">Therapies</TabsTrigger>
           <TabsTrigger value="resilience" className="japanese-text">Resilience</TabsTrigger>
@@ -39,7 +36,7 @@ const TraumaContent = () => {
 
         <TabsContent value="understanding" className="space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <Card className="edu-card washi-texture">
+            <Card className="edu-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 japanese-heading">
                   <Brain className="h-6 w-6 text-primary" />
@@ -51,7 +48,7 @@ const TraumaContent = () => {
                   <div className="bg-primary/10 p-4 rounded-lg border-l-4 border-border">
                     <h4 className="font-semibold text-foreground mb-2 japanese-heading">Amygdala Hyperactivation</h4>
                     <ul className="text-sm text-primary space-y-2 japanese-text">
-                      <li>• Fear center becomes overactive</li>
+                      <li>• Fear centre becomes overactive</li>
                       <li>• Heightened threat detection</li>
                       <li>• Emotional dysregulation</li>
                       <li>• Fight-flight-freeze responses</li>
@@ -84,21 +81,21 @@ const TraumaContent = () => {
               </CardContent>
             </Card>
 
-            <Card className="edu-card washi-texture">
+            <Card className="edu-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 japanese-heading">
-                  <Heart className="h-6 w-6 text-red-600" />
+                  <Heart className="h-6 w-6 text-primary" />
                   Cultural Wisdom Traditions
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-4">
-                  <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
+                  <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Flower className="h-4 w-4" />
                       Sanskrit: त्राण (Trana) - Protection
                     </h4>
-                    <p className="text-sm text-amber-700 japanese-text">
+                    <p className="text-sm text-foreground japanese-text">
                       Ancient Vedic understanding of trauma as disruption of dharma (life purpose) and the path to restoration through yoga, meditation, and spiritual practices.
                     </p>
                   </div>
@@ -113,22 +110,22 @@ const TraumaContent = () => {
                     </p>
                   </div>
 
-                  <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
+                  <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Crown className="h-4 w-4" />
                       Arabic: صبر (Sabr) - Patient Perseverance
                     </h4>
-                    <p className="text-sm text-amber-700 japanese-text">
+                    <p className="text-sm text-foreground japanese-text">
                       Islamic concept of patient endurance through hardship as a path to spiritual growth and inner strength.
                     </p>
                   </div>
 
-                  <div className="bg-red-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-red-800 mb-2 flex items-center gap-2">
+                  <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Shield className="h-4 w-4" />
                       Latin: Virtus - Virtue Through Adversity
                     </h4>
-                    <p className="text-sm text-red-700 japanese-text">
+                    <p className="text-sm text-foreground japanese-text">
                       Roman Stoic philosophy teaching that virtue and strength emerge through facing challenges with courage and wisdom.
                     </p>
                   </div>
@@ -190,7 +187,7 @@ const TraumaContent = () => {
             ].map((approach, index) => (
               <Card key={index} className="edu-card">
                 <CardHeader>
-                  <CardTitle className={`flex items-center gap-2 text-${approach.color}-700`}>
+                  <CardTitle className={`flex items-center gap-2 text-foreground`}>
                     <approach.icon className="h-5 w-5" />
                     {approach.title}
                   </CardTitle>
@@ -198,8 +195,8 @@ const TraumaContent = () => {
                 <CardContent>
                   <ul className="space-y-2">
                     {approach.methods.map((method, idx) => (
-                      <li key={idx} className={`text-sm text-${approach.color}-600 flex items-center gap-2`}>
-                        <div className={`w-2 h-2 rounded-full bg-${approach.color}-400`}></div>
+                      <li key={idx} className={`text-sm text-foreground/80 flex items-center gap-2`}>
+                        <div className={`w-2 h-2 rounded-full bg-primary`}></div>
                         {method}
                       </li>
                     ))}
@@ -211,15 +208,15 @@ const TraumaContent = () => {
         </TabsContent>
 
         <TabsContent value="types" className="space-y-6">
-          <Card className="edu-card washi-texture">
+          <Card className="edu-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
-                <Compass className="h-6 w-6 text-amber-700" />
+                <Compass className="h-6 w-6 text-foreground" />
                 The Many Shapes of Trauma
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-700 leading-relaxed japanese-text">
+              <p className="text-foreground leading-relaxed japanese-text">
                 Trauma is not one thing. It is the nervous system's response to more than it could hold, at a time when it could not fully process what
                 happened. Sometimes it arrives in a single moment. Sometimes it accumulates so slowly that we mistake it for personality. Naming the shape of it
                 is often the first act of relief — because you cannot heal what you cannot see.
@@ -236,15 +233,15 @@ const TraumaContent = () => {
                   { name: "Medical Trauma", body: "Diagnoses, procedures, ICU stays, or medical betrayal. The body was in a place of extremity and it did not forget.", color: "teal" },
                   { name: "Betrayal Trauma", body: "When harm comes from someone we depended on for safety. The wound is not just the event, but the collapse of trust itself.", color: "pink" }
                 ].map((t, i) => (
-                  <div key={i} className={`bg-${t.color}-50/80 p-4 rounded-lg border border-${t.color}-200`}>
-                    <h4 className={`font-semibold text-${t.color}-800 mb-2 japanese-heading`}>{t.name}</h4>
-                    <p className={`text-sm text-${t.color}-700 japanese-text`}>{t.body}</p>
+                  <div key={i} className={`v-tint-plum p-4 rounded-lg border border-border`}>
+                    <h4 className={`font-semibold text-foreground mb-2 japanese-heading`}>{t.name}</h4>
+                    <p className={`text-sm text-foreground japanese-text`}>{t.body}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-border">
-                <p className="text-sm text-amber-700 italic japanese-text">
+              <div className="v-tint-apricot p-4 rounded-lg border-l-4 border-border">
+                <p className="text-sm text-foreground italic japanese-text">
                   You may recognise more than one of these. That is common, not broken. Trauma layers. Healing does too.
                 </p>
               </div>
@@ -253,23 +250,23 @@ const TraumaContent = () => {
         </TabsContent>
 
         <TabsContent value="symptoms" className="space-y-6">
-          <Card className="edu-card washi-texture">
+          <Card className="edu-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
-                <Heart className="h-6 w-6 text-rose-600" />
+                <Heart className="h-6 w-6 text-primary" />
                 What Trauma Feels Like from the Inside
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-700 leading-relaxed japanese-text">
+              <p className="text-foreground leading-relaxed japanese-text">
                 Trauma responses are not defects. They are old strategies that once kept you alive — the flinch, the freeze, the fawn, the fog. Reading these
                 may be uncomfortable. It may also be the first time you feel less alone in your own body.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-rose-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-rose-800 mb-2 japanese-heading">Re-experiencing</h4>
-                  <ul className="text-sm text-rose-700 space-y-1 japanese-text">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Re-experiencing</h4>
+                  <ul className="text-sm text-foreground space-y-1 japanese-text">
                     <li>• Intrusive memories, flashbacks, nightmares</li>
                     <li>• A sound or smell that yanks you back in time</li>
                     <li>• Physical waves — chest, throat, gut — with no clear trigger</li>
@@ -292,9 +289,9 @@ const TraumaContent = () => {
                     <li>• Losing interest in things that used to matter</li>
                   </ul>
                 </div>
-                <div className="bg-amber-50 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-2 japanese-heading">Hyperarousal</h4>
-                  <ul className="text-sm text-amber-700 space-y-1 japanese-text">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Hyperarousal</h4>
+                  <ul className="text-sm text-foreground space-y-1 japanese-text">
                     <li>• Easily startled; sleep that never quite deepens</li>
                     <li>• Anger that surprises even you</li>
                     <li>• Constantly scanning for what could go wrong</li>
@@ -322,7 +319,7 @@ const TraumaContent = () => {
         </TabsContent>
 
         <TabsContent value="therapies" className="space-y-6">
-          <Card className="edu-card washi-texture">
+          <Card className="edu-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
                 <Gem className="h-6 w-6 text-primary" />
@@ -330,7 +327,7 @@ const TraumaContent = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-700 leading-relaxed japanese-text">
+              <p className="text-foreground leading-relaxed japanese-text">
                 No single therapy fits everyone. What matters most is the relationship with the therapist and the sense that your nervous system feels safer,
                 not more overwhelmed, over time. Here are the approaches with the strongest evidence for trauma — described in plain language, so you can walk
                 into a first session with less mystery.
@@ -365,7 +362,7 @@ const TraumaContent = () => {
         </TabsContent>
 
         <TabsContent value="resilience" className="space-y-6">
-          <Card className="edu-card washi-texture">
+          <Card className="edu-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
                 <Mountain className="h-6 w-6 text-primary" />
@@ -373,7 +370,7 @@ const TraumaContent = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-700 leading-relaxed japanese-text">
+              <p className="text-foreground leading-relaxed japanese-text">
                 Resilience is not the absence of suffering. It is what grows through it, slowly, when the wound is tended rather than hidden. Researchers
                 Tedeschi and Calhoun found that survivors often report growth in five specific domains — not despite what happened, but because of how they met
                 it.
@@ -401,15 +398,15 @@ const TraumaContent = () => {
                     The zone where you can feel without being flooded. Healing widens the window — through breath, rhythm, and slowly-titrated exposure.
                   </p>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-1 japanese-heading">Co-regulation</h4>
-                  <p className="text-sm text-amber-700 japanese-text">
+                <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-1 japanese-heading">Co-regulation</h4>
+                  <p className="text-sm text-foreground japanese-text">
                     Nervous systems calm each other. A trusted person's steady presence is not a luxury — it is neurobiology.
                   </p>
                 </div>
-                <div className="bg-amber-50 p-4 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-1 japanese-heading">Ritual & rhythm</h4>
-                  <p className="text-sm text-amber-700 japanese-text">
+                <div className="v-tint-apricot p-4 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-1 japanese-heading">Ritual & rhythm</h4>
+                  <p className="text-sm text-foreground japanese-text">
                     Morning tea. Sunday walks. Lighting a candle for someone lost. Small repeatable acts rebuild a sense of order the trauma disrupted.
                   </p>
                 </div>
@@ -419,7 +416,7 @@ const TraumaContent = () => {
         </TabsContent>
 
         <TabsContent value="support" className="space-y-6">
-          <Card className="edu-card washi-texture">
+          <Card className="edu-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
                 <Church className="h-6 w-6 text-primary" />
@@ -427,7 +424,7 @@ const TraumaContent = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-700 leading-relaxed japanese-text">
+              <p className="text-foreground leading-relaxed japanese-text">
                 Trauma often teaches us that people are unsafe. Healing asks us to test that lesson, gently, with the right people. This is not about opening
                 everything to everyone. It is about learning who deserves your story, and what kind of holding you actually need.
               </p>
@@ -443,9 +440,9 @@ const TraumaContent = () => {
                     <li>• You feel calmer, not smaller, after being with them</li>
                   </ul>
                 </div>
-                <div className="bg-rose-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-rose-800 mb-2 japanese-heading">Boundary language you can borrow</h4>
-                  <ul className="text-sm text-rose-700 space-y-2 japanese-text">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Boundary language you can borrow</h4>
+                  <ul className="text-sm text-foreground space-y-2 japanese-text">
                     <li>• "I'm not ready to talk about that part."</li>
                     <li>• "I need you to just listen right now, not solve it."</li>
                     <li>• "I love you and this topic is off-limits for me."</li>
@@ -465,8 +462,8 @@ const TraumaContent = () => {
                 </ul>
               </div>
 
-              <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-border">
-                <p className="text-sm text-amber-700 italic japanese-text">
+              <div className="v-tint-apricot p-4 rounded-lg border-l-4 border-border">
+                <p className="text-sm text-foreground italic japanese-text">
                   If the first therapist is not the right one, this is information — not failure. Fit matters more than credentials.
                 </p>
               </div>
@@ -475,21 +472,21 @@ const TraumaContent = () => {
         </TabsContent>
 
         <TabsContent value="resources" className="space-y-6">
-          <Card className="edu-card washi-texture">
+          <Card className="edu-card">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
-                <Gem className="h-6 w-6 text-amber-700" />
+                <Gem className="h-6 w-6 text-foreground" />
                 Where to Turn Next
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-amber-50 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-700 mb-2 japanese-heading">India — support lines & services</h4>
-                  <ul className="text-sm text-amber-700 space-y-2 japanese-text">
+                <div className="v-tint-apricot p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">India — support lines & services</h4>
+                  <ul className="text-sm text-foreground space-y-2 japanese-text">
                     <li>• <strong>iCall</strong> — +91 9152987821, Mon–Sat 8 AM–10 PM, free & confidential</li>
-                    <li>• <strong>Vandrevala Foundation</strong> — 1860-2662-345, 24×7</li>
-                    <li>• <strong>KIRAN (Govt of India)</strong> — 1800-599-0019, 24×7, 13 languages</li>
+                    <li>• <strong>Vandrevala Foundation</strong> — +91 9999 666 555, 24×7</li>
+                    <li>• <strong>Tele MANAS (Govt of India)</strong> — 14416 or 1-800-891-4416, free, 24×7</li>
                     <li>• <strong>NIMHANS Bengaluru</strong> — public research & tertiary care</li>
                     <li>• <strong>Sangath</strong> — community mental health, Goa/Delhi/Bhopal</li>
                     <li>• <strong>The Live Love Laugh Foundation</strong> — awareness and access</li>

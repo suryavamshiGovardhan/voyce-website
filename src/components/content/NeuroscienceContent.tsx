@@ -17,7 +17,7 @@ const NeuroscienceContent = () => (
     </Card>
 
     <Tabs defaultValue="history" className="w-full">
-      <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-card">
+      <TabsList className="v-tabs">
         <TabsTrigger value="history">History</TabsTrigger>
         <TabsTrigger value="methods">Methods</TabsTrigger>
         <TabsTrigger value="frontiers">Frontiers</TabsTrigger>

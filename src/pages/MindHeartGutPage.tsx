@@ -10,17 +10,11 @@ import MindHeartGutContent from "@/components/content/MindHeartGutContent";
 import { mindHeartGutResources } from "@/data/mentalHealthResources";
 import { LearnCheck } from "@/components/site/LearnCheck";
 
-const mindHeartGutStatistics = [
-  { label: 'Neurons in Gut', value: '500 Million', source: 'Nature Reviews Gastroenterology' },
-  { label: 'Serotonin Made in Gut', value: '90%', source: 'Journal of Neurogastroenterology' },
-  { label: 'Heart-Brain Connections', value: '40,000', source: 'HeartMath Institute' }
-];
-
 const mindHeartGutKeyFacts = [
   'The gut is often called the "second brain" due to its extensive neural network',
   'Heart rhythm patterns affect brain function and emotional processing',
-  'Gut microbiota directly influences mood and mental health through the vagus nerve',
-  'Stress affects gut permeability, leading to "leaky gut syndrome"',
+  'Researchers are studying how gut bacteria and mood may influence each other, partly through the vagus nerve',
+  'Stress can change how the gut works — many people notice it as butterflies, nausea or appetite changes',
   'Heart rate variability is a key indicator of stress resilience',
   'Breathing exercises can synchronize heart, brain, and gut functions'
 ];
@@ -47,7 +41,6 @@ export default function MindHeartGutPage() {
         <ComprehensiveContent 
           topic="Mind-Heart-Gut Connection"
           resources={mindHeartGutResources}
-          statistics={mindHeartGutStatistics}
           keyFacts={mindHeartGutKeyFacts}
         />
 
