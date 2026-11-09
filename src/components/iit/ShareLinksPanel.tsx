@@ -75,7 +75,7 @@ function LinkRow({
       >
         <code className="flex-1 text-[11px] font-mono truncate text-foreground/80">{url}</code>
         {copied ? (
-          <Check className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
+          <Check className="h-3.5 w-3.5 text-primary shrink-0" />
         ) : (
           <Copy className="h-3.5 w-3.5 text-muted-foreground group-hover:text-foreground shrink-0" />
         )}

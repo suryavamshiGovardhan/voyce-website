@@ -9,9 +9,9 @@ const exploreCategories = [
     icon: Brain,
     title: "Neuroscience",
     description: "Dive deep into brain function, neuroplasticity, and the latest research in cognitive science",
-    color: "from-blue-500 to-indigo-600",
-    textColor: "text-blue-600",
-    bgColor: "bg-blue-50",
+    color: "from-primary to-primary/70",
+    textColor: "text-primary",
+    bgColor: "bg-primary/10",
     borderColor: "border-border",
     link: "/neuroscience"
   },
@@ -20,8 +20,8 @@ const exploreCategories = [
     title: "Emotional Wellness",
     description: "Understanding trauma, stress, and building emotional resilience through evidence-based approaches",
     color: "from-pink-500 to-rose-600",
-    textColor: "text-pink-600",
-    bgColor: "bg-pink-50",
+    textColor: "text-primary",
+    bgColor: "bg-primary/10",
     borderColor: "border-border",
     link: "/trauma"
   },
@@ -29,9 +29,9 @@ const exploreCategories = [
     icon: TreePine,
     title: "Mind-Body Connection",
     description: "Explore the intricate relationship between mind, heart, and gut through holistic wisdom",
-    color: "from-green-500 to-emerald-600",
-    textColor: "text-green-600",
-    bgColor: "bg-green-50",
+    color: "from-primary to-primary/70",
+    textColor: "text-primary",
+    bgColor: "bg-primary/10",
     borderColor: "border-border",
     link: "/mind-heart-gut"
   },
@@ -40,8 +40,8 @@ const exploreCategories = [
     title: "ADHD & Focus",
     description: "Comprehensive resources for attention, hyperactivity, and executive function challenges",
     color: "from-yellow-500 to-orange-600",
-    textColor: "text-yellow-600",
-    bgColor: "bg-yellow-50",
+    textColor: "text-amber-700",
+    bgColor: "bg-amber-50",
     borderColor: "border-border",
     link: "/adhd"
   },
@@ -50,8 +50,8 @@ const exploreCategories = [
     title: "Educational Impact",
     description: "VOYCE framework for schools, transforming mental health support in educational settings",
     color: "from-purple-500 to-violet-600",
-    textColor: "text-purple-600",
-    bgColor: "bg-purple-50",
+    textColor: "text-primary",
+    bgColor: "bg-primary/10",
     borderColor: "border-border",
     link: "/schools"
   },
@@ -59,9 +59,9 @@ const exploreCategories = [
     icon: Globe,
     title: "Cultural Wisdom",
     description: "Ancient healing practices from around the world integrated with modern psychology",
-    color: "from-teal-500 to-cyan-600",
-    textColor: "text-teal-600",
-    bgColor: "bg-teal-50",
+    color: "from-primary to-primary/70",
+    textColor: "text-primary",
+    bgColor: "bg-primary/10",
     borderColor: "border-border",
     link: "/library"
   }
@@ -81,7 +81,7 @@ const FloatingIcon = ({ icon: Icon, delay, position }: { icon: any, delay: numbe
 
 export default function ExploreSection() {
   return (
-    <section id="explore-section" className="relative py-32 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden">
+    <section id="explore-section" className="relative py-32 px-4 bg-surface overflow-hidden">
       {/* Floating Background Icons */}
       <div className="absolute inset-0">
         <FloatingIcon icon={Sparkles} delay={0} position="top-20 left-20" />
@@ -107,30 +107,30 @@ export default function ExploreSection() {
         <div className="mb-20 transform hover:scale-105 transition-all duration-700">
           <div className="flex items-center justify-center mb-8 space-x-6">
             <div className="relative">
-              <BookOpen className="w-16 h-16 text-blue-500 animate-bounce transform hover:rotate-12 transition-all duration-500" />
+              <BookOpen className="w-16 h-16 text-primary animate-bounce transform hover:rotate-12 transition-all duration-500" />
               <div className="absolute inset-0 bg-muted rounded-full blur-xl animate-pulse" />
             </div>
             <div className="relative">
-              <Globe className="w-20 h-20 text-green-500 animate-spin-slow transform hover:scale-125 transition-all duration-700" />
+              <Globe className="w-20 h-20 text-primary animate-spin-slow transform hover:scale-125 transition-all duration-700" />
               <div className="absolute inset-0 bg-muted rounded-full blur-xl animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
             <div className="relative">
-              <Sparkles className="w-16 h-16 text-purple-500 animate-pulse transform hover:-rotate-12 transition-all duration-500" />
+              <Sparkles className="w-16 h-16 text-primary animate-pulse transform hover:-rotate-12 transition-all duration-500" />
               <div className="absolute inset-0 bg-muted rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }} />
             </div>
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-blue-800 to-green-800 bg-clip-text text-transparent leading-tight">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-slate-800 via-primary/80 to-primary/70 bg-clip-text text-transparent leading-tight">
             Explore the VOYCE Universe
           </h2>
           
-          <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-green-500 mx-auto mb-8 rounded-full transform hover:scale-150 transition-all duration-500" />
+          <div className="w-32 h-1 bg-primary mx-auto mb-8 rounded-full transform hover:scale-150 transition-all duration-500" />
           
-          <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-4xl mx-auto font-light">
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto font-light">
             Dive deep into the science of mind, body, and well-being. Our comprehensive guides blend 
-            <span className="font-semibold text-blue-600"> cutting-edge neuroscience</span>, 
-            <span className="font-semibold text-green-600"> ancient wisdom</span>, and 
-            <span className="font-semibold text-purple-600"> cultural insights</span> for holistic mental health understanding.
+            <span className="font-semibold text-primary"> cutting-edge neuroscience</span>, 
+            <span className="font-semibold text-primary"> ancient wisdom</span>, and 
+            <span className="font-semibold text-primary"> cultural insights</span> for holistic mental health understanding.
           </p>
         </div>
 
@@ -139,7 +139,7 @@ export default function ExploreSection() {
           {exploreCategories.map((category, index) => (
             <Card 
               key={category.title}
-              className={`group relative overflow-hidden border-2 ${category.borderColor} bg-white/80 backdrop-blur-sm hover:bg-white/95 transform hover:scale-105 hover:-translate-y-4 transition-all duration-700 shadow-xl hover:shadow-2xl cursor-pointer`}
+              className={`group relative overflow-hidden border-2 ${category.borderColor} bg-card backdrop-blur-sm hover:bg-card transform hover:scale-105 hover:-translate-y-4 transition-all duration-700 shadow-xl hover:shadow-2xl cursor-pointer`}
               style={{
                 animationDelay: `${index * 0.1}s`,
                 boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.1)'
@@ -168,7 +168,7 @@ export default function ExploreSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-600 leading-relaxed mb-6 group-hover:text-slate-800 transition-colors duration-300">
+                <p className="text-muted-foreground leading-relaxed mb-6 group-hover:text-foreground transition-colors duration-300">
                   {category.description}
                 </p>
 
@@ -209,9 +209,9 @@ export default function ExploreSection() {
         </div>
 
         {/* Call to Action Section */}
-        <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 rounded-3xl p-12 text-primary-foreground overflow-hidden transform hover:scale-105 transition-all duration-700">
+        <div className="relative bg-primary rounded-3xl p-12 text-primary-foreground overflow-hidden transform hover:scale-105 transition-all duration-700">
           {/* Background Animation */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 opacity-0 hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-primary opacity-0 hover:opacity-100 transition-opacity duration-500" />
           
           {/* Floating Elements */}
           <div className="absolute inset-0 overflow-hidden">
@@ -226,7 +226,7 @@ export default function ExploreSection() {
                   animationDuration: `${8 + Math.random() * 6}s`
                 }}
               >
-                <div className="w-2 h-2 bg-white rounded-full transform hover:scale-300 transition-transform duration-500" />
+                <div className="w-2 h-2 bg-card rounded-full transform hover:scale-300 transition-transform duration-500" />
               </div>
             ))}
           </div>
@@ -254,7 +254,7 @@ export default function ExploreSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/50 text-foreground hover:bg-white hover:text-slate-800 px-10 py-4 text-lg transform hover:scale-110 hover:-translate-y-2 transition-all duration-300"
+                className="border-white/50 text-foreground hover:bg-card hover:text-foreground px-10 py-4 text-lg transform hover:scale-110 hover:-translate-y-2 transition-all duration-300"
                 asChild
               >
                 <a href={`${BASE_PATH}/library`}>

@@ -8,10 +8,10 @@ import { useToast } from '@/hooks/use-toast';
 import { Smile, Frown, Meh, ThumbsUp, ThumbsDown } from 'lucide-react';
 
 const MOOD_OPTIONS = [
-  { level: 5, label: 'Great', icon: ThumbsUp, color: 'text-green-600' },
-  { level: 4, label: 'Good', icon: Smile, color: 'text-green-500' },
-  { level: 3, label: 'Okay', icon: Meh, color: 'text-yellow-500' },
-  { level: 2, label: 'Not Good', icon: Frown, color: 'text-orange-500' },
+  { level: 5, label: 'Great', icon: ThumbsUp, color: 'text-primary' },
+  { level: 4, label: 'Good', icon: Smile, color: 'text-primary' },
+  { level: 3, label: 'Okay', icon: Meh, color: 'text-amber-700' },
+  { level: 2, label: 'Not Good', icon: Frown, color: 'text-amber-700' },
   { level: 1, label: 'Struggling', icon: ThumbsDown, color: 'text-red-500' },
 ];
 

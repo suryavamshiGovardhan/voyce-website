@@ -43,7 +43,7 @@ export default function InvisibleInheritancePopup() {
               </button>
 
               <div className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-300 shrink-0 ii-node-glow">
+                <span className="mt-1 inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/15 text-primary shrink-0 ii-node-glow">
                   <Sparkles className="h-3.5 w-3.5" />
                 </span>
                 <div className="pr-4">
@@ -61,7 +61,7 @@ export default function InvisibleInheritancePopup() {
                     <Link
                       to="/invisible-inheritance/test"
                       onClick={dismiss}
-                      className="text-xs font-medium text-emerald-300 underline underline-offset-4 hover:text-emerald-200"
+                      className="text-xs font-medium text-primary underline underline-offset-4 hover:text-primary-foreground/80"
                     >
                       Take the couple test
                     </Link>

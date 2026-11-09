@@ -8,6 +8,7 @@ import { ArrowRight, BookOpen, PenLine, Leaf, Lock, ShieldCheck } from "lucide-r
 import PageShell from "@/components/site/PageShell";
 import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard } from "@/components/site/primitives";
 import { Button } from "@/components/ui/button";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 const PROMPTS = [
   "What is one thing that took more energy than usual today?",
@@ -112,6 +113,8 @@ export default function StartHerePage() {
           })}
         </ol>
       </Section>
+
+      <LearnCheck topic="start" />
 
       {/* Inline private reflection */}
       <Section id="reflect" className="scroll-mt-20 py-16 sm:py-24" ariaLabel="One private question">

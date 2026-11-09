@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 /* ------------------------------------------------------------------ */
 
 const HIDDEN = {
-  up: "opacity-0 translate-y-6",
-  left: "opacity-0 -translate-x-6",
-  right: "opacity-0 translate-x-6",
-  scale: "opacity-0 scale-[0.97]",
+  up: "opacity-0 translate-y-10",
+  left: "opacity-0 -translate-x-10",
+  right: "opacity-0 translate-x-10",
+  scale: "opacity-0 scale-[0.94]",
   fade: "opacity-0",
 } as const;
 
@@ -55,9 +55,10 @@ export function Reveal({
   return (
     <Tag
       ref={ref as never}
+      data-v-reveal
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
-        "transition-[opacity,transform] duration-700 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
+        "transition-[opacity,transform] duration-[900ms] [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none",
         shown ? "opacity-100 translate-x-0 translate-y-0 scale-100" : HIDDEN[variant],
         className,
       )}

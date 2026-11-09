@@ -117,17 +117,17 @@ export default function RichContentLibrary({ topic, category }: RichContentLibra
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'book': return 'bg-purple-100 text-purple-700';
-      case 'article': return 'bg-blue-100 text-blue-700';
-      case 'image': return 'bg-green-100 text-green-700';
+      case 'book': return 'bg-primary/10 text-primary';
+      case 'article': return 'bg-primary/10 text-primary';
+      case 'image': return 'bg-primary/10 text-primary';
       case 'video': return 'bg-red-100 text-red-700';
-      case 'research': return 'bg-orange-100 text-orange-700';
-      default: return 'bg-gray-100 text-gray-700';
+      case 'research': return 'bg-amber-50 text-amber-700';
+      default: return 'bg-primary/10 text-foreground';
     }
   };
 
   return (
-    <Card className="bg-card border-slate-200/20 shadow-xl rounded-2xl mb-16">
+    <Card className="bg-card border-border/20 shadow-xl rounded-2xl mb-16">
       <CardHeader>
         <CardTitle className="text-3xl text-foreground">
           📚 Rich Content Library: {topic}

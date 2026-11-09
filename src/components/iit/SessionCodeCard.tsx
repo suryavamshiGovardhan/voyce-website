@@ -70,11 +70,11 @@ function LinkRow({
     <div className="min-w-0">
       <p className="ii-marginalia mb-2">{label}</p>
       <div className="flex items-center gap-2">
-        <code className="flex-1 text-xs bg-white/5 border border-white/10 rounded-md px-3 py-2 truncate font-mono text-foreground/80">
+        <code className="flex-1 text-xs bg-card border border-white/10 rounded-md px-3 py-2 truncate font-mono text-foreground/80">
           {url}
         </code>
         <Button size="sm" variant="outline" onClick={onCopy} aria-label={`Copy ${label}`} className="ii-pill">
-          {copied ? <Check className="h-4 w-4 text-emerald-400" /> : <Copy className="h-4 w-4" />}
+          {copied ? <Check className="h-4 w-4 text-primary" /> : <Copy className="h-4 w-4" />}
         </Button>
       </div>
     </div>

@@ -17,7 +17,7 @@ const Section = ({ no, title, children }: { no: string; title: string; children:
       <span className="ii-marginalia">{no}</span>
       <h2 className="ii-display text-3xl md:text-5xl text-foreground">{title}</h2>
     </div>
-    <div className="ii-serif text-foreground/85 text-base md:text-lg leading-relaxed space-y-5 [&_strong]:text-foreground [&_em]:text-emerald-300/90 [&_li]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6">
+    <div className="ii-serif text-foreground/85 text-base md:text-lg leading-relaxed space-y-5 [&_strong]:text-foreground [&_em]:text-primary/90 [&_li]:my-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6">
       {children}
     </div>
   </motion.section>
@@ -63,7 +63,7 @@ export default function InvisibleInheritancePage() {
               </Link>
               <a
                 href="#vision"
-                className="ii-pill inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-white/15 bg-white/[0.03] backdrop-blur text-sm font-medium text-foreground hover:bg-white/[0.08] transition"
+                className="ii-pill inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-white/15 bg-card/[0.03] backdrop-blur text-sm font-medium text-foreground hover:bg-card/[0.08] transition"
               >
                 Read the vision first
               </a>
@@ -302,7 +302,7 @@ export default function InvisibleInheritancePage() {
                 <Link to="/invisible-inheritance/test" className="ii-cta ii-pill inline-flex items-center px-7 py-3.5 text-sm font-medium">
                   Take the Couple Test
                 </Link>
-                <Link to="/contact" className="ii-pill inline-flex items-center px-7 py-3.5 rounded-full border border-white/15 bg-white/[0.03] text-sm font-medium text-foreground hover:bg-white/[0.08] transition">
+                <Link to="/contact" className="ii-pill inline-flex items-center px-7 py-3.5 rounded-full border border-white/15 bg-card/[0.03] text-sm font-medium text-foreground hover:bg-card/[0.08] transition">
                   Get notified
                 </Link>
               </div>

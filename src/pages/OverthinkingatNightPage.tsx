@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/overthinking-night-hero.jpg';
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function OverthinkingAtNightPage() {
   return (
@@ -250,6 +251,7 @@ export default function OverthinkingAtNightPage() {
             </article>
           </div>
         </main>
+      <LearnCheck topic="article" />
       <NextStep
         title="Let what you read settle for a minute."
         body="A short private check-in helps you notice how it landed."

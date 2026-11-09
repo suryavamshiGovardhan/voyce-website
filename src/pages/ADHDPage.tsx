@@ -9,6 +9,7 @@ import { SEOHead } from "@/components/SEOHead";
 import ReadingProgress from "@/components/engagement/ReadingProgress";
 import ReflectPause from "@/components/engagement/ReflectPause";
 import ContinueJourney from "@/components/engagement/ContinueJourney";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function ADHDPage() {
   return (
@@ -55,6 +56,7 @@ export default function ADHDPage() {
           <ShareStoryButton />
         </div>
 
+        <LearnCheck topic="adhd" />
         <NextStep
           title="Try one focus strategy this week."
           body="Small systems beat big intentions. Start with one."

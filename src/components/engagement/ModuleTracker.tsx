@@ -89,7 +89,7 @@ export function ModuleTracker({ moduleId, moduleTitle, onComplete }: ModuleTrack
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           {isCompleted ? (
-            <CheckCircle2 className="h-6 w-6 text-green-600" />
+            <CheckCircle2 className="h-6 w-6 text-primary" />
           ) : (
             <Circle className="h-6 w-6 text-muted-foreground" />
           )}

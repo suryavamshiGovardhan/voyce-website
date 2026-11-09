@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import { SEOHead } from '@/components/SEOHead';
 import { ArticleSchema } from '@/components/StructuredData';
 import selfCareHero from '@/assets/self-care-selfishness-hero.jpg';
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function SelfCareSelfishnessPage() {
   return (
@@ -250,6 +251,7 @@ export default function SelfCareSelfishnessPage() {
             </div>
           </article>
         </main>
+      <LearnCheck topic="article" />
       <NextStep
         title="Let what you read settle for a minute."
         body="A short private check-in helps you notice how it landed."

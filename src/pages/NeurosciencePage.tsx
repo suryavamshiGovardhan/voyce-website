@@ -8,6 +8,7 @@ import ComprehensiveContent from "@/components/ComprehensiveContent";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import NeuroscienceContent from "@/components/content/NeuroscienceContent";
 import { neuroscienceResources } from "@/data/mentalHealthResources";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 const neuroscienceStatistics = [
   { label: 'Neuroscience Papers Published Annually', value: '50,000+', source: 'PubMed' },
@@ -53,6 +54,7 @@ export default function NeurosciencePage() {
         <ShareStoryButton />
       </div>
 
+      <LearnCheck topic="neuroscience" />
       <NextStep
         title="Go from history to your own brain."
         body="See how structure, memory and emotion fit together."

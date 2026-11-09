@@ -3,6 +3,7 @@ import ImmersionTools from "@/components/ImmersionTools";
 import BreathWidget from "@/components/engagement/BreathWidget";
 import { Reveal, Section, Eyebrow, StatementHeading, Lede } from "@/components/site/primitives";
 import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function ToolsPage() {
   return (
@@ -57,6 +58,7 @@ export default function ToolsPage() {
         </Reveal>
       </Section>
 
+      <LearnCheck topic="tools" />
       <NextStep
         title="Want to understand why these work?"
         body="Read the short science behind stress and the mind–body link."

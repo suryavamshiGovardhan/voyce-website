@@ -53,8 +53,8 @@ export default function QuestionStage({ question, index, total, onAnswer }: Prop
                   "w-full text-left px-5 py-4 rounded-xl border transition-all backdrop-blur-sm",
                   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400",
                   isSelected
-                    ? "border-emerald-400/70 bg-emerald-400/10 text-foreground shadow-[0_10px_40px_-15px_rgba(52,211,153,0.6)]"
-                    : "border-white/10 bg-white/[0.03] hover:bg-white/[0.06] text-foreground/85 hover:text-foreground",
+                    ? "border-primary/40 bg-primary/10 text-foreground shadow-[0_10px_40px_-15px_rgba(52,211,153,0.6)]"
+                    : "border-white/10 bg-card/[0.03] hover:bg-card/[0.06] text-foreground/85 hover:text-foreground",
                 ].join(" ")}
               >
                 <span className="text-sm sm:text-base leading-relaxed">{opt.text}</span>

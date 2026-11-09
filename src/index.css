@@ -19,7 +19,7 @@
 .voyce-particle {
   position: absolute;
   border-radius: 9999px;
-  background: rgba(134, 239, 172, 0.5);
+  background: hsl(var(--apricot) / 0.5);
   filter: blur(1px);
   animation: voyce-float 9s ease-in-out infinite;
   pointer-events: none;
@@ -67,43 +67,47 @@
 
 @layer base {
   :root {
-    /* VOYCE design system — warm off-white, muted charcoal, natural green */
-    --background: 40 33% 98%;
-    --foreground: 160 12% 14%;
-    --surface: 42 26% 95%;
-    --ink: 160 18% 11%;
-    --ink-foreground: 40 30% 96%;
+    /* VOYCE "Dusk" palette — lilac mist, night plum, apricot glow.
+       Dusk is the hour students actually reflect: calm, a little warm, not clinical. */
+    --background: 270 40% 98%;
+    --foreground: 262 30% 15%;
+    --surface: 268 45% 95%;
+    --ink: 258 40% 13%;
+    --ink-foreground: 270 40% 97%;
     --card: 0 0% 100%;
-    --card-foreground: 160 12% 14%;
+    --card-foreground: 262 30% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 160 12% 14%;
-    --primary: 154 38% 30%;
-    --primary-foreground: 40 33% 98%;
-    --secondary: 42 26% 93%;
-    --secondary-foreground: 160 12% 14%;
-    --muted: 42 22% 94%;
-    --muted-foreground: 160 8% 40%;
-    --accent: 24 42% 60%;
-    --accent-foreground: 40 33% 98%;
+    --popover-foreground: 262 30% 15%;
+    --primary: 262 48% 42%;
+    --primary-foreground: 270 40% 98%;
+    --secondary: 268 35% 93%;
+    --secondary-foreground: 262 30% 15%;
+    --muted: 268 32% 94%;
+    --muted-foreground: 262 12% 38%;
+    --accent: 18 90% 66%;
+    --accent-foreground: 258 40% 13%;
+    --apricot: 18 90% 66%;
+    --apricot-soft: 22 100% 92%;
+    --sage: 150 28% 52%;
     --destructive: 0 62% 45%;
-    --destructive-foreground: 40 33% 98%;
-    --border: 40 14% 88%;
-    --input: 40 14% 88%;
-    --ring: 154 38% 30%;
-    --chart-1: 154 38% 34%;
-    --chart-2: 24 42% 60%;
-    --chart-3: 190 24% 40%;
-    --chart-4: 43 44% 62%;
-    --chart-5: 160 12% 30%;
+    --destructive-foreground: 270 40% 98%;
+    --border: 266 24% 88%;
+    --input: 266 24% 88%;
+    --ring: 262 48% 42%;
+    --chart-1: 262 48% 42%;
+    --chart-2: 18 90% 66%;
+    --chart-3: 150 28% 52%;
+    --chart-4: 290 35% 62%;
+    --chart-5: 262 20% 30%;
     --radius: 0.9rem;
     --home-gradient: from-slate-900 via-green-900 to-slate-800;
 
     /* Blog/Story Page Colors */
-    --blog-background: 42 26% 97%;
-    --blog-text: 160 12% 18%;
-    --blog-muted: 160 8% 42%;
-    --blog-accent: 154 24% 85%;
-    --blog-border: 40 14% 88%;
+    --blog-background: 270 40% 98%;
+    --blog-text: 262 30% 18%;
+    --blog-muted: 262 12% 40%;
+    --blog-accent: 268 45% 92%;
+    --blog-border: 266 24% 88%;
   }
 
   .dark {
@@ -1221,3 +1225,104 @@
 .v-legacy .blog-content p { line-height: 1.8; color: hsl(var(--foreground) / 0.82); }
 .v-legacy .blog-quote { font-family: 'Fraunces', Georgia, serif; font-style: normal; font-weight: 400; color: hsl(var(--foreground) / 0.75); }
 .v-legacy .font-playfair { font-family: 'Fraunces', Georgia, serif; }
+
+
+/* ------------------------------------------------------------------ */
+/* Dusk signature details                                               */
+/* ------------------------------------------------------------------ */
+/* Apricot highlighter under the emphasised words in hero headings */
+.v-rise h1 .text-primary, .v-mark {
+  background-image: linear-gradient(transparent 62%, hsl(var(--apricot) / 0.38) 62%, hsl(var(--apricot) / 0.38) 92%, transparent 92%);
+  background-repeat: no-repeat; background-size: 100% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  padding-inline: 0.06em;
+}
+/* Hero atmosphere: plum + apricot dusk sky */
+.v-hero-glow {
+  background:
+    radial-gradient(60rem 28rem at 85% -10%, hsl(var(--primary) / 0.14), transparent 60%),
+    radial-gradient(40rem 24rem at 0% 110%, hsl(var(--apricot) / 0.22), transparent 60%);
+}
+.v-hero-glow::after { background: radial-gradient(circle, hsl(var(--apricot) / 0.45), transparent 65%); }
+/* Night band for closing CTAs gets a horizon line */
+.bg-ink { background-image: radial-gradient(50rem 20rem at 50% 120%, hsl(var(--apricot) / 0.22), transparent 70%); }
+/* Card top hairline in brand colours on hover */
+.v-card-hover { position: relative; }
+.v-card-hover::before {
+  content: ""; position: absolute; inset: 0 1.25rem auto; height: 2px; border-radius: 2px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--apricot)));
+  opacity: 0; transform: scaleX(0.4); transition: opacity var(--dur-base) var(--ease-calm), transform var(--dur-base) var(--ease-calm);
+}
+.v-card-hover:hover::before, .v-card-hover:focus-within::before { opacity: 1; transform: scaleX(1); }
+.v-chip { background: hsl(var(--apricot-soft)); color: hsl(var(--primary)); }
+.group:hover .v-chip, .group:focus-within .v-chip { background: hsl(var(--apricot) / 0.35); }
+::selection { background: hsl(var(--apricot) / 0.45); color: hsl(var(--foreground)); }
+@media (prefers-reduced-motion: reduce) { .v-card-hover::before { transition: none; } }
+
+/* ================================================================== */
+/* Motion v2 — clearly alive on first visit, still calm.               */
+/* All of it is switched off under prefers-reduced-motion.             */
+/* ================================================================== */
+/* Hero entrance: bigger rise with a soft focus pull */
+.v-rise > * {
+  opacity: 0; transform: translateY(26px); filter: blur(6px);
+  animation: v-rise2 1000ms var(--ease-calm) forwards;
+}
+.v-rise > *:nth-child(1) { animation-delay: 60ms; }
+.v-rise > *:nth-child(2) { animation-delay: 180ms; }
+.v-rise > *:nth-child(3) { animation-delay: 320ms; }
+.v-rise > *:nth-child(4) { animation-delay: 460ms; }
+.v-rise > *:nth-child(5) { animation-delay: 600ms; }
+@keyframes v-rise2 { to { opacity: 1; transform: none; filter: none; } }
+
+/* Highlighter draws in under hero emphasis */
+.v-rise h1 .text-primary, .v-mark { background-size: 0% 100%; animation: v-mark 1100ms var(--ease-calm) 700ms forwards; }
+@keyframes v-mark { to { background-size: 100% 100%; } }
+
+/* Living hero sky: slow drifting aurora + two visible orbs */
+.v-hero-glow { background-size: 160% 160%; animation: v-sky 16s ease-in-out infinite alternate; }
+@keyframes v-sky { 0% { background-position: 0% 0%; } 100% { background-position: 100% 60%; } }
+.v-hero-glow::before { opacity: 0.8; animation: v-orb-a 14s ease-in-out infinite alternate; }
+.v-hero-glow::after { opacity: 0.75; animation: v-orb-b 18s ease-in-out infinite alternate; }
+@keyframes v-orb-a { 0% { transform: translate3d(0,0,0) scale(1); } 100% { transform: translate3d(-9rem, 5rem, 0) scale(1.18); } }
+@keyframes v-orb-b { 0% { transform: translate3d(0,0,0) scale(1); } 100% { transform: translate3d(8rem, -4rem, 0) scale(1.12); } }
+
+/* Header settles in */
+header.sticky { animation: v-head 700ms var(--ease-calm) both; }
+@keyframes v-head { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+
+/* Scroll reveals applied automatically to sections and cards */
+html.v-motion .v-auto {
+  opacity: 0; transform: translateY(34px) scale(0.985);
+  transition: opacity 900ms var(--ease-calm), transform 900ms var(--ease-calm);
+  transition-delay: var(--v-delay, 0ms);
+}
+html.v-motion .v-auto.v-in { opacity: 1; transform: none; }
+
+/* Cards: more noticeable lift */
+.v-card-hover:hover, .v-card-hover:focus-within { transform: translateY(-6px); }
+.rounded-\[1\.25rem\].border { transition: transform var(--dur-base) var(--ease-calm), box-shadow var(--dur-base) var(--ease-calm); }
+a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+
+/* Button shine: one sweep shortly after load, then on hover; hero CTA repeats slowly */
+.v-sheen::after { animation: v-shine 1400ms var(--ease-calm) 1400ms 1 both; }
+.v-rise .v-sheen::after { animation: v-shine 1600ms var(--ease-calm) 1400ms infinite; animation-duration: 7s; }
+@keyframes v-shine { 0% { transform: translateX(-120%); } 22%, 100% { transform: translateX(120%); } }
+
+/* Interactive moments */
+.v-pop { animation: v-pop 600ms var(--ease-calm) both; }
+@keyframes v-pop { from { opacity: 0; transform: translateY(10px) scale(0.96); } to { opacity: 1; transform: none; } }
+.v-reply { animation: v-reply 650ms var(--ease-calm) both; }
+@keyframes v-reply { from { opacity: 0; transform: translateY(12px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+.v-ask-glow {
+  position: absolute; right: -6rem; top: -6rem; width: 18rem; height: 18rem; border-radius: 9999px; pointer-events: none;
+  background: radial-gradient(circle, hsl(var(--apricot) / 0.35), transparent 65%); filter: blur(10px);
+  animation: v-float 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v-rise > *, .v-rise h1 .text-primary, .v-mark { opacity: 1 !important; transform: none !important; filter: none !important; animation: none !important; background-size: 100% 100% !important; }
+  .v-hero-glow, .v-hero-glow::before, .v-hero-glow::after, header.sticky, .v-sheen::after, .v-pop, .v-reply, .v-ask-glow { animation: none !important; }
+  html.v-motion .v-auto { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .v-card-hover:hover, a:hover > .rounded-\[1\.25rem\].border { transform: none !important; }
+}

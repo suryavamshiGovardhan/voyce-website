@@ -10,7 +10,7 @@ export function ThinkingLoader({
   fullScreen = true 
 }: ThinkingLoaderProps) {
   const containerClass = fullScreen 
-    ? "min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-green-900/50 to-slate-800"
+    ? "min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-primary/80/50 to-slate-800"
     : "flex items-center justify-center p-8";
 
   return (
@@ -33,13 +33,13 @@ export function ThinkingLoader({
               
               {/* Thought bubbles */}
               <div className="absolute -right-2 -top-2 animate-bounce" style={{ animationDelay: '0s', animationDuration: '2s' }}>
-                <Sparkles className="h-4 w-4 text-green-400" />
+                <Sparkles className="h-4 w-4 text-primary" />
               </div>
               <div className="absolute -left-3 top-0 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '2s' }}>
-                <Sparkles className="h-3 w-3 text-blue-400" />
+                <Sparkles className="h-3 w-3 text-primary" />
               </div>
               <div className="absolute right-2 top-6 animate-bounce" style={{ animationDelay: '1s', animationDuration: '2s' }}>
-                <Sparkles className="h-3 w-3 text-purple-400" />
+                <Sparkles className="h-3 w-3 text-primary" />
               </div>
             </div>
             
@@ -73,7 +73,7 @@ export function InlineThinkingLoader({ message = "Loading..." }: { message?: str
         <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur-xl border border-primary/40 flex items-center justify-center animate-pulse">
           <Brain className="h-5 w-5 text-primary animate-spin-slow" />
         </div>
-        <Sparkles className="absolute -right-1 -top-1 h-3 w-3 text-green-400 animate-bounce" />
+        <Sparkles className="absolute -right-1 -top-1 h-3 w-3 text-primary animate-bounce" />
       </div>
       <span className="text-muted-foreground animate-pulse">{message}</span>
     </div>

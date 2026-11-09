@@ -8,6 +8,7 @@ import { SEOHead } from "@/components/SEOHead";
 import ReadingProgress from "@/components/engagement/ReadingProgress";
 import ReflectPause from "@/components/engagement/ReflectPause";
 import ContinueJourney from "@/components/engagement/ContinueJourney";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function StressPage() {
   return (
@@ -51,6 +52,7 @@ export default function StressPage() {
           <ShareStoryButton />
         </div>
 
+        <LearnCheck topic="stress" />
         <NextStep
           title="Turn one idea into a two-minute practice."
           body="Pick a calm tool, try it once, and notice what shifts."

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import heroImage from '@/assets/desire-suffering-hero.jpg';
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function DesireSufferingArticlePage() {
   return (
@@ -314,6 +315,7 @@ export default function DesireSufferingArticlePage() {
 
         </div>
 
+      <LearnCheck topic="article" />
       <NextStep
         title="Let what you read settle for a minute."
         body="A short private check-in helps you notice how it landed."

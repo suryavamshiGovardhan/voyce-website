@@ -30,32 +30,32 @@ const quickActions: QuickAction[] = [
     label: "Read Blogs",
     description: "Explore articles",
     link: "/blog",
-    colorClass: "text-blue-600",
-    bgClass: "bg-blue-100 hover:bg-blue-200"
+    colorClass: "text-primary",
+    bgClass: "bg-primary/10 hover:bg-blue-200"
   },
   {
     icon: Brain,
     label: "DSM-5 Academy",
     description: "Learn diagnostics",
     link: "/dsm5-academy",
-    colorClass: "text-purple-600",
-    bgClass: "bg-purple-100 hover:bg-purple-200"
+    colorClass: "text-primary",
+    bgClass: "bg-primary/10 hover:bg-purple-200"
   },
   {
     icon: PenLine,
     label: "Journal",
     description: "Write thoughts",
     link: "/journal",
-    colorClass: "text-green-600",
-    bgClass: "bg-green-100 hover:bg-green-200"
+    colorClass: "text-primary",
+    bgClass: "bg-primary/10 hover:bg-green-200"
   },
   {
     icon: Trophy,
     label: "Quizzes",
     description: "Test knowledge",
     link: "/quizzes",
-    colorClass: "text-amber-600",
-    bgClass: "bg-amber-100 hover:bg-amber-200"
+    colorClass: "text-amber-700",
+    bgClass: "bg-amber-50 hover:bg-amber-200"
   }
 ];
 

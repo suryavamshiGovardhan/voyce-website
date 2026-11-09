@@ -99,7 +99,7 @@ export default function ReferralCard() {
   }
 
   return (
-    <Card className="p-6 bg-gradient-to-br from-green-500/10 to-blue-500/10 border-green-500/20">
+    <Card className="p-6 bg-primary border-primary/40">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="text-xl font-bold flex items-center gap-2">
@@ -120,7 +120,7 @@ export default function ReferralCard() {
         <div className="grid grid-cols-2 gap-3">
           <div className="bg-background/50 rounded-lg p-4 text-center">
             <div className="flex justify-center mb-1">
-              <TrendingUp className="h-5 w-5 text-green-500" />
+              <TrendingUp className="h-5 w-5 text-primary" />
             </div>
             <p className="text-2xl font-bold">{referralCount}</p>
             <p className="text-xs text-muted-foreground">Friends Joined</p>

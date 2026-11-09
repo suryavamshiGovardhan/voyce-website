@@ -6,6 +6,7 @@ import { SEOHead } from "@/components/SEOHead";
 import ReadingProgress from "@/components/engagement/ReadingProgress";
 import ReflectPause from "@/components/engagement/ReflectPause";
 import ContinueJourney from "@/components/engagement/ContinueJourney";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 // Lightweight markdown: **bold** and *italic*
 function renderInline(text: string) {
@@ -143,6 +144,7 @@ export default function SeriesEpisodePage() {
         </div>
 
         <ReflectPause prompt="Take a breath. Which part of this story could have been yours?" />
+        <LearnCheck topic="story" className="px-0 sm:px-0" />
 
         <ContinueJourney
           links={[

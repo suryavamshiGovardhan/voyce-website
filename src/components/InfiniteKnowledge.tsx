@@ -101,7 +101,7 @@ export default function InfiniteKnowledge({ topic, searchTerms }: InfiniteKnowle
       case 'article': return 'text-primary bg-muted';
       case 'book': return 'text-primary bg-muted';
       case 'external': return 'text-primary bg-muted';
-      default: return 'text-muted-foreground bg-slate-100/10';
+      default: return 'text-muted-foreground bg-primary/10';
     }
   };
 
@@ -112,7 +112,7 @@ export default function InfiniteKnowledge({ topic, searchTerms }: InfiniteKnowle
 
   if (isLoading) {
     return (
-      <Card className="bg-card border-slate-200/20 shadow-xl rounded-2xl">
+      <Card className="bg-card border-border/20 shadow-xl rounded-2xl">
         <CardHeader>
           <CardTitle className="text-2xl text-foreground">🌐 Infinite Knowledge</CardTitle>
         </CardHeader>
@@ -129,7 +129,7 @@ export default function InfiniteKnowledge({ topic, searchTerms }: InfiniteKnowle
   }
 
   return (
-    <Card className="bg-card border-slate-200/20 shadow-xl rounded-2xl mb-16">
+    <Card className="bg-card border-border/20 shadow-xl rounded-2xl mb-16">
       <CardHeader>
         <CardTitle className="text-3xl text-foreground">🌐 Infinite Knowledge: {topic}</CardTitle>
         <p className="text-muted-foreground">

@@ -88,9 +88,9 @@ export function ProgressWidget() {
               {completedModules.slice(0, 3).map((module) => (
                 <div
                   key={module.id}
-                  className="flex items-center gap-2 text-sm p-2 bg-green-500/10 rounded"
+                  className="flex items-center gap-2 text-sm p-2 bg-primary/10 rounded"
                 >
-                  <CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+                  <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
                   <span className="truncate">{module.module_title}</span>
                 </div>
               ))}

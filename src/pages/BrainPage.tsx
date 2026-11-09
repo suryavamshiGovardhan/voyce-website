@@ -5,6 +5,7 @@ import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import BrainContent from "@/components/content/BrainContent";
 import { SEOHead } from "@/components/SEOHead";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function BrainPage() {
   return (
@@ -33,6 +34,7 @@ export default function BrainPage() {
         <ShareStoryButton />
       </div>
 
+      <LearnCheck topic="brain" />
       <NextStep
         title="See the science in practice."
         body="Stress is where brain science meets daily life."

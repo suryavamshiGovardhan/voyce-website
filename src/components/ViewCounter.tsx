@@ -54,7 +54,7 @@ export default function ViewCounter() {
   };
 
   return (
-    <div className="flex items-center space-x-6 text-slate-400 text-sm">
+    <div className="flex items-center space-x-6 text-muted-foreground text-sm">
       <div className="flex items-center space-x-2">
         <Eye className="h-4 w-4" />
         <span>{formatNumber(views)} views</span>

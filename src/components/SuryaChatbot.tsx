@@ -62,6 +62,12 @@ const getInitialGreeting = (pathname: string): string => {
 
 export function SuryaChatbot() {
   const [isOpen, setIsOpen] = useState(false);
+  // Other parts of the site can open the guide with: window.dispatchEvent(new Event("voyce:open-guide"))
+  useEffect(() => {
+    const open = () => setIsOpen(true);
+    window.addEventListener("voyce:open-guide", open);
+    return () => window.removeEventListener("voyce:open-guide", open);
+  }, []);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);

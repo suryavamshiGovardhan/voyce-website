@@ -29,9 +29,9 @@ const exploreCategories: ExploreCategory[] = [
     icon: Brain,
     title: "Neuroscience",
     description: "Explore brain function, neuroplasticity, and cognitive science research",
-    colorClass: "from-blue-500 to-indigo-600",
-    iconColorClass: "text-blue-600",
-    bgColorClass: "bg-blue-50",
+    colorClass: "from-primary to-primary/70",
+    iconColorClass: "text-primary",
+    bgColorClass: "bg-primary/10",
     borderColorClass: "border-border",
     link: "/neuroscience"
   },
@@ -40,8 +40,8 @@ const exploreCategories: ExploreCategory[] = [
     title: "Emotional Wellness",
     description: "Build emotional resilience through evidence-based approaches",
     colorClass: "from-pink-500 to-rose-600",
-    iconColorClass: "text-pink-600",
-    bgColorClass: "bg-pink-50",
+    iconColorClass: "text-primary",
+    bgColorClass: "bg-primary/10",
     borderColorClass: "border-border",
     link: "/trauma"
   },
@@ -50,7 +50,7 @@ const exploreCategories: ExploreCategory[] = [
     title: "ADHD & Focus",
     description: "Resources for attention and executive function challenges",
     colorClass: "from-amber-500 to-orange-600",
-    iconColorClass: "text-amber-600",
+    iconColorClass: "text-amber-700",
     bgColorClass: "bg-amber-50",
     borderColorClass: "border-border",
     link: "/adhd"
@@ -60,8 +60,8 @@ const exploreCategories: ExploreCategory[] = [
     title: "Schools Program",
     description: "VOYCE framework for mental health in educational settings",
     colorClass: "from-purple-500 to-violet-600",
-    iconColorClass: "text-purple-600",
-    bgColorClass: "bg-purple-50",
+    iconColorClass: "text-primary",
+    bgColorClass: "bg-primary/10",
     borderColorClass: "border-border",
     link: "/schools"
   },
@@ -69,9 +69,9 @@ const exploreCategories: ExploreCategory[] = [
     icon: BookOpen,
     title: "DSM-5 Academy",
     description: "Professional diagnostic criteria training and resources",
-    colorClass: "from-emerald-500 to-teal-600",
-    iconColorClass: "text-emerald-600",
-    bgColorClass: "bg-emerald-50",
+    colorClass: "from-primary to-primary/70",
+    iconColorClass: "text-primary",
+    bgColorClass: "bg-primary/10",
     borderColorClass: "border-border",
     link: "/dsm5-academy"
   },
@@ -79,9 +79,9 @@ const exploreCategories: ExploreCategory[] = [
     icon: Globe,
     title: "Resource Library",
     description: "Cultural wisdom integrated with modern psychology",
-    colorClass: "from-cyan-500 to-sky-600",
-    iconColorClass: "text-cyan-600",
-    bgColorClass: "bg-cyan-50",
+    colorClass: "from-primary to-primary/70",
+    iconColorClass: "text-primary",
+    bgColorClass: "bg-primary/10",
     borderColorClass: "border-border",
     link: "/library"
   }
@@ -229,7 +229,7 @@ function AccessibleExploreSection() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white/50 text-foreground hover:bg-white hover:text-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 focus:ring-2 focus:ring-white/50"
+                className="border-white/50 text-foreground hover:bg-card hover:text-foreground px-8 py-4 text-lg transition-all duration-300 hover:scale-105 focus:ring-2 focus:ring-white/50"
                 asChild
               >
                 <Link to="/library" aria-label="Browse the VOYCE resource library">

@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { BASE_PATH } from "@/lib/site";
+import MotionDirector from "@/components/site/MotionDirector";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -118,6 +119,7 @@ const App = () => (
             <Sonner />
             <BrowserRouter basename={BASE_PATH}>
               <RouteMeta />
+              <MotionDirector />
               <GlobalErrorHandler />
               <DailyCheckIn />
               <SuryaChatbot />

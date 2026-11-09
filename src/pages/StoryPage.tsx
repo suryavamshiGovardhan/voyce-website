@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Share2, BookOpen, MessageCircle } from "lucide-react";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function StoryPage() {
   return (
@@ -181,6 +182,7 @@ export default function StoryPage() {
         </div>
       </main>
       
+      <LearnCheck topic="story" />
       <NextStep
         title="Let what you read settle for a minute."
         body="A short private check-in helps you notice how it landed."

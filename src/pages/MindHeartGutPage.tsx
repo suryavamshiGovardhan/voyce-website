@@ -8,6 +8,7 @@ import ComprehensiveContent from "@/components/ComprehensiveContent";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import MindHeartGutContent from "@/components/content/MindHeartGutContent";
 import { mindHeartGutResources } from "@/data/mentalHealthResources";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 const mindHeartGutStatistics = [
   { label: 'Neurons in Gut', value: '500 Million', source: 'Nature Reviews Gastroenterology' },
@@ -53,6 +54,7 @@ export default function MindHeartGutPage() {
         <ShareStoryButton />
       </div>
 
+      <LearnCheck topic="mind-heart-gut" />
       <NextStep
         title="Try a slow-breathing practice now."
         body="It is the quickest way to feel the mind–body link for yourself."

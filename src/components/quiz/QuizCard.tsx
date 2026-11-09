@@ -70,9 +70,9 @@ export default function QuizCard({ quiz, onComplete }: QuizCardProps) {
       <Card className="p-6">
         <div className="text-center space-y-4">
           {passed ? (
-            <CheckCircle2 className="h-16 w-16 mx-auto text-green-500" />
+            <CheckCircle2 className="h-16 w-16 mx-auto text-primary" />
           ) : (
-            <XCircle className="h-16 w-16 mx-auto text-orange-500" />
+            <XCircle className="h-16 w-16 mx-auto text-amber-700" />
           )}
 
           <div>
@@ -107,7 +107,7 @@ export default function QuizCard({ quiz, onComplete }: QuizCardProps) {
                 key={index}
                 className={`p-3 rounded-lg border ${
                   answers[index] === q.correct_answer
-                    ? 'border-green-500/50 bg-green-500/10'
+                    ? 'border-primary/40 bg-primary/10'
                     : 'border-red-500/50 bg-red-500/10'
                 }`}
               >

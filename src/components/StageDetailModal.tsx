@@ -78,7 +78,7 @@ export function StageDetailModal({ open, onOpenChange, stage, isCompleted, onCom
       <DialogContent className="max-w-2xl bg-muted border-border text-foreground max-h-[85vh] overflow-y-auto">
         <DialogHeader>
           <div className="flex items-center gap-3 mb-1">
-            <span className="text-sky-400 font-mono text-sm">{stage.level}</span>
+            <span className="text-primary font-mono text-sm">{stage.level}</span>
             <span className="text-xs text-muted-foreground">· {stage.duration}</span>
           </div>
           <DialogTitle className="text-2xl font-light text-foreground">{stage.name}</DialogTitle>
@@ -111,7 +111,7 @@ export function StageDetailModal({ open, onOpenChange, stage, isCompleted, onCom
               <Button
                 onClick={handleComplete}
                 disabled={saving || isCompleted}
-                className={isCompleted ? "bg-emerald-700 hover:bg-emerald-700" : "bg-sky-600 hover:bg-sky-500"}
+                className={isCompleted ? "bg-primary hover:bg-primary" : "bg-primary hover:bg-primary"}
               >
                 {isCompleted ? (
                   <><CheckCircle2 className="h-4 w-4 mr-2" /> Completed</>

@@ -1,34 +1,61 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { NextStep, LeaveWith } from "@/components/site/value";
+import { Check, X, ShieldCheck, UserCheck, Trash2, EyeOff } from "lucide-react";
 import PageShell from "@/components/site/PageShell";
-import { Button } from "@/components/ui/button";
-import { Section, Eyebrow, StatementHeading, Lede, Reveal, QuietCard, StepRail } from "@/components/site/primitives";
-import { PhoneFrame, CheckInScreen, SupportScreen } from "@/components/site/ProductScreens";
+import { Section, Eyebrow, StatementHeading, Lede, Reveal } from "@/components/site/primitives";
+import { PageHero, NextStep } from "@/components/site/value";
+import { AskReflect } from "@/components/site/Interactive";
 
-const SIGNALS = [
-  { number: "01", title: "Withdrawal", body: "Shorter answers, closed doors, plans quietly cancelled." },
-  { number: "02", title: "Sleep drift", body: "Late nights that aren't about the phone, early waking that isn't about school." },
-  { number: "03", title: "Irritation", body: "A short fuse over small things is often something larger with no name yet." },
-  { number: "04", title: "Over-functioning", body: "Doing everything perfectly can be a way of not being asked how they are." },
+const IS = [
+  "A private place for your child to check in and put feelings into words",
+  "Plain-language reading on stress, sleep, overthinking and friendship",
+  "Short practices that fit between classes",
+  "Clear signposts to real people when something is serious",
+];
+const IS_NOT = [
+  "A diagnosis, a screening test or a score of your child",
+  "A way for parents or schools to read your child's entries",
+  "Therapy, or a replacement for a counsellor or doctor",
+  "An emergency service",
 ];
 
-const APPROACHES = [
+const SWAPS = [
+  { instead: "How was school?", tryThis: "What was the heaviest part of today?" },
+  { instead: "Why are you always on your phone?", tryThis: "What's been taking up your head lately?" },
+  { instead: "You'll be fine, don't worry.", tryThis: "That sounds hard. Do you want ideas, or just someone to listen?" },
+  { instead: "What's wrong with you?", tryThis: "I've noticed you seem quieter. I'm here whenever you want to talk." },
+];
+
+const SIGNALS = [
+  { title: "Pulling away", body: "Shorter answers, closed doors, plans quietly cancelled." },
+  { title: "Sleep changes", body: "Late nights or early waking that isn't about exams or the phone." },
+  { title: "A shorter fuse", body: "Irritation over small things can be something bigger with no name yet." },
+  { title: "Over-functioning", body: "Doing everything perfectly can be a way of not being asked how they are." },
+];
+
+const WORRY = [
   {
-    title: "Ask smaller questions",
-    body: "\"How was your day?\" invites \"fine\". \"What was the heaviest part of today?\" invites an answer.",
+    label: "They've gone quiet",
+    reply:
+      "Quiet is often protective, not hostile. A low-pressure moment — a drive, a walk, cooking together — tends to open more than a sit-down talk.",
+    next: { to: "/guides", label: "Read the guide on starting a conversation" },
   },
   {
-    title: "Let silence stay",
-    body: "A pause is not refusal. Most honest sentences arrive after the second silence, not the first.",
+    label: "Exam pressure",
+    reply:
+      "Pressure lands harder when a young person feels their worth is the result. Saying out loud that you care how they are, not just how they score, helps.",
+    next: { to: "/stress", label: "Understand stress in plain words" },
   },
   {
-    title: "Don't solve immediately",
-    body: "Being understood once is worth more than three pieces of advice. Solutions can wait a day.",
+    label: "Phone & sleep",
+    reply:
+      "Screens and sleep are often a symptom as much as a cause. Ask what keeps them up before setting rules — the answer may surprise you.",
+    next: { to: "/article/overthinking-at-night", label: "Read: overthinking at night" },
   },
   {
-    title: "Keep their privacy",
-    body: "If your child uses VOYCE, their entries are theirs. Asking to read them usually closes the door you're trying to open.",
+    label: "Something feels serious",
+    reply:
+      "Trust that feeling. Please talk to a counsellor, doctor or Tele MANAS (14416). If anyone is in immediate danger, contact emergency services now.",
+    next: { to: "/safety", label: "See support routes" },
   },
 ];
 
@@ -36,110 +63,130 @@ export default function ParentsPage() {
   return (
     <PageShell
       title="VOYCE for parents"
-      description="Understand the signals behind the silence. Practical, non-clinical guidance for parents who want to notice earlier and start conversations that don't shut down."
-      keywords="parent guidance teenage wellbeing, how to talk to your teenager, signs of stress in students"
+      description="What VOYCE is and isn't, how your child's privacy is protected, and simple ways to start a conversation at home. No diagnosis, no scoring."
+      keywords="how to talk to your teenager, teenage wellbeing India, parent guide student stress"
       canonical="/parents"
     >
-      <Section hero className="pt-16 sm:pt-24">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
-          <Reveal>
-            <Eyebrow>For parents</Eyebrow>
-            <StatementHeading as="h1" className="text-4xl sm:text-5xl">
-              Understand the signals behind the silence.
-            </StatementHeading>
-            <Lede>
-              Most young people aren&rsquo;t hiding something dramatic. They&rsquo;re waiting for a moment where saying
-              something costs less than staying quiet. VOYCE helps you notice earlier and ask better.
-            </Lede>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="v-sheen h-12 rounded-full px-7">
-                <Link to="/resources">
-                  Explore parent support
-                  <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden="true" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="h-12 rounded-full px-7">
-                <Link to="/how-it-works">See how VOYCE works</Link>
-              </Button>
+      <PageHero
+        align="center"
+        eyebrow="For parents & guardians"
+        title={<>Your child doesn&rsquo;t need a diagnosis <span className="text-primary">to need a conversation.</span></>}
+        lede="VOYCE gives young people a private place to notice how they feel — and gives you plain, practical ways to talk at home. Here is exactly what it does, and what it never does."
+        primary={{ to: "/guides", label: "Read the parent guides" }}
+        secondary={{ to: "#privacy", label: "How privacy & consent work" }}
+      />
+
+      <Section className="py-16 sm:py-20">
+        <Reveal className="mb-10 max-w-2xl">
+          <Eyebrow>Straight answers</Eyebrow>
+          <StatementHeading>What VOYCE is — and what it is not.</StatementHeading>
+        </Reveal>
+        <div className="grid gap-5 lg:grid-cols-2">
+          <Reveal variant="left">
+            <div className="v-card h-full p-7">
+              <h3 className="text-lg font-medium">VOYCE is</h3>
+              <ul className="mt-5 space-y-3">
+                {IS.map((t) => (
+                  <li key={t} className="flex gap-3 text-sm leading-relaxed text-foreground/85">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden /> {t}
+                  </li>
+                ))}
+              </ul>
             </div>
           </Reveal>
-          <Reveal delay={120} className="flex justify-center">
-            <PhoneFrame>
-              <CheckInScreen />
-            </PhoneFrame>
+          <Reveal variant="right" delay={100}>
+            <div className="v-card h-full bg-surface p-7">
+              <h3 className="text-lg font-medium">VOYCE is not</h3>
+              <ul className="mt-5 space-y-3">
+                {IS_NOT.map((t) => (
+                  <li key={t} className="flex gap-3 text-sm leading-relaxed text-foreground/85">
+                    <X className="mt-0.5 h-4 w-4 shrink-0 text-destructive" aria-hidden /> {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Reveal>
         </div>
-        <Reveal delay={160}>
-          <LeaveWith className="mt-14" items={["The quiet signs worth noticing earlier", "Better questions to open a conversation", "Guides written for parents, not clinicians", "Clarity on what VOYCE does — and doesn’t — do"]} />
-        </Reveal>
       </Section>
 
-      <Section tone="muted">
-        <Reveal className="max-w-3xl">
-          <Eyebrow>What to look for</Eyebrow>
-          <StatementHeading>Quiet signals, not warning sirens.</StatementHeading>
-          <Lede>
-            None of these mean something is wrong on their own. Together, over a few weeks, they&rsquo;re worth a
-            gentler conversation.
-          </Lede>
+      <Section tone="muted" className="py-16 sm:py-20">
+        <Reveal className="mb-10 max-w-2xl">
+          <Eyebrow>Talking at home</Eyebrow>
+          <StatementHeading>Small swaps that keep the door open.</StatementHeading>
+          <Lede>Most honest answers come from smaller, kinder questions — and from not fixing things straight away.</Lede>
         </Reveal>
-        <StepRail steps={SIGNALS} className="mt-14" />
-      </Section>
-
-      <Section>
-        <Reveal className="max-w-3xl">
-          <Eyebrow>How to start</Eyebrow>
-          <StatementHeading>Four things that keep the door open.</StatementHeading>
-        </Reveal>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
-          {APPROACHES.map((a, i) => (
-            <Reveal key={a.title} delay={i * 80}>
-              <QuietCard interactive className="h-full">
-                <h3 className="text-lg font-medium tracking-tight">{a.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{a.body}</p>
-              </QuietCard>
+        <div className="grid gap-5 sm:grid-cols-2">
+          {SWAPS.map((s, i) => (
+            <Reveal key={s.instead} delay={i * 90}>
+              <div className="v-card v-card-hover h-full p-6">
+                <p className="text-sm text-muted-foreground line-through decoration-destructive/50">&ldquo;{s.instead}&rdquo;</p>
+                <p className="mt-3 font-display text-xl leading-snug text-foreground">&ldquo;{s.tryThis}&rdquo;</p>
+              </div>
             </Reveal>
           ))}
         </div>
       </Section>
 
-      <Section tone="muted">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <Reveal delay={100} className="flex justify-center lg:order-2">
-            <PhoneFrame>
-              <SupportScreen />
-            </PhoneFrame>
-          </Reveal>
-          <Reveal className="lg:order-1">
-            <Eyebrow>Where VOYCE stops</Eyebrow>
-            <StatementHeading>We point towards people, never away from them.</StatementHeading>
-            <Lede>
-              VOYCE does not diagnose, treat, or replace a counsellor, doctor or emergency service. If a situation looks
-              serious, the honest answer is a person — and VOYCE says so clearly, with the routes to reach one.
-            </Lede>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link to="/safety" className="text-sm font-medium text-primary hover:underline">
-                Safety and limits
-              </Link>
-              <Link to="/privacy" className="text-sm font-medium text-primary hover:underline">
-                What a parent can and cannot see
-              </Link>
-            </div>
-          </Reveal>
+      <Section className="py-16 sm:py-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+          <div>
+            <Reveal>
+              <Eyebrow>Quiet signals</Eyebrow>
+              <StatementHeading>Worth noticing over a few weeks — not a checklist.</StatementHeading>
+              <Lede>None of these mean something is wrong on their own. Together, they are a reason for a gentler conversation.</Lede>
+            </Reveal>
+            <ol className="mt-8 space-y-4 border-l-2 border-primary/20 pl-6">
+              {SIGNALS.map((s, i) => (
+                <Reveal as="li" key={s.title} delay={i * 90} variant="left" className="relative">
+                  <span className="absolute -left-[1.95rem] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" aria-hidden />
+                  <h3 className="font-medium">{s.title}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
+          <AskReflect
+            eyebrow="What's on your mind?"
+            question="What are you most worried about right now?"
+            options={WORRY}
+            allowOwnWords={false}
+          />
         </div>
       </Section>
 
-      <Section tone="ink" className="py-24">
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <StatementHeading className="text-ink-foreground">Start with the reading, not the intervention.</StatementHeading>
-          <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-ink-foreground/70">
-            Our guides for parents are short, non-clinical, and written to be used the same evening.
-          </p>
-          <Button asChild size="lg" className="mt-9 h-12 rounded-full px-8">
-            <Link to="/resources">Open the guides</Link>
-          </Button>
+      <Section id="privacy" tone="muted" className="py-16 sm:py-20">
+        <Reveal className="mb-10 max-w-2xl">
+          <Eyebrow>Privacy & consent</Eyebrow>
+          <StatementHeading>Your child&rsquo;s words stay theirs.</StatementHeading>
+        </Reveal>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: <UserCheck className="h-5 w-5" />, t: "Age & consent", b: "Accounts are for 13+. For 13–17, a parent or guardian must know and agree. Under 13 can't sign up." },
+            { icon: <EyeOff className="h-5 w-5" />, t: "No reading entries", b: "Parents and schools can't read a young person's journal or check-ins." },
+            { icon: <ShieldCheck className="h-5 w-5" />, t: "No scoring", b: "VOYCE doesn't diagnose, score or risk-rank anyone." },
+            { icon: <Trash2 className="h-5 w-5" />, t: "Delete any time", b: "An account and everything in it can be deleted whenever they choose." },
+          ].map((c, i) => (
+            <Reveal key={c.t} delay={i * 90}>
+              <div className="v-card group h-full p-6">
+                <span className="v-chip mb-4">{c.icon}</span>
+                <h3 className="font-medium">{c.t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.b}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="mt-8 text-sm text-muted-foreground">
+          Full detail in the <Link to="/privacy" className="v-link font-medium text-primary">privacy policy</Link> and{" "}
+          <Link to="/safety" className="v-link font-medium text-primary">safety page</Link>.
         </Reveal>
       </Section>
+
+      <NextStep
+        title="Start with the reading, not the intervention."
+        body="Short, non-clinical guides written to be used the same evening."
+        primary={{ to: "/guides", label: "Open the parent guides" }}
+        secondary={{ to: "/faq", label: "Read the FAQ" }}
+      />
     </PageShell>
   );
 }

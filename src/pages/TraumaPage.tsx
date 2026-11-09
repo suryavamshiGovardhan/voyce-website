@@ -10,6 +10,7 @@ import ReadingProgress from "@/components/engagement/ReadingProgress";
 import ReflectPause from "@/components/engagement/ReflectPause";
 import BreathWidget from "@/components/engagement/BreathWidget";
 import ContinueJourney from "@/components/engagement/ContinueJourney";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function TraumaPage() {
   return (
@@ -61,6 +62,7 @@ export default function TraumaPage() {
           <ShareStoryButton />
         </div>
 
+        <LearnCheck topic="trauma" />
         <NextStep
           title="You don't have to carry this alone."
           body="If something here feels personal, talking to a trusted adult or a professional is a strong first step."

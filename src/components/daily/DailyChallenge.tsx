@@ -206,7 +206,7 @@ export default function DailyChallenge() {
   };
 
   return (
-    <Card className={`p-6 ${isCompleted ? 'bg-green-500/10 border-green-500/20' : 'bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-purple-500/20'}`}>
+    <Card className={`p-6 ${isCompleted ? 'bg-primary/10 border-primary/40' : 'bg-primary border-primary/40'}`}>
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="text-lg font-bold flex items-center gap-2">
@@ -223,8 +223,8 @@ export default function DailyChallenge() {
 
         {isCompleted ? (
           <div className="text-center py-4">
-            <CheckCircle2 className="h-12 w-12 mx-auto mb-3 text-green-500" />
-            <p className="font-medium text-green-600 dark:text-green-400">
+            <CheckCircle2 className="h-12 w-12 mx-auto mb-3 text-primary" />
+            <p className="font-medium text-primary dark:text-primary">
               Challenge Completed! 🎉
             </p>
             <p className="text-sm text-muted-foreground mt-1">

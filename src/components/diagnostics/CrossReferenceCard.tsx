@@ -16,15 +16,15 @@ export function CrossReferenceCard({ reference, showFrom = "icd9" }: CrossRefere
   const getRelationshipColor = (relationship: string) => {
     switch (relationship) {
       case "exact":
-        return "bg-green-500/10 text-green-700 border-green-500/20";
+        return "bg-primary/10 text-primary border-primary/40";
       case "approximate":
-        return "bg-yellow-500/10 text-yellow-700 border-yellow-500/20";
+        return "bg-primary/10 text-amber-700 border-amber-300";
       case "broader":
-        return "bg-blue-500/10 text-blue-700 border-blue-500/20";
+        return "bg-primary/10 text-primary border-primary/40";
       case "narrower":
-        return "bg-purple-500/10 text-purple-700 border-purple-500/20";
+        return "bg-primary/10 text-primary border-primary/40";
       default:
-        return "bg-gray-500/10 text-gray-700 border-gray-500/20";
+        return "bg-muted-foreground/10 text-foreground border-border/20";
     }
   };
 

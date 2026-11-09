@@ -35,7 +35,7 @@ export default function DimensionIntro({ dimension, number, total, onContinue }:
         {dimension.subtitle}
       </p>
 
-      <blockquote className="ii-serif italic text-foreground/75 border-l-2 border-emerald-400/50 pl-5 mb-12 max-w-md text-left">
+      <blockquote className="ii-serif italic text-foreground/75 border-l-2 border-primary/40 pl-5 mb-12 max-w-md text-left">
         {dimension.caption}
       </blockquote>
 

@@ -44,7 +44,7 @@ const getResourceColor = (type: string) => {
     case 'video': return 'bg-muted text-primary border-border';
     case 'website': return 'bg-muted text-primary border-border';
     case 'organization': return 'bg-muted text-primary border-border';
-    default: return 'bg-slate-100/20 text-muted-foreground border-slate-300/30';
+    default: return 'bg-primary/10 text-muted-foreground border-border/30';
   }
 };
 
@@ -58,7 +58,7 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
     <div className="space-y-12">
       {/* Statistics Section */}
       {statistics && (
-        <Card className="bg-card border-slate-200/20 shadow-xl rounded-2xl">
+        <Card className="bg-card border-border/20 shadow-xl rounded-2xl">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground flex items-center">
               📊 {topic} Statistics & Facts
@@ -80,7 +80,7 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
 
       {/* Key Facts */}
       {keyFacts && (
-        <Card className="bg-card border-slate-200/20 shadow-xl rounded-2xl">
+        <Card className="bg-card border-border/20 shadow-xl rounded-2xl">
           <CardHeader>
             <CardTitle className="text-2xl text-foreground">🔍 Key Facts About {topic}</CardTitle>
           </CardHeader>
@@ -88,7 +88,7 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {keyFacts.map((fact, index) => (
                 <div key={index} className="flex items-start space-x-3 bg-muted p-4 rounded-xl">
-                  <div className="bg-green-500 w-2 h-2 rounded-full mt-2 flex-shrink-0"></div>
+                  <div className="bg-primary w-2 h-2 rounded-full mt-2 flex-shrink-0"></div>
                   <p className="text-muted-foreground text-sm">{fact}</p>
                 </div>
               ))}
@@ -98,7 +98,7 @@ export default function ComprehensiveContent({ topic, resources, statistics, key
       )}
 
       {/* Resources Grid */}
-      <Card className="bg-card border-slate-200/20 shadow-xl rounded-2xl">
+      <Card className="bg-card border-border/20 shadow-xl rounded-2xl">
         <CardHeader>
           <CardTitle className="text-3xl text-foreground">
             🌐 Comprehensive {topic} Resources

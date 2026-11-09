@@ -6,11 +6,11 @@ const NeuroscienceContent = () => (
   <div className="space-y-8">
     <Card className="bg-card border-border">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-slate-800">
-          <Microscope className="h-6 w-6 text-cyan-600" /> A Field That Rewrites Itself Every Decade
+        <CardTitle className="flex items-center gap-2 text-foreground">
+          <Microscope className="h-6 w-6 text-primary" /> A Field That Rewrites Itself Every Decade
         </CardTitle>
       </CardHeader>
-      <CardContent className="text-slate-700 leading-relaxed space-y-3">
+      <CardContent className="text-foreground leading-relaxed space-y-3">
         <p>Neuroscience is unusual among sciences in how fast it moves. The dominant model of the brain in 1990 (hard-wired regions with fixed functions) was substantially revised by 2005 (distributed networks, adult plasticity), revised again by 2015 (the primacy of connectivity and rhythm), and is being revised now by AI, single-cell sequencing, and dense electrode arrays. Any textbook you read is a snapshot.</p>
         <p>What follows is a short, honest map — the history that got us here, the tools that opened new territory, the questions still open, and the labs in India doing serious work.</p>
       </CardContent>
@@ -26,7 +26,7 @@ const NeuroscienceContent = () => (
 
       <TabsContent value="history" className="space-y-4">
         <Card><CardHeader><CardTitle className="flex items-center gap-2"><Brain className="h-5 w-5" /> Cajal to Connectome — A Compressed Timeline</CardTitle></CardHeader>
-        <CardContent className="text-slate-700 leading-relaxed space-y-3">
+        <CardContent className="text-foreground leading-relaxed space-y-3">
           <p><strong>1890s — Santiago Ramón y Cajal.</strong> Using Golgi's silver staining, Cajal drew the neuron doctrine into existence: the brain is made of discrete cells, not a continuous web. His hand-drawn plates are still among the most accurate depictions of neural morphology ever produced. Nobel, 1906.</p>
           <p><strong>1920s — Hans Berger</strong> records the first human EEG, opening the door to studying brain electrical activity non-invasively.</p>
           <p><strong>1949 — Donald Hebb</strong> proposes what becomes shorthand as "cells that fire together wire together" — the foundational principle of learning and plasticity, and, decades later, of the artificial neural networks powering modern AI.</p>
@@ -41,7 +41,7 @@ const NeuroscienceContent = () => (
 
       <TabsContent value="methods" className="space-y-4">
         <Card><CardHeader><CardTitle className="flex items-center gap-2"><Cpu className="h-5 w-5" /> The Tools That Made Modern Neuroscience Possible</CardTitle></CardHeader>
-        <CardContent className="text-slate-700 leading-relaxed space-y-3">
+        <CardContent className="text-foreground leading-relaxed space-y-3">
           <p><strong>Electrophysiology</strong> — single-unit recording, EEG, and now high-density Neuropixels probes that can record from hundreds of neurons at once. Gives millisecond temporal resolution; the price is invasiveness or spatial coverage.</p>
           <p><strong>fMRI (functional magnetic resonance imaging)</strong> — measures blood-oxygenation changes as a proxy for neural activity. Whole-brain coverage, non-invasive, but seconds of temporal resolution and no direct causal claims. Overhyped in the 2000s; now used with much more statistical rigor.</p>
           <p><strong>PET (positron emission tomography)</strong> — traces radioactive markers to study neurotransmitter systems and metabolism. Still essential for understanding dopamine, serotonin, and receptor distributions in living humans.</p>
@@ -55,7 +55,7 @@ const NeuroscienceContent = () => (
 
       <TabsContent value="frontiers" className="space-y-4">
         <Card><CardHeader><CardTitle>Open Questions and Live Debates</CardTitle></CardHeader>
-        <CardContent className="text-slate-700 leading-relaxed space-y-3">
+        <CardContent className="text-foreground leading-relaxed space-y-3">
           <p><strong>Consciousness</strong> — no theory currently commands consensus. Global Workspace Theory, Integrated Information Theory (Tononi), Higher-Order Theories, and Predictive Processing accounts each capture something; none is complete. Adversarial collaborations (structured experiments designed to distinguish competing theories) are producing real data for the first time.</p>
           <p><strong>Memory reconsolidation</strong> — the finding that recalled memories become briefly malleable is opening new therapeutic possibilities but also raising uncomfortable questions about what "the past" really is.</p>
           <p><strong>Psychedelics and neuroplasticity</strong> — psilocybin, MDMA, and ketamine are producing durable therapeutic effects in trials for treatment-resistant depression and PTSD. The mechanism appears to involve a temporary widening of the brain's plastic window. The regulatory landscape is shifting fast.</p>
@@ -67,7 +67,7 @@ const NeuroscienceContent = () => (
 
       <TabsContent value="india" className="space-y-4">
         <Card><CardHeader><CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5" /> Indian Neuroscience — Where the Work is Happening</CardTitle></CardHeader>
-        <CardContent className="text-slate-700 leading-relaxed space-y-3">
+        <CardContent className="text-foreground leading-relaxed space-y-3">
           <p>Serious neuroscience in India happens across a small number of well-resourced institutions and a growing number of newer labs. If you are a student thinking about the field, here is the honest map.</p>
           <p><strong>NBRC (National Brain Research Centre, Manesar)</strong> — India's dedicated neuroscience institute, doing strong work in cognitive neuroscience, neuroimaging, and computational modelling.</p>
           <p><strong>NIMHANS (Bengaluru)</strong> — clinical neuroscience powerhouse, with major work in psychiatry, neurology, addiction medicine, and one of the country's few adult ADHD clinics.</p>

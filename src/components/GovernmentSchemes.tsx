@@ -41,34 +41,34 @@ export default function GovernmentSchemes() {
   ];
 
   const categoryColors = {
-    "Mental Health": "bg-emerald-100 text-emerald-800",
-    "Healthcare": "bg-blue-100 text-blue-800",
-    "Education": "bg-purple-100 text-purple-800"
+    "Mental Health": "bg-primary/10 text-foreground",
+    "Healthcare": "bg-primary/10 text-foreground",
+    "Education": "bg-primary/10 text-foreground"
   };
 
   return (
-    <Card className="bg-white/80 backdrop-blur-sm border-emerald-200 shadow-lg">
+    <Card className="bg-card backdrop-blur-sm border-primary/20 shadow-lg">
       <CardHeader className="pb-4">
-        <CardTitle className="flex items-center text-slate-800">
-          <Building className="h-6 w-6 mr-2 text-emerald-600" />
+        <CardTitle className="flex items-center text-foreground">
+          <Building className="h-6 w-6 mr-2 text-primary" />
           Government Support Schemes
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {schemes.map((scheme, index) => (
-          <div key={index} className="p-4 rounded-lg border bg-slate-50 border-slate-200 hover:shadow-md transition-shadow">
+          <div key={index} className="p-4 rounded-lg border bg-primary/10 border-border hover:shadow-md transition-shadow">
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-start space-x-3">
-                <scheme.icon className="h-5 w-5 mt-1 text-slate-600" />
+                <scheme.icon className="h-5 w-5 mt-1 text-muted-foreground" />
                 <div className="flex-1">
                   <div className="flex items-center space-x-2 mb-2">
-                    <h4 className="font-medium text-slate-800">{scheme.name}</h4>
+                    <h4 className="font-medium text-foreground">{scheme.name}</h4>
                     <Badge className={categoryColors[scheme.category as keyof typeof categoryColors]}>
                       {scheme.category}
                     </Badge>
                   </div>
-                  <p className="text-sm text-slate-600 mb-2">{scheme.description}</p>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-sm text-muted-foreground mb-2">{scheme.description}</p>
+                  <p className="text-xs text-muted-foreground">
                     <strong>Eligibility:</strong> {scheme.eligibility}
                   </p>
                 </div>
@@ -78,7 +78,7 @@ export default function GovernmentSchemes() {
               asChild 
               size="sm" 
               variant="outline"
-              className="w-full border-emerald-300 hover:bg-emerald-50"
+              className="w-full border-primary/20 hover:bg-muted"
             >
               <a href={scheme.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                 Learn More <ExternalLink className="h-3 w-3 ml-1" />
@@ -87,8 +87,8 @@ export default function GovernmentSchemes() {
           </div>
         ))}
         
-        <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <p className="text-sm text-blue-800">
+        <div className="mt-6 p-4 bg-primary/10 border border-primary/20 rounded-lg">
+          <p className="text-sm text-foreground">
             <strong>Note:</strong> Eligibility criteria may vary. Visit official websites or contact local offices for detailed information and application procedures.
           </p>
         </div>

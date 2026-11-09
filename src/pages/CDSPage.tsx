@@ -6,6 +6,7 @@ import { canonicalFor } from "@/components/SEOHead";
 import { PageHero, LeaveWith, NextStep } from "@/components/site/value";
 import ShareStoryButton from "@/components/ShareStoryButton";
 import CDSContent from "@/components/content/CDSContent";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 export default function CDSPage() {
   return (
@@ -29,6 +30,7 @@ export default function CDSPage() {
         <ShareStoryButton />
       </div>
 
+      <LearnCheck topic="cds" />
       <NextStep
         title="Curious how attention differs from person to person?"
         body="ADHD is the closest relative to CDS — and the better known one."

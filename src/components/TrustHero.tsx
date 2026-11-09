@@ -11,7 +11,7 @@ import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 function TrustHero() {
   return (
     <section
-      className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-slate-900 via-green-900/80 to-slate-800"
+      className="relative min-h-[85vh] flex items-center justify-center text-center overflow-hidden bg-gradient-to-br from-slate-900 via-primary/80/80 to-slate-800"
       aria-labelledby="hero-heading"
       role="banner"
     >
@@ -54,7 +54,7 @@ function TrustHero() {
         {/* New series ribbon */}
         <Link
           to="/series"
-          className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-emerald-400/10 border border-emerald-300/30 text-emerald-200 text-xs sm:text-sm font-medium tracking-wide hover:bg-emerald-400/20 transition-all"
+          className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-primary/10 border border-primary/20 text-primary-foreground/80 text-xs sm:text-sm font-medium tracking-wide hover:bg-primary/20 transition-all"
         >
           <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
           New series — The Unheard Mind
@@ -64,7 +64,7 @@ function TrustHero() {
         {/* Logo / Title */}
         <h1
           id="hero-heading"
-          className="font-display text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-emerald-200 to-green-400"
+          className="font-display text-5xl sm:text-6xl md:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/80 to-primary/70"
         >
           VOYCE
         </h1>
@@ -86,7 +86,7 @@ function TrustHero() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-green-500/20 hover:shadow-green-500/40 transition-all"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg shadow-green-500/20 hover:shadow-green-500/40 transition-all"
           >
             <Link to="/start-here" className="flex items-center gap-2">
               Start here (2 minutes)
@@ -98,7 +98,7 @@ function TrustHero() {
             asChild
             variant="ghost"
             size="lg"
-            className="text-white/75 hover:text-white hover:bg-white/10 px-6 py-6 text-lg rounded-xl"
+            className="text-white/75 hover:text-white hover:bg-card px-6 py-6 text-lg rounded-xl"
           >
             <Link to="/stories" className="flex items-center gap-2">
               <BookOpen className="h-5 w-5" aria-hidden="true" />
@@ -114,7 +114,7 @@ function TrustHero() {
             href="https://sites.google.com/view/4igroups/ai4schools"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-green-400 hover:text-green-300 text-sm font-medium inline-flex items-center gap-1 transition-colors"
+            className="text-primary hover:text-primary text-sm font-medium inline-flex items-center gap-1 transition-colors"
           >
             Learn about AI4Schools
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

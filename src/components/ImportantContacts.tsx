@@ -36,23 +36,23 @@ export default function ImportantContacts() {
   ];
 
   return (
-    <Card className="bg-white/80 backdrop-blur-sm border-rose-200 shadow-lg">
+    <Card className="bg-card backdrop-blur-sm border-rose-200 shadow-lg">
       <CardHeader className="pb-4">
-        <CardTitle className="flex items-center text-slate-800">
+        <CardTitle className="flex items-center text-foreground">
           <AlertTriangle className="h-6 w-6 mr-2 text-rose-600" />
           Important Contacts
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         {contacts.map((contact, index) => (
-          <div key={index} className={`p-4 rounded-lg border ${contact.emergency ? 'bg-rose-50 border-rose-200' : 'bg-slate-50 border-slate-200'}`}>
+          <div key={index} className={`p-4 rounded-lg border ${contact.emergency ? 'bg-rose-50 border-rose-200' : 'bg-primary/10 border-border'}`}>
             <div className="flex items-start justify-between">
               <div className="flex items-start space-x-3">
-                <contact.icon className={`h-5 w-5 mt-1 ${contact.emergency ? 'text-rose-600' : 'text-slate-600'}`} />
+                <contact.icon className={`h-5 w-5 mt-1 ${contact.emergency ? 'text-rose-600' : 'text-muted-foreground'}`} />
                 <div>
-                  <h4 className="font-medium text-slate-800">{contact.name}</h4>
-                  <p className="text-sm text-slate-600 mb-2">{contact.description}</p>
-                  <p className="text-sm font-mono text-slate-700">
+                  <h4 className="font-medium text-foreground">{contact.name}</h4>
+                  <p className="text-sm text-muted-foreground mb-2">{contact.description}</p>
+                  <p className="text-sm font-mono text-foreground">
                     {contact.number || contact.contact}
                   </p>
                 </div>
@@ -71,8 +71,8 @@ export default function ImportantContacts() {
           </div>
         ))}
         
-        <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-          <p className="text-sm text-amber-800">
+        <div className="mt-6 p-4 bg-amber-50 border border-amber-300 rounded-lg">
+          <p className="text-sm text-amber-700">
             <strong>Emergency:</strong> If you're in immediate danger, call 108 (Emergency Services) or visit your nearest hospital.
           </p>
         </div>

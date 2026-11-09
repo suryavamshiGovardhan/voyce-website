@@ -15,10 +15,10 @@ const libraryContent = [
     fullContent: "The death of ego is not the death of personality or individuality. It's the death of the illusion that you are separate, that you are the voice in your head, that you are the story you tell yourself about yourself.",
     tags: ["Shadow Work", "Non-Duality", "Advanced", "Death Practice"],
     icon: Skull,
-    color: "text-sky-400",
-    bgColor: "bg-sky-600",
-    borderColor: "border-sky-300/30",
-    hoverBorder: "hover:border-sky-300/60",
+    color: "text-primary",
+    bgColor: "bg-primary",
+    borderColor: "border-primary/20",
+    hoverBorder: "hover:border-primary/20",
     japaneseIcon: "zen",
     level: "L7",
     readTime: "12 min",
@@ -31,10 +31,10 @@ const libraryContent = [
     fullContent: "Every wound carries medicine. Every trauma holds the seeds of transformation. The very experiences that broke you open are the same ones that can awaken you to your true nature.",
     tags: ["Trauma Healing", "Integration", "Somatic", "Wisdom"],
     icon: Heart,
-    color: "text-orange-400",
-    bgColor: "bg-orange-600",
-    borderColor: "border-orange-300/30",
-    hoverBorder: "hover:border-orange-300/60",
+    color: "text-amber-700",
+    bgColor: "bg-primary",
+    borderColor: "border-amber-300",
+    hoverBorder: "hover:border-amber-300",
     japaneseIcon: "lotus",
     level: "L2",
     readTime: "8 min",
@@ -47,10 +47,10 @@ const libraryContent = [
     fullContent: "The DMN—default mode network—is the brain's selfing system. When it goes offline, so does your sense of being a separate self. This is the neuroscience of enlightenment.",
     tags: ["Neuroscience", "Research", "PhD Level", "DMN", "Consciousness"],
     icon: Brain,
-    color: "text-sky-400",
-    bgColor: "bg-sky-600",
-    borderColor: "border-sky-300/30",
-    hoverBorder: "hover:border-sky-300/60",
+    color: "text-primary",
+    bgColor: "bg-primary",
+    borderColor: "border-primary/20",
+    hoverBorder: "hover:border-primary/20",
     japaneseIcon: "crane",
     level: "L6",
     readTime: "15 min",
@@ -63,10 +63,10 @@ const libraryContent = [
     fullContent: "True masculinity is not about dominance or suppression of emotion. It's about conscious strength, emotional intelligence, and the courage to be vulnerable.",
     tags: ["Masculinity", "Shadow", "Integration", "Archetypes"],
     icon: Zap,
-    color: "text-orange-400",
-    bgColor: "bg-orange-600",
-    borderColor: "border-orange-300/30",
-    hoverBorder: "hover:border-orange-300/60",
+    color: "text-amber-700",
+    bgColor: "bg-primary",
+    borderColor: "border-amber-300",
+    hoverBorder: "hover:border-amber-300",
     japaneseIcon: "mountain",
     level: "L3",
     readTime: "10 min",
@@ -79,10 +79,10 @@ const libraryContent = [
     fullContent: "The medical model treats symptoms, not souls. True healing happens when we understand that many 'mental illnesses' are actually spiritual emergencies—the psyche's attempt to heal itself.",
     tags: ["Alternative Medicine", "Spiritual Emergency", "Paradigm Shift"],
     icon: Eye,
-    color: "text-sky-400",
-    bgColor: "bg-sky-600",
-    borderColor: "border-sky-300/30",
-    hoverBorder: "hover:border-sky-300/60",
+    color: "text-primary",
+    bgColor: "bg-primary",
+    borderColor: "border-primary/20",
+    hoverBorder: "hover:border-primary/20",
     japaneseIcon: "wave",
     level: "L4",
     readTime: "20 min",
@@ -95,10 +95,10 @@ const libraryContent = [
     fullContent: "Attachment is the ego's version of love. True love is freedom—the freedom to be yourself and the freedom to let others be themselves.",
     tags: ["Love", "Attachment", "Relationships", "Non-Dual"],
     icon: Heart,
-    color: "text-orange-400",
-    bgColor: "bg-orange-600",
-    borderColor: "border-orange-300/30",
-    hoverBorder: "hover:border-orange-300/60",
+    color: "text-amber-700",
+    bgColor: "bg-primary",
+    borderColor: "border-amber-300",
+    hoverBorder: "hover:border-amber-300",
     japaneseIcon: "cherry",
     level: "L5",
     readTime: "12 min",
@@ -111,10 +111,10 @@ const libraryContent = [
     fullContent: "We are living through the democratization of enlightenment. What once took lifetimes in monasteries can now be accelerated through understanding the technology of consciousness.",
     tags: ["Technology", "Consciousness", "Acceleration", "Modern"],
     icon: Target,
-    color: "text-sky-400",
-    bgColor: "bg-sky-600",
-    borderColor: "border-sky-300/30",
-    hoverBorder: "hover:border-sky-300/60",
+    color: "text-primary",
+    bgColor: "bg-primary",
+    borderColor: "border-primary/20",
+    hoverBorder: "hover:border-primary/20",
     japaneseIcon: "torii",
     level: "L6",
     readTime: "18 min",
@@ -127,10 +127,10 @@ const libraryContent = [
     fullContent: "Physical death is optional—ego death is mandatory. The question is whether you'll die consciously or unconsciously, willingly or kicking and screaming.",
     tags: ["Death", "Ego Death", "Ultimate", "Mysticism"],
     icon: Crown,
-    color: "text-orange-400",
-    bgColor: "bg-orange-600",
-    borderColor: "border-orange-300/30",
-    hoverBorder: "hover:border-orange-300/60",
+    color: "text-amber-700",
+    bgColor: "bg-primary",
+    borderColor: "border-amber-300",
+    hoverBorder: "hover:border-amber-300",
     japaneseIcon: "lotus",
     level: "L7",
     readTime: "25 min",
@@ -139,12 +139,12 @@ const libraryContent = [
 ];
 
 const categories = [
-  { name: "Ego Death", count: 24, color: "text-sky-400" },
-  { name: "Trauma Healing", count: 18, color: "text-orange-400" },
-  { name: "Neuroscience", count: 15, color: "text-sky-400" },
-  { name: "Shadow Work", count: 21, color: "text-orange-400" },
-  { name: "Consciousness", count: 33, color: "text-sky-400" },
-  { name: "Sacred Relating", count: 12, color: "text-orange-400" }
+  { name: "Ego Death", count: 24, color: "text-primary" },
+  { name: "Trauma Healing", count: 18, color: "text-amber-700" },
+  { name: "Neuroscience", count: 15, color: "text-primary" },
+  { name: "Shadow Work", count: 21, color: "text-amber-700" },
+  { name: "Consciousness", count: 33, color: "text-primary" },
+  { name: "Sacred Relating", count: 12, color: "text-amber-700" }
 ];
 
 export default function LibraryPreview() {
@@ -155,9 +155,9 @@ export default function LibraryPreview() {
     <div className="space-y-8">
       <div className="text-center mb-8">
         <div className="flex items-center justify-center space-x-4 mb-4">
-          <Sparkles className="h-8 w-8 text-orange-400 float-3d" />
+          <Sparkles className="h-8 w-8 text-amber-700 float-3d" />
           <span className="text-white text-2xl font-light">The Archive of Truth</span>
-          <Sparkles className="h-8 w-8 text-sky-400 float-3d" />
+          <Sparkles className="h-8 w-8 text-primary float-3d" />
         </div>
         <p className="text-slate-300 text-lg italic leading-relaxed max-w-4xl mx-auto">
           "This is not a library of books but a library of souls. Each piece of wisdom here
@@ -198,10 +198,10 @@ export default function LibraryPreview() {
                         <Badge variant="outline" className={`${content.borderColor} ${content.color} text-xs`}>
                           {content.level}
                         </Badge>
-                        <span className="text-slate-500 text-xs">{content.readTime}</span>
+                        <span className="text-muted-foreground text-xs">{content.readTime}</span>
                       </div>
                       <h3 className="text-white font-medium text-lg">{content.title}</h3>
-                      <p className="text-slate-400 text-xs">{content.category}</p>
+                      <p className="text-muted-foreground text-xs">{content.category}</p>
                     </div>
                   </div>
                   <JapaneseIcon
@@ -213,7 +213,7 @@ export default function LibraryPreview() {
                 <div className="flex-grow">
                   <p className="text-slate-300 text-sm leading-relaxed mb-4 italic">"{content.preview}"</p>
 
-                  <p className="text-slate-400 text-xs leading-relaxed mb-4">{content.fullContent}</p>
+                  <p className="text-muted-foreground text-xs leading-relaxed mb-4">{content.fullContent}</p>
                 </div>
 
                 <div className="space-y-3">
@@ -226,7 +226,7 @@ export default function LibraryPreview() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-slate-500 text-xs italic">by {content.author}</span>
+                    <span className="text-muted-foreground text-xs italic">by {content.author}</span>
                     <Button
                       size="sm"
                       className={`${content.bgColor} hover:${content.bgColor}/80 text-white haptic-btn text-xs px-4`}
@@ -258,7 +258,7 @@ export default function LibraryPreview() {
       </div>
 
       <div className="mt-12">
-        <div className="bg-black/30 backdrop-blur-sm border border-orange-300/30 rounded-lg p-8">
+        <div className="bg-black/30 backdrop-blur-sm border border-amber-300 rounded-lg p-8">
           <div className="text-center">
             <h3 className="text-white text-2xl font-light mb-4">The Living Library</h3>
             <p className="text-slate-300 text-sm leading-relaxed italic max-w-4xl mx-auto mb-6">

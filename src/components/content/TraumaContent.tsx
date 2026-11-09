@@ -7,48 +7,26 @@ import { Shield, Heart, Brain, Flower, Mountain, Gem, Church, TreeDeciduous, Com
 const TraumaContent = () => {
   return (
     <div className="space-y-8 washi-texture">
-      <Card className="bg-gradient-to-br from-amber-50/80 to-orange-50/80 border-border cherry-blossom-bg">
+      <Card className="bg-surface border-border cherry-blossom-bg">
         <CardHeader>
           <CardTitle className="flex items-center gap-3 text-3xl japanese-heading">
             <Shield className="h-8 w-8 text-amber-700" />
-            <Flower className="h-6 w-6 text-orange-600" />
+            <Flower className="h-6 w-6 text-amber-700" />
             Trauma Recovery & Resilience
-            <Mountain className="h-6 w-6 text-amber-600" />
+            <Mountain className="h-6 w-6 text-amber-700" />
           </CardTitle>
           <div className="ink-brush-divider my-4"></div>
         </CardHeader>
         <CardContent>
-          <p className="text-lg text-amber-800 leading-relaxed mb-6 japanese-text">
+          <p className="text-lg text-amber-700 leading-relaxed mb-6 japanese-text">
             古の智慧と現代科学の融合 - Ancient wisdom meets modern science in understanding trauma as a transformative journey from suffering to strength, 
             incorporating Greek concepts of catharsis, Indian principles of dharma, and Roman stoic resilience.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <Church className="h-8 w-8 text-amber-700 mb-3" />
-              <div className="text-3xl font-bold text-amber-700 mb-1">1 in 4</div>
-              <div className="text-sm text-amber-600 japanese-text">Adults experience trauma</div>
-            </div>
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <Crown className="h-8 w-8 text-orange-700 mb-3" />
-              <div className="text-3xl font-bold text-orange-700 mb-1">70%</div>
-              <div className="text-sm text-orange-600 japanese-text">Recovery with proper support</div>
-            </div>
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <Gem className="h-8 w-8 text-red-700 mb-3" />
-              <div className="text-3xl font-bold text-red-700 mb-1">12 weeks</div>
-              <div className="text-sm text-red-600 japanese-text">Average therapy duration</div>
-            </div>
-            <div className="bg-card p-6 rounded-xl border border-border hover-lift">
-              <TreeDeciduous className="h-8 w-8 text-green-700 mb-3" />
-              <div className="text-3xl font-bold text-green-700 mb-1">90%</div>
-              <div className="text-sm text-green-600 japanese-text">Post-traumatic growth potential</div>
-            </div>
-          </div>
         </CardContent>
       </Card>
 
       <Tabs defaultValue="understanding" className="w-full">
-        <TabsList className="grid w-full grid-cols-8 bg-gradient-to-r from-amber-100 to-orange-100 border border-border">
+        <TabsList className="grid w-full grid-cols-8 bg-surface border border-border">
           <TabsTrigger value="understanding" className="japanese-text">Understanding</TabsTrigger>
           <TabsTrigger value="types" className="japanese-text">Types</TabsTrigger>
           <TabsTrigger value="symptoms" className="japanese-text">Symptoms</TabsTrigger>
@@ -64,15 +42,15 @@ const TraumaContent = () => {
             <Card className="edu-card washi-texture">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 japanese-heading">
-                  <Brain className="h-6 w-6 text-blue-600" />
+                  <Brain className="h-6 w-6 text-primary" />
                   Neurobiological Impact
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-4">
-                  <div className="bg-blue-50/80 p-4 rounded-lg border-l-4 border-border">
-                    <h4 className="font-semibold text-blue-800 mb-2 japanese-heading">Amygdala Hyperactivation</h4>
-                    <ul className="text-sm text-blue-700 space-y-2 japanese-text">
+                  <div className="bg-primary/10 p-4 rounded-lg border-l-4 border-border">
+                    <h4 className="font-semibold text-foreground mb-2 japanese-heading">Amygdala Hyperactivation</h4>
+                    <ul className="text-sm text-primary space-y-2 japanese-text">
                       <li>• Fear center becomes overactive</li>
                       <li>• Heightened threat detection</li>
                       <li>• Emotional dysregulation</li>
@@ -81,9 +59,9 @@ const TraumaContent = () => {
                     </ul>
                   </div>
                   
-                  <div className="bg-purple-50/80 p-4 rounded-lg border-l-4 border-border">
-                    <h4 className="font-semibold text-purple-800 mb-2 japanese-heading">Hippocampus Changes</h4>
-                    <ul className="text-sm text-purple-700 space-y-2 japanese-text">
+                  <div className="bg-primary/10 p-4 rounded-lg border-l-4 border-border">
+                    <h4 className="font-semibold text-foreground mb-2 japanese-heading">Hippocampus Changes</h4>
+                    <ul className="text-sm text-primary space-y-2 japanese-text">
                       <li>• Volume reduction in chronic trauma</li>
                       <li>• Memory formation difficulties</li>
                       <li>• Contextual memory impairment</li>
@@ -92,9 +70,9 @@ const TraumaContent = () => {
                     </ul>
                   </div>
 
-                  <div className="bg-green-50/80 p-4 rounded-lg border-l-4 border-border">
-                    <h4 className="font-semibold text-green-800 mb-2 japanese-heading">Prefrontal Cortex Impact</h4>
-                    <ul className="text-sm text-green-700 space-y-2 japanese-text">
+                  <div className="bg-primary/10 p-4 rounded-lg border-l-4 border-border">
+                    <h4 className="font-semibold text-foreground mb-2 japanese-heading">Prefrontal Cortex Impact</h4>
+                    <ul className="text-sm text-primary space-y-2 japanese-text">
                       <li>• Executive function impairment</li>
                       <li>• Decision-making difficulties</li>
                       <li>• Attention and concentration issues</li>
@@ -115,8 +93,8 @@ const TraumaContent = () => {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-4">
-                  <div className="bg-amber-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-amber-800 mb-2 flex items-center gap-2">
+                  <div className="bg-amber-50 p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
                       <Flower className="h-4 w-4" />
                       Sanskrit: त्राण (Trana) - Protection
                     </h4>
@@ -125,22 +103,22 @@ const TraumaContent = () => {
                     </p>
                   </div>
 
-                  <div className="bg-blue-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                  <div className="bg-primary/10 p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Church className="h-4 w-4" />
                       Greek: Κάθαρσις (Katharsis) - Purification
                     </h4>
-                    <p className="text-sm text-blue-700 japanese-text">
+                    <p className="text-sm text-primary japanese-text">
                       Aristotelian concept of emotional purification through experiencing and expressing deep emotions, foundational to modern trauma therapy.
                     </p>
                   </div>
 
-                  <div className="bg-orange-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-orange-800 mb-2 flex items-center gap-2">
+                  <div className="bg-amber-50 p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-amber-700 mb-2 flex items-center gap-2">
                       <Crown className="h-4 w-4" />
                       Arabic: صبر (Sabr) - Patient Perseverance
                     </h4>
-                    <p className="text-sm text-orange-700 japanese-text">
+                    <p className="text-sm text-amber-700 japanese-text">
                       Islamic concept of patient endurance through hardship as a path to spiritual growth and inner strength.
                     </p>
                   </div>
@@ -155,12 +133,12 @@ const TraumaContent = () => {
                     </p>
                   </div>
 
-                  <div className="bg-teal-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-teal-800 mb-2 flex items-center gap-2">
+                  <div className="bg-primary/10 p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                       <Mountain className="h-4 w-4" />
                       Japanese: 金継ぎ (Kintsugi) - Golden Repair
                     </h4>
-                    <p className="text-sm text-teal-700 japanese-text">
+                    <p className="text-sm text-primary japanese-text">
                       Art of repairing broken pottery with gold, symbolizing that brokenness and healing are part of beauty, not something to hide.
                     </p>
                   </div>
@@ -241,7 +219,7 @@ const TraumaContent = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-900 leading-relaxed japanese-text">
+              <p className="text-amber-700 leading-relaxed japanese-text">
                 Trauma is not one thing. It is the nervous system's response to more than it could hold, at a time when it could not fully process what
                 happened. Sometimes it arrives in a single moment. Sometimes it accumulates so slowly that we mistake it for personality. Naming the shape of it
                 is often the first act of relief — because you cannot heal what you cannot see.
@@ -265,8 +243,8 @@ const TraumaContent = () => {
                 ))}
               </div>
 
-              <div className="bg-amber-50/80 p-4 rounded-lg border-l-4 border-border">
-                <p className="text-sm text-amber-800 italic japanese-text">
+              <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-border">
+                <p className="text-sm text-amber-700 italic japanese-text">
                   You may recognise more than one of these. That is common, not broken. Trauma layers. Healing does too.
                 </p>
               </div>
@@ -283,7 +261,7 @@ const TraumaContent = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-900 leading-relaxed japanese-text">
+              <p className="text-amber-700 leading-relaxed japanese-text">
                 Trauma responses are not defects. They are old strategies that once kept you alive — the flinch, the freeze, the fawn, the fog. Reading these
                 may be uncomfortable. It may also be the first time you feel less alone in your own body.
               </p>
@@ -297,42 +275,42 @@ const TraumaContent = () => {
                     <li>• Physical waves — chest, throat, gut — with no clear trigger</li>
                   </ul>
                 </div>
-                <div className="bg-blue-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-blue-800 mb-2 japanese-heading">Avoidance</h4>
-                  <ul className="text-sm text-blue-700 space-y-1 japanese-text">
+                <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Avoidance</h4>
+                  <ul className="text-sm text-primary space-y-1 japanese-text">
                     <li>• Steering around places, people, conversations</li>
                     <li>• Overworking, over-scrolling, over-caring for others</li>
                     <li>• A quiet, persistent "I don't want to talk about it"</li>
                   </ul>
                 </div>
-                <div className="bg-purple-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-purple-800 mb-2 japanese-heading">Mood & cognition shifts</h4>
-                  <ul className="text-sm text-purple-700 space-y-1 japanese-text">
+                <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Mood & cognition shifts</h4>
+                  <ul className="text-sm text-primary space-y-1 japanese-text">
                     <li>• Persistent shame or guilt, often without an object</li>
                     <li>• A sense that the world is unsafe and people cannot be trusted</li>
                     <li>• Trouble remembering parts of the event, or entire periods of life</li>
                     <li>• Losing interest in things that used to matter</li>
                   </ul>
                 </div>
-                <div className="bg-orange-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-orange-800 mb-2 japanese-heading">Hyperarousal</h4>
-                  <ul className="text-sm text-orange-700 space-y-1 japanese-text">
+                <div className="bg-amber-50 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-amber-700 mb-2 japanese-heading">Hyperarousal</h4>
+                  <ul className="text-sm text-amber-700 space-y-1 japanese-text">
                     <li>• Easily startled; sleep that never quite deepens</li>
                     <li>• Anger that surprises even you</li>
                     <li>• Constantly scanning for what could go wrong</li>
                   </ul>
                 </div>
-                <div className="bg-teal-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-teal-800 mb-2 japanese-heading">Dissociation</h4>
-                  <ul className="text-sm text-teal-700 space-y-1 japanese-text">
+                <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Dissociation</h4>
+                  <ul className="text-sm text-primary space-y-1 japanese-text">
                     <li>• Feeling far away from your own body</li>
                     <li>• "Losing time" during hard conversations</li>
                     <li>• A dreamlike quality that comes and goes</li>
                   </ul>
                 </div>
-                <div className="bg-green-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-green-800 mb-2 japanese-heading">Somatic signs</h4>
-                  <ul className="text-sm text-green-700 space-y-1 japanese-text">
+                <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Somatic signs</h4>
+                  <ul className="text-sm text-primary space-y-1 japanese-text">
                     <li>• Chronic pain, unexplained gut trouble, autoimmune flare-ups</li>
                     <li>• A body that flinches at touch, or craves it desperately</li>
                     <li>• Fatigue that sleep does not fix</li>
@@ -347,12 +325,12 @@ const TraumaContent = () => {
           <Card className="edu-card washi-texture">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
-                <Gem className="h-6 w-6 text-purple-700" />
+                <Gem className="h-6 w-6 text-primary" />
                 Therapies That Actually Help
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-900 leading-relaxed japanese-text">
+              <p className="text-amber-700 leading-relaxed japanese-text">
                 No single therapy fits everyone. What matters most is the relationship with the therapist and the sense that your nervous system feels safer,
                 not more overwhelmed, over time. Here are the approaches with the strongest evidence for trauma — described in plain language, so you can walk
                 into a first session with less mystery.
@@ -367,17 +345,17 @@ const TraumaContent = () => {
                   { name: "Sensorimotor Psychotherapy", body: "Combines body awareness with talk. You notice posture, gesture, breath as you speak — the body speaks first, and it is heard.", suits: "Suits: developmental trauma, chronic dissociation." },
                   { name: "Group Therapy & Peer Support", body: "Being witnessed by others who understand can undo the isolation trauma builds. Not a replacement for individual work, but often a powerful companion.", suits: "Suits: grief, addiction recovery, shared identity trauma." }
                 ].map((t, i) => (
-                  <div key={i} className="bg-purple-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-purple-800 mb-2 japanese-heading">{t.name}</h4>
-                    <p className="text-sm text-purple-700 japanese-text mb-2">{t.body}</p>
-                    <p className="text-xs text-purple-600 italic">{t.suits}</p>
+                  <div key={i} className="bg-primary/10 p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-2 japanese-heading">{t.name}</h4>
+                    <p className="text-sm text-primary japanese-text mb-2">{t.body}</p>
+                    <p className="text-xs text-primary italic">{t.suits}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-blue-50/80 p-4 rounded-lg border-l-4 border-border">
-                <h4 className="font-semibold text-blue-800 mb-1 japanese-heading">On medication</h4>
-                <p className="text-sm text-blue-700 japanese-text">
+              <div className="bg-primary/10 p-4 rounded-lg border-l-4 border-border">
+                <h4 className="font-semibold text-foreground mb-1 japanese-heading">On medication</h4>
+                <p className="text-sm text-primary japanese-text">
                   Medication does not "cure" trauma, but it can turn the volume down enough for therapy to reach you. SSRIs (like sertraline), prazosin for
                   nightmares, and short-term anti-anxiety support are common. This is a conversation with a psychiatrist, not a search engine.
                 </p>
@@ -390,12 +368,12 @@ const TraumaContent = () => {
           <Card className="edu-card washi-texture">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
-                <Mountain className="h-6 w-6 text-emerald-700" />
+                <Mountain className="h-6 w-6 text-primary" />
                 Post-Traumatic Growth
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-900 leading-relaxed japanese-text">
+              <p className="text-amber-700 leading-relaxed japanese-text">
                 Resilience is not the absence of suffering. It is what grows through it, slowly, when the wound is tended rather than hidden. Researchers
                 Tedeschi and Calhoun found that survivors often report growth in five specific domains — not despite what happened, but because of how they met
                 it.
@@ -409,29 +387,29 @@ const TraumaContent = () => {
                   { title: "4. New possibilities", body: "Old paths lose their grip. New callings — creative, vocational, spiritual — often emerge." },
                   { title: "5. Spiritual or existential deepening", body: "Not necessarily religious. A larger sense of meaning, or a more honest one." }
                 ].map((d, i) => (
-                  <div key={i} className="bg-emerald-50/80 p-4 rounded-lg border border-border">
-                    <h4 className="font-semibold text-emerald-800 mb-1 japanese-heading">{d.title}</h4>
-                    <p className="text-sm text-emerald-700 japanese-text">{d.body}</p>
+                  <div key={i} className="bg-primary/10 p-4 rounded-lg border border-border">
+                    <h4 className="font-semibold text-foreground mb-1 japanese-heading">{d.title}</h4>
+                    <p className="text-sm text-primary japanese-text">{d.body}</p>
                   </div>
                 ))}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-teal-50/80 p-4 rounded-lg border border-border">
-                  <h4 className="font-semibold text-teal-800 mb-1 japanese-heading">Window of tolerance</h4>
-                  <p className="text-sm text-teal-700 japanese-text">
+                <div className="bg-primary/10 p-4 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-1 japanese-heading">Window of tolerance</h4>
+                  <p className="text-sm text-primary japanese-text">
                     The zone where you can feel without being flooded. Healing widens the window — through breath, rhythm, and slowly-titrated exposure.
                   </p>
                 </div>
-                <div className="bg-amber-50/80 p-4 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-800 mb-1 japanese-heading">Co-regulation</h4>
+                <div className="bg-amber-50 p-4 rounded-lg border border-border">
+                  <h4 className="font-semibold text-amber-700 mb-1 japanese-heading">Co-regulation</h4>
                   <p className="text-sm text-amber-700 japanese-text">
                     Nervous systems calm each other. A trusted person's steady presence is not a luxury — it is neurobiology.
                   </p>
                 </div>
-                <div className="bg-orange-50/80 p-4 rounded-lg border border-border">
-                  <h4 className="font-semibold text-orange-800 mb-1 japanese-heading">Ritual & rhythm</h4>
-                  <p className="text-sm text-orange-700 japanese-text">
+                <div className="bg-amber-50 p-4 rounded-lg border border-border">
+                  <h4 className="font-semibold text-amber-700 mb-1 japanese-heading">Ritual & rhythm</h4>
+                  <p className="text-sm text-amber-700 japanese-text">
                     Morning tea. Sunday walks. Lighting a candle for someone lost. Small repeatable acts rebuild a sense of order the trauma disrupted.
                   </p>
                 </div>
@@ -444,20 +422,20 @@ const TraumaContent = () => {
           <Card className="edu-card washi-texture">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 japanese-heading">
-                <Church className="h-6 w-6 text-indigo-700" />
+                <Church className="h-6 w-6 text-primary" />
                 Building the Circle That Holds You
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <p className="text-amber-900 leading-relaxed japanese-text">
+              <p className="text-amber-700 leading-relaxed japanese-text">
                 Trauma often teaches us that people are unsafe. Healing asks us to test that lesson, gently, with the right people. This is not about opening
                 everything to everyone. It is about learning who deserves your story, and what kind of holding you actually need.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-indigo-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-indigo-800 mb-2 japanese-heading">Signs of a safe person</h4>
-                  <ul className="text-sm text-indigo-700 space-y-1 japanese-text">
+                <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Signs of a safe person</h4>
+                  <ul className="text-sm text-primary space-y-1 japanese-text">
                     <li>• They listen without rushing to fix</li>
                     <li>• They believe you the first time</li>
                     <li>• They can hold their own emotions while you have yours</li>
@@ -476,9 +454,9 @@ const TraumaContent = () => {
                 </div>
               </div>
 
-              <div className="bg-teal-50/80 p-5 rounded-lg border border-border">
-                <h4 className="font-semibold text-teal-800 mb-2 japanese-heading">Choosing a therapist — a short checklist</h4>
-                <ul className="text-sm text-teal-700 space-y-1 japanese-text">
+              <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                <h4 className="font-semibold text-foreground mb-2 japanese-heading">Choosing a therapist — a short checklist</h4>
+                <ul className="text-sm text-primary space-y-1 japanese-text">
                   <li>• Are they trained specifically in trauma (EMDR, SE, IFS, TF-CBT)?</li>
                   <li>• Do they explain their approach in plain language?</li>
                   <li>• Do they welcome your questions about consent, pace, and safety?</li>
@@ -487,8 +465,8 @@ const TraumaContent = () => {
                 </ul>
               </div>
 
-              <div className="bg-amber-50/80 p-4 rounded-lg border-l-4 border-border">
-                <p className="text-sm text-amber-800 italic japanese-text">
+              <div className="bg-amber-50 p-4 rounded-lg border-l-4 border-border">
+                <p className="text-sm text-amber-700 italic japanese-text">
                   If the first therapist is not the right one, this is information — not failure. Fit matters more than credentials.
                 </p>
               </div>
@@ -506,8 +484,8 @@ const TraumaContent = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-amber-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-amber-800 mb-2 japanese-heading">India — support lines & services</h4>
+                <div className="bg-amber-50 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-amber-700 mb-2 japanese-heading">India — support lines & services</h4>
                   <ul className="text-sm text-amber-700 space-y-2 japanese-text">
                     <li>• <strong>iCall</strong> — +91 9152987821, Mon–Sat 8 AM–10 PM, free & confidential</li>
                     <li>• <strong>Vandrevala Foundation</strong> — 1860-2662-345, 24×7</li>
@@ -517,9 +495,9 @@ const TraumaContent = () => {
                     <li>• <strong>The Live Love Laugh Foundation</strong> — awareness and access</li>
                   </ul>
                 </div>
-                <div className="bg-blue-50/80 p-5 rounded-lg border border-border">
-                  <h4 className="font-semibold text-blue-800 mb-2 japanese-heading">Global directories</h4>
-                  <ul className="text-sm text-blue-700 space-y-2 japanese-text">
+                <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                  <h4 className="font-semibold text-foreground mb-2 japanese-heading">Global directories</h4>
+                  <ul className="text-sm text-primary space-y-2 japanese-text">
                     <li>• <strong>findahelpline.com</strong> — local crisis lines by country</li>
                     <li>• <strong>ISSTD</strong> — International Society for the Study of Trauma & Dissociation</li>
                     <li>• <strong>EMDRIA</strong> — find a certified EMDR therapist</li>
@@ -529,9 +507,9 @@ const TraumaContent = () => {
                 </div>
               </div>
 
-              <div className="bg-purple-50/80 p-5 rounded-lg border border-border">
-                <h4 className="font-semibold text-purple-800 mb-2 japanese-heading">Books that have helped many</h4>
-                <ul className="text-sm text-purple-700 space-y-1 japanese-text">
+              <div className="bg-primary/10 p-5 rounded-lg border border-border">
+                <h4 className="font-semibold text-foreground mb-2 japanese-heading">Books that have helped many</h4>
+                <ul className="text-sm text-primary space-y-1 japanese-text">
                   <li>• <em>The Body Keeps the Score</em> — Bessel van der Kolk</li>
                   <li>• <em>What Happened to You?</em> — Bruce Perry & Oprah Winfrey</li>
                   <li>• <em>The Myth of Normal</em> — Gabor Maté</li>
@@ -542,8 +520,8 @@ const TraumaContent = () => {
                 </ul>
               </div>
 
-              <div className="bg-slate-50/80 p-4 rounded-lg border-l-4 border-slate-400">
-                <p className="text-sm text-slate-700 italic japanese-text">
+              <div className="bg-primary/10 p-4 rounded-lg border-l-4 border-border">
+                <p className="text-sm text-foreground italic japanese-text">
                   VOYCE is a companion, not a clinician. If any of this stirs something that feels too big to carry alone, please reach out to a professional or
                   one of the lines above. You do not have to earn the right to ask for help.
                 </p>

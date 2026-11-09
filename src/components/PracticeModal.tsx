@@ -114,7 +114,7 @@ export function PracticeModal({ open, onOpenChange, toolTitle }: PracticeModalPr
               <Button
                 size="sm"
                 onClick={() => setIsRunning((r) => !r)}
-                className="bg-sky-600 hover:bg-sky-500 text-foreground"
+                className="bg-primary hover:bg-primary text-foreground"
               >
                 {isRunning ? <><Pause className="h-4 w-4 mr-1" /> Pause</> : <><Play className="h-4 w-4 mr-1" /> Start</>}
               </Button>
@@ -134,7 +134,7 @@ export function PracticeModal({ open, onOpenChange, toolTitle }: PracticeModalPr
 
             <Button
               size="sm"
-              className="bg-orange-600 hover:bg-orange-500 text-primary-foreground"
+              className="bg-primary hover:bg-primary text-primary-foreground"
               onClick={() => {
                 if (stepIndex + 1 < steps.length) {
                   setStepIndex((i) => i + 1);

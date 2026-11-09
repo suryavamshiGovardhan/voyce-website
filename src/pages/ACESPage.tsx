@@ -11,6 +11,7 @@ import ReadingProgress from "@/components/engagement/ReadingProgress";
 import ReflectPause from "@/components/engagement/ReflectPause";
 import BreathWidget from "@/components/engagement/BreathWidget";
 import ContinueJourney from "@/components/engagement/ContinueJourney";
+import { LearnCheck } from "@/components/site/LearnCheck";
 
 const acesResources = [
   {
@@ -94,6 +95,7 @@ export default function ACESPage() {
         <ShareStoryButton />
       </div>
 
+      <LearnCheck topic="aces" />
       <NextStep
         title="Resilience is built, not born."
         body="If this topic feels heavy, please pause — and reach out to someone you trust."
