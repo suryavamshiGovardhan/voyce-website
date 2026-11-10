@@ -1340,11 +1340,27 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
   color: hsl(var(--foreground));
 }
 .v-brain-loader--full {
+  position: relative;
+  overflow: hidden;
   min-height: 100vh;
-  padding: 2rem 1.25rem;
+  padding: 2rem 1.25rem 6.5rem;
   background: #100a1a;
   color: #f7f2fb;
+  justify-content: flex-end;
 }
+.v-brain-loader--full .v-brain-loader__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.v-brain-loader--full .v-brain-loader__message,
+.v-brain-loader--full .v-brain-loader__hint {
+  position: relative;
+  z-index: 1;
+}
+.v-brain-loader--full .v-brain-loader__message { margin-top: auto; }
 .v-brain-loader--inline {
   padding: 2.5rem 1rem;
   background: transparent;
