@@ -111,7 +111,7 @@ export function SiteIntro() {
               className="v-site-intro__word"
               style={{
                 animationDelay: `${delay}s`,
-                ["--row-shift" as string]: row % 2 === 1 ? "0.55em" : "0",
+                ["--row-shift" as string]: row % 2 === 1 ? "1.6rem" : "0",
               }}
               ref={(el) => {
                 if (el) tilesRef.current[i] = el;

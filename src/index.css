@@ -1392,10 +1392,11 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
 }
 .v-site-intro__grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  column-gap: 4vw;
-  row-gap: 6.5vh;
-  width: min(92vw, 88rem);
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  column-gap: clamp(2.5rem, 8vw, 7rem);
+  row-gap: clamp(2rem, 8vh, 5.5rem);
+  width: 100%;
   justify-items: center;
   align-items: center;
 }
@@ -1404,12 +1405,13 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
   margin-left: var(--row-shift, 0);
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.6rem, 6.2vw, 5.25rem);
-  letter-spacing: 0.015em;
+  font-size: clamp(1.35rem, 3.4vw, 2.85rem);
+  letter-spacing: 0.02em;
   line-height: 1;
-  color: rgba(167, 139, 250, 0.22);
+  color: rgba(167, 139, 250, 0.28);
   text-transform: none;
   user-select: none;
+  white-space: nowrap;
   opacity: 0;
   animation: v-intro-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transition: color 0.45s ease, text-shadow 0.45s ease, opacity 0.6s ease;
@@ -1439,9 +1441,9 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
 }
 @media (max-width: 640px) {
   .v-site-intro__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 5vw;
-    row-gap: 5.5vh;
+    grid-template-columns: repeat(3, max-content);
+    column-gap: 1.75rem;
+    row-gap: 2.75rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
