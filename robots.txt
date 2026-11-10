@@ -1,0 +1,33 @@
+# robots.txt for VOYCE — student & school wellbeing
+# https://suryavamshigovardhan.github.io/voyce-website
+
+User-agent: *
+Allow: /
+
+# Private / account / admin pages
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /journal
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /drafts
+Disallow: /blog/create
+Disallow: /blog/edit/
+Disallow: /admin
+Disallow: /invisible-inheritance/test/
+
+# CAM moved to its own site: https://suryavamshigovardhan.github.io/cam-website/
+Disallow: /cam
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Sitemap: https://suryavamshigovardhan.github.io/voyce-website/sitemap.xml

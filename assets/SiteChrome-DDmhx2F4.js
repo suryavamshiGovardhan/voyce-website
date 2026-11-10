@@ -1,0 +1,1 @@
+import{j as e,a2 as n,a3 as t,h as i}from"./index-C3QKWTaA.js";function r({children:s,className:a}){return e.jsxs("div",{className:i("v-legacy flex min-h-screen flex-col",a),children:[e.jsx(n,{}),e.jsx("main",{id:"main-content",tabIndex:-1,className:"flex-1 focus:outline-none",children:s}),e.jsx(t,{})]})}export{r as S};
