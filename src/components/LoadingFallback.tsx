@@ -6,7 +6,7 @@ interface LoadingFallbackProps {
 }
 
 export function LoadingFallback({
-  message = "Thinking…",
+  message = "Thinking...",
   fullScreen = true,
 }: LoadingFallbackProps) {
   return <ThinkingLoader message={message} fullScreen={fullScreen} />;

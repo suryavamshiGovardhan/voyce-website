@@ -1331,84 +1331,7 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
 /* ------------------------------------------------------------------ */
 /* Brain loading animation — cinematic dusk stage, nodes connecting.  */
 /* ------------------------------------------------------------------ */
-.v-brain-loader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  color: hsl(var(--foreground));
-}
-.v-brain-loader--full {
-  position: relative;
-  overflow: hidden;
-  min-height: 100vh;
-  padding: 2rem 1.25rem 6.5rem;
-  background: #100a1a;
-  color: #f7f2fb;
-  justify-content: flex-end;
-}
-.v-brain-loader--full .v-brain-loader__canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-.v-brain-loader--full .v-brain-loader__message,
-.v-brain-loader--full .v-brain-loader__hint {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 1;
-}
-.v-brain-loader--full .v-brain-loader__message { bottom: 4.75rem; margin: 0; }
-.v-brain-loader--full .v-brain-loader__hint { bottom: 3rem; }
-.v-brain-loader--inline {
-  padding: 2.5rem 1rem;
-  background: transparent;
-}
-.v-brain-loader--row {
-  flex-direction: row;
-  gap: 0.85rem;
-  padding: 1.25rem 0;
-  background: transparent;
-}
-.v-brain-loader__canvas {
-  display: block;
-  width: min(34rem, 86vw);
-  height: min(34rem, 86vw);
-}
-.v-brain-loader--inline .v-brain-loader__canvas,
-.v-brain-loader--row .v-brain-loader__canvas {
-  width: 7.5rem;
-  height: 7.5rem;
-}
-.v-brain-loader__message {
-  margin: 0;
-  font-family: "Fraunces", Georgia, ui-serif, serif;
-  font-size: 1.45rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-}
-.v-brain-loader--full .v-brain-loader__message { color: #f7f2fb; }
-.v-brain-loader__hint {
-  margin: 0.15rem 0 0;
-  font-size: 0.85rem;
-  color: hsl(var(--muted-foreground));
-}
-.v-brain-loader--full .v-brain-loader__hint { color: rgba(247, 242, 251, 0.62); }
 
-@media (prefers-reduced-motion: reduce) {
-  .v-brain-loader__canvas { /* animation is halted in JS */ }
-}
-
-/* ------------------------------------------------------------------ */
-/* Learn pages in the Dusk system (Nov 10 pass)                        */
-/* Older long-form content components keep their structure; these     */
-/* rules bring tabs, cards, tints and headings into the shared look.   */
-/* ------------------------------------------------------------------ */
 .v-tint-plum    { background: hsl(var(--surface)); }
 .v-tint-apricot { background: hsl(var(--apricot-soft) / 0.7); }
 .v-tint-sage    { background: hsl(var(--sage) / 0.12); }
@@ -1453,4 +1376,74 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
 @media (max-width: 639px) {
   .v-learn-body { padding: 0.75rem; }
   .v-learn-body .p-6 { padding: 1rem; }
+}
+
+/* First-visit typographic entry. Separate from the brain icon loader. */
+.v-site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #100a1a;
+  overflow: hidden;
+  pointer-events: auto;
+}
+.v-site-intro__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  column-gap: 4vw;
+  row-gap: 6.5vh;
+  width: min(92vw, 88rem);
+  justify-items: center;
+  align-items: center;
+}
+.v-site-intro__word {
+  display: block;
+  margin-left: var(--row-shift, 0);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 6.2vw, 5.25rem);
+  letter-spacing: 0.015em;
+  line-height: 1;
+  color: rgba(167, 139, 250, 0.22);
+  text-transform: none;
+  user-select: none;
+  opacity: 0;
+  animation: v-intro-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: color 0.45s ease, text-shadow 0.45s ease, opacity 0.6s ease;
+}
+.v-site-intro__word[data-lit] {
+  color: #ff9a6a;
+  text-shadow:
+    0 0 24px rgba(255, 154, 106, 0.55),
+    0 0 64px rgba(90, 56, 158, 0.45);
+}
+.v-site-intro--exit {
+  pointer-events: none;
+  animation: v-intro-veil 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.v-site-intro--exit .v-site-intro__word {
+  animation: v-intro-out 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes v-intro-in {
+  from { opacity: 0; transform: translateY(0.45em); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes v-intro-out {
+  to { opacity: 0; transform: translateY(-0.2em); filter: blur(6px); }
+}
+@keyframes v-intro-veil {
+  to { opacity: 0; background: #100a1a; }
+}
+@media (max-width: 640px) {
+  .v-site-intro__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 5vw;
+    row-gap: 5.5vh;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v-site-intro { display: none; }
 }

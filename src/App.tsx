@@ -11,6 +11,7 @@ import { AuthProvider } from "@/hooks/useAuth";
 import { GlobalErrorHandler } from "@/components/GlobalErrorHandler";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LoadingFallback } from "@/components/LoadingFallback";
+import { SiteIntro } from "@/components/SiteIntro";
 import { DailyCheckIn } from "@/components/engagement/DailyCheckIn";
 import { SuryaChatbot } from "@/components/SuryaChatbot";
 import { RouteMeta } from "@/components/site/RouteMeta";
@@ -118,6 +119,7 @@ const App = () => (
             <Sonner />
             <BrowserRouter basename={BASE_PATH}>
               <RouteMeta />
+              <SiteIntro />
               <MotionDirector />
               <GlobalErrorHandler />
               <DailyCheckIn />
