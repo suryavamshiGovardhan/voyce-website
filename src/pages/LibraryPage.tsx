@@ -28,7 +28,7 @@ export default function LibraryPage() {
           />
         }
       />
-      <Section id="shelf" className="py-16 sm:py-20">
+      <Section id="shelf" className="py-24 sm:py-32">
         <Reveal>
           <LibraryPreview />
         </Reveal>

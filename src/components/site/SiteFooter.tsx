@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Instagram, Mail } from "lucide-react";
-import SonarGrid from "@/components/ui/sonar-grid";
 
 const COLUMNS: { title: string; links: { label: string; to: string }[] }[] = [
   {
@@ -55,24 +54,19 @@ const OTHER: { label: string; to: string; note: string }[] = [
 
 export default function SiteFooter() {
   return (
-    <footer className="relative border-t border-border bg-surface pb-20 sm:pb-0">
-      <SonarGrid
-        aria-hidden="true"
-        interactive={false}
-        baseOpacity={0.1}
-        pingEvery={7}
-        speed={180}
-        amplitude={1.4}
-        maxRings={2}
-        className="pointer-events-none absolute inset-0 hidden sm:block"
-      />
-      <div className="relative mx-auto w-full max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+    <footer className="relative bg-surface pb-20 text-[13px] sm:pb-0">
+      <div className="relative mx-auto w-full max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
+        <p className="mb-8 border-b border-border/80 pb-6 text-xs leading-relaxed text-muted-foreground">
+          VOYCE is a reflective, educational wellbeing space. It does not provide therapy, diagnosis or emergency
+          support. If you or someone else is in immediate danger, contact local emergency services or a crisis
+          helpline &mdash; in India, Tele MANAS is free on 14416.
+        </p>
         <div className="grid gap-10 lg:grid-cols-[1.2fr_3fr]">
           <div>
-            <Link to="/" className="font-display text-xl tracking-tight">
+            <Link to="/" className="a-headline text-lg">
               VOYCE
             </Link>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-2 max-w-xs text-[13px] leading-relaxed text-muted-foreground">
               A calm place to notice what you feel, understand it, and find the next small step.
             </p>
             <div className="mt-6 flex items-center gap-3">
@@ -81,14 +75,14 @@ export default function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="VOYCE on Instagram"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-primary/40 hover:text-primary"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-background text-foreground/70 transition-colors hover:text-primary"
               >
                 <Instagram className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="mailto:voycexx@gmail.com"
                 aria-label="Email VOYCE"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border transition-colors hover:border-primary/40 hover:text-primary"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-background text-foreground/70 transition-colors hover:text-primary"
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -98,13 +92,13 @@ export default function SiteFooter() {
           <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4">
             {COLUMNS.map((col) => (
               <div key={col.title}>
-                <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                <h2 className="mb-3 text-xs font-semibold text-foreground">
                   {col.title}
                 </h2>
-                <ul className="space-y-2.5">
+                <ul className="space-y-2">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <Link to={link.to} className="v-link text-sm text-foreground/80 transition-colors hover:text-primary">
+                      <Link to={link.to} className="text-xs text-muted-foreground transition-colors hover:text-foreground hover:underline">
                         {link.label}
                       </Link>
                     </li>
@@ -115,20 +109,20 @@ export default function SiteFooter() {
           </nav>
         </div>
 
-        <div className="mt-10 border-t border-border pt-8">
+        <div className="mt-10 border-t border-border/80 pt-6">
           <nav aria-label="Other initiatives" className="mb-8">
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            <p className="text-xs font-semibold text-foreground">
               Other projects from the same team
             </p>
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
               {OTHER.map((item) => (
-                <li key={item.label} className="text-sm text-muted-foreground">
+                <li key={item.label} className="text-xs text-muted-foreground">
                   {item.to.startsWith("http") ? (
-                    <a href={item.to} target="_blank" rel="noopener noreferrer" className="v-link text-foreground/80 transition-colors hover:text-primary">
+                    <a href={item.to} target="_blank" rel="noopener noreferrer" className="text-foreground/80 transition-colors hover:text-foreground hover:underline">
                       {item.label}
                     </a>
                   ) : (
-                    <Link to={item.to} className="v-link text-foreground/80 transition-colors hover:text-primary">
+                    <Link to={item.to} className="text-foreground/80 transition-colors hover:text-foreground hover:underline">
                       {item.label}
                     </Link>
                   )}{" "}
@@ -137,14 +131,9 @@ export default function SiteFooter() {
               ))}
             </ul>
           </nav>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            VOYCE is a reflective, educational wellbeing space. It does not provide therapy, diagnosis, or emergency
-            support. If you or someone else is in immediate danger, contact local emergency services or a crisis
-            helpline.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 border-t border-border/80 pt-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} VOYCE. Founded by Suryavamshi Govardhan.</p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
               <Link to="/privacy" className="hover:text-primary">
                 Privacy
               </Link>

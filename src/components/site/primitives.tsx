@@ -102,7 +102,7 @@ export function Section({
     <Tag
       id={id}
       aria-label={ariaLabel}
-      className={cn("py-20 sm:py-28", tones[tone], hero && "relative isolate overflow-hidden", className)}
+      className={cn("py-24 sm:py-32 lg:py-36", tones[tone], hero && "relative isolate overflow-hidden", className)}
     >
       {hero && <div className="v-hero-glow" aria-hidden />}
       <div className={cn("mx-auto w-full max-w-6xl px-5 sm:px-8", hero && "relative z-10", containerClassName)}>
@@ -118,7 +118,7 @@ export function Section({
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <p className={cn("mb-5 text-xs font-medium uppercase tracking-[0.22em] text-primary", className)}>
+    <p className={cn("mb-4 text-base font-semibold tracking-tight text-primary sm:text-lg", className)}>
       {children}
     </p>
   );
@@ -136,7 +136,7 @@ export function StatementHeading({
   return (
     <Tag
       className={cn(
-        "font-display text-3xl leading-[1.12] tracking-tight sm:text-4xl md:text-[2.9rem]",
+        "a-headline text-balance text-[2.1rem] leading-[1.08] sm:text-5xl md:text-[3.4rem]",
         className,
       )}
     >
@@ -147,7 +147,7 @@ export function StatementHeading({
 
 export function Lede({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <p className={cn("mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg", className)}>
+    <p className={cn("mt-6 max-w-2xl text-lg font-medium leading-[1.5] text-muted-foreground sm:text-[1.3rem]", className)}>
       {children}
     </p>
   );
@@ -161,13 +161,13 @@ export type Step = { number: string; title: string; body: string };
 
 export function StepRail({ steps, className }: { steps: Step[]; className?: string }) {
   return (
-    <ol className={cn("grid gap-px overflow-hidden rounded-2xl bg-border sm:grid-cols-2 lg:grid-cols-4", className)}>
+    <ol className={cn("grid gap-4 sm:grid-cols-2 lg:grid-cols-4", className)}>
       {steps.map((step, i) => (
-        <li key={step.number} className="bg-background">
+        <li key={step.number} className="rounded-[1.75rem] bg-card">
           <Reveal delay={i * 70} className="h-full">
-            <div className="flex h-full flex-col gap-3 p-7">
-              <span className="font-display text-sm text-primary">{step.number}</span>
-              <h3 className="text-lg font-medium tracking-tight">{step.title}</h3>
+            <div className="flex h-full flex-col gap-3 p-8">
+              <span className="text-sm font-semibold text-primary">{step.number}</span>
+              <h3 className="a-headline text-2xl leading-tight">{step.title}</h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{step.body}</p>
             </div>
           </Reveal>

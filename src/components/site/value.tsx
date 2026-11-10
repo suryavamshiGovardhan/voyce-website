@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Reveal, Section, StatementHeading } from "@/components/site/primitives";
@@ -38,27 +38,26 @@ export function PageHero({
       <div className="v-hero-glow" aria-hidden />
       <div
         className={cn(
-          "relative z-10 mx-auto grid w-full max-w-6xl gap-12 px-5 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20",
+          "relative z-10 mx-auto grid w-full max-w-6xl gap-14 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-28",
           aside ? "lg:grid-cols-[1.25fr_1fr] lg:items-center" : "",
         )}
       >
         <div className={cn("v-rise", centered && !aside && "mx-auto max-w-3xl text-center")}>
           {eyebrow && (
-            <p className="mb-5 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.22em] text-primary">
-              <span className="v-breathe inline-block h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
+            <p className="mb-4 text-base font-semibold tracking-tight text-primary sm:text-lg">
               {eyebrow}
             </p>
           )}
-          <h1 className="font-display text-4xl leading-[1.06] tracking-tight text-foreground sm:text-5xl md:text-[3.6rem]">
+          <h1 className="a-headline text-balance text-[2.5rem] leading-[1.05] text-foreground sm:text-6xl md:text-[4.1rem]">
             {title}
           </h1>
           {lede && (
-            <p className={cn("mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg", centered && !aside && "mx-auto")}>
+            <p className={cn("mt-6 max-w-2xl text-lg font-medium leading-[1.5] text-muted-foreground sm:text-[1.3rem]", centered && !aside && "mx-auto")}>
               {lede}
             </p>
           )}
           {(primary || secondary) && (
-            <div className={cn("mt-9 flex flex-col gap-3 sm:flex-row", centered && !aside && "sm:justify-center")}>
+            <div className={cn("mt-9 flex flex-wrap items-center gap-x-7 gap-y-4", centered && !aside && "justify-center")}>
               {primary && <ActionButton action={primary} variant="primary" />}
               {secondary && <ActionButton action={secondary} variant="secondary" />}
             </div>
@@ -76,39 +75,46 @@ export function PageHero({
 }
 
 function ActionButton({ action, variant }: { action: HeroAction; variant: "primary" | "secondary" }) {
-  const inner = (
+  const primary = variant === "primary";
+  const inner = primary ? (
+    <>{action.label}</>
+  ) : (
     <>
       {action.label}
-      <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden />
+      <ChevronRight className="h-[1.05em] w-[1.05em] translate-y-px transition-transform group-hover:translate-x-0.5" aria-hidden />
     </>
   );
-  const cls =
-    variant === "primary"
-      ? "v-sheen h-12 rounded-full px-7 text-[0.95rem]"
-      : "h-12 rounded-full border-foreground/15 bg-background/70 px-7 text-[0.95rem] backdrop-blur";
+  const cls = primary
+    ? "inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-[1.0625rem] font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+    : "group inline-flex items-center gap-0.5 text-[1.0625rem] font-medium text-primary underline-offset-4 hover:underline";
+  if (action.to.startsWith("#")) {
+    return (
+      <a
+        href={action.to}
+        className={cls}
+        onClick={(e) => {
+          const el = document.getElementById(action.to.slice(1));
+          if (!el) return;
+          e.preventDefault();
+          const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        }}
+      >
+        {inner}
+      </a>
+    );
+  }
+  if (action.external) {
+    return (
+      <a href={action.to} className={cls} target={action.to.startsWith("mailto:") ? undefined : "_blank"} rel="noopener noreferrer">
+        {inner}
+      </a>
+    );
+  }
   return (
-    <Button asChild size="lg" variant={variant === "primary" ? "default" : "outline"} className={cls}>
-      {action.to.startsWith("#") ? (
-        <a
-          href={action.to}
-          onClick={(e) => {
-            const el = document.getElementById(action.to.slice(1));
-            if (!el) return;
-            e.preventDefault();
-            const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-            el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-          }}
-        >
-          {inner}
-        </a>
-      ) : action.external ? (
-        <a href={action.to} target="_blank" rel="noopener noreferrer">
-          {inner}
-        </a>
-      ) : (
-        <Link to={action.to}>{inner}</Link>
-      )}
-    </Button>
+    <Link to={action.to} className={cls}>
+      {inner}
+    </Link>
   );
 }
 
@@ -161,24 +167,21 @@ export function NextStep({
   secondary?: HeroAction;
 }) {
   return (
-    <Section tone="ink" className="relative isolate overflow-hidden py-20 sm:py-24">
-      <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-primary/25 blur-3xl v-float" aria-hidden />
-      <Reveal className="relative mx-auto max-w-2xl text-center">
-        <StatementHeading className="text-ink-foreground">{title}</StatementHeading>
-        {body && <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-ink-foreground/70">{body}</p>}
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button asChild size="lg" className="v-sheen h-12 rounded-full px-8">
-            <Link to={primary.to}>
-              {primary.label}
-              <ArrowRight className="v-arrow ml-2 h-4 w-4" aria-hidden />
-            </Link>
+    <Section tone="ink" className="a-ink-plain relative isolate overflow-hidden py-28 sm:py-40">
+      <Reveal className="relative mx-auto max-w-3xl text-center">
+        <StatementHeading className="text-ink-foreground sm:text-6xl md:text-[4rem]">{title}</StatementHeading>
+        {body && <p className="mx-auto mt-6 max-w-xl text-lg font-medium leading-relaxed text-ink-foreground/65 sm:text-xl">{body}</p>}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          <Button asChild size="lg" className="h-12 rounded-full px-7 text-[1.0625rem]">
+            <Link to={primary.to}>{primary.label}</Link>
           </Button>
           {secondary && (
             <Link
               to={secondary.to}
-              className="v-link inline-flex h-12 items-center px-4 text-sm font-medium text-ink-foreground/85 hover:text-ink-foreground"
+              className="group inline-flex items-center gap-0.5 text-[1.0625rem] font-medium text-lilac underline-offset-4 hover:underline"
             >
               {secondary.label}
+              <ChevronRight className="h-[1.05em] w-[1.05em] translate-y-px transition-transform group-hover:translate-x-0.5" aria-hidden />
             </Link>
           )}
         </div>
@@ -196,17 +199,17 @@ export type Feature = { icon?: ReactNode; title: string; body: string; to?: stri
 export function FeatureGrid({ items, cols = 3 }: { items: Feature[]; cols?: 2 | 3 | 4 }) {
   const grid = { 2: "sm:grid-cols-2", 3: "sm:grid-cols-2 lg:grid-cols-3", 4: "sm:grid-cols-2 lg:grid-cols-4" }[cols];
   return (
-    <div className={cn("grid gap-5", grid)}>
+    <div className={cn("grid gap-4", grid)}>
       {items.map((f, i) => {
         const body = (
           <>
             {f.icon && <span className="v-chip mb-5">{f.icon}</span>}
-            <h3 className="text-lg font-medium tracking-tight text-foreground">{f.title}</h3>
+            <h3 className="a-headline text-[1.4rem] leading-tight text-foreground">{f.title}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.body}</p>
             {f.to && (
-              <span className="mt-5 inline-flex items-center text-sm font-medium text-primary">
+              <span className="mt-6 inline-flex items-center gap-0.5 text-[1.0625rem] font-medium text-primary group-hover:underline underline-offset-4">
                 {f.cta ?? "Open"}
-                <ArrowRight className="v-arrow ml-1.5 h-4 w-4" aria-hidden />
+                <ChevronRight className="h-[1.05em] w-[1.05em] translate-y-px" aria-hidden />
               </span>
             )}
           </>
@@ -214,11 +217,11 @@ export function FeatureGrid({ items, cols = 3 }: { items: Feature[]; cols?: 2 | 
         return (
           <Reveal key={f.title} delay={(i % 3) * 80} className="h-full">
             {f.to ? (
-              <Link to={f.to} className="v-card v-card-hover group flex h-full flex-col p-7 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <Link to={f.to} className="v-card v-card-hover group flex h-full flex-col p-8 sm:p-9 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                 {body}
               </Link>
             ) : (
-              <div className="v-card v-card-hover group flex h-full flex-col p-7">{body}</div>
+              <div className="v-card v-card-hover group flex h-full flex-col p-8 sm:p-9">{body}</div>
             )}
           </Reveal>
         );

@@ -74,7 +74,7 @@ export default function TeachersPage() {
         }
       />
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <Reveal className="mb-10 max-w-2xl">
           <Eyebrow>The privacy line</Eyebrow>
           <StatementHeading>Grouped insight for you. Private words for them.</StatementHeading>
@@ -96,7 +96,7 @@ export default function TeachersPage() {
         </div>
       </Section>
 
-      <Section tone="muted" className="py-16 sm:py-20">
+      <Section tone="muted" className="py-24 sm:py-32">
         <Reveal className="mb-10 max-w-2xl">
           <Eyebrow>Consent in the classroom</Eyebrow>
           <StatementHeading>Optional for every student, every time.</StatementHeading>
@@ -118,7 +118,7 @@ export default function TeachersPage() {
         </div>
       </Section>
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
           <div>
             <Reveal>

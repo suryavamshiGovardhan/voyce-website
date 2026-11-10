@@ -63,7 +63,7 @@ export default function StudentsPage() {
         aside={<AskReflect eyebrow="Right now" question="How has this week felt, in one word?" options={WEEK} allowOwnWords />}
       />
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <Reveal className="max-w-2xl">
           <Eyebrow>Stories that sound like you</Eyebrow>
           <StatementHeading>Someone else has felt this. Read their version.</StatementHeading>
@@ -88,7 +88,7 @@ export default function StudentsPage() {
         </div>
       </Section>
 
-      <Section tone="muted" className="py-16 sm:py-20">
+      <Section tone="muted" className="py-24 sm:py-32">
         <Reveal className="mb-10 max-w-2xl">
           <Eyebrow>Fits between classes</Eyebrow>
           <StatementHeading>Small things you can do today.</StatementHeading>
@@ -102,7 +102,7 @@ export default function StudentsPage() {
         />
       </Section>
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <Reveal variant="left">
             <Eyebrow>Who sees what you write?</Eyebrow>

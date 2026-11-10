@@ -145,13 +145,13 @@ export default function SiteHeader() {
     </a>
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b transition-colors duration-300",
-        scrolled ? "border-border bg-background/90 backdrop-blur-md" : "border-transparent bg-background",
+        "a-nav sticky top-0 z-50 w-full border-b transition-colors duration-300",
+        scrolled || open ? "border-border/70" : "border-transparent",
       )}
     >
-      <nav aria-label="Main" className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
+      <nav aria-label="Main" className="mx-auto flex h-12 max-w-6xl items-center justify-between px-5 sm:px-8">
         <Link to="/" className="flex items-baseline gap-2" aria-label="VOYCE home">
-          <span className="font-display text-xl tracking-tight">VOYCE</span>
+          <span className="a-headline text-[1.15rem] tracking-[-0.02em]">VOYCE</span>
           <span className="text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground">wellbeing</span>
         </Link>
 
@@ -164,7 +164,7 @@ export default function SiteHeader() {
                   to={entry.to}
                   className={({ isActive }) =>
                     cn(
-                      "rounded-full px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground",
+                      "rounded-full px-3 py-2 text-[13px] text-foreground/75 transition-colors hover:text-foreground",
                       isActive && "text-foreground",
                     )
                   }
@@ -180,10 +180,10 @@ export default function SiteHeader() {
                     type="button"
                     aria-expanded={openMenu === entry.label}
                     onClick={() => setOpenMenu(openMenu === entry.label ? null : entry.label)}
-                    className="flex items-center gap-1 rounded-full px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="flex items-center gap-1 rounded-full px-3 py-2 text-[13px] text-foreground/75 transition-colors hover:text-foreground"
                   >
                     {entry.label}
-                    <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                    <ChevronDown className="h-3 w-3 opacity-60" aria-hidden="true" />
                   </button>
                   {openMenu === entry.label && entry.items && (
                     <div
@@ -192,7 +192,7 @@ export default function SiteHeader() {
                         entry.wide ? "left-1/2 w-[38rem] -translate-x-1/2" : entry.label === "Other initiatives" ? "right-0 w-80" : "left-0 w-72",
                       )}
                     >
-                      <div className="rounded-2xl border border-border bg-popover p-2 shadow-[0_24px_60px_-30px_hsl(var(--foreground)/0.45)]">
+                      <div className="rounded-2xl border border-border/60 bg-popover/95 p-2 shadow-[0_24px_60px_-30px_hsl(var(--foreground)/0.45)] backdrop-blur-xl">
                         {entry.note && (
                           <p className="px-3 pb-1 pt-2 text-[11px] uppercase tracking-[0.18em] text-primary">{entry.note}</p>
                         )}
@@ -233,15 +233,15 @@ export default function SiteHeader() {
 
         <div className="hidden items-center gap-2 lg:flex">
           {user ? (
-            <Button asChild size="sm" className="rounded-full px-5">
+            <Button asChild size="sm" className="h-8 rounded-full px-4 text-[13px]">
               <Link to="/dashboard">My VOYCE</Link>
             </Button>
           ) : (
             <>
-              <Button asChild variant="ghost" size="sm" className="rounded-full">
+              <Button asChild variant="ghost" size="sm" className="h-8 rounded-full px-3 text-[13px] text-foreground/75">
                 <Link to="/login">Sign in</Link>
               </Button>
-              <Button asChild size="sm" className="rounded-full px-5">
+              <Button asChild size="sm" className="h-8 rounded-full px-4 text-[13px]">
                 <Link to="/start-here">Start here</Link>
               </Button>
             </>
@@ -251,7 +251,7 @@ export default function SiteHeader() {
         {/* Mobile toggle */}
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border lg:hidden"
+          className="-mr-2 inline-flex h-11 w-11 items-center justify-center rounded-full lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -263,8 +263,8 @@ export default function SiteHeader() {
 
       {/* Mobile panel */}
       {open && (
-        <div id="mobile-nav" className="border-t border-border bg-background lg:hidden">
-          <div className="max-h-[calc(100vh-4rem)] overflow-y-auto px-5 pb-8 pt-4">
+        <div id="mobile-nav" className="border-t border-border/70 bg-background lg:hidden">
+          <div className="max-h-[calc(100vh-3rem)] overflow-y-auto px-5 pb-8 pt-4">
             <div className="mb-5 flex flex-col gap-3">
               {user ? (
                 <Button asChild className="h-12 rounded-full">

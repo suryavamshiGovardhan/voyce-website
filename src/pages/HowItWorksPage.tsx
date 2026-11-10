@@ -70,7 +70,7 @@ export default function HowItWorksPage() {
       </Section>
 
       {STEPS.map((step, i) => (
-        <Section key={step.n} tone={i % 2 === 1 ? "muted" : "default"} className="py-16 sm:py-20">
+        <Section key={step.n} tone={i % 2 === 1 ? "muted" : "default"} className="py-24 sm:py-32">
           <div
             className={`grid items-center gap-12 lg:grid-cols-2 ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
           >

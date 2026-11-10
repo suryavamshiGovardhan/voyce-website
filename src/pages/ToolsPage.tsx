@@ -31,7 +31,7 @@ export default function ToolsPage() {
         }
       />
 
-      <Section id="breathe" className="py-16 sm:py-20">
+      <Section id="breathe" className="py-24 sm:py-32">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <Reveal variant="left">
             <Eyebrow>Start here · 1 minute</Eyebrow>
@@ -47,7 +47,7 @@ export default function ToolsPage() {
         </div>
       </Section>
 
-      <Section tone="muted" className="py-16 sm:py-20">
+      <Section tone="muted" className="py-24 sm:py-32">
         <Reveal className="mb-10 max-w-2xl">
           <Eyebrow>More practices</Eyebrow>
           <StatementHeading>Pick what fits the moment.</StatementHeading>

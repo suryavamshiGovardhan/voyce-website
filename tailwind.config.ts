@@ -21,6 +21,9 @@ export default {
 			colors: {
 				border: 'hsl(var(--border))',
 				surface: 'hsl(var(--surface))',
+				apricot: { DEFAULT: 'hsl(var(--apricot))', soft: 'hsl(var(--apricot-soft))' },
+				sage: { DEFAULT: 'hsl(var(--sage))', soft: 'hsl(var(--sage-soft))' },
+				lilac: 'hsl(var(--lilac))',
 				ink: {
 					DEFAULT: 'hsl(var(--ink))',
 					foreground: 'hsl(var(--ink-foreground))'

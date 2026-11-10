@@ -60,7 +60,7 @@ export default function SchoolsPage() {
         }
       />
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <Reveal className="mb-12 max-w-2xl">
           <Eyebrow>How a pilot runs</Eyebrow>
           <StatementHeading>Four steps, no long contract.</StatementHeading>
@@ -70,7 +70,7 @@ export default function SchoolsPage() {
 
       <SchoolAwareness />
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <Reveal>
             <Eyebrow>Boundaries</Eyebrow>

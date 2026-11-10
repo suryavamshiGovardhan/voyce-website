@@ -89,6 +89,8 @@
     --apricot: 18 90% 66%;
     --apricot-soft: 22 100% 92%;
     --sage: 150 28% 52%;
+    --sage-soft: 150 30% 91%;
+    --lilac: 268 60% 90%;
     --destructive: 0 62% 45%;
     --destructive-foreground: 270 40% 98%;
     --border: 266 24% 88%;
@@ -1452,3 +1454,68 @@ a:hover > .rounded-\[1\.25rem\].border, .cursor-pointer.rounded-\[1\.25rem\]:hov
 @media (prefers-reduced-motion: reduce) {
   .v-site-intro { display: none; }
 }
+
+/* ================================================================== */
+/* Apple-style system (Nov 2026) — big tight type, quiet surfaces,     */
+/* frosted nav, bento tiles. Dusk palette only; one accent at a time.  */
+/* ================================================================== */
+body { letter-spacing: -0.006em; text-rendering: optimizeLegibility; }
+.a-headline,
+.font-display {
+  font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.font-display { font-weight: 600; letter-spacing: -0.025em; }
+.text-balance { text-wrap: balance; }
+
+/* Gradient emphasis — plum into a deep apricot */
+.a-gradient, .v-rise h1 .text-primary {
+  background-image: linear-gradient(100deg, hsl(var(--primary)) 10%, hsl(290 45% 50%) 50%, hsl(18 78% 54%) 95%) !important;
+  background-size: 100% 100% !important;
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent !important; -webkit-text-fill-color: transparent;
+  animation: none !important; padding-inline: 0;
+}
+.a-gradient-dark {
+  background-image: linear-gradient(100deg, hsl(268 70% 82%) 10%, hsl(18 92% 72%) 90%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+}
+
+/* Flat night sections, like a product page's dark chapters */
+.a-ink-plain { background-image: none !important; }
+
+/* Soft halo behind product visuals */
+.a-glow {
+  background: radial-gradient(closest-side, hsl(var(--primary) / 0.22), hsl(var(--apricot) / 0.12) 55%, transparent 75%);
+  filter: blur(10px);
+}
+
+/* Cards → calm rounded tiles */
+.v-card {
+  border-radius: 1.75rem;
+  border-color: hsl(var(--border) / 0.55);
+  box-shadow: none;
+}
+.v-card-hover:hover, .v-card-hover:focus-within {
+  transform: translateY(-2px) scale(1.005);
+  box-shadow: 0 30px 60px -40px hsl(var(--foreground) / 0.35);
+  border-color: hsl(var(--border) / 0.55);
+}
+.v-card-hover::before { display: none; }
+.a-tile { transition: transform 500ms var(--ease-calm); }
+a.a-tile:hover, .a-tile:has(a:hover) { transform: scale(1.008); }
+
+/* Thin frosted navigation bar */
+header.a-nav {
+  background: hsl(var(--background) / 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .a-tile, a.a-tile:hover, .a-tile:has(a:hover) { transition: none; transform: none; }
+  .v-card-hover:hover, .v-card-hover:focus-within { transform: none; }
+}
+/* Quieter hero atmosphere */
+.v-hero-glow { opacity: 0.5; }

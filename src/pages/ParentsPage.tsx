@@ -76,7 +76,7 @@ export default function ParentsPage() {
         secondary={{ to: "#privacy", label: "How privacy & consent work" }}
       />
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <Reveal className="mb-10 max-w-2xl">
           <Eyebrow>Straight answers</Eyebrow>
           <StatementHeading>What VOYCE is — and what it is not.</StatementHeading>
@@ -109,7 +109,7 @@ export default function ParentsPage() {
         </div>
       </Section>
 
-      <Section tone="muted" className="py-16 sm:py-20">
+      <Section tone="muted" className="py-24 sm:py-32">
         <Reveal className="mb-10 max-w-2xl">
           <Eyebrow>Talking at home</Eyebrow>
           <StatementHeading>Small swaps that keep the door open.</StatementHeading>
@@ -127,7 +127,7 @@ export default function ParentsPage() {
         </div>
       </Section>
 
-      <Section className="py-16 sm:py-20">
+      <Section className="py-24 sm:py-32">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div>
             <Reveal>
@@ -154,7 +154,7 @@ export default function ParentsPage() {
         </div>
       </Section>
 
-      <Section id="privacy" tone="muted" className="py-16 sm:py-20">
+      <Section id="privacy" tone="muted" className="py-24 sm:py-32">
         <Reveal className="mb-10 max-w-2xl">
           <Eyebrow>Privacy & consent</Eyebrow>
           <StatementHeading>Your child&rsquo;s words stay theirs.</StatementHeading>

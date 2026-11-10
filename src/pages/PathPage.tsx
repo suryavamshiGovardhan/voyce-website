@@ -28,7 +28,7 @@ export default function PathPage() {
           />
         }
       />
-      <Section id="stages" className="py-16 sm:py-20">
+      <Section id="stages" className="py-24 sm:py-32">
         <Reveal>
           <LearningPath />
         </Reveal>
