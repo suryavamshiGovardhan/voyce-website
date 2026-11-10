@@ -43,7 +43,7 @@ export function JournalPreview() {
   };
 
   if (loading) {
-    return <LoadingFallback message="Loading journal..." />;
+    return <LoadingFallback fullScreen={false} message="Loading journal..." />;
   }
 
   return (

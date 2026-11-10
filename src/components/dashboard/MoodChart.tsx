@@ -47,7 +47,7 @@ export function MoodChart() {
   };
 
   if (loading) {
-    return <LoadingFallback message="Loading mood data..." />;
+    return <LoadingFallback fullScreen={false} message="Loading mood data..." />;
   }
 
   if (data.length === 0) {

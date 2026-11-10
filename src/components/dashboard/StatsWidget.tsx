@@ -95,7 +95,7 @@ export function StatsWidget() {
   };
 
   if (loading) {
-    return <LoadingFallback message="Loading stats..." />;
+    return <LoadingFallback fullScreen={false} message="Loading stats..." />;
   }
 
   const statCards = [

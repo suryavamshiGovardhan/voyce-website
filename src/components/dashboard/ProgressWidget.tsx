@@ -58,7 +58,7 @@ export function ProgressWidget() {
   ).slice(0, 3);
 
   if (loading) {
-    return <LoadingFallback message="Loading progress..." />;
+    return <LoadingFallback fullScreen={false} message="Loading progress..." />;
   }
 
   return (

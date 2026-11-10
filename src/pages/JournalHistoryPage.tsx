@@ -90,7 +90,7 @@ export default function JournalHistoryPage() {
   };
 
   if (user && loading) {
-    return <LoadingFallback message="Loading your journal..." />;
+    return <LoadingFallback fullScreen={false} message="Loading your journal..." />;
   }
 
   return (
